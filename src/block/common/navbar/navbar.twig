@@ -1,0 +1,127 @@
+<nav class="{{navbar_prefix}}block  {{navbar_mod}}">
+	<div class="{{navbar_prefix}}header">
+		<div class="{{navbar_prefix}}container container  is--header">
+			<div class="{{navbar_prefix}}header-row row">
+				<div class="{{navbar_prefix}}header-cols cols  is--logotip">
+					<a class="{{navbar_prefix}}logotip" href="{{page.index}}">
+						<img src="{{path.img}}/default/logo-header.svg" class="img-responsive" alt="">
+					</a>
+				</div>
+				<div class="{{navbar_prefix}}header-cols cols  is--icon">
+					<div class="{{navbar_prefix}}header-icon-row  row">
+						<div class="cols">
+							<a href="#" class="{{navbar_prefix}}header-icon">{% include "../svg-sprite/svg.twig" with {icon:"search"} %}</a>
+						</div>
+						<div class="cols">
+							<a href="#" class="{{navbar_prefix}}header-icon">{% include "../svg-sprite/svg.twig" with {icon:"pointer"} %}</a>
+						</div>
+						<div class="cols">
+							<a href="#" class="{{navbar_prefix}}header-icon">{% include "../svg-sprite/svg.twig" with {icon:"login"} %}</a>
+						</div>
+					</div>
+				</div>
+				<div class="{{navbar_prefix}}header-cols cols  is--hamb">
+					<button class="{{navbar_prefix}}hamburger" data-name="Меню" data-hamburger>
+						<span class="{{navbar_prefix}}hamburger-icon">
+							<span class="{{navbar_prefix}}hamburger-line  is--left"></span>
+							<span class="{{navbar_prefix}}hamburger-line  is--center"></span>
+							<span class="{{navbar_prefix}}hamburger-line  is--right"></span>
+						</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="{{navbar_prefix}}collapse" >
+		<div class="{{navbar_prefix}}collapse-inner">	
+			<div class="{{navbar_prefix}}container  container  is--collapse">
+				<div class="{{navbar_prefix}}collapse-row  grid__row">
+					<div class="{{navbar_prefix}}collapse-cols">
+						<ul class="{{navbar_prefix}}nav">
+						    {% include "item-drop.twig" with {prefix:navbar_prefix, mod:"", name:"ГАЗ", list : [
+						    	{"name":"По трем документам", "link":"", "mod":""},
+						    	{"name":"Микроаванс", "link":"", "mod":""},
+						    	{"name":"Лизинг без переплаты", "link":"", "mod":""},
+						    	{"name":"Лизинг с trade-in", "link":"", "mod":""},
+						    	{"name":"Для стартапов", "link":"", "mod":""},
+						    	{"name":"Одобрение за 1 день", "link":"", "mod":""},
+						    	{"name":"ГАЗель NEXT", "link":"", "mod":""},
+						    	{"name":"ГАЗон NEXT", "link":"", "mod":""},
+						    	{"name":"ГАЗель Бизнес", "link":"", "mod":""},
+						    	{"name":"Б/У ГАЗель", "link":"", "mod":""}
+						    ]} %}
+
+						    {% include "item-drop.twig" with {prefix:navbar_prefix, mod:"", name:"Коммерческая техника", list : [
+						    	{"name":"Лизинг по трем документам", "link":"", "mod":""},
+						    	{"name":"Автобусы", "link":"", "mod":""},
+						    	{"name":"Микроавтобусы", "link":"", "mod":""},
+						    	{"name":"Для стартапов", "link":"", "mod":""},
+						    	{"name":"Лизинг с Trade-in", "link":"", "mod":""},
+						    	{"name":"Лизинг б/у техники", "link":"", "mod":""}
+						    ]} %}
+						    {% include "item-drop.twig" with {prefix:navbar_prefix, mod:"", name:"Грузовые авто", list : [
+						    	{"name":"Volvo", "link":"", "mod":""},
+						    	{"name":"КамАз", "link":"", "mod":""},
+						    	{"name":"IVECO", "link":"", "mod":""},
+						    	{"name":"Scania", "link":"", "mod":""},
+						    	{"name":"MAN", "link":"", "mod":""},
+						    	{"name":"DAF", "link":"", "mod":""},
+						    	{"name":"МАЗ", "link":"", "mod":""},
+						    	{"name":"Renault", "link":"", "mod":""},
+						    	{"name":"УРАЛ", "link":"", "mod":""},
+						    	{"name":"Mercedes-Benz", "link":"", "mod":""},
+						    	{"name":"HOWO", "link":"", "mod":""}
+						    ]} %}
+						    {% include "item-drop.twig" with {prefix:navbar_prefix, mod:"", name:"Спецтехника", list : [
+						    	{"name":"RM-TEREX", "link":"", "mod":""},
+						    	{"name":"Тракторы МТЗ", "link":"", "mod":""},
+						    	{"name":"Экскаваторы", "link":"", "mod":""},
+						    	{"name":"Складская техника", "link":"", "mod":""},
+						    	{"name":"Автокраны", "link":"", "mod":""},
+						    	{"name":"XGMA", "link":"", "mod":""},
+						    	{"name":"Бульдозеры", "link":"", "mod":""},
+						    	{"name":"Техника ХТЗ в лизинг", "link":"", "mod":""}
+						    ]} %}
+							{% set navbar = [
+								{"name":"Оборудование", "link":"","mod":""},
+								{"name":"Инвесторам", "link":"","mod":""}
+							] %}
+						    {% for value in navbar %}
+							<li class="{{navbar_prefix}}nav-item  {{value.mod }}"><a href="{{value.link}}" class="{{navbar_prefix}}nav-link"><span>{{value.name}}</span></a></li>
+						    {% endfor %}
+						    {% include "item-drop.twig" with {prefix:navbar_prefix, mod:"", name:"О компании", list : [
+						    	{"name":"Отзывы", "link":"", "mod":""},
+						    	{"name":"Новости", "link":"", "mod":""},
+						    	{"name":"Новости для инвесторов", "link":"", "mod":""},
+						    	{"name":"Руководство", "link":"", "mod":""},
+						    	{"name":"Цифры и факты", "link":"", "mod":""},
+						    	{"name":"Преимущества", "link":"", "mod":""},
+						    	{"name":"Вакансии", "link":"", "mod":""}
+						    ]} %}
+							{% set navbar = [
+								{"name":"Каталог", "link":"","mod":""},
+								{"name":"Офисы продаж", "link":"","mod":""}
+							] %}
+						    {% for value in navbar %}
+							<li class="{{navbar_prefix}}nav-item  {{value.mod }}"><a href="{{value.link}}" class="{{navbar_prefix}}nav-link"><span>{{value.name}}</span></a></li>
+						    {% endfor %}
+						</ul>
+					</div>
+					<div class="{{navbar_prefix}}collapse-cols"></div>
+					<div class="{{navbar_prefix}}collapse-cols">
+						{% include "../form/form.twig" with {
+							view: "login", 
+							prefix:"form__",
+							ID: "login",
+							mod:"is--login", 
+							heading:"Вход в личный кабинет", 
+							heading_mod:"is--h3  color--white-f6  margin--narrow", 
+							heading_level:"p", 
+							btn_name:"Отправить" 
+						} %} 
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>

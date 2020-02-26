@@ -1,0 +1,62 @@
+<footer class="{{footer_prefix}}block">	
+	<div class="{{footer_prefix}}container container">
+		<div class="{{footer_prefix}}row  grid__row">
+			<div class="{{footer_prefix}}cols  is--tel">
+				<a href="tel:{{contacts.phone_tel}}" class="{{footer_prefix}}tel">{{contacts.phone}}</a>
+				<p>Москва</p>
+			</div>	
+			<ul class="{{footer_prefix}}nav">
+				<li class="is--heading">Коммерческая техника</li>
+				<li><a href="#">Льготный лизинг</a></li>
+				<li><a href="#">Лизинг по трем документам</a></li>
+				<li><a href="#">Автобусы в лизинг</a></li>
+				<li><a href="#">Микроавтобусы в лизинг</a></li>
+				<li><a href="#">Лизинг для стартапов</a></li>
+				<li><a href="#">Лизинг с trade-in</a></li>
+				<li><a href="#">Лизинг б/у техники</a></li>
+				<li><a href="#">Автомобили УРАЛ в лизинг</a></li>
+			</ul>	
+			<ul class="{{footer_prefix}}nav">
+				<li class="is--heading">ГАЗ в лизинг</li>
+				<li><a href="#">По трем документам</a></li>
+				<li><a href="#">С минимальным авансом</a></li>
+				<li><a href="#">ГАЗ в лизинг без переплаты</a></li>
+				<li><a href="#">ГАЗ в лизинг с trade-in</a></li>
+				<li><a href="#">ГАЗ для стартапов</a></li>
+				<li><a href="#">Одобрение за 1 день</a></li>
+				<li><a href="#">ГАЗель NEXT в лизинг</a></li>
+				<li><a href="#">ГАЗон NEXT в лизинг</a></li>
+				<li><a href="#">ГАЗель Бизнес в лизинг</a></li>
+				<li><a href="#">Б/У ГАЗель в лизинг</a></li>
+			</ul>
+			<ul class="{{footer_prefix}}nav">
+				<li class="is--heading">Спецтехника в лизинг</li>
+				<li><a href="#">RM-TEREX в лизинг</a></li>
+				<li><a href="#">Техника ХТЗ в лизинг</a></li>
+				<li><a href="#">Тракторы МТЗ в лизинг</a></li>
+				<li><a href="#">Экскаваторы в лизинг</a></li>
+				<li><a href="#">Складская техника в лизинг</a></li>
+				<li><a href="#">Автокраны в лизинг</a></li>
+				<li><a href="#">Бульдозеры в лизинг</a></li>
+				<li><a href="#">Льготный лизинг спецтехники</a></li>
+			</ul>
+			<hr class="{{footer_prefix}}cols  is--line">
+			<div>
+				<p class="{{footer_prefix}}logo"><img src="{{path.img}}/default/logo-footer.svg" class="img-responsive" alt=""></p>
+				<p class="{{footer_prefix}}copyright">© Элемент Лизинг, 2010-2020</p>
+				<p class="{{footer_prefix}}copyright"><a href="http://playhard.agency/">Разработка сайта – Playhard</a></p>
+			</div>	
+			<ul class="{{footer_prefix}}nav">
+				<li><a href="#">Статьи</a></li>
+				<li><a href="#">Техническая поддержка</a></li>
+				<li><a href="#">Карта сайта</a></li>
+			</ul>
+			<div>
+				<p>Следите за нами в соцсетях</p>
+				{% include "../../common/social/tpl.twig" with {prefix:"social__",group:"is--footer", list:[{name:"soc-vk", link:soc.vk},{name:"soc-inst", link:soc.inst},{name:"soc-fb", link:soc.fb}]} %}
+			</div>			
+
+			{# {% include "../../common/continfo/tpl.twig" with {view: "footer", prefix:"continfo__", group_prefix:footer_prefix, mod:"is--footer", list:[{"mod":"","name":contacts.address, "icon":"contacts-address", "tag":"div"},{"mod":"is--email","name":contacts.email, "href":contacts.email, "icon":"contacts-email", "tag":"a", "target":"mailto:"},{"mod":"is--tel","name":contacts.phone, "href":contacts.phone_tel, "icon":"contacts-tel", "tag":"a", "target":"tel:"}]} %}  #}
+		</div>	
+	</div>
+</footer>
