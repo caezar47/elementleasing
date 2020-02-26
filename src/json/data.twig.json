@@ -23,22 +23,22 @@
 	},
 
 	"page":{
-		"index":"/",
-		"about":"/about.html",
-		"articles":"/articles.html",
-		"articles_card":"/articles-card.html",
-		"action":"/action.html",
-		"action_card":"/action-card.html",
-		"services":"/services.html",
-		"services_card":"/services-card.html",
-		"portfolio":"/portfolio.html",
-		"portfolio_card":"/portfolio-card.html",
-		"reviews":"/reviews.html",
-		"contacts":"/contacts.html",
-		"404":"/404.html",
-		"sitemap":"/sitemap.html",
-		"style":"/style.html",
-		"agreement":"/agreement.html"
+		"index":"./",
+		"about":"./about.html",
+		"articles":"./articles.html",
+		"articles_card":"./articles-card.html",
+		"action":"./action.html",
+		"action_card":"./action-card.html",
+		"services":"./services.html",
+		"services_card":"./services-card.html",
+		"portfolio":"./portfolio.html",
+		"portfolio_card":"./portfolio-card.html",
+		"reviews":"./reviews.html",
+		"contacts":"./contacts.html",
+		"404":"./404.html",
+		"sitemap":"./sitemap.html",
+		"style":"./style.html",
+		"agreement":"./agreement.html"
 	},
 	"prefix":{
 		"heading":"page-header__",
@@ -47,24 +47,12 @@
 		"tabs":"tabs__",
 		"link":"link__",
 		"btn-icon":"btn-icon__"
-	},		
-	"email":{
-		"email":"partner@fedoperator.ru",
-		"phone":"+7 (910) 303-04-63",  
-		"phone_tel":"+79103030463",
-		"path_img":"//orel.fedoperator.ru/var/site/static/img"
-	}, 
+	} 
 	"path":{		                  
-		"css":"/css",
-		"img":"/img",
-		"js":"/js",
-		"favicon":"/favicon",
-		"docs":"/docs"
-	},                       
-	"url-path-css":"/css",
-	"url-path-img":"/img",
-	"url-path-js":"/js",
-	"url-path-plugins":"/plugins",
-	"url-path-favicon":"/favicon",
-	"url-path-docs":"/docs"
+		"css":"./css",
+		"img":"./img",
+		"js":"./js",
+		"favicon":"./favicon",
+		"docs":"./docs"
+	}
 }
