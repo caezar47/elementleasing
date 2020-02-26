@@ -47,12 +47,12 @@
 		"tabs":"tabs__",
 		"link":"link__",
 		"btn-icon":"btn-icon__"
-	} 
+	},
 	"path":{		                  
 		"css":"./css",
 		"img":"./img",
 		"js":"./js",
 		"favicon":"./favicon",
-		"docs":"./docs"
+		"docs":"./docs" 
 	}
 }
