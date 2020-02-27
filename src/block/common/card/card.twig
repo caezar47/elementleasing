@@ -12,6 +12,35 @@
 </div> 
 {% endfor %}
 {% endif %}
+{% if view == "news" %}
+{% for value in list %}		
+<article class="{{prefix}}item  {{mod}}">
+	<a href="{{value.link}}" class="{{prefix}}preview  {{mod}}">
+		<img src="{{value.img}}" alt="{{value.heading}}" class="img-responsive">
+	</a>
+	<div class="{{prefix}}wrap  {{mod}}">
+		<h4 class="{{prefix}}heading  {{mod}}"><a href="{{link}}">{{value.heading}}</a></h4>
+		<div class="{{prefix}}note  {{mod}}">{{value.note}}</div>
+		<time class="{{prefix}}date  {{mod}}" datetime="{{value.date_iso}}">{{value.date}}</time>
+	</div>	
+</article>
+{% endfor %}
+{% endif %}
+{% if view == "programm" %}
+{% for value in list %}		
+<div class="{{prefix}}item  {{mod}}">
+	<p class="{{prefix}}heading  {{mod}}">{{value.heading}}</p>
+	<div class="{{prefix}}note  {{mod}}">{{value.note}}</div>
+	<p class="{{prefix}}value  {{mod}}">
+		Аванс 
+		<span>{{value.value}}</span>
+	</p>
+		
+</div>
+{% endfor %}
+{% endif %}
+
+
 
 {% if view == "preview" %}
 {% for value in list %}		
@@ -55,21 +84,6 @@
 {% endfor %}
 {% endif %}
 
-{% if view == "news" %}
-{% for value in list %}		
-<article class="{{prefix}}card  {{mod}}">
-	<a href="{{value.link}}" class="{{prefix}}preview  {{mod}}">
-		<img src="{{value.img}}" alt="{{value.heading}}" class="img-responsive">
-		<div class="{{prefix}}bg  {{mod}}">
-			<div class="{{prefix}}view  {{mod}}"></div>
-		</div>
-	</a>
-	<time class="{{prefix}}date  {{mod}}" datetime="{{value.date_iso}}">{{value.date}}</time>
-	<h4 class="{{prefix}}heading  {{mod}}"><a href="{{link}}">{{value.heading}}</a></h4>
-	<div class="{{prefix}}note  {{mod}}">{{value.note}}</div>	
-</article>
-{% endfor %}
-{% endif %}
 
 {% if view == "adv" %}
 {% for value in list %}		

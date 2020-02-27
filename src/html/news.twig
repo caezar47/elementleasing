@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+	<head>	
+    	{% include "../block/common/head/head.twig" with {title:"news"}  %}
+	</head>
+	<body>
+    	{% include "../block/common/navbar/navbar.twig" with {navbar_prefix:"navbar__"} %}
+		<main class="content-block__panel">
+			{% include "../block/page/about/news.twig" with {
+				content_prefix:"content-block__", 
+				content_mod:"is--page-news", 
+				heading_group:"margin--default", 
+				heading_mod:"is--hXL  fw--700  color--primary-l", 
+				heading_level:"h1", 
+				heading:"Новости", 
+				bread_mod:"",
+				bread:[
+					{name:"Главная", link:page.index},
+					{name:"Новости"}
+				],
+				bread:"Новости" 
+			} %}
+			{% include "../block/page/index/programm.twig" with {
+				content_prefix:"content-block__", 
+				content_mod:"is--index-programm"
+			} %}
+		</main>
+
+    	{% include "../block/common/footer/footer.twig" with {footer_prefix:"footer__"} %}
+
+    	{% include "../block/common/modals/include.twig"%}
+    	{% include "../block/common/script/script.twig"%}
+	</body>
+</html>

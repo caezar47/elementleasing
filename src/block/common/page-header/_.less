@@ -1,10 +1,16 @@
-.page-header__{	
-	&group{}	
-	&container{}
-	&panel{}
-	&row{}
-	&cols{}
+.page-header__{
+	&panel{
+		&.is--page{
+			&-news{
+				align-items: center;
+				& > .cols{
+					&:nth-child(2){
+						margin-left: auto;
+					}
+				}
+			}
+		}
+	}
 	&heading{
-		//margin: 0;
 	}
 }
