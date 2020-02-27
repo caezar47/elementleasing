@@ -1,11 +1,6 @@
 .breadcrumb__{
-	@gutter: 12px;
+	@gutter: 9px;
 	@gutter_top: 5px;
-	&block{
-		margin-bottom: 10px;
-		@media print{display: none;} 
-		&.is--heading{}
-	}
 	&list{
 		display: flex;
 		flex-wrap: wrap;
@@ -18,6 +13,10 @@
 		line-height: @bread_lh;			
 		margin-left: -@gutter;
 		margin-right: -@gutter;	
+		margin-bottom: 15px;
+		.media-breakpoint-up(@xl; {
+			margin-bottom: 25px;;
+		});
 	} 
 	&list-item{
 		position: relative;	
@@ -26,7 +25,7 @@
 		padding-right: @gutter;	
 		color: @bread_color;		
 		&:after{
-			content: '...'; 
+			content: '/'; 
 			position: absolute;
 			bottom: 0%;
 			transform: translate(50%, 0%);		
@@ -34,7 +33,6 @@
 		}	
 		&.is--active{
 			color: @bread_color_active;
-			font-weight: 700;
 			&::before,	
 			&::after{display: none}	
 		}
@@ -45,9 +43,6 @@
 		&:hover{color: @bread_color_active}
 		.breadcrumb__list-item.is--active &{
 			color: @bread_color_active;
-		}
-		.breadcrumb__list.is--line-blue-light &{
-			color: @bread_color;
 		}
 	}
 }

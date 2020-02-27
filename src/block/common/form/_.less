@@ -11,11 +11,13 @@
 			&.is--login{
 				display: flex;
 				margin: 0;
+				margin-bottom: 30px;
 				padding: 0;
 				list-style: none;
-				font-size: @b-fs - 2;
-				line-height: @b-lh - 2;
-				margin-bottom: 25px;
+				font-size: 0.88em;
+    			line-height: 0.91em;
+				//font-size: @b-fs - 2;
+				//line-height: @b-lh - 2;
 			}
 		}
 		&-item{
@@ -190,8 +192,6 @@
 			color: @input_plh_color;
 			font-size: @input_plh_fs;
 			line-height: @input_plh_lh;
-			//text-transform: uppercase;
-			//letter-spacing: 0.5px;
 		}
 		&::-webkit-input-placeholder {
 			transition: @trs-site;
@@ -282,6 +282,8 @@
 			margin-bottom: 10px;
 			font-size: @b-fs - 6;
 			line-height: @b-lh - 5;
+			font-size: 0.66em;
+			line-height: 1.5em;
 			a{
 				color: #9AA0AC;
 				&:hover{
@@ -454,15 +456,17 @@
 		}
 	}
 	//check
-	&check{
+	&checkbox{
 		&{
 			position: relative;
 			display: flex;
 			align-items: center;
-			&.is--danger,
+			font-size: @check_fs;
+			line-height: @check_lh;
+			/*&.is--danger,
 			&.is--white{
 				color: @check_w_color;
-			}
+			}*/
 			& + &{margin-top: 5px}
 		}
 		&-input{
@@ -473,38 +477,48 @@
 			margin: -1px;
 			clip: rect(0 0 0 0);
 		}
-		&-box{
+		&-icon{
+			position: relative;
 			margin-top: -3px;
 			min-width: @check_size;
 			width: @check_size;
 			height: @check_size;
 			background-color: @check_bg;
-			border-radius: @check_radius;
-			margin-right: 8px;
+			margin-right: 10px;
 			transition: @trs-site;
-			box-shadow: 0 0 0 @check_border_width @check_border_color;
-			.form__check-input:focus + &{
-				background-color: @check_focus_bg;
-				box-shadow: 
-					0 0 0 @check_border_width @check_focus_border_color,
-					0 0 0 @check_border_width+2 @check_focus_shadow;
+			border: @check_border_width solid @check_border_color;
+			&::after{
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-position: center;
+				transform: scale(3);
+				opacity: 0;
+				.icon-checked(@c: 'F99F1B');
+				transition: @trs-site;
 			}
-			.form__check-input:checked + &{
-				background-color: @check_focus_bg;
-				box-shadow: 0 0 0 @check_border_width @check_focus_border_color;
+			.form__checkbox-input:focus + &{
+				border-color: @check_focus_border_color;
+			}
+			.form__checkbox-input:checked + &{
+				border-color: @check_focus_border_color;
+				&::after{
+					opacity: 1;
+					transform: scale(1);
+					transition: all @trs-option 0.2s;
+				}
 			}
 			.form__check-input:checked:focus + &{
-				background-color: @check_focus_bg;
-				box-shadow: 
-					0 0 0 @check_border_width @check_focus_border_color,
-					0 0 0 @check_border_width+2 @check_focus_shadow;
 			}
-			.form__check-input:disabled + &,
-			.form__check-input:checked:disabled + &{
-				background-color: @check_disabled_bg;
-				box-shadow: none;
+			.form__checkbox-input:disabled + &,
+			.form__checkbox-input:checked:disabled + &{
+				//background-color: @check_disabled_bg;
+				border-color: @check_disabled_border_color;
 			}
-			// white 
+			/*// white 
 			&.is--danger,
 			&.is--white{
 				background-color: @check_w_bg;
@@ -532,36 +546,7 @@
 					background-color: @check_w_disabled_bg;
 					box-shadow: 0 0 0 @check_border_width  @check_w_disabled_border_color;
 				}
-			}
-		}
-		&-icon{
-			path{				
-				transform: scale(3);
-				transform-origin: center;
-				fill: @check_icon;
-				transition: @trs-site;
-				.form__check-input:focus:checked + * &,
-				.form__check-input:checked + * &{
-					transition: all @trs-option 0.2s;
-					transform: scale(1);
-					fill: @check_focus_icon;
-				}
-				// disabled 
-				.form__check-input:disabled:checked + * &{
-					fill: @check_disabled_icon;
-				}
-				.form__check-input.is--danger:disabled:checked + * &,
-				.form__check-input.is--white:disabled:checked + * &{
-					fill: @check_w_disabled_icon;
-				}
-				// white 
-				.form__check-input.is--white:focus:checked + * &,
-				.form__check-input.is--white:checked + * &,
-				.form__check-input.is--danger:focus:checked + * &,
-				.form__check-input.is--danger:checked + * &{
-					fill: @check_w_focus_icon;
-				}
-			}
+			}*/
 		}
 	}
 	//search

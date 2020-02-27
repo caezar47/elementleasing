@@ -14,15 +14,12 @@
 			{% include "../common/button/tpl.twig" with {prefix:content_prefix, heading:"Кнопки и ссылки"} %}	
 		</div>
 		<div class="{{content_prefix}}elem  {{content_mod}}">
-			{% include "../common/button/tpl.twig" with {prefix:content_prefix, heading:"Кнопки и ссылки"} %}	
+			<h4 class="{{content_prefix}}heading">Формы</h4>
+			{% include "../common/form/tpl.twig" with {prefix:"form__", heading:"Формы"} %}	
 		</div>
 		<div class="{{content_prefix}}elem  {{content_mod}}">
 			<h4 class="{{content_prefix}}heading">Вкладки</h4>
 			{% include "../common/tabs/tpl.twig" with {prefix:"tabs__", tabs:"tcard", heading:"Вкладки"} %}	
-		</div>
-		<div class="{{content_prefix}}elem  {{content_mod}}">
-			<h4 class="{{content_prefix}}heading">Формы</h4>
-			{% include "../common/form/tpl.twig" with {prefix:"form__", heading:"Формы"} %}	
 		</div>
 		<div class="{{content_prefix}}elem  {{content_mod}}">
 			<h4 class="{{content_prefix}}heading">Таблицы</h4>

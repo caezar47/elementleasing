@@ -41,6 +41,10 @@
 @media-point-notxxs: ~"(min-width: 567px)";
 
 //===== heading =====//
+.heading(){
+	.calcFontSize(40, 142, 320, 1680);
+	.calcLineHeight(44, 150, 320, 1680);	
+}
 .heading1(){
 	.calcFontSize(30, 56, 320, 1680);
 	.calcLineHeight(34, 60, 320, 1680);
@@ -58,8 +62,10 @@
 .heading4(){
 	//.calcFontSize(24, 30, 320, 1680);
 	//.calcLineHeight(28, 34, 320, 1680);
-	font-size: @b-fs + 3;
-	line-height: @b-lh + 4; 
+	//font-size: @b-fs + 3;
+	//line-height: @b-lh + 4; 
+    font-size: 1.33em;
+    line-height: 1.33em;
 }
 .heading5(){
 	//.calcFontSize(20, 23, 320, 1680);

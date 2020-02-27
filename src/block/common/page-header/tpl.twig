@@ -6,9 +6,6 @@
 <h4 style="margin-bottom: 20px">Header H4</h4>
 <h5 style="margin-bottom: 20px">Header H5</h5>
 <h6>Header H6</h6>
-{% else %}
-	{% if bread != null %}
-		{% include "../breadcrumb/tpl.twig" with {prefix:"breadcrumb__", mod:bread_mod, bread:bread, bread_l2:bread_l2, bread_l2_link:bread_l2_link, bread_l3:bread_l3,  bread_l3_link:bread_l3_link } %}
-	{% endif %}		
+{% else %}	
 	<{{level}} class="{{prefix}}heading  {{mod}}  {{group}}" {% if heading_view == "modal" %}data-modal-heading{% endif %}>{{heading}}</{{level}}>
 {% endif %}

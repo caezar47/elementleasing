@@ -14,22 +14,28 @@
 		color: @btn_color;
 		border-radius: @btn_radius;
 		padding: 13px 15px;
+		padding: 14px 13px 10px;
 		border-width: 1px;
 		border-style: solid;
 		border-color: @btn_border_color;
 		&:hover{			
 			color: @btn_hover_color;
 			background-color: @btn_hover_bg_color;
-			//border-color: @btn_hover_border_color;
+			border-color: @btn_hover_border_color;
+		}
+		&:active{			
+			color: @btn_active_color;
+			background-color: @btn_active_bg_color;
+			border-color: @btn_active_border_color;
 		}
 		&.is--arrow{
 			text-align: left;
 			padding-right: 30px;
 			.icon-dropdown(@c:'fff');
-			background-position: center right;
 			background-position: center right 15px;
 			background-size: 8px auto;
 		}
+		//color
 		&.is--success{
 			background-color: @success;
 			border-color: @success;
@@ -54,6 +60,45 @@
 				border-color: @success-a;
 			}
 		}
+		&.is--white{		
+			color: @btn_w_color;
+			background-color: @btn_w_bg_color;
+			border-color: @btn_w_border_color;
+			&:hover{			
+				color: @btn_w_hover_color;
+				background-color: @btn_w_hover_bg_color;
+				border-color: @btn_w_hover_border_color;
+			}
+			&:active{			
+				color: @btn_w_active_color;
+				background-color: @btn_w_active_bg_color;
+				border-color: @btn_w_active_border_color;
+			}
+			&.is--arrow{
+				.icon-dropdown(@c:'333';@w: 8px; @h: auto);
+				&:hover{
+					.icon-dropdown(@c:'fff';@w: 8px; @h: auto);
+				}
+			}
+		}
+		//size
+		&.is--lg{
+			.heading3();
+			padding: 26px 40px 22px 49px;
+			&:hover{
+				box-shadow: 0 12px 34px 0 rgba(0,0,84,0.25);
+			}
+			&:active{
+				box-shadow: 0 12px 34px 0 rgba(0,0,84,0);
+			}
+		}
+		&.is--md{
+			font-size: @btn_fs - 2;
+			font-size: 0.88em;
+			line-height: 1.4em;
+			min-width: 248px;
+		}
+		//old
 		/*
 		&.is--invers{		
 			color: @btn_i_color;
@@ -64,22 +109,12 @@
 				background-color: @btn_i_hover_bg_color;
 				//border-color: @btn_i_hover_border_color;
 			}
-		}
-		&.is--white{		
-			color: @btn_w_color;
-			background-color: @btn_w_bg_color;
-			//border-color: @btn_w_border_color;
-			&:hover{			
-				color: @btn_w_hover_color;
-				background-color: @btn_w_hover_bg_color;
-				//border-color: @btn_w_hover_border_color;
-			}
 		}	
 		&.is--block{
 			.media-breakpoint-up(@lg; {
 				width: 100%;
 			});
-		}*/	
+		}
 		&.is--xl{
 			.media-breakpoint-up(@lg; {
 				padding: 25px 3.2vw;
@@ -101,7 +136,7 @@
 			.media-breakpoint-up(@lg; {
 				padding: 8px 1vw;
 			});
-		}
+		}*/	
 	}
 }
 .link__{

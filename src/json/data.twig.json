@@ -24,15 +24,7 @@
 
 	"page":{
 		"index":"./",
-		"about":"./about.html",
-		"articles":"./articles.html",
-		"articles_card":"./articles-card.html",
-		"action":"./action.html",
-		"action_card":"./action-card.html",
-		"services":"./services.html",
-		"services_card":"./services-card.html",
-		"portfolio":"./portfolio.html",
-		"portfolio_card":"./portfolio-card.html",
+		"menedzhment":"./menedzhment.html",
 		"reviews":"./reviews.html",
 		"contacts":"./contacts.html",
 		"404":"./404.html",
@@ -46,6 +38,7 @@
 		"btn":"btn__",
 		"tabs":"tabs__",
 		"link":"link__",
+		"breadcrumb":"breadcrumb__",
 		"btn-icon":"btn-icon__"
 	},
 	"path":{		                  
