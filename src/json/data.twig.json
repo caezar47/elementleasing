@@ -35,6 +35,7 @@
 	"prefix":{
 		"heading":"page-header__",
 		"form":"form__",
+		"card":"card__",
 		"btn":"btn__",
 		"tabs":"tabs__",
 		"link":"link__",
