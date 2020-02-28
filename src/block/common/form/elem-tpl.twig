@@ -1,7 +1,7 @@
 {% if view == "input" %}
 {% for value in list %}	
 <p class="{{prefix}}item  {{mod}}  {{value.mod_elem}}">
-	<input type="{{value.type}}" class="{{prefix}}control  {{value.validate}}  {{mod}}  {{value.color}}" id="{{value.form_id}}[{{value.id}}]" name="f[{{value.name}}]" placeholder="{{value.placeholder}}">
+	<input type="{{value.type}}" class="{{prefix}}control  {{value.validate}}  {{mod}}  {{color}}" id="{{value.form_id}}[{{value.id}}]" name="f[{{value.name}}]" placeholder="{{value.placeholder}}">
 </p>
 {% endfor %}
 {% endif %}

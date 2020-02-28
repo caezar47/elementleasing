@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+	<head>	
+    	{% include "../block/common/head/head.twig" with {title:"news"}  %}
+	</head>
+	<body>
+    	{% include "../block/common/navbar/navbar.twig" with {navbar_prefix:"navbar__"} %}
+		<main class="content-block__panel">
+			{% include "../block/page/about/news.twig" with {
+				view:"news_card", 
+				content_prefix:"content-block__", 
+				content_mod:"is--page-news-card", 
+				heading_group:"margin--default", 
+				heading_mod:"is--hXL  fw--700  color--primary-l", 
+				heading_level:"h1", 
+				heading:"Новости", 
+				heading_sm:"Осенняя хандра – для ГАЗа не беда!", 
+				bread_mod:"",
+				bread:[
+					{name:"Главная", link:page.index},
+					{name:"Новости", link:page.news},
+					{name:"Осенняя хандра – для ГАЗа не беда!"}
+				]
+			} %}
+			{% include "../block/common/form/form.twig" with {
+				view: 			"leasing", 
+				prefix:			prefix.form, 
+				mod:			"is--leasing", 
+				color:			"is--primary", 
+				ID: 			"f_leasing", 
+				heading:		"Нужна техника в лизинг?", 
+				heading_level:	"h3", 
+				heading_mod:	"is--h1  color--white  fw--700  margin--tiny",
+				heading_sm:		"Оставьте заявку, и наш консультант <br>перезвонит вам и отправит информацию на почту!", 
+				heading_sm_level:	"p", 
+				heading_sm_mod:	"color--white  fw--100  margin--medium"
+			} %}
+			{% include "../block/page/index/programm.twig" with {
+				content_prefix:"content-block__", 
+				content_mod:"is--index-programm"
+			} %}
+		</main>
+
+    	{% include "../block/common/footer/footer.twig" with {footer_prefix:"footer__"} %}
+
+    	{% include "../block/common/modals/include.twig"%}
+    	{% include "../block/common/script/script.twig"%}
+	</body>
+</html>

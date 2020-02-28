@@ -146,24 +146,49 @@
 			});
 		}
 		&.is--news{
-			height: 140px;
-			position: relative;
-			&::before{
-				content: '';
-				position: absolute;
-				top: 0;
-				left: 0;
-				background-color: fadeout(@primary, 50%);
-				width: 100%;
-				height: 100%;
-				transition: @trs-site;
-				.card__item:hover &{
-					background-color: fadeout(@primary, 100%);
+			&{
+				height: 140px;
+				position: relative;
+				&::before{
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					background-color: fadeout(@primary, 50%);
+					width: 100%;
+					height: 100%;
+					transition: @trs-site;
+					.card__item:hover &{
+						background-color: fadeout(@primary, 100%);
+					}
+				}
+				img{
+					.img-fit();
+					object-position: center;
 				}
 			}
-			img{
-				.img-fit();
-				object-position: center;
+			&-card{
+				position: relative;
+				height: 150px;
+				margin-bottom: 20px;
+				.media-breakpoint-up(@sm; {
+					height: 335px;
+					margin-bottom: 40px;
+				});
+				&::before{
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					background-color: fadeout(@primary, 50%);
+					width: 100%;
+					height: 100%;
+					transition: @trs-site;
+				}
+				img{
+					.img-fit();
+					object-position: center;
+				}
 			}
 		}
 	}
@@ -180,19 +205,21 @@
 			}
 		}
 		&.is--news{
-			font-weight: 700;
-			margin-bottom: 5px;
-			.heading5();
-			.card__item:nth-child(1) &,
-			.card__item:nth-child(2) &,
-			.card__item:nth-child(3) &,
-			.card__item:nth-child(4) &{
-				.heading4();
-			}
-			a{
-				color: @default;
-				.card__item:hover &{
-					color: @primary;
+			&{
+				font-weight: 700;
+				margin-bottom: 5px;
+				.heading5();
+				.card__item:nth-child(1) &,
+				.card__item:nth-child(2) &,
+				.card__item:nth-child(3) &,
+				.card__item:nth-child(4) &{
+					.heading4();
+				}
+				a{
+					color: @default;
+					.card__item:hover &{
+						color: @primary;
+					}
 				}
 			}
 		}
@@ -232,9 +259,17 @@
 	}
 	&date{	
 		&.is--news{
-			margin-top: auto;
-			color: @black-98;
-			font-size: 0.77em;
+			&{
+				margin-top: auto;
+				color: @black-98;
+				font-size: 0.77em;
+			}
+			&-card{
+				display: block;
+				color: @black-98;
+				font-size: 0.77em;
+				margin-bottom: 35px;
+			}
 		}
 		&.is--reviews{
 		}

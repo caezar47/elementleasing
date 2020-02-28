@@ -4,8 +4,8 @@
 		overflow: hidden; 
 	}
 	&container{	
-		position: relative;
-		z-index: 5;
+		//position: relative;
+		//z-index: 5;
 		@media print{padding: 0!important}		
 		padding-top: 40px;
 		padding-bottom: 40px;
@@ -65,8 +65,17 @@
 		&.is--index{
 			&-programm{
 				.media-breakpoint-up(@lg; {
-					padding-top: 3.4vw;
-					padding-bottom: 7.9vw;
+					//padding-top: 3.4vw;
+					//padding-bottom: 7.9vw;
+					padding-top: 6.3vw;
+    				padding-bottom: 6.3vw;
+				});
+			}
+		}
+		&.is--page{
+			&-news{
+				.media-breakpoint-up(@lg; {
+    				padding-bottom: 3.5vw;
 				});
 			}
 		}

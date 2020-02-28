@@ -26,6 +26,7 @@
 		"index":"./",
 		"menedzhment":"./menedzhment.html",
 		"news":"./news.html",
+		"news_card":"./news-card.html",
 		"reviews":"./reviews.html",
 		"contacts":"./contacts.html",
 		"404":"./404.html",

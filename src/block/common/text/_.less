@@ -6,9 +6,12 @@
 	&inner{
 	}		
 	&block{	
-		line-height: @b-lh - 2;
+		line-height: 1.67em;
 		div, p{
-			margin-bottom: 10px;
+			margin-bottom: 15px;
+			.media-breakpoint-up(@lg; {
+				margin-bottom: 30px;
+			});
 		}
 		ol, ul, .table{
 			margin-bottom: 20px;

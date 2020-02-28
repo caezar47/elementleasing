@@ -46,20 +46,33 @@
 	.calcLineHeight(50, 150, 320, 1680);	
 }
 .heading1(){
-	.calcFontSize(30, 56, 320, 1680);
-	.calcLineHeight(34, 60, 320, 1680);
+	//.calcFontSize(30, 56, 320, 1680);
+	//.calcLineHeight(34, 60, 320, 1680);
+	font-size: 2em;
+	line-height: 1.34em;
+    .media-breakpoint-up(@md; {
+		font-size: 3.1em;  	
+    });
 }
 .heading2(){
-	.calcFontSize(28, 46, 320, 1680);
-	.calcLineHeight(32, 50, 320, 1680);
+	//.calcFontSize(28, 46, 320, 1680);
+	//.calcLineHeight(32, 50, 320, 1680);
+	font-size: 1.7em;
+    line-height: 1.34em;
+    .media-breakpoint-up(@md; {
+		font-size: 2.22em;  	
+    });
 }
 .heading3(){
 	//.calcFontSize(24, 34, 320, 1680);
 	//.calcLineHeight(28, 38, 320, 1680);
 	//font-size: 36px;
 	//line-height: 48px; 
-	font-size: 2em;
+	font-size: 1.5em;
     line-height: 1.34em;
+    .media-breakpoint-up(@md; {
+		font-size: 2em;  	
+    });
 }
 .heading4(){
 	//.calcFontSize(24, 30, 320, 1680);
@@ -67,7 +80,7 @@
 	//font-size: @b-fs + 3;
 	//line-height: @b-lh + 4; 
     font-size: 1.33em;
-    line-height: 1.33em;
+    line-height: 1.34em;
 }
 .heading5(){
 	//.calcFontSize(20, 23, 320, 1680);
@@ -75,7 +88,7 @@
 	font-size: @b-fs;
 	line-height: @b-lh; 
     font-size: 1em;
-    line-height: 1.33em;	
+    line-height: 1.34em;	
 }
 .heading6(){
 	//.calcFontSize(14, 15, 320, 1680);

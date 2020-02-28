@@ -12,6 +12,7 @@
 </div> 
 {% endfor %}
 {% endif %}
+
 {% if view == "news" %}
 {% for value in list %}		
 <article class="{{prefix}}item  {{mod}}">
@@ -19,13 +20,30 @@
 		<img src="{{value.img}}" alt="{{value.heading}}" class="img-responsive">
 	</a>
 	<div class="{{prefix}}wrap  {{mod}}">
-		<h4 class="{{prefix}}heading  {{mod}}"><a href="{{link}}">{{value.heading}}</a></h4>
+		<h4 class="{{prefix}}heading  {{mod}}"><a href="{{value.link}}">{{value.heading}}</a></h4>
 		<div class="{{prefix}}note  {{mod}}">{{value.note}}</div>
 		<time class="{{prefix}}date  {{mod}}" datetime="{{value.date_iso}}">{{value.date}}</time>
 	</div>	
 </article>
 {% endfor %}
 {% endif %}
+
+{% if view == "news_card" %}
+<article class="{{prefix}}item  {{mod}}">
+	<picture class="{{prefix}}preview  {{mod}}">
+		<img src="{{img}}" alt="{{heading}}" class="img-responsive">
+	</picture>
+	<h2 class="fw--700  margin--narrow">{{heading}}</h2>
+	<time class="{{prefix}}date  {{mod}}" datetime="{{date_iso}}">{{date}}</time>
+	<div class="text__block  margin--huge">{{note}}</div>
+	<div class="link__group">
+		<a href="#" class="link__item  is--prev">Предыдущая новость</a>
+		<a href="#" class="link__item  is--next">Следующая новость</a>
+	</div>
+
+</article>
+{% endif %}
+
 {% if view == "programm" %}
 {% for value in list %}		
 <div class="{{prefix}}item  {{mod}}">
