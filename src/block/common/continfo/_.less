@@ -1,84 +1,97 @@
 .continfo__{
-	&block{}
-	&card{
-		&.is--contacts{
+	&block{
+		&.is--email-tel{
 			margin-bottom: 30px;
+			.media-breakpoint-up(@md; {
+				margin-bottom: 55px;
+			});			
+		}
+		&.is--office{
+			&-main{
+				background-color: @white;
+				box-shadow: 0 12px 24px 0 rgba(0,52,156,0.25);
+				padding: 50px 40px;
+			}
+		}
+	}
+	&header{
+		&.is--office{
+			&-main{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-bottom: 20px;
+			}
+		}
+
+	}
+	&heading{
+		&.is--office{
+			&-main{
+			}
+		}
+
+	}
+	&link{
+		&.is--office{
+			&-main{
+				font-size: 0.77em;
+				a{
+					color: @success;					
+					&:hover{
+						color: @success-h;
+					}
+					&:active{
+						color: @success-a;
+					}	
+				}
+			}
+		}
+	}
+	&card{
+		&.is--email-tel{
+			margin-bottom: 30px;
+			.media-breakpoint-up(@md; {
+				margin-bottom: 40px;
+			});	
 			&:last-child{
-				margin-bottom: 0;
+				margin-bottom: 0px;
+			}		
+		}
+		&.is--office{
+			&-main{
+				font-weight: 700;
+				margin-bottom: 20px;
+				&.is--address{
+					font-weight: 400;
+					margin-bottom: 30px;
+				}
+				.media-breakpoint-up(@md; {
+					&.is--address{
+						margin-bottom: 4vw;
+					}
+				});
 			}
 		}
 	}
 	&item{
-		position: relative;
-		padding-left: @continfo_icon_width + 13px;
-		display: inline-block;
-		&, &:focus,&:hover{
-			color: @continfo_color;
+		&.is--email-tel{
+			display: inline-block;
+			font-weight: 700;
+			.heading2();
+			color: @default;
+			margin-bottom: 10px;			
 		}
-		&.is--contacts{
-			font-weight: 400;
-			padding-top: 5px;
-			padding-bottom: 5px;
-			margin-bottom: 5px;		
-		}
-		&.is--navbar{			
-			font-size: @b-fs + 6;
-			line-height: @b-lh + 2;
-			white-space: nowrap;
-			.media-breakpoint-up(@xl; {
-				font-size: @b-fs + 2;
-				line-height: @b-lh + 2;	
-			});
-		}
-		&.is--navbar-header{
-			display: block;
-			padding: 0;
-			width: @continfo_icon_width;
-			height: @continfo_icon_width;
-		}
-		&.is--footer{
-			&,
-			a[href^="mailto:"]&,
-			a[href^="mailto:"]&:focus,
-			a[href^="mailto:"]&:hover, 
-			a[href^="tel:"]&, 
-			a[href^="tel:"]&:focus, 
-			a[href^="tel:"]&:hover{
-				color: @white;
+
+		&.is--office{
+			&-main{
+				color: @default;
 			}
-			.media-breakpoint-down(@md; {
-				padding-left: 0;
-			});		
-		}
-		&.is--noicon{
-			padding-left: 0;
 		}
 	}
-	&item-icon{
-		position: absolute;
-		left: 0;
-		top: 50%;
-		transform: translateY(-50%);
-		background-color: @continfo_icon_bg;
-		color: @continfo_icon_color;
-		width: @continfo_icon_width;
-		height: @continfo_icon_width;
-		border-width: @continfo_icon_border;
-		border-style: solid;
-		border-color: @continfo_icon_border_color;
-		border-radius: @continfo_icon_radius;
-		padding: @continfo_icon_padding;
-		&.is--footer{
-			.media-breakpoint-down(@md; {
-				display: none;
-			});
+	&label{
+		&.is--email-tel{
+			
 		}
-		&.is--contacts{
-		}
-		&.is--noicon{
-			display: none;
-		}
-		svg{display: block;}
 	}
-	&item-name{}
 }

@@ -157,6 +157,31 @@
 					}		
 				});
 			}
+			&-contacts{
+				& > *{
+					&:nth-child(3){
+						height: 2px;
+						background-color: @white-e9;
+						margin: 0;
+					}
+				}
+				.media-breakpoint-up(@md; {
+					grid-template-columns: repeat(2, 1fr);	
+					& > *{
+						&:nth-child(1){
+							align-self: flex-end;
+						}
+						&:nth-child(3){
+							grid-column: span 2;
+							margin-top: 6vw;
+						}
+					}
+
+				});
+				.media-breakpoint-up(@lg; {	
+					grid-template-columns: 7fr 5fr;			
+				});				
+			}
 		}
 	}		  
 	&cols{

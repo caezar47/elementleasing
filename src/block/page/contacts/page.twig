@@ -1,16 +1,84 @@
 <main class="{{content_prefix}}panel  {{content_mod}}">
-	<div class="{{content_prefix}}container container  is--full">
-		{% include "../../common/page-header/tpl.twig" with {prefix:"page-header__", mod:heading_mod, group:heading_group, level:heading_level, heading:heading, level_sm:heading_sm_level, heading:heading_sm, bread:bread, bread_mod:bread_mod, bread_l1:bread_l1, bread_l1_link:bread_l1_link, bread_l2:bread_l2, bread_l2_link:bread_l2_link } %}	
-		<div class="{{content_prefix}}grid-row  is--aic  is--columns-6  grid__row  {{content_mod}}">
-			<div class="grid__cols">
-				{% include "../../common/continfo/tpl.twig" with {prefix:"continfo__", mod:"is--contacts"} %}
+	<div class="{{content_prefix}}container container">
+		{% include "../../common/breadcrumb/tpl.twig" with {
+			prefix:prefix.breadcrumb, 
+			mod:bread_mod, 
+			bread:bread
+		} %}
+		{% include "../../common/page-header/tpl.twig" with {
+			prefix:"page-header__", 
+			mod:heading_mod,
+			level:heading_level, 
+			heading:heading
+		} %}
 
-
-				{% include "../../common/continfo/tpl.twig" with {view: "", prefix:"continfo__", mod:"is--contacts", list:[{"mod":"","name":contacts.address, "icon":"contacts-address", "tag":"div"},{"mod":"is--email","name":contacts.email, "href":contacts.email, "icon":"contacts-email", "tag":"a", "target":"mailto:"},{"mod":"is--tel","name":contacts.phone, "href":contacts.phone_tel, "icon":"contacts-tel", "tag":"a", "target":"tel:"}]} %}
+		<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
+			<div>
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--email-tel", 
+					list:[
+						{
+							"name":contacts.phone, 
+							"href":contacts.phone_tel, 
+							"tag":"a", 
+							"target":"tel:", 
+							"label":"Номер для звонков по Москве"
+						},
+						{
+							"name":contacts.email, 
+							"href":contacts.email,  
+							"tag":"a", 
+							"target":"mailto:",
+							"label":"Для любых обращений"
+						}
+				]} %}
+				{% include "../../common/button/btn.twig" with {
+					view:"modal",
+					prefix:"btn__", 
+					mod:"is--lg  is--white", 
+					target:"modal-form", 
+					name:"Заказать обратный звонок", 
+					m_heading: "Заказать звонок", 
+					m_heading_sm: "Мы перезвоним вам в ближайшее время", m_btn:"Отправить"
+				} %}
 			</div>
-			<div class="grid__cols">
-				{% include "../../common/map/tpl.twig" with {prefix:"map__", mod:"is--contacts",zoom: contacts.map_zoom, center_coord: contacts.map_center_coord, point_coord: contacts.map_point_coord, point_heading: contacts.map_point_heading} %}	
+			<div>
+				{% include "../../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:"is--office-main", 
+					title:"Москва", 
+					title_mod:"is--h3  fw--700", 
+					link:"#", 
+					link_name:"Как добраться", 
+					list:[
+						{
+							"name":contacts.address, 
+							"tag":"p",
+							"mod":"is--address"
+						},
+						{
+							"name":contacts.phone, 
+							"href":contacts.phone_tel, 
+							"tag":"a", 
+							"target":"tel:"
+						},
+						{
+							"name":contacts.email, 
+							"href":contacts.email,  
+							"tag":"a", 
+							"target":"mailto:"
+						},
+						{
+							"name":contacts.clock, 
+							"tag":"p"
+						}
+				]} %}
 			</div>
+			<hr>
 		</div>		
 	</div>
 </main>
+				{# {% include "../../common/map/tpl.twig" with {prefix:"map__", mod:"is--contacts",zoom: contacts.map_zoom, center_coord: contacts.map_center_coord, point_coord: contacts.map_point_coord, point_heading: contacts.map_point_heading} %}	 #}

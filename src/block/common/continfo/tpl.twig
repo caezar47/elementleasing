@@ -1,11 +1,20 @@
-{% for value in list %}
-<div class="{{prefix}}card  {% if view == "footer" %}{{group_prefix}}cols cols{% endif %} {{mod}}  {{value.mod}}"> 
-	<{{value.tag}} {% if value.href != null %}href="{{value.target}}{{value.href}}"{% endif %} class="{{prefix}}item  {{mod}}">
-		{% if value.icon != null %}
-		<span class="{{prefix}}item-icon  {{mod}}">
-		{% include "../svg-sprite/svg.twig" with {icon:value.icon} %}</span>
+<div class="{{prefix}}block  {{mod}}">
+	{% if title != null %}
+	<div class="{{prefix}}header  {{mod}}">
+		<p class="{{prefix}}heading  {{mod}}  {{title_mod}}">
+			{{title}}
+		</p>
+		<p class="{{prefix}}link  {{mod}}"><a href="{{link}}">{{link_name}}</a></p>
+	</div>
+	{% endif %}
+	{% for value in list %}
+	<div class="{{prefix}}card  {{mod}}  {{value.mod}}"> 
+		<{{value.tag}} {% if value.href != null %}href="{{value.target}}{{value.href}}"{% endif %} class="{{prefix}}item  {{mod}}">		
+			<span class="{{prefix}}item-name  {{mod}}">{{value.name}}</span>
+		</{{value.tag}}>
+		{% if value.label != null %}
+		<p class="{{prefix}}label  {{mod}}">{{value.label}}</p>
 		{% endif %}
-		<span class="{{prefix}}item-name  {{mod}}">{{value.name}}</span>
-	</{{value.tag}}>
+	</div>
+	{% endfor %} 
 </div>
-{% endfor %} 
