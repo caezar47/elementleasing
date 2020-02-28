@@ -90,8 +90,8 @@
 							<li class="{{navbar_prefix}}nav-item  {{value.mod }}"><a href="{{value.link}}" class="{{navbar_prefix}}nav-link"><span>{{value.name}}</span></a></li>
 						    {% endfor %}
 						    {% include "item-drop.twig" with {prefix:navbar_prefix, mod:"", name:"О компании", list : [
-						    	{"name":"Отзывы", "link":"", "mod":""},
-						    	{"name":"Новости", "link":"", "mod":""},
+						    	{"name":"Отзывы", "link":page.reviews, "mod":""},
+						    	{"name":"Новости", "link":page.news, "mod":""},
 						    	{"name":"Новости для инвесторов", "link":"", "mod":""},
 						    	{"name":"Руководство", "link":page.menedzhment, "mod":""},
 						    	{"name":"Цифры и факты", "link":"", "mod":""},
