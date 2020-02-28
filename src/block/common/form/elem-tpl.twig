@@ -7,13 +7,16 @@
 {% endif %}
 
 {% if view == "select" %}
-<div class="{{prefix}}item  {{mod}}  {{mod_elem}}">
-	<select class="{{prefix}}control form-control {{value.validate}}  {{mod}}  {{color}}" id="{{form_id}}[{{id}}]" name="f[{{name}}]">
+<p class="{{prefix}}item  {{mod}}  {{group}}">
+	{% if label %}
+	<label class="{{prefix}}label  {{mod}}" for="{{form_id}}[{{id}}]">{{label}}</label>
+	{% endif %}
+	<select class="{{prefix}}control  {{value.validate}}  {{mod}}  {{color}}" id="{{form_id}}[{{id}}]" name="f[{{name}}]">
 		{% for value in list %}
 			<option value="{{value.val}}" {{value.status}}>{{value.name}}</option>
 		{% endfor %}	
 	</select>
-</div>
+</p>
 {% endif %}
 
 {% if view == "radio" %}

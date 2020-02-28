@@ -5,7 +5,9 @@
 				align-items: center;
 				& > .cols{
 					&:nth-child(2){
-						margin-left: auto;
+						.media-breakpoint-up(@md; {
+							margin-left: auto;
+						});
 					}
 				}
 			}
