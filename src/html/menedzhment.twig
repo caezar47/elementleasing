@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="ru-RU"> 
 	<head>	
-    	{% include "../block/common/head/head.twig" with {title:"about"}  %}
+    	{% include "../block/common/head/head.twig" with {title:"Руководство"}  %}
 	</head>
 	<body>
-    	{% include "../block/common/navbar/navbar.twig" with {navbar_prefix:"navbar__", navbar_mod:"is--scroll"} %}
+    	{% include "../block/common/navbar/navbar.twig" with {navbar_prefix:"navbar__"} %}
 
 		{% include "../block/page/about/menedzhment.twig" with {
 			content_prefix:"content-block__", 
@@ -16,13 +16,12 @@
 			bread:[
 				{name:"Главная", link:page.index},
 				{name:"Руководство"}
-			],
-			bread:"Руководство" 
+			]
 		} %}
 
     	{% include "../block/common/footer/footer.twig" with {footer_prefix:"footer__"} %}
 
-    	{% include "../block/common/modals/include.twig"%}
+    	{# {% include "../block/common/modals/include.twig"%} #}
     	{% include "../block/common/script/script.twig"%}
 	</body>
 </html>

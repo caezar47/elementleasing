@@ -58,6 +58,28 @@
 {% endfor %}
 {% endif %}
 
+{% if view == "reviews" %}
+{% for value in list %}		
+<article class="{{prefix}}item  {{mod}}">
+	<div class="{{prefix}}wrap  {{mod}}">
+		<h4 class="{{prefix}}heading  {{mod}}" data-grid-heading>{{value.firm}}</h4>
+		<time class="{{prefix}}date  {{mod}}" data-grid-date datetime="{{value.date_iso}}">{{value.date}}</time>
+		<div class="{{prefix}}note  {{mod}}  text__block" data-grid-note>{{value.note}}</div>
+		<div class="{{prefix}}sign  {{mod}}" data-grid-sign>
+			<p>{{value.name}}</p>
+			{% if value.city %}<p>{{value.city}}</p>{% endif %}
+			{% if value.email %}<p>{{value.email}}</p>{% endif %}
+		</div>
+		{% if value.video %}
+			<p class="{{prefix}}video  {{mod}}" data-grid-video>
+				<a href="#">Смотреть видеоотзыв</a>
+			</p>
+		{% endif %}
+	</div> 
+</article> 
+{% endfor %}
+{% endif %}
+
 
 
 {% if view == "preview" %}
@@ -89,18 +111,6 @@
 {% endfor %}
 {% endif %}
 
-{% if view == "reviews" %}
-{% for value in list %}		
-<div class="{{prefix}}card  {{mod}}">
-	<div class="{{prefix}}heading-block  {{mod}}">	
-		<h4 class="{{prefix}}heading  {{mod}}">{{value.heading}}</h4>
-		<div class="{{prefix}}line  {{mod}}"></div>
-		<time class="{{prefix}}date  {{mod}}" datetime="{{value.date_iso}}">{{value.date}}</time>
-	</div>
-	<div class="{{prefix}}note  {{mod}}">{{value.note}}</div>
-</div> 
-{% endfor %}
-{% endif %}
 
 
 {% if view == "adv" %}
