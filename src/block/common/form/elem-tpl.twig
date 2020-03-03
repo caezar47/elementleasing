@@ -1,7 +1,8 @@
 {% if view == "input" %}
+
 {% for value in list %}	
 <p class="{{prefix}}item  {{mod}}  {{value.mod_elem}}">
-	<input type="{{value.type}}" class="{{prefix}}control  {{value.validate}}  {{mod}}  {{color}}" id="{{value.form_id}}[{{value.id}}]" name="f[{{value.name}}]" placeholder="{{value.placeholder}}">
+	<input type="{{value.type}}" class="{{prefix}}control  {{value.validate}}  {{mod}}  {{color}}" id="{{value.form_id}}[{{value.id}}]" name="f[{{value.name}}]" placeholder="{{value.placeholder}}" {% if value.view == "date" %}onfocus="(this.type='date')"{% endif %}>
 </p>
 {% endfor %}
 {% endif %}
@@ -90,10 +91,10 @@
 {% endif %}
 
 {% if view == "agreement" %}
-<div class="{{prefix}}item  {{mod}}  {{mod_elem}}  is--agreement">
+<div class="{{prefix}}item  {{mod}}  is--agreement">
 	<input type="hidden" name="f[Согласие на обработку персональных данных]" value="Да">
-	<div class="{{prefix}}text  {{mod}}  is--agreement">	
-		Нажимая на кнопку <span {% if heading_view == "modal" %}data-btn-heading{% endif %}>«{{btn_name}}»</span>, Вы соглашаетесь с правилами обработки <a href="{{page.agreement}}" target="_blank">персональных данных</a>
+	<div class="{{prefix}}text  {{mod}}  {{color}}  is--agreement">	
+		Соглашаюсь с условиями передачи информации</a>
 	</div>	
 </div>
 {% endif %}

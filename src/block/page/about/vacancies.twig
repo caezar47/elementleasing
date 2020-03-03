@@ -1,0 +1,134 @@
+<div class="{{content_prefix}}container container">
+	{% include "../../common/breadcrumb/tpl.twig" with {
+		prefix:prefix.breadcrumb, 
+		mod:bread_mod, 
+		bread:bread
+	} %}	
+	<div class="page-header__panel  row  {{heading_group}}  {{content_mod}}">
+		<div class="cols">
+			{% include "../../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+		</div>
+		<div class="cols">
+			{% if view == "vacancies_list"%}
+			<p class="is--h4  color--primary">16 открытых вакансий</p>
+			{% endif %}
+			{% if view == "vacancies_card"%}
+				<a href="{{page.vacancies}}" class="{{prefix.link}}item  is--prev  is--md">Назад к вакансиям</a>
+			{% endif %}
+		</div>
+	</div>	
+	<div class="{{content_prefix}}row  grid__row   is--page-aside">
+		{% include "../../common/aside/tpl.twig" with {
+			prefix: "aside__",
+			heading: "Другие разделы",
+			active: page.vacancies,
+			nav:[
+				{name:"Инвесторам", link: ""},
+				{name:"Отзывы", link: page.reviews},
+				{name:"Новости", link: page.news},
+				{name:"Новости для инвесторов", link: ""},
+				{name:"Руководство", link: page.menedzhment},
+				{name:"Цифры и факты", link: ""},
+				{name:"Преимущества", link: ""},
+				{name:"Вакансии", link: page.vacancies},
+				{name:"Наши офисы", link: page.contacts}
+			]
+		} %}
+		{% if view == "vacancies_list"%}
+		<div>			
+			{% include "../../common/form/form.twig" with {
+				view: 			"search", 
+				prefix:			prefix.form, 
+				mod:			"is--search", 
+				color:			"is--primary-light", 
+				ID: 			"f_search", 
+				placeholder:	"Введите название вакансии или города",
+				btn_mod:		"",
+				btn_name:		"Поиск вакансии"
+			} %}
+
+			{% include "../../common/table/tpl.twig" with {
+			 	view: "vacancies", 
+			 	prefix:prefix.table, 
+			 	mod:content_mod,  
+			 	list: [
+			 		{
+			 			"name":"Менеджер лизинговых проектов", 
+			 			"link":page.vacancies_card, 
+			 			"city":"Санкт-Петербург"
+			 		},
+			 		{
+			 			"name":"Менеджер по развитию отношений с партнерами", 
+			 			"link":page.vacancies_card, 
+			 			"city":"Москва"
+			 		},
+			 		{
+			 			"name":"Специалист по документообороту", 
+			 			"link":page.vacancies_card, 
+			 			"city":"Хабаровск"
+			 		},
+			 		{
+			 			"name":"Менеджер лизинговых проектов", 
+			 			"link":page.vacancies_card, 
+			 			"city":"Иркутск"
+			 		},
+			 		{
+			 			"name":"Менеджер лизинговых проектов", 
+			 			"link":page.vacancies_card, 
+			 			"city":"Уфа"
+			 		},
+			 		{
+			 			"name":"Менеджер лизинговых проектов", 
+			 			"link":page.vacancies_card, 
+			 			"city":"Новосибирск"
+			 		},
+			 		{
+			 			"name":"Менеджер по развитию отношений с партнерами", 
+			 			"link":page.vacancies_card, 
+			 			"city":"Самара"
+			 		},
+			 		{
+			 			"name":"Специалист по документообороту", 
+			 			"link":page.vacancies_card, 
+			 			"city":"Липецк"
+			 		},
+			 		{
+			 			"name":"Специалист по документообороту", 
+			 			"link":page.vacancies_card, 
+			 			"city":"Пермь"
+			 		},
+			 		{
+			 			"name":"Менеджер лизинговых проектов", 
+			 			"link":page.vacancies_card, 
+			 			"city":"Сыктывкар"
+			 		}
+			 	]} %}
+
+				{% include "../../common/button/btn.twig" with {
+					view:"link",
+					prefix:"btn__", 
+					mod:"is--lg  is--white", 
+					link:"#", 
+					name:"Ещё 6 вакансий"
+				} %}
+		</div>
+		{% endif %}
+		{% if view == "vacancies_card"%}
+		{% include "../../common/card/card.twig" with {
+		 	view: "news_card", 
+		 	prefix:prefix.card, 
+		 	mod:"is--news-card",
+ 			heading:heading_sm,
+ 			img:"http://via.placeholder.com/500x265", 
+ 			date:"11.10.2019", 
+ 			date_iso:"2019-10-11", 
+ 			note:"<p>В&nbsp;Саратове Автопробег по&nbsp;традиции проходит осенью. Но&nbsp;холодная и&nbsp;дождливая погода ─ не&nbsp;повод для хандры, ведь у&nbsp;предпринимателей города появляется прекрасная возможность приобрести новую технику ГАЗ с&nbsp;ощутимой выгодой. </p><p>Илья Плешаков, менеджер лизинговых проектов, г. Саратов:<br> —&nbsp;С&nbsp;5&nbsp;по&nbsp;8&nbsp;ноября совместно с&nbsp;«АвтоцентрГАЗ-Лидер» мы&nbsp;ездили общаться с&nbsp;повторными и&nbsp;новыми клиентами, для которых провели презентацию ГАЗона полной массой 10&nbsp;тонн. График поездок из-за праздников был довольно плотный,<br> но&nbsp;свой план мы&nbsp;выполнили и&nbsp;встретились с&nbsp;представителями разных сфер бизнеса: грузовые перевозки, геологоразведочные работы, пассажирские перевозки, строительство и&nbsp;т.&nbsp;д. </p><p>Машину уже достаточно хорошо знают, но&nbsp;с&nbsp;удовольствием тестировали и&nbsp;ездили. Многих клиентов интересовала новинка от&nbsp;ГАЗ&nbsp;—<br> 3х-литровый Next на&nbsp;метане, т.&nbsp;к. именно небольшие коммерческие автомобили категории «В» являются приоритетным выбором большинства предприятий. Мы&nbsp;вручили сертификаты со&nbsp;скидкой участникам Автопробега и&nbsp;уже оформляем сделки.</p>"			 		
+	 	} %}
+		{% endif %}
+	</div>		
+</div>

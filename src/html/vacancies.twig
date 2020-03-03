@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+	<head>	
+    	{% include "../block/common/head/head.twig" with {title:"Новости"}  %}
+	</head>
+	<body>
+    	{% include "../block/common/navbar/navbar.twig" with {navbar_prefix:"navbar__"} %}
+		<main class="content-block__panel">
+			{% include "../block/page/about/vacancies.twig" with {
+				view:"vacancies_list", 
+				content_prefix:"content-block__", 
+				content_mod:"is--page-vacancies", 
+				heading_group:"margin--default", 
+				heading_mod:"is--hXL  fw--700  color--primary-l", 
+				heading_level:"h1", 
+				heading:"Вакансии", 
+				bread_mod:"",
+				bread:[
+					{name:"Главная", link:page.index},
+					{name:"Вакансии"}
+				]
+			} %}
+			{% include "../block/common/form/form.twig" with {
+				view: 			"vacancies", 
+				prefix:			prefix.form, 
+				mod:			"is--vacancies", 
+				color:			"is--primary", 
+				ID: 			"f_leasing", 
+				heading:		"Не нашли вакансию?", 
+				heading_level:	"h3", 
+				heading_mod:	"is--h2  color--white  fw--700  margin--tiny",
+				heading_sm:		"Расскажите о себе, и мы свяжемся с вами, если&nbsp;найдется подходящая вакансия!", 
+				heading_sm_level:	"p", 
+				heading_sm_mod:	"color--white  margin--small"
+			} %}
+			{# {% include "../block/page/index/programm.twig" with {
+				content_prefix:"content-block__", 
+				content_mod:"is--index-programm"
+			} %} #}
+		</main>
+		
+    	{% include "../block/common/footer/footer.twig" with {footer_prefix:"footer__"} %}
+
+    	{# {% include "../block/common/modals/include.twig"%} #}
+    	{% include "../block/common/script/script.twig"%}
+	</body>
+</html>

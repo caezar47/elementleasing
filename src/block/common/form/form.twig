@@ -65,6 +65,50 @@
 		</div>
 	</form>
 {% endif %}
+{% if view=="search" %}
+	<form action="#" class="{{prefix}}panel  {{mod}}">
+		{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
+			{"type":"text", "id":"email", "form_id":ID, "name":placeholder, "placeholder":placeholder}
+		]} %}
+		<div class="{{prefix}}btn  {{mod}}">
+			<button type="submit" class="btn__item  {{btn_mod}}">{{btn_name}}</button>
+		</div>
+	</form>
+{% endif %}
+{% if view=="vacancies" %}
+	<form action="#" class="{{prefix}}panel  {{mod}}">
+		<div class="{{prefix}}container  container  {{mod}}">
+			{% include "../../common/page-header/tpl.twig" with {
+				heading_view:heading_view, 
+				prefix:"page-header__", 
+				mod:heading_mod, 
+				group:heading_group, 
+				level:heading_level, 
+				heading:heading} %}
+			{% include "../../common/page-header/tpl.twig" with {
+				heading_view:heading_view, 
+				prefix:"page-header__", 
+				mod:heading_sm_mod, 
+				group:heading_sm_group, 
+				level:heading_sm_level, 
+				heading:heading_sm} %}	
+
+			<div class="{{prefix}}row  grid__row  {{mod}}">
+				{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
+					{"type":"text", "id":"fio", "form_id":ID, "name":"fio", "placeholder":"Фамилия и Имя"},
+					{view: "date","type":"text", "id":"bithday", "form_id":ID, "name":"bithday", "placeholder":"Дата рождения"},
+					{"type":"text", "id":"city", "form_id":ID, "name":"city", "placeholder":"Город планируемой работы"},
+					{"type":"email", "id":"email", "form_id":ID, "name":"Email", "placeholder":"E-mail"},
+					{"type":"tel", "id":"tel", "form_id":ID, "name":"Телефон", "placeholder":"Телефон"}
+				]} %}
+				<div class="{{prefix}}drag  {{color}}  {{mod}}">Перетащите или загрузите сюда резюме</div>
+				{% include "elem-tpl.twig" with {view: "textarea", prefix:prefix, mod:mod, color:color, id:"comments", "form_id":ID, name:"Расскажите, почему вы хотите у нас работать?", placeholder:"Расскажите, почему вы хотите у нас работать?"} %}	
+				{% include "elem-tpl.twig" with {view:"agreement", prefix:prefix, mod:mod, color:color, mod_elem:"grid__cols  is--agreement", btn_name:btn_name} %}	
+				<button type="submit" class="btn__item  is--success">Отправить</button>
+			</div>
+		</div>
+	</form>
+{% endif %}
 {# 
 <div class="{{prefix}}block  {{mod}}" {% if panel=="block" %}style="background-image: url({{path.img}}{{bg}})"{% endif %}>
 	{% if panel=="block" %}<div class="{{prefix}}container container  {{mod}}"  >{% endif %}
