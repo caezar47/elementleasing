@@ -4,13 +4,9 @@
 {% endif %}
 
 {% if view == "btn" %}
-<button type="{{type}}" class="{{prefix}}item  {{mod}}" {% if heading_view == "modal" %}data-btn-heading{% endif %}>
-	<span class="{{prefix}}name">{{name}}</span>
-</button>
+<button type="{{type}}" class="{{prefix}}item  {{mod}}" {% if heading_view == "modal" %}data-btn-heading{% endif %}>{{name}}</button>
 {% endif %}
 
 {% if view == "link" %}
-<a href="{{link}}" class="{{prefix}}item  {{mod}}">
-	<span class="{{prefix}}name">{{name}}</span>
-</a>  
+<a href="{{link}}" class="{{prefix}}item  {{mod}}">{{name}}</a>  
 {% endif %}

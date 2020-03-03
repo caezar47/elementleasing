@@ -10,11 +10,3 @@ humb.addEventListener('click',  function(e) {
 	html.classList.toggle('is--open-navbar');
 	this.classList.toggle('is--active');
 });
-/*
-body.addEventListener('click',  function(e) {
-	if(e.target.closest('.navbar__block').length == 0){
-
-		alert('1');	
-	}
-});
-*/

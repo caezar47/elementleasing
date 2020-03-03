@@ -41,6 +41,7 @@
 		"card":"card__",
 		"btn":"btn__",
 		"tabs":"tabs__",
+		"map":"map__",
 		"link":"link__",
 		"breadcrumb":"breadcrumb__",
 		"pagination":"pagination__",

@@ -4,8 +4,36 @@
 		<p class="{{prefix}}heading  {{mod}}  {{title_mod}}">
 			{{title}}
 		</p>
-		<p class="{{prefix}}link  {{mod}}"><a href="{{link}}">{{link_name}}</a></p>
+		<p class="{{prefix}}link  {{mod}}"><a href="{{link}}" 
+			{% if coord != null %}
+			{% if map_main == true %}
+				data-map-base 
+			{% endif %}
+				data-coord 
+				data-city="{{title}}" 
+				data-phone="{{phone}}" 
+				data-email="{{email}}" 
+				data-c="{{coord}}" 
+				data-addr="{{address}}"
+			{% endif %}
+			>{{link_name}}</a></p>
 	</div>
+	{% endif %}
+	{% if address != null %}
+	<p class="{{prefix}}card  {{mod}}  is--address">{{address}}</p>
+	{% endif %}
+	{% if phone != null %}
+	<p class="{{prefix}}card  {{mod}}">
+		<a href="tel:{{phone_tel}}">{{phone}}</a>
+	</p>
+	{% endif %}
+	{% if email != null %}
+	<p class="{{prefix}}card  {{mod}}">
+		<a href="mailto:{{email}}">{{email}}</a>
+	</p>
+	{% endif %}
+	{% if clock != null %}
+	<p class="{{prefix}}card  {{mod}}">{{clock}}</p>
 	{% endif %}
 	{% for value in list %}
 	<div class="{{prefix}}card  {{mod}}  {{value.mod}}"> 

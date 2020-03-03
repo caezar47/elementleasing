@@ -1,1 +1,14 @@
+{% if view == "yandex" %}
+<div class="{{prefix}}block  {{mod}}" id="yandex_map">
+	<div class="{{prefix}}panel  {{mod}}">
+		<p class="{{prefix}}heading  {{mod}}" data-map-heading>{{city}}</p>
+		<p class="{{prefix}}item  {{mod}}  is--address" data-map-address>{{address}}</p>
+		<p class="{{prefix}}item  {{mod}}" data-map-phone>{{phone}}</p>
+		<p class="{{prefix}}item  {{mod}}" data-map-email>{{email}}</p>
+		<p class="{{prefix}}item  {{mod}}" data-map-clock>{{clock}}</p>
+	</div>
+</div>
+{% endif %}
+{% if view == "2gis" %}
 <div class="{{prefix}}block  {{mod}}" id="map-2gis" data-map='{"center" : {{center_coord}},"zoom" : {{zoom}}, "placemarks" : [{"coord" : {{point_coord}}, "heading": "{{point_heading}}"}]}' ></div>
+{% endif %}

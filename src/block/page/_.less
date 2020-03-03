@@ -78,6 +78,11 @@
     				padding-bottom: 3.5vw;
 				});
 			}
+			&-contacts{
+				.media-breakpoint-up(@lg; {
+    				padding-bottom: 9.4vw;
+				});
+			}
 		}
 	}
 	&elem{
@@ -163,6 +168,7 @@
 						height: 2px;
 						background-color: @white-e9;
 						margin: 0;
+						border: 0;
 					}
 				}
 				.media-breakpoint-up(@md; {
@@ -174,6 +180,10 @@
 						&:nth-child(3){
 							grid-column: span 2;
 							margin-top: 6vw;
+							margin-bottom: 1.8vw;
+						}
+						&:nth-child(4){
+							grid-column: span 2;
 						}
 					}
 

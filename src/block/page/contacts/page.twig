@@ -1,5 +1,5 @@
 <main class="{{content_prefix}}panel  {{content_mod}}">
-	<div class="{{content_prefix}}container container">
+	<div class="{{content_prefix}}container container  {{content_mod}}">
 		{% include "../../common/breadcrumb/tpl.twig" with {
 			prefix:prefix.breadcrumb, 
 			mod:bread_mod, 
@@ -34,11 +34,20 @@
 							"label":"Для любых обращений"
 						}
 				]} %}
-				{% include "../../common/button/btn.twig" with {
+				{# {% include "../../common/button/btn.twig" with {
 					view:"modal",
 					prefix:"btn__", 
 					mod:"is--lg  is--white", 
 					target:"modal-form", 
+					name:"Заказать обратный звонок", 
+					m_heading: "Заказать звонок", 
+					m_heading_sm: "Мы перезвоним вам в ближайшее время", m_btn:"Отправить"
+				} %} #}
+				{% include "../../common/button/btn.twig" with {
+					view:"link",
+					prefix:"btn__", 
+					mod:"is--lg  is--white", 
+					link:"#", 
 					name:"Заказать обратный звонок", 
 					m_heading: "Заказать звонок", 
 					m_heading_sm: "Мы перезвоним вам в ближайшее время", m_btn:"Отправить"
@@ -52,33 +61,35 @@
 					title:"Москва", 
 					title_mod:"is--h3  fw--700", 
 					link:"#", 
-					link_name:"Как добраться", 
-					list:[
-						{
-							"name":contacts.address, 
-							"tag":"p",
-							"mod":"is--address"
-						},
-						{
-							"name":contacts.phone, 
-							"href":contacts.phone_tel, 
-							"tag":"a", 
-							"target":"tel:"
-						},
-						{
-							"name":contacts.email, 
-							"href":contacts.email,  
-							"tag":"a", 
-							"target":"mailto:"
-						},
-						{
-							"name":contacts.clock, 
-							"tag":"p"
-						}
-				]} %}
+					link_name:"Как добраться",					 
+					address:contacts.address, 
+					phone:contacts.phone, 
+					phone_tel:contacts.phone_tel, 
+					email:contacts.email,  
+					clock:contacts.clock,
+					map_main:true,
+					coord:"55.74260176 37.52784544"
+				} %}
 			</div>
 			<hr>
-		</div>		
+			{% include "../../common/tabs/tpl.twig" with {
+				view:"map",
+				tabs:"contacts_", 
+				prefix:prefix.tabs,
+				mod:content_mod
+			} %}
+		</div>	
 	</div>
+	{% include "../../common/map/tpl.twig" with {
+		view:"yandex",
+		prefix:prefix.map,
+		mod:content_mod,
+		city:"Москва", 
+		address:contacts.address, 
+		phone:contacts.phone, 
+		phone_tel:contacts.phone_tel, 
+		email:contacts.email,  
+		clock:"С 10:00 до 19:00<br>Суббота, воскресенье — выходной",
+		clock1:contacts.clock
+	} %}		
 </main>
-				{# {% include "../../common/map/tpl.twig" with {prefix:"map__", mod:"is--contacts",zoom: contacts.map_zoom, center_coord: contacts.map_center_coord, point_coord: contacts.map_point_coord, point_heading: contacts.map_point_heading} %}	 #}
