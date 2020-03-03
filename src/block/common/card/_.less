@@ -109,6 +109,20 @@
 				}
 			});
 		}
+		&.is--articles{
+			border-top: 2px solid @white-e9;
+			padding-top: 30px;
+			padding-bottom: 40px;
+			&:last-of-type{
+				border-bottom: 2px solid @white-e9;
+				margin-bottom: 30px;
+			}
+			.media-breakpoint-up(@md; {
+				&:last-of-type{
+					margin-bottom: 4vw;
+				}				
+			});
+		}
 	}
 	&wrap{	
 		&.is--menedzhment{
@@ -305,6 +319,19 @@
 			.heading5();
 			font-weight: 700;
 		}
+		&.is--articles{
+			.heading3();
+			font-weight: 700;
+			a{
+				color: @default;
+				&:hover{
+					color: @primary-h;
+				}
+				&:active{
+					color: @primary-a;
+				}
+			}
+		}
 	}
 	&note{
 		&.is--menedzhment{
@@ -336,7 +363,6 @@
 		&.is--reviews{
 			font-weight: 100;
 			font-size: 0.889em;
-
 		}
 	}	
 	&sign{
@@ -377,6 +403,11 @@
 			color: @black-98;
 			font-size: 0.77em;
 			white-space: nowrap;
+		}
+		&.is--articles{
+			display: inline-block;
+			color: @black-98;
+			margin-bottom: 15px;
 		}
 	}
 	&value{

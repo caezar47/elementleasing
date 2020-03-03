@@ -1,16 +1,49 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="ru-RU"> 
 	<head>	
-    	{% include "../block/common/head/head.twig" with {title:"articles"}  %}
+    	{% include "../block/common/head/head.twig" with {title:"news"}  %}
 	</head>
 	<body>
-    	{% include "../block/common/navbar/navbar.twig" with {navbar_prefix:"navbar__", navbar_mod:"is--scroll"} %}
-
-		{# {% include "../block/page/articles/card.twig" with {content_prefix:"content-block__", content_mod:"is--articles-card", heading_group:"", heading_mod:"is--h1  is--ff-2  align--center-notsmart", heading_level:"h1", heading:"Lorem ipsum dolor sit.", bread_mod:"justify--center-notsmart", bread:"Lorem ipsum dolor sit.", bread_l1:"Новости", bread_l1_link:page.articles} %} #}
+    	{% include "../block/common/navbar/navbar.twig" with {navbar_prefix:"navbar__"} %}
+		<main class="content-block__panel">
+			{% include "../block/page/about/articles.twig" with {
+				view:"articles_card", 
+				content_prefix:"content-block__", 
+				content_mod:"is--page-news-card", 
+				heading_group:"margin--default", 
+				heading_mod:"is--hXL  fw--700  color--primary-l", 
+				heading_level:"h1", 
+				heading:"Статьи", 
+				heading_sm:"Полуприцеп рефрижератор б/у в лизинг", 
+				bread_mod:"",
+				bread:[
+					{name:"Главная", link:page.index},
+					{name:"Статьи", link:page.articles},
+					{name:"Полуприцеп рефрижератор б/у в лизинг"}
+				]
+			} %}
+			{% include "../block/common/form/form.twig" with {
+				view: 			"leasing", 
+				prefix:			prefix.form, 
+				mod:			"is--leasing", 
+				color:			"is--primary", 
+				ID: 			"f_leasing", 
+				heading:		"Нужна техника в лизинг?", 
+				heading_level:	"h3", 
+				heading_mod:	"is--h1  color--white  fw--700  margin--tiny",
+				heading_sm:		"Оставьте заявку, и наш консультант <br>перезвонит вам и отправит информацию на почту!", 
+				heading_sm_level:	"p", 
+				heading_sm_mod:	"color--white  fw--100  margin--medium"
+			} %}
+			{% include "../block/page/index/programm.twig" with {
+				content_prefix:"content-block__", 
+				content_mod:"is--index-programm"
+			} %}
+		</main>
 
     	{% include "../block/common/footer/footer.twig" with {footer_prefix:"footer__"} %}
 
-    	{% include "../block/common/modals/include.twig"%}
+    	{# {% include "../block/common/modals/include.twig"%} #}
     	{% include "../block/common/script/script.twig"%}
 	</body>
 </html>

@@ -30,9 +30,11 @@
 
 {% if view == "news_card" %}
 <article class="{{prefix}}item  {{mod}}">
+	{% if img != null %}
 	<picture class="{{prefix}}preview  {{mod}}">
 		<img src="{{img}}" alt="{{heading}}" class="img-responsive">
 	</picture>
+	{% endif %}
 	<h2 class="fw--700  margin--narrow">{{heading}}</h2>
 	<time class="{{prefix}}date  {{mod}}" datetime="{{date_iso}}">{{date}}</time>
 	<div class="text__block  margin--huge">{{note}}</div>
@@ -40,7 +42,6 @@
 		<a href="#" class="link__item  is--prev">Предыдущая новость</a>
 		<a href="#" class="link__item  is--next">Следующая новость</a>
 	</div>
-
 </article>
 {% endif %}
 
@@ -77,6 +78,16 @@
 		{% endif %}
 	</div> 
 </article> 
+{% endfor %}
+{% endif %}
+
+{% if view == "articles" %}
+{% for value in list %}		
+<article class="{{prefix}}item  {{mod}}">
+	<time class="{{prefix}}date  {{mod}}" datetime="{{value.date_iso}}">{{value.date}}</time>	
+	<h4 class="{{prefix}}heading  {{mod}}"><a href="{{value.link}}">{{value.heading}}</a></h4>
+	<div class="{{prefix}}note  {{mod}}">{{value.note}}</div>
+</article>
 {% endfor %}
 {% endif %}
 
