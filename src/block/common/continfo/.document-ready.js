@@ -1,4 +1,7 @@
-ymaps.ready(init);
+var mapYA = $("#yandex_map");
+if(mapYA.length > 0) { 
+	ymaps.ready(init);
+}
 function init(){
 	var mainMap = $("[data-map-base]");
 	var mainCoord = mainMap.attr("data-c");

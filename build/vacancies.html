@@ -347,14 +347,15 @@
 					</div>		
 </div>				<form action="#" class="form__panel  is--vacancies">
 		<div class="form__container  container  is--vacancies">
-				
+			<div class="form__wrap  is--vacancies">
+					
 	<h3 class="page-header__heading  is--h2  color--white  fw--700  margin--tiny" >Не нашли вакансию?</h3>
-				
+					
 	<p class="page-header__heading  color--white  margin--small" >Расскажите о себе, и мы свяжемся с вами, если&nbsp;найдется подходящая вакансия!</p>
 	
 
-			<div class="form__row  grid__row  is--vacancies">
-				
+				<div class="form__row  grid__row  is--vacancies">
+					
 	
 <p class="form__item  is--vacancies  ">
 	<input type="text" class="form__control    is--vacancies  is--primary" id="f_leasing[fio]" name="f[fio]" placeholder="Фамилия и Имя" >
@@ -383,8 +384,21 @@
 
 
 
-				<div class="form__drag  is--primary  is--vacancies">Перетащите или загрузите сюда резюме</div>
-				
+					
+					
+
+
+
+
+
+<label class="form__file  is--vacancies  is--primary">
+	<input type="file"  class="form__file-input  is--vacancies  is--primary" id="f_leasing[file]" name="f[Загрузите сюда резюме]">
+	<span class="form__file-name  is--vacancies  is--primary" data-heading="Прикрепить резюме">Прикрепить резюме</span>
+</label>
+
+
+					
+
 
 
 
@@ -395,24 +409,35 @@
 
 
 
-
 	
-				
+						
+					
+
+
+<div class="form__item  is--sm  ">
+		<label class="form__checkbox  is--sm  is--primary">
+		<input class="form__checkbox-input  is--sm  is--primary" type="checkbox" id="f_leasing[agreement]" name="f[Согласие с условиями передачи информации]" checked>
+		<span class="form__checkbox-icon  is--sm  is--primary"></span>
+		Соглашаюсь с условиями передачи информации
+	</label>
+	</div>
 
 
 
 
 
-
-
-<div class="form__item  is--vacancies  is--agreement">
-	<input type="hidden" name="f[Согласие на обработку персональных данных]" value="Да">
-	<div class="form__text  is--vacancies  is--primary  is--agreement">	
-		Соглашаюсь с условиями передачи информации</a>
-	</div>	
-</div>
-	
-				<button type="submit" class="btn__item  is--success">Отправить</button>
+					<button type="submit" data-test class="btn__item  is--success">Отправить</button>
+				</div>
+			</div>
+			<div class="form__result  is--vacancies">
+					
+	<h3 class="page-header__heading  is--h2  color--white  fw--700  margin--tiny" >Спасибо!<br>Анкета отправлена</h3>
+					
+	<p class="page-header__heading  color--white  margin--large" >Мы свяжемся с вами, как только найдется подходящая вакансия.</p>
+				<div class="form__result-img  is--vacancies">
+					<svg class="icon-svg icon-checked" role="img">
+	<use xlink:href="./img/svg/sprite.svg#checked"></use>
+</svg>				</div>
 			</div>
 		</div>
 	</form>
