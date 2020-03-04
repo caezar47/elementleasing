@@ -118,6 +118,12 @@
 				} %}
 		</div>
 		{% endif %}
+		{% if view == "vacancies_no"%}
+		<div class="{{content_prefix}}wrap  {{content_mod}}">
+			<h3 class="is--hLG  fw--700  color--white-c0  margin--tiny">Вакансий нет</h3>
+			<p class="color--white-c0">Если хотите предложить свою<br> кандидатуру, то воспользуйтесь формой ниже!</p>
+		</div>
+		{% endif %}
 		{% if view == "vacancies_card"%}
 		{% include "../../common/card/card.twig" with {
 		 	view: "news_card", 
