@@ -1,73 +1,72 @@
 {% if view == "input" %}
-
-{% for value in list %}	
-<p class="{{prefix}}item  {{mod}}  {{value.mod_elem}}">
-	<input type="{{value.type}}" class="{{prefix}}control  {{value.validate}}  {{mod}}  {{color}}" id="{{value.form_id}}[{{value.id}}]" name="f[{{value.name}}]" placeholder="{{value.placeholder}}" {% if value.view == "date" %}onfocus="(this.type='date')"{% endif %}>
-</p>
-{% endfor %}
+	{% for value in list %}	
+	<p class="{{prefix}}item  {{mod}}  {{value.mod_elem}}">
+		<input type="{{value.type}}" class="{{prefix}}control  {{value.validate}}  {{mod}}  {{color}}" id="{{value.form_id}}[{{value.id}}]" name="f[{{value.name}}]" placeholder="{{value.placeholder}}" {% if value.view == "date" %}onfocus="(this.type='date')"{% endif %}>
+	</p>
+	{% endfor %}
 {% endif %}
 
 {% if view == "select" %}
-<p class="{{prefix}}item  {{mod}}  {{group}}">
-	{% if label %}
-	<label class="{{prefix}}label  {{mod}}" for="{{form_id}}[{{id}}]">{{label}}</label>
-	{% endif %}
-	<select class="{{prefix}}control  {{value.validate}}  {{mod}}  {{color}}" id="{{form_id}}[{{id}}]" name="f[{{name}}]">
-		{% for value in list %}
-			<option value="{{value.val}}" {{value.status}}>{{value.name}}</option>
-		{% endfor %}	
-	</select>
-</p>
+	<p class="{{prefix}}item  {{mod}}  {{group}}">
+		{% if label %}
+		<label class="{{prefix}}label  {{mod}}" for="{{form_id}}[{{id}}]">{{label}}</label>
+		{% endif %}
+		<select class="{{prefix}}control  {{value.validate}}  {{mod}}  {{color}}" id="{{form_id}}[{{id}}]" name="f[{{name}}]">
+			{% for value in list %}
+				<option value="{{value.val}}" {{value.status}}>{{value.name}}</option>
+			{% endfor %}	
+		</select>
+	</p>
 {% endif %}
 
 {% if view == "radio" %}
-<div class="{{prefix}}item  is--radio  {{mod}}  {{mod_elem}}">
-	{% for value in list %}
-	<label class="{{prefix}}radio  {{mod}}  {{color}}">
-		<input class="{{prefix}}radio-input  {{mod}}  {{color}}" type="radio" id="{{value.form_id}}[{{value.id}}]" name="f[{{value.name}}]" {{value.status}}>
-		<span class="{{prefix}}radio-box  {{mod}}  {{color}}">
-			<svg class="{{prefix}}radio-icon  {{mod}}  {{color}}" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-				<path fill-rule="evenodd" clip-rule="evenodd" d="M13.908 7.448c.47.44.507 1.193.085 1.682l-4.114 4.762c-.214.246-.516.39-.834.394a1.121 1.121 0 0 1-.844-.37l-2.172-2.382a1.226 1.226 0 0 1 .042-1.683 1.11 1.11 0 0 1 1.615.043l1.32 1.448 3.288-3.805a1.111 1.111 0 0 1 1.614-.089z"/>
-			</svg>
-		</span>
-		{{value.label}}
-	</label>
-	{% endfor %}
-</div>
+	<div class="{{prefix}}item  is--radio  {{mod}}  {{mod_elem}}">
+		{% for value in list %}
+		<label class="{{prefix}}radio  {{mod}}  {{color}}">
+			<input class="{{prefix}}radio-input  {{mod}}  {{color}}" type="radio" id="{{value.form_id}}[{{value.id}}]" name="f[{{value.name}}]" {{value.status}}>
+			<span class="{{prefix}}radio-box  {{mod}}  {{color}}">
+				<svg class="{{prefix}}radio-icon  {{mod}}  {{color}}" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M13.908 7.448c.47.44.507 1.193.085 1.682l-4.114 4.762c-.214.246-.516.39-.834.394a1.121 1.121 0 0 1-.844-.37l-2.172-2.382a1.226 1.226 0 0 1 .042-1.683 1.11 1.11 0 0 1 1.615.043l1.32 1.448 3.288-3.805a1.111 1.111 0 0 1 1.614-.089z"/>
+				</svg>
+			</span>
+			{{value.label}}
+		</label>
+		{% endfor %}
+	</div>
 {% endif %}
 
 {% if view == "checkbox" %}
-<div class="{{prefix}}item  {{mod}}  {{group}}">
-	{% for value in list %}
-	<label class="{{prefix}}checkbox  {{mod}}  {{color}}  {{value.group}}">
-		<input class="{{prefix}}checkbox-input  {{mod}}  {{color}}" type="checkbox" id="{{value.form_id}}[{{value.id}}]" name="f[{{value.name}}]" {{value.status}}>
-		<span class="{{prefix}}checkbox-icon  {{mod}}  {{color}}"></span>
-		{{value.label}}
-	</label>
-	{% endfor %}
-</div>
+	<div class="{{prefix}}item  {{mod}}  {{group}}">
+		{% for value in list %}
+		<label class="{{prefix}}checkbox  {{mod}}  {{color}}  {{value.group}}">
+			<input class="{{prefix}}checkbox-input  {{mod}}  {{color}}" type="checkbox" id="{{value.form_id}}[{{value.id}}]" name="f[{{value.name}}]" {{value.status}}>
+			<span class="{{prefix}}checkbox-icon  {{mod}}  {{color}}"></span>
+			{{value.label}}
+		</label>
+		{% endfor %}
+	</div>
 {% endif %}
 
 {% if view == "agreement" %}
-<div class="{{prefix}}item  {{mod}}  is--agreement">
-	<input type="hidden" name="f[Согласие на обработку персональных данных]" value="Да">
-	<div class="{{prefix}}text  {{mod}}  {{color}}  is--agreement">	
-		Соглашаюсь с условиями передачи информации</a>
-	</div>	
-</div>
+	<div class="{{prefix}}item  {{mod}}  is--agreement">
+		<input type="hidden" name="f[Согласие на обработку персональных данных]" value="Да">
+		<div class="{{prefix}}text  {{mod}}  {{color}}  is--agreement">	
+			Соглашаюсь с условиями передачи информации</a>
+		</div>	
+	</div>
 {% endif %}
 
 {% if view == "textarea" %}	
-<div class="{{prefix}}item  {{mod}}  {{mod_elem}}">
-	<textarea class="{{prefix}}control form-control {{validate}}  {{mod}}  {{color}}" id="{{form_id}}[{{id}}]" name="f[{{name}}]" placeholder="{{placeholder}}"></textarea>
-</div>
+	<div class="{{prefix}}item  {{mod}}  {{mod_elem}}">
+		<textarea class="{{prefix}}control form-control {{validate}}  {{mod}}  {{color}}" id="{{form_id}}[{{id}}]" name="f[{{name}}]" placeholder="{{placeholder}}"></textarea>
+	</div>
 {% endif %}
 
 {% if view == "file" %}
-<label class="{{prefix}}file  {{mod}}  {{color}}">
-	<input type="file"  class="{{prefix}}file-input  {{mod}}  {{color}}" id="{{form_id}}[{{id}}]" name="f[{{name}}]">
-	<span class="{{prefix}}file-name  {{mod}}  {{color}}" data-heading="Прикрепить резюме">Прикрепить резюме</span>
-</label>
+	<label class="{{prefix}}file  {{mod}}  {{color}}">
+		<input type="file"  class="{{prefix}}file-input  {{mod}}  {{color}}" id="{{form_id}}[{{id}}]" name="f[{{name}}]">
+		<span class="{{prefix}}file-name  {{mod}}  {{color}}" data-heading="Прикрепить резюме">Прикрепить резюме</span>
+	</label>
 {% endif %}
 
 {% if view == "range" %}

@@ -10,14 +10,13 @@
 		color: @footer_color;	
 		background: @footer_bg;
 		//overflow: hidden;
-		padding-top: 30px;
-		padding-bottom: 30px;
+		padding-top: 36px;
+		padding-bottom: 36px;
 		.media-breakpoint-up(@xl; {
 			padding-top: 70px;
 			padding-bottom: 100px;
 			
 		});
-
 		a{
 			color: @footer_color;
 			&:hover,
@@ -35,25 +34,52 @@
 		});
 	}
 	&cols{
-		&.is--tel{			
-			.media-breakpoint-up(@md; {
-				grid-column: span 3;			
-			});
-			.media-breakpoint-up(@lg; {
-				grid-column: span 1;			
-			});
-		}
 		&.is--line{
+			display: none;
 			border-top: 1px solid fadeout(#4C4C4C, 15%);
 			margin: 20px 0;
-			.media-breakpoint-up(@md; {
-				grid-column: span 3;			
-			});
-			.media-breakpoint-up(@lg; {
-				margin: 30px 0 23px;
-				grid-column: span 4;			
-			});
 		}
+		&.is--social,
+		&.is--nav{
+			display: none;
+		}
+		.media-breakpoint-down(@md; {
+			&.is--nav-default{
+				grid-row: 2;
+			}
+			&.is--copyright{
+				display: flex;
+				padding-top: 10px;
+			}
+		});
+		.media-breakpoint-up(@md; {	
+			&.is--social,
+			&.is--nav{
+				display: block;
+			}		
+			&.is--tel{			
+				grid-column: span 3;			
+			}
+			&.is--line{
+				display: block;
+				grid-column: span 3;			
+			}
+			&.is--search{
+				display: none;			
+			}
+		});
+		.media-breakpoint-up(@lg; {
+			&.is--tel{
+				grid-column: span 1;	
+			}
+			&.is--line{
+				margin: 30px 0 23px;
+				grid-column: span 4;
+			}	
+			&.is--nav-default{
+			    grid-column: 3;
+			}		
+		});
 	}
 	&tel{
 		a&{
@@ -64,7 +90,6 @@
 			line-height: 1.27em;
 			color: @success;
 			font-weight: 500;
-			margin-bottom: 5px;
 			.media-breakpoint-up(@xl; {
 				margin-bottom: 15px;			
 			});
@@ -88,13 +113,27 @@
 		li{
 			margin-bottom: 8px;
 		}
+		.media-breakpoint-down(@md; {
+			font-size: 0.88em;
+		});
+		.media-breakpoint-up(@md; {
+			li.is--hidden{
+				display: none;
+			}
+		});
 	}
 	&logo{
-		max-width: 82px;
-		margin-bottom: 20px;
+		width: 65px;
+		margin-right: 25px;
+		.media-breakpoint-up(@md; {
+			width: 82px;
+			margin: 0 0 20px 0;
+		});
 	}
 	&copyright{
-		//font-size: @b-fs - 4;
-		font-size: 0.778em;
+		font-size: 0.67em;
+		.media-breakpoint-up(@md; {
+			font-size: 0.778em;
+		});
 	}
 }

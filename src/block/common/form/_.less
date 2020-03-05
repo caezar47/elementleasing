@@ -11,26 +11,6 @@
     			padding-bottom: 6.66vw;
 			});
 		}
-		&.is--search{
-			display: flex;
-			//margin-bottom: 25px;
-			.media-breakpoint-down(@sm; {
-				flex-wrap: wrap;
-				& > *:nth-child(1){
-					flex-basis: 100%;
-					margin-bottom: 10px;
-				}
-			});
-			.media-breakpoint-up(@sm; {
-				flex-wrap: wrap;
-				& > *:nth-child(1){
-					flex: 1 1 0;
-				}
-				& > *:nth-child(2){
-					margin-left: 30px;
-				}
-			});
-		}
 		&.is--vacancies{
 			background-color: @primary;
 			padding-top: 30px;
@@ -308,7 +288,7 @@
 		border-style: solid;   
 		border-color: @input_border_color;
 		border-radius: @input_radius;	   
-		height: @input_height;
+		height: @input_height - 8;
 		padding: 10px 15px;
 		box-shadow: none;
 		&[type="text"]{
@@ -407,6 +387,16 @@
 				border-color: @primary;
 			}
 		}
+		&.is--success-black{
+			background-color: @black-29;
+			border-color: @success;
+			&:focus{
+				background-color: @white;
+			}
+		}
+		.media-breakpoint-up(@lg; {   
+			height: @input_height;			
+		});
 		/*&.is--white{ 
 			border-color: @input_w_border_color;
 			background-color: @input_w_bg;
@@ -458,6 +448,11 @@
 					margin-top: 15px;
 				}
 			}
+		}
+		&.is--search{
+			.media-breakpoint-down(@lg; {
+				display: none;
+			});
 		}
 	}
 	&text{
@@ -768,7 +763,45 @@
 	}
 	//search
 	&search{
-		display: flex;
+		&{
+			position: relative;
+			.media-breakpoint-up(@lg; {
+				display: flex;
+			});
+		}
+		&-input{
+			.media-breakpoint-down(@lg; {
+				input{
+					padding-right: 45px;
+				}
+			});
+			.media-breakpoint-up(@lg; {				
+				flex: 1 1 0;
+				margin-right: 30px;
+			});
+		}
+		&-btn{
+			.media-breakpoint-down(@lg; {
+				display: none;
+			});
+		}
+		&-icon{
+			position: absolute;
+			top: 0;
+			right: 0;
+			.btn-clearfix();
+			width: 40px;
+			height: 40px;
+			padding: 12px;
+			color: @primary;
+			.media-breakpoint-up(@lg; {
+				display: none;
+			});
+			&.is--success-black{
+				color: @success;
+			}
+		}
+		/*display: flex;
 		&-input{
 			display: block;
 			width: 100%;
@@ -823,7 +856,7 @@
 				color: @search_btn_f_color;
 				background-color: @search_btn_f_bg;
 			}		
-		}
+		}*/
 	}
 }
 // === formError === //
