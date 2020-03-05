@@ -1,31 +1,31 @@
 {% if view == "menedzhment" %}
-{% for value in list %}		
-<div class="{{prefix}}item  {{mod}}">
-	<div class="{{prefix}}preview  {{mod}}">
-		<img src="{{value.img}}" alt="{{value.heading}}" class="img-responsive">
-	</div>
-	<div class="{{prefix}}wrap  {{mod}}">
-		<p class="{{prefix}}heading  {{mod}}">{{value.name}}</p>
-		<p class="{{prefix}}heading  {{mod}}-post">{{value.post}}</p>
-		<div class="{{prefix}}note  {{mod}}">{{value.note}}</div>
+	{% for value in list %}		
+	<div class="{{prefix}}item  {{mod}}">
+		<div class="{{prefix}}preview  {{mod}}">
+			<img src="{{value.img}}" alt="{{value.heading}}" class="img-responsive">
+		</div>
+		<div class="{{prefix}}wrap  {{mod}}">
+			<p class="{{prefix}}heading  {{mod}}">{{value.name}}</p>
+			<p class="{{prefix}}heading  {{mod}}-post">{{value.post}}</p>
+			<div class="{{prefix}}note  {{mod}}">{{value.note}}</div>
+		</div> 
 	</div> 
-</div> 
-{% endfor %}
+	{% endfor %}
 {% endif %}
 
 {% if view == "news" %}
-{% for value in list %}		
-<article class="{{prefix}}item  {{mod}}">
-	<a href="{{value.link}}" class="{{prefix}}preview  {{mod}}">
-		<img src="{{value.img}}" alt="{{value.heading}}" class="img-responsive">
-	</a>
-	<div class="{{prefix}}wrap  {{mod}}">
-		<h4 class="{{prefix}}heading  {{mod}}"><a href="{{value.link}}">{{value.heading}}</a></h4>
-		<div class="{{prefix}}note  {{mod}}">{{value.note}}</div>
-		<time class="{{prefix}}date  {{mod}}" datetime="{{value.date_iso}}">{{value.date}}</time>
-	</div>	
-</article>
-{% endfor %}
+	{% for value in list %}		
+	<article class="{{prefix}}item  {{mod}}">
+		<div class="{{prefix}}wrap  {{mod}}">
+			<h4 class="{{prefix}}heading  {{mod}}"><a href="{{value.link}}">{{value.heading}}</a></h4>
+			<div class="{{prefix}}note  {{mod}}">{{value.note}}</div>
+			<time class="{{prefix}}date  {{mod}}" datetime="{{value.date_iso}}">{{value.date}}</time>
+		</div>	
+		<a href="{{value.link}}" class="{{prefix}}preview  {{mod}}">
+			<img src="{{value.img}}" alt="{{value.heading}}" class="img-responsive">
+		</a>
+	</article>
+	{% endfor %}
 {% endif %}
 
 {% if view == "news_card" %}
