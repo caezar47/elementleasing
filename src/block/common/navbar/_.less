@@ -15,6 +15,9 @@
 		background-color: @navbar_header_bg;
 		padding-top: 15px;
 		padding-bottom: 15px;
+		.media-breakpoint-down(@xl; {
+			box-shadow: 0 2px 4px 0 rgba(0,52,156,0.25);
+		});
 		.media-breakpoint-up(@xl; {
 			padding-top: 25px;
 			padding-bottom: 25px;

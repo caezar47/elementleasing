@@ -1,4 +1,5 @@
 .slick {
+	@g: 15px;
 	&-slider{	
 		position: relative;
 		display: block;
@@ -13,12 +14,13 @@
 		&.slick-dotted{
 			padding-bottom: 0;
 			margin-bottom: (@slider_dots_width * 2) + 15px;
-			@media @media-point-notsmart { 	
+			.media-breakpoint-up(@md; {
 				margin-bottom: ~"calc(@{slider_dots_bottom} + (@{slider_dots_width} * 2) + 15px)";
-			}
+			});
 		}
-		&[data-slider-slick="slick-header"] {
+		&[data-slick-catalog] {
 			padding: 0;
+			//max-width: 1080px;
 		}
 	}
 	&-list {
@@ -36,6 +38,10 @@
 		&.dragging {
 			cursor: pointer;
 			cursor: hand;
+		}
+		[data-slick-catalog] &{
+			margin: 0 -@g;
+			padding: 25px 0;
 		}
 	} 
 	&-track,
@@ -101,6 +107,9 @@
 		}
 		[data-slider-slick="slick-gallery"] &{
 			padding: 0 15px;
+		}
+		[data-slick-catalog] &{
+			padding: 0 @g;
 		}
 	}
 	&-btn{

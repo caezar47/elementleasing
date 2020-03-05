@@ -21,6 +21,7 @@
 		</div>
 	</form>
 {% endif %}
+
 {% if view=="leasing" %}
 	<form action="#" class="{{prefix}}panel  {{mod}}">
 		<div class="container">
@@ -65,8 +66,9 @@
 		</div>
 	</form>
 {% endif %}
+
 {% if view=="search" %}
-	<form action="#" class="{{prefix}}panel  {{mod}}">
+	<form action="#" class="{{prefix}}panel  {{mod}}  {{group}}">
 		{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
 			{"type":"text", "id":"email", "form_id":ID, "name":placeholder, "placeholder":placeholder}
 		]} %}

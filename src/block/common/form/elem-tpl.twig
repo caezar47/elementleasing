@@ -37,9 +37,9 @@
 {% endif %}
 
 {% if view == "checkbox" %}
-<div class="{{prefix}}item  {{mod}}  {{mod_elem}}">
+<div class="{{prefix}}item  {{mod}}  {{group}}">
 	{% for value in list %}
-	<label class="{{prefix}}checkbox  {{mod}}  {{color}}">
+	<label class="{{prefix}}checkbox  {{mod}}  {{color}}  {{value.group}}">
 		<input class="{{prefix}}checkbox-input  {{mod}}  {{color}}" type="checkbox" id="{{value.form_id}}[{{value.id}}]" name="f[{{value.name}}]" {{value.status}}>
 		<span class="{{prefix}}checkbox-icon  {{mod}}  {{color}}"></span>
 		{{value.label}}

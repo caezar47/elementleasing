@@ -10,5 +10,23 @@
 		}
 	}
 	&heading{
+		&.is--line{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			&::before,
+			&::after{
+				content: '';
+				height: 1px;
+				background-color: @primary-l;
+				flex: 1 1 0;
+			}
+			&::before{
+				margin-right: 15px;
+			}
+			&::after{
+				margin-left: 15px;
+			}
+		}
 	}
 }

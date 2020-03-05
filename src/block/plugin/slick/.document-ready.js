@@ -1,5 +1,7 @@
 'use strict';
 $(function() { 
+	var catalog = $('[data-slick-catalog]');
+
 	var header = $('[data-slider-slick="slick-header"]');	
 	var gallery = $('[data-slider-slick="slick-gallery"]');	
 	var CMS__TPL_PATH = '/wp-content/themes/azbn7theme';  
@@ -9,7 +11,29 @@ $(function() {
 	var prevArrow = '<button type="button" class="slick-btn  is--prev"><span class="sr-only">Предыдущий слайд</span></button>';
 	var nextArrow = '<button type="button" class="slick-btn  is--next"><span class="sr-only">Следующий слайд</span></button>';	
 	
-	
+	catalog.slick({
+		slidesToShow: 2,
+		slidesToScroll: 2,
+		arrows: false,
+		//centerMode: true,
+  		//centerPadding: '60px',
+		dots: false,
+		infinite: true,
+		autoplay: true,
+  		autoplaySpeed: 4000,
+		prevArrow: prevArrow,
+		nextArrow: nextArrow,
+		responsive: [
+		    {
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+				}
+		    }
+		]
+	});
+
 	header.slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
