@@ -15,8 +15,13 @@
 		</div>
 		<div class="cols">
 			{% if view == "vacancies_list"%}
-			<p class="is--h4  color--primary">16 открытых вакансий</p>
+			<p class="{{content_prefix}}label {{content_mod}}">16 открытых вакансий</p>
 			{% endif %}
+
+			{% if view == "vacancies_no"%}
+			<p class="{{content_prefix}}label {{content_mod}}">Нет открытых вакансий</p>
+			{% endif %}
+			
 			{% if view == "vacancies_card"%}
 				<a href="{{page.vacancies}}" class="{{prefix.link}}item  is--prev  is--md">Назад к вакансиям</a>
 			{% endif %}
@@ -40,12 +45,12 @@
 			]
 		} %}
 		{% if view == "vacancies_list"%}
-		<div>			
+		<div class="{{content_mod}}">			
 			{% include "../../common/form/form.twig" with {
 				view: 			"search", 
 				prefix:			prefix.form, 
 				mod:			"is--search", 
-				mod:			"margin--default", 
+				group:			content_mod, 
 				color:			"is--primary-light", 
 				ID: 			"f_search", 
 				placeholder:	"Введите название вакансии или города",

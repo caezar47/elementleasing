@@ -123,7 +123,12 @@
 		&.is--page{
 			&-aside{
 				&{
-					grid-template-columns: 100%;	
+					grid-template-columns: 100%;
+					.media-breakpoint-down(@md; {
+						& > .is--page-vacancies{
+							font-size: 16px;
+						}
+					});	
 					.media-breakpoint-up(@xl; {
 						grid-template-columns: 4fr 8fr;				
 					});
@@ -218,7 +223,6 @@
 						margin-bottom: 45px;
 					}		
 				});
-
 			}
 		}
 	}		  
@@ -226,9 +230,25 @@
 		&.is--page{
 			&-vacancies{
 				background-color: @white-f2;
-				padding: 25px 20px;
+				padding: 35px 20px;
+				margin: 0 -15px;
+				.media-breakpoint-down(@md; {
+					font-size: 16px;
+				});
 				.media-breakpoint-up(@lg; {
+					margin: 0;
 					padding: 50px 55px;
+				});
+			}
+		}
+	}	  
+	&label{
+		&.is--page{
+			&-vacancies{
+				font-size: .78em;
+				.media-breakpoint-up(@md; {
+					.heading4();
+					color: @primary;
 				});
 			}
 		}

@@ -13,13 +13,23 @@
 		}
 		&.is--vacancies{
 			background-color: @primary;
-			padding-top: 30px;
-			padding-bottom: 30px;
-			padding-left: 15px;
-			padding-right: 15px;
+			.media-breakpoint-down(@md; {
+				font-size: 16px;
+				padding-top: 25px;
+				padding-bottom: 25px;
+				.page-header__heading{
+					text-align: center;
+					&:nth-child(2){
+						font-size: 14px;
+						line-height: 1.5em;
+					}
+				}
+			});
 			.media-breakpoint-up(@md; {
 			    padding-top: 2.9vw;
     			padding-bottom: 4.1vw;
+				padding-left: 15px;
+				padding-right: 15px;
 			});
 		}
 	}
@@ -61,12 +71,10 @@
 	&container{
 		position: relative;
 		&.is--vacancies{
-			border: 1px solid @primary-a;
 			max-width: 550px;
-			padding-top: 25px;
-			padding-bottom: 25px;
 			.media-breakpoint-up(@md; {
 				padding: 35px 50px;
+				border: 1px solid @primary-a;
 			});
 			.media-breakpoint-up(@lg; {
 				max-width: 795px;
@@ -145,6 +153,17 @@
 		}
 		&.is--vacancies{
 			grid-gap: 25px 15px;
+			.media-breakpoint-down(@md; {				
+				grid-template-columns: repeat(2, 1fr); 
+				& > *{
+					grid-column: span 2;
+				}
+				& > *:nth-child(8),
+				& > *:nth-child(9){
+					grid-column: span 1;
+					align-self: center;
+				}
+			});
 			.media-breakpoint-up(@md; {
 				grid-template-columns: repeat(2, 1fr); 
 				& > *:nth-child(1),
@@ -481,16 +500,20 @@
 	//file
 	&file{
 		position: relative;
-		cursor: pointer;	
+		cursor: pointer;
+		padding: 10px 20px;
+		border: 2px dashed @primary;
+		background-color: @white;
+		border-radius: 10px;
+		font-size: 0.88em;
+		text-align: center;	
+		.media-breakpoint-up(@md; {
+			padding: 20px;			
+		});
 		&.is--primary{
 			background-color: @primary;
 			border-color: @white;
 			color: @white;
-			font-size: 0.88em;
-			text-align: center;
-			border: 2px dashed @white;
-			border-radius: 10px;
-			padding: 20px;
 			transition: @trs-site;
 			&:hover{				
 				border-color: @success;
@@ -768,6 +791,14 @@
 			.media-breakpoint-up(@lg; {
 				display: flex;
 			});
+			&.is--page{
+				&-vacancies{
+					margin-bottom: 40px;
+					.media-breakpoint-up(@md; {
+						margin-bottom: 20px;
+					});
+				}
+			}
 		}
 		&-input{
 			.media-breakpoint-down(@lg; {

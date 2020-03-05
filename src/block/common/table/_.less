@@ -1,38 +1,3 @@
-.tables__{
-	&panel{
-	}
-	&heading{
-		margin-bottom: 25px;
-		.media-breakpoint-up(@lg; {
-			margin-bottom: 1.55vw;
-		});
-	}
-	&heading-row{
-		justify-content: space-between;
-		align-items: center;
-	}
-	&heading-cols{
-		
-	}
-	&card{
-		margin-bottom: 35px;
-		.media-breakpoint-up(@lg; {
-			margin-bottom: 2.5vw;
-		});
-		&:last-child{
-			margin-bottom: 0;
-		}
-	}
-	&item{
-		padding-bottom: 25px;
-		.media-breakpoint-up(@lg; {
-			margin-bottom: 2.3vw;
-		});
-		&:last-child{
-			margin-bottom: 0;
-		}		
-	}
-}
 .table-responsive{
 	overflow-x: auto;
 	min-height: 0.01%;
@@ -53,9 +18,6 @@
 	&.is--page{
 		&-vacancies{
 			margin-bottom: 25px;
-			.media-breakpoint-up(@md; {
-				margin-bottom: 3vw;
-			});
 			a{
 				color: @default;
 				font-weight: 700;
@@ -66,6 +28,33 @@
 					color: @primary-a;
 				}
 			}
+			.media-breakpoint-down(@md; {
+				margin-bottom: 30px;
+				line-height: 1.25em;
+				thead{
+					display: none;
+				}
+				tr{	
+					display: block;
+					border-bottom: 1px solid @table_border_color;
+					padding: 15px 10px;
+					&:first-child{
+						border-top: 1px solid @table_border_color;
+					}
+					td, th{
+						display: block;
+						padding: 0;
+						border: 0!important;
+						margin-bottom: 15px;
+						&:last-child{
+							margin-bottom: 0px;
+						}
+					}
+				}
+			});
+			.media-breakpoint-up(@md; {
+				margin-bottom: 3vw;
+			});
 		}
 	}
 	@media print{

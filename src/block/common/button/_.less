@@ -84,6 +84,10 @@
 		&.is--lg{
 			.heading4();
 			padding: 20px 20px;
+			.media-breakpoint-down(@md; {
+				padding: 10px 20px;
+				width: 100%;
+			});
 			.media-breakpoint-up(@lg; {
 				padding: 26px 40px 22px 49px;
 			});

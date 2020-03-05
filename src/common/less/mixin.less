@@ -46,10 +46,11 @@
 	.calcLineHeight(56, 150, 320, 1680);	
 }
 .heading-lg(){
-	font-size: 2.2em;  	
-    line-height: 1.2em;
+	font-size: 3.5em;  	
+    line-height: 1em;
     .media-breakpoint-up(@md; {
 		font-size: 4.6em;
+    	line-height: 1.2em;
     });
 }
 .heading-md(){
@@ -71,7 +72,7 @@
 .heading2(){
 	//.calcFontSize(28, 46, 320, 1680);
 	//.calcLineHeight(32, 50, 320, 1680);
-	font-size: 1.7em;
+	font-size: 1.5em;
     line-height: 1.34em;
     .media-breakpoint-up(@md; {
 		font-size: 2.22em;  	
@@ -92,9 +93,12 @@
 	//.calcFontSize(24, 30, 320, 1680);
 	//.calcLineHeight(28, 34, 320, 1680);
 	//font-size: @b-fs + 3;
-	//line-height: @b-lh + 4; 
-    font-size: 1.33em;
+	//line-height: @b-lh + 4;
+    font-size: 1em;
     line-height: 1.34em;
+    .media-breakpoint-up(@md; { 
+	    font-size: 1.33em;
+	});
 }
 .heading5(){
 	//.calcFontSize(20, 23, 320, 1680);
