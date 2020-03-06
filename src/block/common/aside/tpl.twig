@@ -2,11 +2,18 @@
 	<a href="#" data-aside-toggle="dropdown" class="{{prefix}}header">
 		<div class="container">
 			<div class="{{prefix}}btn">
+				{% if nav != null %}
 				<div class="{{prefix}}hamb">
 					<div class="{{prefix}}hamb-line  is--left"></div>
 					<div class="{{prefix}}hamb-line  is--center"></div>
 					<div class="{{prefix}}hamb-line  is--right"></div>
 				</div>
+				{% endif %}
+				{% if view == "filter_catalog" %}
+				<div class="{{prefix}}filter-icon">
+					{% include "../svg-sprite/svg.twig" with {icon:"filter"} %}
+				</div>
+				{% endif %}
 				<p class="{{prefix}}btn-name">
 					{{heading}}
 				</p>

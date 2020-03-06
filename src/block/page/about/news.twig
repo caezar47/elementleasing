@@ -18,10 +18,10 @@
 				<a href="{{page.news}}" class="{{prefix.link}}item  is--prev  is--md">Назад к новостям</a>
 			{% else %}
 			{% include "../../common/form/elem-tpl.twig" with {
-				view:"select", 
+				view:"filter", 
 				prefix:prefix.form, 
-				mod:"is--filter", 
-				color:color, 
+				mod:"", 
+				color:"", 
 				group:"", 
 				label:"Сортировать:", 
 				form_id:"filter", 

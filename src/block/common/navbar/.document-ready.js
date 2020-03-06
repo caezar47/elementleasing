@@ -38,3 +38,4 @@ $('.navbar-aside__dropdown [data-toggle="dropdown"]').on('click', function(e) {
 $('.azbn__search-dropdown').on('shown.bs.dropdown', function(e) {
 	$('.azbn__search-input').focus();
 });
+

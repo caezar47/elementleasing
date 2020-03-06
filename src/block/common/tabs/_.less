@@ -1,34 +1,22 @@
 .tabs__{ 
+	@gutter_xs: 11px;
 	@gutter: 0.5vw;
-	&panel{}
-	&nav{
-		list-style: none;
-		padding: 0px;
-		margin: -10px -5px 0; 
-		display: flex;
-		flex-wrap: wrap;
-		position: relative;
+	&panel{
 		&.is--page{
 			&-contacts{
-				margin-bottom: 20px;
-				.media-breakpoint-up(@sm; {
-					justify-content: space-between;
-				});
-				.media-breakpoint-up(@lg; {
-					flex-wrap: nowrap;
-					margin: -10px -(@gutter) 3vw; 
+				.media-breakpoint-down(@md; {
+					font-size: 14px;
 				});
 			}
 		}
 	}
 	&row{
 		&.is--page{
-			&-contacts{
+			&-contacts{				
+				grid-gap: 20px 15px;
 				.media-breakpoint-up(@sm; {
 					grid-template-columns: repeat(2, 1fr);
 				});
-			}
-			&-contacts{
 				.media-breakpoint-up(@lg; {
 					grid-gap: 40px 16px;
 					grid-template-columns: repeat(3, 1fr);
@@ -36,8 +24,26 @@
 			}
 		}
 	}	
+	&nav{
+		list-style: none;
+		padding: 0px;
+		margin: -10px -@gutter_xs 0; 
+		display: flex;
+		flex-wrap: wrap;
+		position: relative;
+		&.is--page{
+			&-contacts{
+				margin-bottom: 30px;
+				justify-content: space-between;
+				.media-breakpoint-up(@lg; {
+					flex-wrap: nowrap;
+					margin: -10px -(@gutter) 3vw; 
+				});
+			}
+		}
+	}
 	&item{	
-		padding: 10px 5px 0;
+		padding: 10px @gutter_xs 0;
 		&.is--page{
 			&-contacts{
 				.media-breakpoint-up(@lg; {
@@ -49,24 +55,11 @@
 	&link{
 		position: relative;
 		display: inline-block;
-		//font-size: @b-fs - 2;
-		//line-height: @b-lh - 2;
-		.heading3();
-		font-weight: 700;
-		
+		.heading3();		
 		color: @tabs_color;
-		//padding: 12px 30px;
-		//border-width: 3px;
-		//border-style: solid;
-		//border-color: @tabs_border_color;
-		/*&.dropdown-toggle{}
-		.media-breakpoint-up(@lg; {
-			display: block;
+		.media-breakpoint-up(@md; {
+			font-weight: 700;
 		});
-		span{
-			position: relative;
-			z-index: 2;			
-		}*/
 		&:hover,
 		.tabs__item.open &,
 		.tabs__item.is--active &,

@@ -2,14 +2,37 @@
 	&panel{
 		align-items: center;
 		& > .cols{
+			.media-breakpoint-down(@sm; {
+				flex-basis: 100%;
+			});
 			&:nth-child(2){
 				//.media-breakpoint-up(@md; {
 					margin-left: auto;
+					justify-self: flex-end;
 				//});
 			}
 		}
 	}
 	&heading{
+		sup{
+			font-weight: 100;
+			color: @success;    
+			font-size: 55%;
+    		top: -1.15em;
+		}
+		&.is--catalog-screen{
+			display: none;
+			.media-breakpoint-up(@md; {
+				display: block;
+			});
+		}
+		&.is--catalog-device{
+			display: block;
+			text-align: center;
+			.media-breakpoint-up(@md; {
+				display: none;
+			});
+		}
 		&.is--line{
 			display: flex;
 			align-items: center;

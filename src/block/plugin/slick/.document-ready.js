@@ -25,14 +25,24 @@ $(function() {
 		nextArrow: nextArrow,
 		responsive: [
 		    {
-				breakpoint: 768,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1,
-				}
+				breakpoint: 768,				
+		      	settings: "unslick"
 		    }
 		]
 	});
+
+	/*window.addEventListener("resize", function() {
+	  if (window.innerWidth <= 768) {
+	    catalog.slick('unslick');
+	    sliderIsLive = false;
+	  }
+	  else {
+	    if (sliderIsLive) {
+	      catalog.slick();
+	      sliderIsLive = true;
+	    }
+	  }
+	});*/
 
 	header.slick({
 		slidesToShow: 1,
