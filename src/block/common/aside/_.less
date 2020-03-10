@@ -107,7 +107,10 @@
 			line-height: 1.16em;
 		}
 		&-item{
-			margin-bottom: 20px;
+			margin-bottom: 5px;
+			.media-breakpoint-up(@md; {
+				margin-bottom: 20px;
+			});
 			.media-breakpoint-up(@xl; {
 				margin-bottom: 1.8vw;
 			});
@@ -121,6 +124,13 @@
 			position: relative;
 			padding-bottom: 10px;
 			color: fadeout(@primary, 70%);
+			sup{
+				font-weight: 100;
+				color: @success;
+				position: absolute;
+    			top: -1%;
+				font-size: 0.55em;
+			}
 			&::after{
 				content: '';
 				position: absolute;

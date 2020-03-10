@@ -1,185 +1,207 @@
-<div class="{{content_prefix}}container container">
-	{% include "../../common/breadcrumb/tpl.twig" with {
-		prefix:prefix.breadcrumb, 
-		mod:bread_mod, 
-		bread:bread
-	} %}	
-	<div class="page-header__panel  row  {{heading_group}}  {{content_mod}}">
-		<div class="cols">
+{% if view != "catalog_adv" %}
+	<div class="{{content_prefix}}container container">
+		{% include "../../common/breadcrumb/tpl.twig" with {
+			prefix:prefix.breadcrumb, 
+			mod:bread_mod, 
+			bread:bread
+		} %}	
+		<div class="page-header__panel  row  {{heading_group}}  {{content_mod}}">
+			<div class="cols">
+				{% include "../../common/page-header/tpl.twig" with {
+					prefix:"page-header__", 
+					mod:heading_mod,
+					level:heading_level, 
+					heading:heading
+				} %}
+				{% if view == "catalog_page"%}
+					{% include "../../common/page-header/tpl.twig" with {
+						prefix:"page-header__", 
+						mod:heading_cat_mod,
+						level:heading_cat_level, 
+						heading:heading_cat
+					} %}
+				{% endif %}
+			</div>
+			<div class="cols">
+				{% if view == "catalog_page"%}
+					{% include "../../common/form/elem-tpl.twig" with {
+						view:"filter", 
+						prefix:prefix.form, 
+						mod:"", 
+						color:"", 
+						group:"", 
+						label:"Сортировать:", 
+						form_id:"filter", 
+						id:"select", 
+						name:"Сортировать", 
+						list: [
+							{"name": "по дате","status": "selected"},
+							{"name": "по новизне"},
+							{"name": "по популярности"}
+						]}
+					%}
+				{% endif %}
+
+				{% if view == "catalog_card"%}
+					<a href="{{page.news}}" class="{{prefix.link}}item  is--prev  is--md">Назад к новостям</a>			
+				{% endif %}
+			</div>
+		</div>	
+		{% if view == "catalog_page"%}
+		<div class="{{content_prefix}}row  grid__row   is--page-aside-sm  margin--huge">
+			{% include "../../common/aside/tpl.twig" with {
+				view: "filter_catalog",
+				prefix: "aside__",
+				heading: "Фильтры",
+				ID: "filter"
+			} %}
+			<div>
+				{% include "../../common/form/form.twig" with {
+					view: 			"search", 
+					prefix:			prefix.form, 
+					mod:			"is--search", 
+					group:			content_mod, 
+					color:			"is--primary-light", 
+					ID: 			"f_search", 
+					placeholder:	"Введите название техники",
+					btn_mod:		"",
+					btn_name:		"Поиск техники"
+				} %}
+
+				<div class="{{content_prefix}}row  grid__row  {{content_mod}}">		
+					{% include "../../common/card/card.twig" with {
+					 	view: "catalog", 
+					 	prefix:prefix.card, 
+					 	mod:"is--catalog", 
+					 	list: [
+					 		{
+					 			"heading":"Галичанин КС-55713-4", 
+					 			"type":"Автокран", 
+					 			"cost":"2 500 000", 
+					 			"leasing":"49 700", 
+					 			"time":"до 36 месяцев", 
+					 			"img":"http://via.placeholder.com/500x265"
+					 		},
+					 		{
+					 			"heading":"Клинцы КС-55713-1К-4", 
+					 			"type":"Автокран", 
+					 			"cost":"2 500 000", 
+					 			"leasing":"49 700", 
+					 			"time":"до 36 месяцев", 
+					 			"img":"http://via.placeholder.com/500x265"
+					 		},
+					 		{
+					 			"heading":"Клинцы КС-55713-1К-4", 
+					 			"type":"Автокран", 
+					 			"cost":"2 500 000", 
+					 			"leasing":"49 700", 
+					 			"time":"до 36 месяцев", 
+					 			"img":"http://via.placeholder.com/500x265"
+					 		},
+					 		{
+					 			"heading":"Клинцы КС-55713-1К-4", 
+					 			"type":"Автокран", 
+					 			"cost":"2 500 000", 
+					 			"leasing":"49 700", 
+					 			"time":"до 36 месяцев", 
+					 			"img":"http://via.placeholder.com/500x265"
+					 		},
+					 		{
+					 			"heading":"Клинцы КС-55713-1К-4", 
+					 			"type":"Автокран", 
+					 			"cost":"2 500 000", 
+					 			"leasing":"49 700", 
+					 			"time":"до 36 месяцев", 
+					 			"img":"http://via.placeholder.com/500x265"
+					 		},
+					 		{
+					 			"heading":"Клинцы КС-55713-1К-4", 
+					 			"type":"Автокран", 
+					 			"cost":"2 500 000", 
+					 			"leasing":"49 700", 
+					 			"time":"до 36 месяцев", 
+					 			"img":"http://via.placeholder.com/500x265"
+					 		}
+					 	]
+					} %}
+						<div class="{{content_prefix}}row  grid__row  {{content_mod}}  is--new">
+							<h2 class="{{prefix.heading}}heading  is--heading  is--line  fw--700  is--h3">Новинки в каталоге</h2>	
+							{% include "../../common/card/card.twig" with {
+							 	view: "catalog_new", 
+							 	prefix:prefix.card, 
+							 	mod:"is--catalog-new", 
+							 	list: [
+							 		{
+							 			"heading":"Автокран Ивановец КС-55713-1К-4",
+							 			"sale":"20%", 
+							 			"img":"http://via.placeholder.com/500x265"
+							 		},
+							 		{
+							 			"heading":"Автокран Ивановец КС-55713-1К-4",
+							 			"sale":"15%", 
+							 			"img":"http://via.placeholder.com/500x265"
+							 		},
+							 		{
+							 			"heading":"Автокран Ивановец КС-55713-1К-4",
+							 			"sale":"20%", 
+							 			"img":"http://via.placeholder.com/500x265"
+							 		}
+							 	]
+							} %}	
+						</div>	
+					{% include "../../common/card/card.twig" with {
+					 	view: "catalog", 
+					 	prefix:prefix.card, 
+					 	mod:"is--catalog", 
+					 	list: [
+					 		{
+					 			"heading":"Клинцы КС-55713-1К-4", 
+					 			"type":"Автокран", 
+					 			"cost":"2 500 000", 
+					 			"leasing":"49 700", 
+					 			"time":"до 36 месяцев", 
+					 			"img":"http://via.placeholder.com/500x265"
+					 		},
+					 		{
+					 			"heading":"Клинцы КС-55713-1К-4", 
+					 			"type":"Автокран", 
+					 			"cost":"2 500 000", 
+					 			"leasing":"49 700", 
+					 			"time":"до 36 месяцев", 
+					 			"img":"http://via.placeholder.com/500x265"
+					 		},
+					 		{
+					 			"heading":"Клинцы КС-55713-1К-4", 
+					 			"type":"Автокран", 
+					 			"cost":"2 500 000", 
+					 			"leasing":"49 700", 
+					 			"time":"до 36 месяцев", 
+					 			"img":"http://via.placeholder.com/500x265"
+					 		}
+					 	]
+					} %}
+				</div>
+			</div>
+		</div>
+		{% endif %}
+	</div>
+{% endif %}
+
+
+{% if view == "catalog_card"%}
+	
+{% endif %}	
+
+{% if view == "catalog_adv" %}
+	<div class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
 			{% include "../../common/page-header/tpl.twig" with {
 				prefix:"page-header__", 
 				mod:heading_mod,
 				level:heading_level, 
 				heading:heading
 			} %}
-			{% include "../../common/page-header/tpl.twig" with {
-				prefix:"page-header__", 
-				mod:heading_cat_mod,
-				level:heading_cat_level, 
-				heading:heading_cat
-			} %}
 		</div>
-		<div class="cols">
-			{% if view == "catalog_page"%}
-				{% include "../../common/form/elem-tpl.twig" with {
-					view:"filter", 
-					prefix:prefix.form, 
-					mod:"", 
-					color:"", 
-					group:"", 
-					label:"Сортировать:", 
-					form_id:"filter", 
-					id:"select", 
-					name:"Сортировать", 
-					list: [
-						{"name": "по дате","status": "selected"},
-						{"name": "по новизне"},
-						{"name": "по популярности"}
-					]}
-				%}
-			{% endif %}
-
-			{% if view == "news_card"%}
-				<a href="{{page.news}}" class="{{prefix.link}}item  is--prev  is--md">Назад к новостям</a>			
-			{% endif %}
-		</div>
-	</div>	
-	{% if view == "catalog_page"%}
-	<div class="{{content_prefix}}row  grid__row   is--page-aside-sm  margin--huge">
-		{% include "../../common/aside/tpl.twig" with {
-			view: "filter_catalog",
-			prefix: "aside__",
-			heading: "Фильтры",
-			ID: "filter"
-		} %}
-		<div>
-			{% include "../../common/form/form.twig" with {
-				view: 			"search", 
-				prefix:			prefix.form, 
-				mod:			"is--search", 
-				group:			content_mod, 
-				color:			"is--primary-light", 
-				ID: 			"f_search", 
-				placeholder:	"Введите название техники",
-				btn_mod:		"",
-				btn_name:		"Поиск техники"
-			} %}
-
-			<div class="{{content_prefix}}row  grid__row  {{content_mod}}">		
-				{% include "../../common/card/card.twig" with {
-				 	view: "catalog", 
-				 	prefix:prefix.card, 
-				 	mod:"is--catalog", 
-				 	list: [
-				 		{
-				 			"heading":"Галичанин КС-55713-4", 
-				 			"type":"Автокран", 
-				 			"cost":"2 500 000", 
-				 			"leasing":"49 700", 
-				 			"time":"до 36 месяцев", 
-				 			"img":"http://via.placeholder.com/500x265"
-				 		},
-				 		{
-				 			"heading":"Клинцы КС-55713-1К-4", 
-				 			"type":"Автокран", 
-				 			"cost":"2 500 000", 
-				 			"leasing":"49 700", 
-				 			"time":"до 36 месяцев", 
-				 			"img":"http://via.placeholder.com/500x265"
-				 		},
-				 		{
-				 			"heading":"Клинцы КС-55713-1К-4", 
-				 			"type":"Автокран", 
-				 			"cost":"2 500 000", 
-				 			"leasing":"49 700", 
-				 			"time":"до 36 месяцев", 
-				 			"img":"http://via.placeholder.com/500x265"
-				 		},
-				 		{
-				 			"heading":"Клинцы КС-55713-1К-4", 
-				 			"type":"Автокран", 
-				 			"cost":"2 500 000", 
-				 			"leasing":"49 700", 
-				 			"time":"до 36 месяцев", 
-				 			"img":"http://via.placeholder.com/500x265"
-				 		},
-				 		{
-				 			"heading":"Клинцы КС-55713-1К-4", 
-				 			"type":"Автокран", 
-				 			"cost":"2 500 000", 
-				 			"leasing":"49 700", 
-				 			"time":"до 36 месяцев", 
-				 			"img":"http://via.placeholder.com/500x265"
-				 		},
-				 		{
-				 			"heading":"Клинцы КС-55713-1К-4", 
-				 			"type":"Автокран", 
-				 			"cost":"2 500 000", 
-				 			"leasing":"49 700", 
-				 			"time":"до 36 месяцев", 
-				 			"img":"http://via.placeholder.com/500x265"
-				 		}
-				 	]} %}
-					<div class="{{content_prefix}}row  grid__row  {{content_mod}}  is--new">
-						<h2 class="{{prefix.heading}}heading  is--heading  is--line  fw--700  is--h3">Новинки в каталоге</h2>	
-						{% include "../../common/card/card.twig" with {
-						 	view: "catalog_new", 
-						 	prefix:prefix.card, 
-						 	mod:"is--catalog-new", 
-						 	list: [
-						 		{
-						 			"heading":"Автокран Ивановец КС-55713-1К-4",
-						 			"sale":"20%", 
-						 			"img":"http://via.placeholder.com/500x265"
-						 		},
-						 		{
-						 			"heading":"Автокран Ивановец КС-55713-1К-4",
-						 			"sale":"15%", 
-						 			"img":"http://via.placeholder.com/500x265"
-						 		},
-						 		{
-						 			"heading":"Автокран Ивановец КС-55713-1К-4",
-						 			"sale":"20%", 
-						 			"img":"http://via.placeholder.com/500x265"
-						 		}
-						 	]} %}	
-					</div>	
-				{% include "../../common/card/card.twig" with {
-				 	view: "catalog", 
-				 	prefix:prefix.card, 
-				 	mod:"is--catalog", 
-				 	list: [
-				 		{
-				 			"heading":"Клинцы КС-55713-1К-4", 
-				 			"type":"Автокран", 
-				 			"cost":"2 500 000", 
-				 			"leasing":"49 700", 
-				 			"time":"до 36 месяцев", 
-				 			"img":"http://via.placeholder.com/500x265"
-				 		},
-				 		{
-				 			"heading":"Клинцы КС-55713-1К-4", 
-				 			"type":"Автокран", 
-				 			"cost":"2 500 000", 
-				 			"leasing":"49 700", 
-				 			"time":"до 36 месяцев", 
-				 			"img":"http://via.placeholder.com/500x265"
-				 		},
-				 		{
-				 			"heading":"Клинцы КС-55713-1К-4", 
-				 			"type":"Автокран", 
-				 			"cost":"2 500 000", 
-				 			"leasing":"49 700", 
-				 			"time":"до 36 месяцев", 
-				 			"img":"http://via.placeholder.com/500x265"
-				 		}
-				 	]} %}
-			</div>
-		</div>
-	</div>
-
-	<div class="{{content_prefix}}wrap  {{content_mod}}">
-		<h2 class="is--h1  fw--700  margin--tiny">Вас может заинтересовать</h2>
 		<div data-slick-catalog>
 			{% include "../../common/card/card.twig" with {
 			 	view: "catalog_promo", 
@@ -203,25 +225,27 @@
 			 			"cost":"20 000", 
 			 			"status":"Есть в наличии", 
 			 			"img":"http://via.placeholder.com/500x265"
+			 		},
+			 		{
+			 			"heading":"MAN TGS 18.400 4X2 BLS", 
+			 			"cost":"20 000", 
+			 			"status":"Есть в наличии", 
+			 			"img":"http://via.placeholder.com/500x265"
+			 		},
+			 		{
+			 			"heading":"MAN TGS 18.400 4X2 BLS", 
+			 			"cost":"20 000", 
+			 			"status":"Есть в наличии", 
+			 			"img":"http://via.placeholder.com/500x265"
+			 		},
+			 		{
+			 			"heading":"MAN TGS 18.400 4X2 BLS", 
+			 			"cost":"20 000", 
+			 			"status":"Есть в наличии", 
+			 			"img":"http://via.placeholder.com/500x265"
 			 		}
 			 	]
 			} %}
 		</div>
 	</div>
-
-	{% endif %}
-
-
-	{% if view == "catalog_card"%}
-		{% include "../../common/card/card.twig" with {
-		 	view: "news_card", 
-		 	prefix:prefix.card, 
-		 	mod:"is--news-card",
- 			heading:heading_sm,
- 			img:"http://via.placeholder.com/500x265", 
- 			date:"11.10.2019", 
- 			date_iso:"2019-10-11", 
- 			note:"<p>В&nbsp;Саратове Автопробег по&nbsp;традиции проходит осенью. Но&nbsp;холодная и&nbsp;дождливая погода ─ не&nbsp;повод для хандры, ведь у&nbsp;предпринимателей города появляется прекрасная возможность приобрести новую технику ГАЗ с&nbsp;ощутимой выгодой. </p><p>Илья Плешаков, менеджер лизинговых проектов, г. Саратов:<br> —&nbsp;С&nbsp;5&nbsp;по&nbsp;8&nbsp;ноября совместно с&nbsp;«АвтоцентрГАЗ-Лидер» мы&nbsp;ездили общаться с&nbsp;повторными и&nbsp;новыми клиентами, для которых провели презентацию ГАЗона полной массой 10&nbsp;тонн. График поездок из-за праздников был довольно плотный,<br> но&nbsp;свой план мы&nbsp;выполнили и&nbsp;встретились с&nbsp;представителями разных сфер бизнеса: грузовые перевозки, геологоразведочные работы, пассажирские перевозки, строительство и&nbsp;т.&nbsp;д. </p><p>Машину уже достаточно хорошо знают, но&nbsp;с&nbsp;удовольствием тестировали и&nbsp;ездили. Многих клиентов интересовала новинка от&nbsp;ГАЗ&nbsp;—<br> 3х-литровый Next на&nbsp;метане, т.&nbsp;к. именно небольшие коммерческие автомобили категории «В» являются приоритетным выбором большинства предприятий. Мы&nbsp;вручили сертификаты со&nbsp;скидкой участникам Автопробега и&nbsp;уже оформляем сделки.</p>"			 		
-	 	} %}
-	{% endif %}	
-</div>
+{% endif %}	

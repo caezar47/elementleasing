@@ -1,3 +1,4 @@
+{% if view != "search_nav" %}
 <aside class="{{prefix}}block">
 	<a href="#" data-aside-toggle="dropdown" class="{{prefix}}header">
 		<div class="container">
@@ -83,3 +84,14 @@
 		</div>
 	</div>
 </aside>
+{% else %}
+	{% if nav != null %}
+		<ul class="{{prefix}}nav">
+			{% for value in nav %}
+			<li class="{{prefix}}nav-item">
+				<a class="{{prefix}}nav-link  {% if value.link == active %}is--active{% endif %}" href="{{value.link}}">{{value.name}}</a>
+			</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+{% endif %}

@@ -12,15 +12,16 @@ $(function() {
 	var nextArrow = '<button type="button" class="slick-btn  is--next"><span class="sr-only">Следующий слайд</span></button>';	
 	
 	catalog.slick({
-		slidesToShow: 2,
-		slidesToScroll: 2,
+		slidesToShow: 4,
+		slidesToScroll: 1,
 		arrows: false,
+		dots: false,
+		infinite: false,
 		//centerMode: true,
   		//centerPadding: '60px',
-		dots: false,
-		infinite: true,
-		autoplay: true,
-  		autoplaySpeed: 4000,
+		//infinite: true,
+		//autoplay: true,
+  		//autoplaySpeed: 4000,
 		prevArrow: prevArrow,
 		nextArrow: nextArrow,
 		responsive: [

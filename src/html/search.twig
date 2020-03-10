@@ -1,27 +1,24 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="ru-RU"> 
 	<head>	
-    	{% include "../block/common/head/head.twig" with {title:"Каталог"}  %}
+    	{% include "../block/common/head/head.twig" with {title:"Поиск"}  %}
 	</head>
 	<body>
     	{% include "../block/common/navbar/navbar.twig" with {navbar_prefix:"navbar__"} %}
 
 		<main class="content-block__panel">
-			{% include "../block/page/catalog/page.twig" with {
+			{% include "../block/page/search.twig" with {
 				view:"catalog_page", 
 				content_prefix:"content-block__", 
-				content_mod:"is--page-catalog", 
-				heading_group:"margin--default", 
-				heading_mod:"is--hXL  fw--700  color--primary-l  is--catalog-screen", 
+				content_mod:"is--page-search", 
+				heading_group:"margin--large", 
+				heading_mod:"is--hXL  fw--700  color--primary-l", 
 				heading_level:"h1", 
-				heading:"Каталог",  
-				heading_cat_mod:"is--h3  fw--700  is--catalog-device", 
-				heading_cat_level:"p", 
-				heading_cat:"Автокраны <sup>36</sup>", 
+				heading:"Поиск",
 				bread_mod:"",
 				bread:[
 					{name:"Главная", link:page.index},
-					{name:"Каталог"}
+					{name:"Поиск"}
 				] 
 			} %}
 			{% include "../block/page/catalog/page.twig" with {

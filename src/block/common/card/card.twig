@@ -94,19 +94,16 @@
 {% if view == "catalog" %}
 	{% for value in list %}		
 	<div class="{{prefix}}item  {{mod}}">
-		{# <div class="{{prefix}}wrap  {{mod}}"> #}
-			<p class="{{prefix}}preview  {{mod}}" data-grid-preview>
-				<img src="{{value.img}}" alt="{{value.heading}}" class="img-responsive">
-			</p>
-			{# <div class="{{prefix}}wrap  {{mod}}-body"> #}
-			<div class="{{prefix}}wrap  {{mod}}"  data-grid-wrap>
-				<h5 class="{{prefix}}heading  {{mod}}">{{value.heading}}</h5>
-				<p class="{{prefix}}value  {{mod}}  is--type">{{value.type}}</p>
-				<p class="{{prefix}}value  {{mod}}">Цена: <span>от {{value.cost}} ₽</span></p>
-				<p class="{{prefix}}value  {{mod}}">Лизинг: <span>{{value.leasing}} ₽/мес.</span></p>
-				<p class="{{prefix}}value  {{mod}}">Срок: <span>{{value.time}}</span></p>
-			</div>	
-		{# </div>	 #}
+		<a href="{{link}}" class="{{prefix}}preview  {{mod}}" data-grid-preview>
+			<img src="{{value.img}}" alt="{{value.heading}}" class="img-responsive">
+		</a>
+		<div class="{{prefix}}wrap  {{mod}}"  data-grid-wrap>
+			<h5 class="{{prefix}}heading  {{mod}}"><a href="{{link}}">{{value.heading}}</a></h5>
+			<p class="{{prefix}}value  {{mod}}  is--type">{{value.type}}</p>
+			<p class="{{prefix}}value  {{mod}}">Цена: <span>от {{value.cost}} ₽</span></p>
+			<p class="{{prefix}}value  {{mod}}">Лизинг: <span>{{value.leasing}} ₽/мес.</span></p>
+			<p class="{{prefix}}value  {{mod}}">Срок: <span>{{value.time}}</span></p>
+		</div>	
 		<button type="button" class="{{prefix}}btn  {{mod}}"  data-grid-btn>Запрос на лизинг</button>
 	</div>
 	{% endfor %}
