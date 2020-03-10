@@ -75,20 +75,27 @@
 			position: relative;
 		}
 		&.is--index{
-			&-programm{
-				.media-breakpoint-up(@lg; {
-					//padding-top: 3.4vw;
-					//padding-bottom: 7.9vw;
-					padding-top: 6.3vw;
-    				padding-bottom: 6.3vw;
-				});
-			}
+
 		}
 		&.is--page{
 			&-news{
-				.media-breakpoint-up(@lg; {
-    				padding-bottom: 3.5vw;
-				});
+				&{
+					.media-breakpoint-up(@lg; {
+	    				padding-bottom: 3.5vw;
+					});
+				}
+				&-programm{
+					.media-breakpoint-up(@lg; {   
+	    				padding-top: 3.3vw;
+	    				padding-bottom: 7.9vw;
+					});
+				}
+				&-card-programm{
+					.media-breakpoint-up(@lg; {   
+	    				padding-top: 6.3vw;
+	    				padding-bottom: 7vw;
+					});
+				}
 			}
 			&-contacts{
 				.media-breakpoint-up(@lg; {
@@ -134,11 +141,6 @@
 	}
 	&row{
 		&.is--index{
-			&-programm{
-				.media-breakpoint-up(@lg; {
-					grid-template-columns: repeat(3, 1fr);
-				});
-			}
 		}
 		&.is--page{
 			&-aside{
@@ -164,41 +166,52 @@
 				}
 			}
 			&-news{
-				align-self: flex-start;
-				grid-gap: 20px 30px;
-				.media-breakpoint-up(@md; {
-					grid-template-columns: repeat(2, 1fr);
-					& > *{
-						&.is--pagination{
-							grid-column: span 2;
-							margin-top: 40px;
-						}						
-					}
-
-				});
-				.media-breakpoint-up(@lg; {
-					grid-template-columns: repeat(12, 1fr);
-					grid-gap: 25px 16px;
-					& > *{
-						grid-column: span 4;
-						&:nth-child(1),
-						&:nth-child(4){
-							grid-column: span 7;
+				&{
+					align-self: flex-start;
+					grid-gap: 20px 30px;
+					.media-breakpoint-up(@md; {
+						grid-template-columns: repeat(2, 1fr);
+						& > *{
+							&.is--pagination{
+								grid-column: span 2;
+								margin-top: 40px;
+							}						
 						}
-						&:nth-child(2),
-						&:nth-child(3){
-							grid-column: span 5;
-						}
-						&:nth-child(3),
-						&:nth-child(4){
-							margin-bottom: 15px;
-						}
-						&.is--pagination{
-							grid-column: span 12;
-							margin-top: 40px;
-						}
-					}		
-				});
+					});
+					.media-breakpoint-up(@lg; {
+						grid-template-columns: repeat(12, 1fr);
+						grid-gap: 25px 16px;
+						& > *{
+							grid-column: span 4;
+							&:nth-child(1),
+							&:nth-child(4){
+								grid-column: span 7;
+							}
+							&:nth-child(2),
+							&:nth-child(3){
+								grid-column: span 5;
+							}
+							&:nth-child(3),
+							&:nth-child(4){
+								margin-bottom: 15px;
+							}
+							&.is--pagination{
+								grid-column: span 12;
+								margin-top: 40px;
+							}
+						}		
+					});
+				}
+				&-programm{
+					.media-breakpoint-up(@lg; {
+						grid-template-columns: repeat(3, 1fr);
+					});
+				}
+				&-card-programm{
+					.media-breakpoint-up(@lg; {
+						grid-template-columns: repeat(3, 1fr);
+					});
+				}
 			}
 			&-contacts{
 				& > *{

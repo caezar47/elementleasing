@@ -32,6 +32,7 @@
 		"reviews":"./reviews.html",
 		"vacancies":"./vacancies.html",
 		"vacancies_no":"./vacancies-no.html",
+		"vacancies_card":"./vacancies-card.html",
 		"contacts":"./contacts.html",
 		"catalog":"./catalog.html",
 		"search":"./search.html",

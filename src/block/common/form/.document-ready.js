@@ -4,7 +4,7 @@ var file = $('.form__file-input');
 var file_name = $('.form__file-name');
 var input = $(".form__control");
 var reset = $(".form__reset");
-var btn = $("[data-test]");
+var test = $("[data-test]");
 var filter_view = $("[data-filter-view]");
 
 phone.mask("+7 (999) 999-99-99",{placeholder:"+7 (___) ___-__-__"});
@@ -22,9 +22,12 @@ input.on("input", function () {
 file.on('change', function(e) {
     $(this).siblings('.form__file-name').html($(this).val().replace(/.*(\/|\\)/, '')+'<br> Заменить файл');
 });
-btn.on('click', function(e) {
+test.on('click', function(e) {
 	e.preventDefault();
 	$(this).closest('.form__panel').find('.form__result').addClass('is--visible');
+});
+$('form button[type="submit"]').on('click', function(e) {
+	e.preventDefault();
 });
 filter_view.on('click', function(e) {
 	e.preventDefault();

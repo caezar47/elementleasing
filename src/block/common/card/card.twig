@@ -47,15 +47,14 @@
 
 {% if view == "programm" %}
 	{% for value in list %}		
-	<div class="{{prefix}}item  {{mod}}">
+	<a href="{{link}}" class="{{prefix}}item  {{mod}}">
 		<p class="{{prefix}}heading  {{mod}}">{{value.heading}}</p>
 		<div class="{{prefix}}note  {{mod}}">{{value.note}}</div>
 		<p class="{{prefix}}value  {{mod}}">
 			Аванс 
 			<span>{{value.value}}</span>
-		</p>
-			
-	</div>
+		</p>			
+	</a>
 	{% endfor %}
 {% endif %}
 

@@ -568,6 +568,7 @@
 		}
 		&.is--programm{
 			.heading3();
+			color: @default;
 			font-weight: 700;
 			margin-bottom: 15px;
 		}
@@ -598,6 +599,9 @@
 					.heading5();
 					margin-bottom: 0;
 				});
+				a{
+					color: @default;
+				}
 			}
 			&-new{
 				max-width: 170px;
@@ -850,11 +854,13 @@
 				padding-right: 30px;
 				.icon-next(@c:'333';@w: 7px; @h: auto);
 				background-position: center right 15px;
-				.card__item:hover &{
-					color: @white;
-					background-color: @success;
-					.icon-next(@c:'fff';@w: 7px; @h: auto);
-				}
+				.media-breakpoint-down(@md; {
+					.card__item:hover &{
+						color: @white;
+						background-color: @success;
+						.icon-next(@c:'fff';@w: 7px; @h: auto);
+					}
+				});
 				.media-breakpoint-up(@md; {
 					border-color: @blue-c6;
 					padding: 20px;

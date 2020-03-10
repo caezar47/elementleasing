@@ -24,7 +24,8 @@
 		padding-right: @gutter;	
 		color: @bread_color;
 		font-size: 0.77em;
-		line-height: 1.33em;		
+		line-height: 1.33em;
+		font-weight: 100;		
 		&:after{
 			content: '/'; 
 			position: absolute;
@@ -33,6 +34,7 @@
 			right: 0;
 		}	
 		&.is--active{
+			font-weight: 400;
 			color: @bread_color_active;
 			&::before,	
 			&::after{display: none}	
