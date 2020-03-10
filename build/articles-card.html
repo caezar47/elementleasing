@@ -221,9 +221,9 @@
 				
 
 	<article class="card__item  is--news-card">
-				<h2 class="fw--700  margin--narrow">Полуприцеп рефрижератор б/у в лизинг</h2>
+				<h2 class="card__heading  is--news-card  fw--700  margin--narrow">Полуприцеп рефрижератор б/у в лизинг</h2>
 		<time class="card__date  is--news-card" datetime="2019-10-11">11.10.2019</time>
-		<div class="text__block  margin--huge"><p>В&nbsp;Саратове Автопробег по&nbsp;традиции проходит осенью. Но&nbsp;холодная и&nbsp;дождливая погода ─ не&nbsp;повод для хандры, ведь у&nbsp;предпринимателей города появляется прекрасная возможность приобрести новую технику ГАЗ с&nbsp;ощутимой выгодой. </p><p>Илья Плешаков, менеджер лизинговых проектов, г. Саратов:<br> —&nbsp;С&nbsp;5&nbsp;по&nbsp;8&nbsp;ноября совместно с&nbsp;«АвтоцентрГАЗ-Лидер» мы&nbsp;ездили общаться с&nbsp;повторными и&nbsp;новыми клиентами, для которых провели презентацию ГАЗона полной массой 10&nbsp;тонн. График поездок из-за праздников был довольно плотный,<br> но&nbsp;свой план мы&nbsp;выполнили и&nbsp;встретились с&nbsp;представителями разных сфер бизнеса: грузовые перевозки, геологоразведочные работы, пассажирские перевозки, строительство и&nbsp;т.&nbsp;д. </p><p>Машину уже достаточно хорошо знают, но&nbsp;с&nbsp;удовольствием тестировали и&nbsp;ездили. Многих клиентов интересовала новинка от&nbsp;ГАЗ&nbsp;—<br> 3х-литровый Next на&nbsp;метане, т.&nbsp;к. именно небольшие коммерческие автомобили категории «В» являются приоритетным выбором большинства предприятий. Мы&nbsp;вручили сертификаты со&nbsp;скидкой участникам Автопробега и&nbsp;уже оформляем сделки.</p></div>
+		<div class="card__note  is--news-card  text__block"><p>В&nbsp;Саратове Автопробег по&nbsp;традиции проходит осенью. Но&nbsp;холодная и&nbsp;дождливая погода ─ не&nbsp;повод для хандры, ведь у&nbsp;предпринимателей города появляется прекрасная возможность приобрести новую технику ГАЗ с&nbsp;ощутимой выгодой. </p><p>Илья Плешаков, менеджер лизинговых проектов, г. Саратов:<br> —&nbsp;С&nbsp;5&nbsp;по&nbsp;8&nbsp;ноября совместно с&nbsp;«АвтоцентрГАЗ-Лидер» мы&nbsp;ездили общаться с&nbsp;повторными и&nbsp;новыми клиентами, для которых провели презентацию ГАЗона полной массой 10&nbsp;тонн. График поездок из-за праздников был довольно плотный,<br> но&nbsp;свой план мы&nbsp;выполнили и&nbsp;встретились с&nbsp;представителями разных сфер бизнеса: грузовые перевозки, геологоразведочные работы, пассажирские перевозки, строительство и&nbsp;т.&nbsp;д. </p><p>Машину уже достаточно хорошо знают, но&nbsp;с&nbsp;удовольствием тестировали и&nbsp;ездили. Многих клиентов интересовала новинка от&nbsp;ГАЗ&nbsp;—<br> 3х-литровый Next на&nbsp;метане, т.&nbsp;к. именно небольшие коммерческие автомобили категории «В» являются приоритетным выбором большинства предприятий. Мы&nbsp;вручили сертификаты со&nbsp;скидкой участникам Автопробега и&nbsp;уже оформляем сделки.</p></div>
 		<div class="link__group">
 			<a href="#" class="link__item  is--prev">Предыдущая новость</a>
 			<a href="#" class="link__item  is--next">Следующая новость</a>
@@ -245,13 +245,15 @@
 			</div>
 </main>			
 	<form action="#" class="form__panel  is--leasing">
-		<div class="container">
-				
+		<div class="form__bg  is--leasing"><img src="./img/default/train.svg" alt=""></div>
+		<div class="form__container  container">
+			<div class="form__wrap  is--leasing">
+					
 	<h3 class="page-header__heading  is--h1  color--white  fw--700  margin--tiny  " >Нужна техника в лизинг?</h3>
-				
+					
 	<p class="page-header__heading  color--white  fw--100  margin--medium  " >Оставьте заявку, и наш консультант <br>перезвонит вам и отправит информацию на почту!</p>
-			<div class="form__row  grid__row  is--leasing">				
-						
+				<div class="form__row  grid__row  is--leasing">				
+							
 	<p class="form__item  is--leasing  ">
 		<input type="text" class="form__control    is--leasing  is--primary" id="f_leasing[fio]" name="f[fio]" placeholder="Имя" >
 	</p>
@@ -265,7 +267,7 @@
 
 
 	
-				
+					
 	<p class="form__item  is--leasing  ">
 				<select class="form__control    is--leasing  is--primary" id="f_leasing[city]" name="f[Город]">
 							<option value="" selected disabled>Город</option>
@@ -284,7 +286,7 @@
 
 
 		
-						
+							
 	<p class="form__item  is--leasing  ">
 		<input type="tel" class="form__control    is--leasing  is--primary" id="f_leasing[tel]" name="f[Телефон]" placeholder="Телефон" >
 	</p>
@@ -301,9 +303,16 @@
 
 
 
-				<button type="submit" class="btn__item  is--arrow  is--md  is--success">Отправить заявку</button>	
+					<button type="submit" data-test class="btn__item  is--arrow  is--md  is--success">Отправить заявку</button>	
+				</div>
 			</div>
-		</div>
+			<div class="form__result  is--leasing">
+					
+	< class="page-header__heading    " ></>
+					
+	< class="page-header__heading    " ></>
+			</div>
+		</div>	
 	</form>
 
 

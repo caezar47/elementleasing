@@ -90,6 +90,11 @@
 	    				padding-bottom: 7.9vw;
 					});
 				}
+				&-card{
+					.media-breakpoint-up(@lg; {   
+						padding-bottom: 4vw;
+					});
+				}
 				&-card-programm{
 					.media-breakpoint-up(@lg; {   
 	    				padding-top: 6.3vw;
@@ -1045,16 +1050,34 @@
 			});
 		}
 		&.is--news{
-			display: flex;
-			.media-breakpoint-down(@md; {
-				font-size: 16px;
-			});
-			.media-breakpoint-up(@md; {
-				min-height: 315px;
-				box-shadow: 0 12px 34px 1px rgba(0,52,156,0.25);
-				background-color: @white;
-				flex-direction: column;
-			});
+			&{
+				display: flex;
+				.media-breakpoint-down(@md; {
+					font-size: 16px;
+				});
+				.media-breakpoint-up(@md; {
+					min-height: 315px;
+					box-shadow: 0 12px 34px 1px rgba(0,52,156,0.25);
+					background-color: @white;
+					flex-direction: column;
+				});
+			}
+			&-card{
+				.media-breakpoint-down(@md; {
+					display: flex;
+					flex-direction: column;
+					font-size: 16px;
+					.link__group{
+						font-size: 0.75em;
+						.link__item.is--prev{
+							padding-left: 15px;
+						}
+						.link__item.is--next{
+							padding-right: 15px;
+						}
+					}
+				});
+			}
 		}
 		&.is--programm{
 			position: relative;
@@ -1471,12 +1494,14 @@
 				});
 			}
 			&-card{
-				position: relative;
-				height: 150px;
+				position: relative;    
+				margin-left: -15px;
+			    margin-right: -15px;
+			    height: 200px;
 				margin-bottom: 20px;
 				.media-breakpoint-up(@sm; {
 					height: 335px;
-					margin-bottom: 40px;
+					margin: 0 0 40px;
 				});
 				&::before{
 					content: '';
@@ -1601,6 +1626,11 @@
 					}
 				});
 			}
+			&-card{
+				.media-breakpoint-down(@md; {
+					order: -2;
+				});
+			}
 		}
 		&.is--programm{
 			.heading3();
@@ -1696,15 +1726,23 @@
 			}
 		}
 		&.is--news{
-			display: none;
-			.media-breakpoint-up(@md; {
-				display: block;				
-				font-weight: 100;
-				font-size: 0.889em;
-				margin-bottom: 10px;
-				overflow: hidden;
-	    		height: 75px;
-			});
+			&{
+				display: none;
+				.media-breakpoint-up(@md; {
+					display: block;				
+					font-weight: 100;
+					font-size: 0.889em;
+					margin-bottom: 10px;
+					overflow: hidden;
+		    		height: 75px;
+				});
+			}
+			&-card{
+				margin-bottom: 25px;
+				.media-breakpoint-up(@md; {
+					margin-bottom: 4vw;
+				});
+			}	
 		}	
 		&.is--programm{
 			color: @black-9a;
@@ -1752,6 +1790,10 @@
 				color: @black-98;
 				font-size: 0.77em;
 				margin-bottom: 35px;
+				.media-breakpoint-down(@md; {
+					margin-bottom: 15px;
+					order: -1;
+				});
 			}
 		}
 		&.is--reviews{
@@ -2312,6 +2354,7 @@
 	}
 	&panel{
 		&.is--leasing{
+			position: relative;
 			background-color: @primary;
 			padding-top: 30px;
 			padding-bottom: 30px;
@@ -2396,38 +2439,59 @@
 			max-width: 1180px;
 		}
 	}
-	&wrap{
-		&.is--hidden{
+	&bg{
+		transition: @trs-site;
+		&.is--leasing{
+			display: none;
+			.media-breakpoint-up(@md; {
+				display: block;
+				position: absolute;
+				opacity: 0.1;
+				top: 50%;
+				right: 20px;
+				width: 614px;
+				transform: translate(0, -50%);	
+			});		
 		}
+		&.is--result{
+			right: 16%;
+		}
+	}
+	&wrap{
+		transition: @trs-site;
 		&.is--vacancies{
+		}
+		&.is--hidden{
+			opacity: 0;
 		}
 	}
 	&result{
-		&{
+		&{	
+			opacity: 0;
+			z-index: -1;
+			position: absolute;	
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			padding-left: 15px;
+			padding-right: 15px;
+			transition: @trs-site;
 			&.is--visible{
-				
+				z-index: 1;
+				opacity: 1;
+			}		
+			&.is--leasing{				
 			}
 			&.is--vacancies{
-				opacity: 0;
-				z-index: -1;
-				position: absolute;
 				background-color: @primary;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
 				padding: 25px 15px;
-				transition: @trs-site;
 				.media-breakpoint-up(@md; {
 					padding: 35px 50px;
 				});
 				.media-breakpoint-up(@lg; {
 					padding: 35px 185px 75px;
 				});
-				&.is--visible{
-					z-index: 1;
-					opacity: 1;
-				}
 			}
 		}
 		&-img{
@@ -4121,6 +4185,11 @@
 					margin-left: auto;
 					justify-self: flex-end;
 				//});
+			}
+			&.is--back{
+				.media-breakpoint-down(@md; {
+					display: none;
+				});
 			}
 		}
 	}

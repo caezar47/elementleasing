@@ -25,6 +25,8 @@ file.on('change', function(e) {
 test.on('click', function(e) {
 	e.preventDefault();
 	$(this).closest('.form__panel').find('.form__result').addClass('is--visible');
+	$(this).closest('.form__panel').find('.form__wrap').addClass('is--hidden');
+	$(this).closest('.form__panel').find('.form__bg').addClass('is--result');
 });
 $('form button[type="submit"]').on('click', function(e) {
 	e.preventDefault();

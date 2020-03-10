@@ -24,46 +24,65 @@
 
 {% if view=="leasing" %}
 	<form action="#" class="{{prefix}}panel  {{mod}}">
-		<div class="container">
-			{% include "../../common/page-header/tpl.twig" with {
-				heading_view:heading_view, 
-				prefix:"page-header__", 
-				mod:heading_mod, 
-				group:heading_group, 
-				level:heading_level, 
-				heading:heading} %}
-			{% include "../../common/page-header/tpl.twig" with {
-				heading_view:heading_view, 
-				prefix:"page-header__", 
-				mod:heading_sm_mod, 
-				group:heading_sm_group, 
-				level:heading_sm_level, 
-				heading:heading_sm} %}
-			<div class="{{prefix}}row  grid__row  {{mod}}">				
-				{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
-					{"type":"text", "id":"fio", "form_id":ID, "name":"fio", "placeholder":"Имя"}
-				]} %}	
-				{% include "elem-tpl.twig" with {
-					view:"select", 
-					prefix:prefix, 
-					mod:mod, 
-					color:color, 
-					id:"city", 
-					form_id:ID, 
-					name:"Город", 
-					list: [
-						{"name": "Город","status": "selected disabled"},
-						{"name": "Пункт1"},
-						{"name": "Пункт2"},
-						{"name": "Пункт3"}
-					] } %}		
-				{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
-					{"type":"tel", "id":"tel", "form_id":ID, "name":"Телефон", "placeholder":"Телефон"},
-					{"type":"email", "id":"email", "form_id":ID, "name":"Email", "placeholder":"E-mail"}
-				]} %}
-				<button type="submit" class="btn__item  is--arrow  is--md  is--success">Отправить заявку</button>	
+		<div class="{{prefix}}bg  {{mod}}"><img src="{{path.img}}/default/train.svg" alt=""></div>
+		<div class="{{prefix}}container  container">
+			<div class="{{prefix}}wrap  {{mod}}">
+				{% include "../../common/page-header/tpl.twig" with {
+					heading_view:heading_view, 
+					prefix:"page-header__", 
+					mod:heading_mod, 
+					group:heading_group, 
+					level:heading_level, 
+					heading:heading} %}
+				{% include "../../common/page-header/tpl.twig" with {
+					heading_view:heading_view, 
+					prefix:"page-header__", 
+					mod:heading_sm_mod, 
+					group:heading_sm_group, 
+					level:heading_sm_level, 
+					heading:heading_sm} %}
+				<div class="{{prefix}}row  grid__row  {{mod}}">				
+					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
+						{"type":"text", "id":"fio", "form_id":ID, "name":"fio", "placeholder":"Имя"}
+					]} %}	
+					{% include "elem-tpl.twig" with {
+						view:"select", 
+						prefix:prefix, 
+						mod:mod, 
+						color:color, 
+						id:"city", 
+						form_id:ID, 
+						name:"Город", 
+						list: [
+							{"name": "Город","status": "selected disabled"},
+							{"name": "Пункт1"},
+							{"name": "Пункт2"},
+							{"name": "Пункт3"}
+						] } %}		
+					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
+						{"type":"tel", "id":"tel", "form_id":ID, "name":"Телефон", "placeholder":"Телефон"},
+						{"type":"email", "id":"email", "form_id":ID, "name":"Email", "placeholder":"E-mail"}
+					]} %}
+					<button type="submit" data-test class="btn__item  is--arrow  is--md  is--success">Отправить заявку</button>	
+				</div>
 			</div>
-		</div>
+			<div class="{{prefix}}result  {{mod}}">
+				{% include "../../common/page-header/tpl.twig" with {
+					heading_view:heading_view, 
+					prefix:"page-header__", 
+					mod:heading_r_mod, 
+					group:heading_r_group, 
+					level:heading_r_level, 
+					heading:heading_r} %}
+				{% include "../../common/page-header/tpl.twig" with {
+					heading_view:heading_view, 
+					prefix:"page-header__", 
+					mod:heading_r_sm_mod, 
+					group:heading_r_sm_group, 
+					level:heading_r_sm_level, 
+					heading:heading_r_sm} %}
+			</div>
+		</div>	
 	</form>
 {% endif %}
 

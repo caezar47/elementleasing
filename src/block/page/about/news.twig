@@ -1,4 +1,4 @@
-<div class="{{content_prefix}}container container">
+<div class="{{content_prefix}}container container  {{content_mod}}">
 	{% include "../../common/breadcrumb/tpl.twig" with {
 		prefix:prefix.breadcrumb, 
 		mod:bread_mod, 
@@ -13,28 +13,30 @@
 				heading:heading
 			} %}
 		</div>
-		<div class="cols">
-			{% if view == "news_card"%}
+		{% if view == "news_card"%}
+			<div class="cols  is--back">
 				<a href="{{page.news}}" class="{{prefix.link}}item  is--prev  is--md">Назад к новостям</a>
-			{% else %}
-			{% include "../../common/form/elem-tpl.twig" with {
-				view:"filter", 
-				prefix:prefix.form, 
-				mod:"", 
-				color:"", 
-				group:"", 
-				label:"Сортировать:", 
-				form_id:"filter", 
-				id:"select", 
-				name:"Сортировать", 
-				list: [
-					{"name": "по дате","status": "selected"},
-					{"name": "по новизне"},
-					{"name": "по популярности"}
-				]}
-			%}
-			{% endif %}
-		</div>
+			</div>
+		{% else %}			
+			<div class="cols">
+				{% include "../../common/form/elem-tpl.twig" with {
+					view:"filter", 
+					prefix:prefix.form, 
+					mod:"", 
+					color:"", 
+					group:"", 
+					label:"Сортировать:", 
+					form_id:"filter", 
+					id:"select", 
+					name:"Сортировать", 
+					list: [
+						{"name": "по дате","status": "selected"},
+						{"name": "по новизне"},
+						{"name": "по популярности"}
+					]}
+				%}
+			</div>
+		{% endif %}
 	</div>	
 	<div class="{{content_prefix}}row  grid__row   is--page-aside">
 		{% include "../../common/aside/tpl.twig" with {
