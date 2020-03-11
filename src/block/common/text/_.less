@@ -103,6 +103,41 @@
 			border: 0; 
 			margin-bottom: 25px;
 		} 
+		&.is--leasing{
+			&-formaliz{
+				font-weight: 100;
+				max-width: 620px;
+				p, div{
+					.heading4();
+					padding-left: 90px;
+					font-size: 1.33em;
+					line-height: 1.5em;
+					position: relative;
+					margin-bottom: 20px;
+				}
+				h2,
+				h3,
+				h4,
+				h5{
+					font-weight: 700;
+					margin-bottom: 25px;
+					& + *{
+						&::before{
+							content: '';
+							position: absolute;
+							left: 0;
+							top: 15px;
+							height: 1px;
+							width: 80px;
+							background-color: @white-e9;
+						}
+					}
+				}
+				* + h3{
+					padding-top: 50px;
+				}
+			}
+		}
 	}
 }
 

@@ -1,0 +1,367 @@
+{% if view == "leasing_header" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../../common/breadcrumb/tpl.twig" with {
+				prefix:prefix.breadcrumb, 
+				mod:bread_mod, 
+				bread:bread
+			} %}			
+			{% include "../../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}			
+			{% include "../../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_sm_mod,
+				level:heading_sm_level, 
+				heading:heading_sm
+			} %}		
+			{% include "../../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_val_mod,
+				level:heading_val_level, 
+				heading:heading_val
+			} %}
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "leasing_condition" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">	
+			<div class="{{content_prefix}}row  grid__row   {{content_mod}}">
+				<div>
+					{% include "../../common/page-header/tpl.twig" with {
+						prefix:"page-header__", 
+						mod:heading_mod,
+						level:heading_level, 
+						heading:heading
+					} %}			
+					{% include "../../common/page-header/tpl.twig" with {
+						prefix:"page-header__", 
+						mod:heading_sm_mod,
+						level:heading_sm_level, 
+						heading:heading_sm
+					} %}	
+					<div class="{{content_prefix}}row  row  {{content_mod}}-label">
+						{% for value in list %}						
+						<p class="{{content_prefix}}label  cols  {{content_mod}}">{{value.label}} <span>{{value.value}}</span></li>
+						{% endfor %}
+					</div>	
+				</div>	
+				<div>
+					{% include "../../common/form/form.twig" with {
+						view: 			"leasing_base", 
+						prefix:			prefix.form, 
+						mod:			"is--leasing-base", 
+						color:			"is--primary-light", 
+						ID: 			"f_leasing-base", 
+						heading:		"Запрос на лизинг", 
+						heading_level:	"h3", 
+						heading_mod:	"is--h3  fw--700  is--form-leasing-base",
+						heading_sm:		"Оставьте заявку, и наш консультант перезвонит!", 
+						heading_sm_level:"p", 
+						heading_sm_mod:	"is--h6  fw--100  is--form-leasing-base-xs",
+						heading_r:		"Спасибо!<br>Анкета отправлена", 
+						heading_r_level:"h3", 
+						heading_r_mod:	"is--h2 fw--700  margin--tiny",
+						heading_r_sm:	"Мы свяжемся с вами, как только найдется подходящая вакансия.", 
+						heading_r_sm_level:	"p", 
+						heading_r_sm_mod:	"margin--large"
+					} %}	
+				</div>	
+			</div>
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "leasing_formaliz" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}		
+			<div class="{{content_prefix}}row  grid__row   {{content_mod}}">
+				<div>				
+					{% include "../../common/tabs/tpl.twig" with {
+						view:"leasing_formaliz",
+						tabs:"leasing_", 
+						prefix:prefix.tabs,
+						mod:"is--default",
+						group:content_mod,
+						list:list
+					} %}
+				</div>
+				<picture>
+					<img src="{{path.img}}/default/leasing-formaliz.png" class="img-responsive" alt="">
+				</picture>
+			</div>
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "leasing_adv" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}		
+			<div class="{{content_prefix}}slider   {{content_mod}}">
+				<div id="carousel-example-generic" class="{{prefix.card}}carousel  carousel slide  {{content_mod}}" data-ride="carousel">
+					<div class="{{prefix.card}}carousel-inner  {{content_mod}}  carousel-inner" role="listbox">
+						{% for value in list %}
+						<div class="item  {{value.status}}">
+							<div class="{{prefix.card}}card  {{content_mod}}">
+								<div class="{{prefix.card}}heading  {{content_mod}}">
+									{{value.name}}
+								</div>
+								<div class="{{prefix.card}}icon  {{content_mod}}">
+									<img src="{{value.icon}}" alt="" class="img-responsive">
+								</div>
+								<div class="{{prefix.card}}preview  {{content_mod}}">
+									<img src="{{value.preview}}" alt="">
+								</div>								
+								<div class="{{prefix.card}}note  {{content_mod}}">{{value.note}}</div>
+							</div>
+						</div>
+						{% endfor %}
+						{# <div class="item">
+							<div class="{{prefix.card}}card  {{content_mod}}">
+								<div class="{{prefix.card}}heading  {{content_mod}}">2. Выгодные условия лизинговых программ</div>
+								<div class="{{prefix.card}}icon  {{content_mod}}">
+									<img src="http://via.placeholder.com/256x256" alt="">
+								</div>
+								<div class="{{prefix.card}}preview  {{content_mod}}"><img src="http://via.placeholder.com/640x360" alt=""></div>
+								
+								<div class="{{prefix.card}}note  {{content_mod}}">Лизинговые услуги относятся к расходам предприятия и позволяют снизить налог на прибыль компании, а также вернуть до 20% НДС от стоимости объекта лизинга.</div>
+							</div>
+						</div> #}
+					</div>
+					<ol class="{{prefix.card}}carousel-indicators  {{content_mod}} carousel-indicators">
+						{% set i = 0 %}
+						{% for value in list %}
+						<li data-target="#carousel-example-generic" data-slide-to="{{i}}" class="{{value.status}}"></li>
+						{% set i = i + 1 %}
+						{% endfor %}
+					</ol>
+					<a class="{{prefix.card}}carousel-control  {{content_mod}}  is--left" href="#carousel-example-generic" role="button" data-slide="prev"><span class="sr-only">Предыдущий слайд</span></a>
+					<a class="{{prefix.card}}carousel-control  {{content_mod}}  is--right" href="#carousel-example-generic" role="button" data-slide="next"><span class="sr-only">Следующий слайд</span></a>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endif %}
+{% if view == "leasing_catalog" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}			
+			<div class="{{content_prefix}}slider  {{content_mod}}" data-slick-catalog data-slick-dots="true">
+				{% include "../../common/card/card.twig" with {
+				 	view: "catalog_promo", 
+				 	prefix:prefix.card, 
+				 	mod:"is--catalog-promo-primary", 
+				 	list: [
+				 		{
+				 			"heading":"MAN TGS 18.400 4X2 BLS", 
+				 			"link":page.catalog_card, 
+				 			"cost":"20 000", 
+				 			"status":"Есть в наличии", 
+				 			"img":"http://via.placeholder.com/500x265"
+				 		},
+				 		{
+				 			"heading":"MAN TGS 18.400 4X2 BLS",
+				 			"link":page.catalog_card,  
+				 			"cost":"20 000", 
+				 			"status":"Есть в наличии", 
+				 			"img":"http://via.placeholder.com/500x265"
+				 		},
+				 		{
+				 			"heading":"MAN TGS 18.400 4X2 BLS",
+				 			"link":page.catalog_card,  
+				 			"cost":"20 000", 
+				 			"status":"Есть в наличии", 
+				 			"img":"http://via.placeholder.com/500x265"
+				 		},
+				 		{
+				 			"heading":"MAN TGS 18.400 4X2 BLS", 
+				 			"link":page.catalog_card, 
+				 			"cost":"20 000", 
+				 			"status":"Есть в наличии", 
+				 			"img":"http://via.placeholder.com/500x265"
+				 		},
+				 		{
+				 			"heading":"MAN TGS 18.400 4X2 BLS",
+				 			"link":page.catalog_card,  
+				 			"cost":"20 000", 
+				 			"status":"Есть в наличии", 
+				 			"img":"http://via.placeholder.com/500x265"
+				 		},
+				 		{
+				 			"heading":"MAN TGS 18.400 4X2 BLS",
+				 			"link":page.catalog_card,  
+				 			"cost":"20 000", 
+				 			"status":"Есть в наличии", 
+				 			"img":"http://via.placeholder.com/500x265"
+				 		}
+				 	]
+				} %}
+			</div>
+			<p class="align--right">
+				<a class="link__item  is--next  is--success" href="{{page.catalog}}">Весь каталог</a>
+			</p>
+		</div>
+	</section>
+{% endif %}
+
+
+
+{% if view == "catalog_page"%}
+<div class="{{content_prefix}}row  grid__row   is--page-aside-sm  margin--huge">
+	{% include "../../common/aside/tpl.twig" with {
+		view: "filter_catalog",
+		prefix: "aside__",
+		heading: "Фильтры",
+		ID: "filter"
+	} %}
+	<div>
+		{% include "../../common/form/form.twig" with {
+			view: 			"search", 
+			prefix:			prefix.form, 
+			mod:			"is--search", 
+			group:			content_mod, 
+			color:			"is--primary-light", 
+			ID: 			"f_search", 
+			placeholder:	"Введите название техники",
+			btn_mod:		"",
+			btn_name:		"Поиск техники"
+		} %}
+
+		<div class="{{content_prefix}}row  grid__row  {{content_mod}}">		
+			{% include "../../common/card/card.twig" with {
+			 	view: "catalog", 
+			 	prefix:prefix.card, 
+			 	mod:"is--catalog", 
+			 	list: [
+			 		{
+			 			"heading":"Галичанин КС-55713-4", 
+			 			"type":"Автокран", 
+			 			"cost":"2 500 000", 
+			 			"leasing":"49 700", 
+			 			"time":"до 36 месяцев", 
+			 			"img":"http://via.placeholder.com/500x265"
+			 		},
+			 		{
+			 			"heading":"Клинцы КС-55713-1К-4", 
+			 			"type":"Автокран", 
+			 			"cost":"2 500 000", 
+			 			"leasing":"49 700", 
+			 			"time":"до 36 месяцев", 
+			 			"img":"http://via.placeholder.com/500x265"
+			 		},
+			 		{
+			 			"heading":"Клинцы КС-55713-1К-4", 
+			 			"type":"Автокран", 
+			 			"cost":"2 500 000", 
+			 			"leasing":"49 700", 
+			 			"time":"до 36 месяцев", 
+			 			"img":"http://via.placeholder.com/500x265"
+			 		},
+			 		{
+			 			"heading":"Клинцы КС-55713-1К-4", 
+			 			"type":"Автокран", 
+			 			"cost":"2 500 000", 
+			 			"leasing":"49 700", 
+			 			"time":"до 36 месяцев", 
+			 			"img":"http://via.placeholder.com/500x265"
+			 		},
+			 		{
+			 			"heading":"Клинцы КС-55713-1К-4", 
+			 			"type":"Автокран", 
+			 			"cost":"2 500 000", 
+			 			"leasing":"49 700", 
+			 			"time":"до 36 месяцев", 
+			 			"img":"http://via.placeholder.com/500x265"
+			 		},
+			 		{
+			 			"heading":"Клинцы КС-55713-1К-4", 
+			 			"type":"Автокран", 
+			 			"cost":"2 500 000", 
+			 			"leasing":"49 700", 
+			 			"time":"до 36 месяцев", 
+			 			"img":"http://via.placeholder.com/500x265"
+			 		}
+			 	]
+			} %}
+				<div class="{{content_prefix}}row  grid__row  {{content_mod}}  is--new">
+					<h2 class="{{prefix.heading}}heading  is--heading  is--line  fw--700  is--h3">Новинки в каталоге</h2>	
+					{% include "../../common/card/card.twig" with {
+					 	view: "catalog_new", 
+					 	prefix:prefix.card, 
+					 	mod:"is--catalog-new", 
+					 	list: [
+					 		{
+					 			"heading":"Автокран Ивановец КС-55713-1К-4",
+					 			"sale":"20%", 
+					 			"img":"http://via.placeholder.com/500x265"
+					 		},
+					 		{
+					 			"heading":"Автокран Ивановец КС-55713-1К-4",
+					 			"sale":"15%", 
+					 			"img":"http://via.placeholder.com/500x265"
+					 		},
+					 		{
+					 			"heading":"Автокран Ивановец КС-55713-1К-4",
+					 			"sale":"20%", 
+					 			"img":"http://via.placeholder.com/500x265"
+					 		}
+					 	]
+					} %}	
+				</div>	
+			{% include "../../common/card/card.twig" with {
+			 	view: "catalog", 
+			 	prefix:prefix.card, 
+			 	mod:"is--catalog", 
+			 	list: [
+			 		{
+			 			"heading":"Клинцы КС-55713-1К-4", 
+			 			"type":"Автокран", 
+			 			"cost":"2 500 000", 
+			 			"leasing":"49 700", 
+			 			"time":"до 36 месяцев", 
+			 			"img":"http://via.placeholder.com/500x265"
+			 		},
+			 		{
+			 			"heading":"Клинцы КС-55713-1К-4", 
+			 			"type":"Автокран", 
+			 			"cost":"2 500 000", 
+			 			"leasing":"49 700", 
+			 			"time":"до 36 месяцев", 
+			 			"img":"http://via.placeholder.com/500x265"
+			 		},
+			 		{
+			 			"heading":"Клинцы КС-55713-1К-4", 
+			 			"type":"Автокран", 
+			 			"cost":"2 500 000", 
+			 			"leasing":"49 700", 
+			 			"time":"до 36 месяцев", 
+			 			"img":"http://via.placeholder.com/500x265"
+			 		}
+			 	]
+			} %}
+		</div>
+	</div>
+</div>
+{% endif %}

@@ -1,6 +1,8 @@
 'use strict';
 $(function() { 
 	var catalog = $('[data-slick-catalog]');
+	var dots = $('[data-slick-dots]').data('slick-dots');
+	console.log(dots);
 
 	var header = $('[data-slider-slick="slick-header"]');	
 	var gallery = $('[data-slider-slick="slick-gallery"]');	
@@ -12,10 +14,10 @@ $(function() {
 	var nextArrow = '<button type="button" class="slick-btn  is--next"><span class="sr-only">Следующий слайд</span></button>';	
 	
 	catalog.slick({
-		slidesToShow: 4,
-		slidesToScroll: 1,
+		slidesToShow: 2,
+		slidesToScroll: 2,
 		arrows: false,
-		dots: false,
+		dots: dots,
 		infinite: false,
 		//centerMode: true,
   		//centerPadding: '60px',

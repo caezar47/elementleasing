@@ -1125,6 +1125,25 @@
 	</div>
 </div>
 {% endif %}
+
+{% if view == "leasing_formaliz" %}
+<div class="{{prefix}}panel  {{mod}}">
+	<ul class="{{prefix}}nav  {{mod}}">
+		{% for value in list %}
+		<li class="{{prefix}}item  {{mod}} {{value.status}}">
+			<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}{{value.id}}" data-toggle="tab">{{value.name}}</a>
+		</li>
+		{% endfor %}
+	</ul>
+	{% for value in list %}
+	<div class="{{prefix}}pane  {{value.status}}  {{mod}}" id="{{tabs}}{{value.id}}">
+		<div class="text__block  {{group}}">
+			{{value.note}}
+		</div>
+	</div>
+	{% endfor %}
+</div>
+{% endif %}
 {# <div class="{{prefix}}panel">
 	<ul class="{{prefix}}nav  {{mod}}">
 		<li class="{{prefix}}item  {{mod}} active">

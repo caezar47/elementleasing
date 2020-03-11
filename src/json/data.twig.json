@@ -24,6 +24,7 @@
 
 	"page":{
 		"index":"./",
+		"leasing":"./leasing.html",
 		"menedzhment":"./menedzhment.html",
 		"news":"./news.html",
 		"news_card":"./news-card.html",
@@ -35,6 +36,7 @@
 		"vacancies_card":"./vacancies-card.html",
 		"contacts":"./contacts.html",
 		"catalog":"./catalog.html",
+		"catalog_card":"./catalog-card.html",
 		"search":"./search.html",
 		"404":"./404.html",
 		"sitemap":"./sitemap.html",

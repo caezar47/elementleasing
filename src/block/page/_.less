@@ -14,6 +14,34 @@
 				}
 			}
 		}
+		&.is--leasing{
+			&-header{
+				&::after{
+					content: '';
+					position: absolute;
+					z-index: 1;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background-color: fadeout(@primary, 50%);
+				}
+				background-position: center;
+				background-size: cover;
+				.media-breakpoint-up(@xl; {
+				   background-attachment: fixed;
+				});
+			}
+			&-formaliz{
+				background-color: #FAFDFF;
+			}
+			&-adv{
+				background-color: @primary;
+			}
+			&-catalog{
+				background-color: @primary;
+			}
+		}
 	}
 	&container{	
 		//position: relative;
@@ -74,8 +102,42 @@
 			overflow: hidden;
 			position: relative;
 		}
+
 		&.is--index{
 
+		}
+		&.is--leasing{
+			&-header{
+				display: flex;
+				flex-direction: column;
+				position: relative;
+				z-index: 2;
+				.media-breakpoint-up(@lg; {
+					padding-top: 2.7vw;
+					padding-bottom: 3.7vw;
+				});
+			}
+			&-condition{
+				padding-top: 25px;
+				padding-bottom: 15px;
+			}
+			&-formaliz{
+				.media-breakpoint-up(@lg; {
+					padding-top: 3.6vw;
+					padding-bottom: 6.2vw;
+				});
+			}
+			&-adv{
+				.media-breakpoint-up(@lg; {
+					padding-top: 3vw;
+					padding-bottom: 5vw;
+				});
+			}
+			&-catalog{
+				.media-breakpoint-up(@lg; {
+					padding-bottom: 6.3vw;
+				});
+			}
 		}
 		&.is--page{
 			&-news{
@@ -300,6 +362,33 @@
 				});
 			}
 		}
+		&.is--leasing{
+			&-condition{
+				.media-breakpoint-up(@md; {
+					grid-template-columns: 7fr 5fr;
+					& > *:nth-child(1){
+						padding-top: 30px;
+					}
+				});
+			}
+			&-condition-label{
+				.cols{
+					flex-basis: 50%;
+					margin-bottom: 40px;
+				}
+			}
+			&-formaliz{
+				.media-breakpoint-up(@md; {
+					grid-template-columns: 7fr 5fr;
+					& > *:nth-child(2){
+						align-self: center;
+						justify-self: flex-end;
+						margin-right: -30px;
+						padding-top: 10px;
+					}
+				});
+			}
+		}
 	}		  
 	&wrap{
 		&.is--page{
@@ -329,6 +418,28 @@
 				.media-breakpoint-up(@md; {
 					.heading4();
 					color: @primary;
+				});
+			}
+		}
+		&.is--leasing{
+			&-condition{
+				color: @black-98;
+				line-height: 2.3em;
+				span{
+					display: block;
+					color: @default;
+					font-weight: 700;
+					font-size: 2em;
+				}
+			}
+		}
+	}	  
+	&slider{
+		&.is--leasing{
+			&-catalog{
+				margin-bottom: 30px;
+				.media-breakpoint-up(@md; {
+					margin-bottom: 5.3vw;
 				});
 			}
 		}

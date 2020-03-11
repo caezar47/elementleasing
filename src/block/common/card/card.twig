@@ -124,14 +124,14 @@
 	{% for value in list %}	
 	<div>
 		<div class="{{prefix}}item  {{mod}}">
-			<div class="{{prefix}}preview  {{mod}}">
+			<a href="{{value.link}}" class="{{prefix}}preview  {{mod}}">
 				<img src="{{value.img}}" alt="{{value.heading}}" class="img-responsive">
 				<div class="{{prefix}}wrap  {{mod}}">
 					<h5 class="{{prefix}}heading  {{mod}}">{{value.heading}}</h5>
 					<p class="{{prefix}}value  {{mod}}  is--cost">От {{value.cost}} ₽ в месяц</p>
 					<p class="{{prefix}}value  {{mod}}  is--status">{{value.status}}</p>
 				</div>
-			</div>
+			</a>
 			<button type="button" class="{{prefix}}btn  {{mod}}">Запрос на лизинг</button>
 		</div>
 	</div>

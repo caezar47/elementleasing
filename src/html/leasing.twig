@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+	<head>	
+    	{% include "../block/common/head/head.twig" with {title:"Лизинг"}  %}
+	</head>
+	<body>
+    	{% include "../block/common/navbar/navbar.twig" with {navbar_prefix:"navbar__"} %}
+		<main class="content-block__panel">
+			{% include "../block/page/leasing/tpl.twig" with {
+				view:"leasing_header", 
+				content_prefix:"content-block__", 
+				content_mod:"is--leasing-header",
+				heading_mod:"is--h1  fw--700  color--white  is--leasing-header", 
+				heading_level:"h1", 
+				heading:"Грузовые<br> авто в лизинг", 
+				heading_sm_mod:"is--h4  color--white  is--leasing-header-sm", 
+				heading_sm_level:"p", 
+				heading_sm:"Поможем получить надежный грузовой транспорт для вашего бизнеса.", 
+				heading_val_mod:"fw--700  color--white  is--leasing-header-value", 
+				heading_val_level:"p", 
+				heading_val:"Аванс <span>от 20%</span>", 
+				bread_mod:"is--white",
+				bread:[
+					{name:"Главная", link:page.index},
+					{name:"Грузовые авто в лизинг"}
+				],
+				bg:[path.img,"/default/leasing-header.jpg"].join("")
+			} %}
+
+			{% include "../block/page/leasing/tpl.twig" with {
+				view:"leasing_condition", 
+				content_prefix:"content-block__", 
+				content_mod:"is--leasing-condition",
+				heading_mod:"is--h1  fw--700  is--leasing-condition", 
+				heading_level:"h2", 
+				heading:"Условия лизинга", 
+				heading_sm_mod:"fw--100  is--h4  color--black-54  is--leasing-condition-sm", 
+				heading_sm_level:"p", 
+				heading_sm:"Для юридических лиц и&nbsp;индивидуальных предпринимателей", 
+				list:[
+					{label:"Аванс", value:"от 20%"},
+					{label:"Переплата в год", value:"от 6,0%"},
+					{label:"Срок лизинга", value:"от 12 до 36 мес."},
+					{value:"Скидка производителя"}
+				],
+			} %}
+			{% include "../block/page/leasing/tpl.twig" with {
+				view:"leasing_formaliz", 
+				content_prefix:"content-block__", 
+				content_mod:"is--leasing-formaliz",
+				heading_mod:"is--h1  fw--700  is--leasing-formaliz", 
+				heading_level:"h2", 
+				heading:"Кто может оформить лизинг?",  
+				list:[
+					{
+						id:"entity",
+						status:"active",
+						name:"Юридическое лицо", 
+						note:'
+							<h3>Для всех форм собственности, включая ООО, ЗАО, ОАО</h3>
+							<p>У нас вы можете приобрести в лизинг любую модель грузовых автомобилей.</p>
+							<h3>Чтобы получить технику в лизинг:</h3>
+							<p>Нужно иметь не менее 20% собственных средств от ее стоимости.</p>
+							<p>Максимальный срок договора составляет 36 месяцев.</p>
+						'
+					},
+					{
+						id:"ip",
+						status:"",
+						name:"ИП",
+						note:'
+							<h3>Для всех форм собственности, включая ООО, ЗАО, ОАО</h3>
+							<p>У нас вы можете приобрести в лизинг любую модель грузовых автомобилей.</p>
+							<h3>Чтобы получить технику в лизинг:</h3>
+							<p>Нужно иметь не менее 25% собственных средств от ее стоимости.</p>
+							<p>Максимальный срок договора составляет 48 месяцев.</p>
+						'
+					}
+				],
+			} %}
+			{% include "../block/page/leasing/tpl.twig" with {
+				view:"leasing_adv", 
+				content_prefix:"content-block__", 
+				content_mod:"is--leasing-adv",
+				heading_mod:"is--h1  fw--700  color--white  is--leasing-adv", 
+				heading_level:"h2", 
+				heading:"Преимущества работы <br>с Элемент Лизинг",  
+				list:[
+					{
+						status:"active",
+						name:"1. Выгодные условия лизинговых программ", 
+						icon:"http://via.placeholder.com/256x256", 
+						preview:"http://via.placeholder.com/640x360", 
+						note:'Лизинговые услуги относятся к расходам предприятия и позволяют снизить налог на прибыль компании, а также вернуть до 20% НДС от стоимости объекта лизинга.'
+					},
+					{
+						status:"",
+						name:"2. Выгодные условия лизинговых программ", 
+						icon:"http://via.placeholder.com/256x256", 
+						preview:"http://via.placeholder.com/640x360", 
+						note:'Лизинговые услуги относятся к расходам предприятия и позволяют снизить налог на прибыль компании, а также вернуть до 20% НДС от стоимости объекта лизинга.'
+					}
+				],
+			} %}
+			{% include "../block/page/leasing/tpl.twig" with {
+				view:"leasing_catalog", 
+				content_prefix:"content-block__", 
+				content_mod:"is--leasing-catalog",
+				heading_mod:"is--hXL  fw--700  color--blue-08  is--leasing-catalog", 
+				heading_level:"h2", 
+				heading:"Каталог",  
+				list:[
+					{
+						status:"active",
+						name:"1. Выгодные условия лизинговых программ", 
+						icon:"http://via.placeholder.com/256x256", 
+						preview:"http://via.placeholder.com/640x360", 
+						note:'Лизинговые услуги относятся к расходам предприятия и позволяют снизить налог на прибыль компании, а также вернуть до 20% НДС от стоимости объекта лизинга.'
+					},
+					{
+						status:"",
+						name:"2. Выгодные условия лизинговых программ", 
+						icon:"http://via.placeholder.com/256x256", 
+						preview:"http://via.placeholder.com/640x360", 
+						note:'Лизинговые услуги относятся к расходам предприятия и позволяют снизить налог на прибыль компании, а также вернуть до 20% НДС от стоимости объекта лизинга.'
+					}
+				],
+			} %}
+			{# {% include "../block/common/form/form.twig" with {
+				view: 			"vacancies", 
+				prefix:			prefix.form, 
+				mod:			"is--vacancies", 
+				color:			"is--primary", 
+				ID: 			"f_leasing", 
+				heading:		"Не нашли вакансию?", 
+				heading_level:	"h3", 
+				heading_mod:	"is--h2  color--white  fw--700  margin--tiny",
+				heading_sm:		"Расскажите о себе, и мы свяжемся с вами, если&nbsp;найдется подходящая вакансия!", 
+				heading_sm_level:"p", 
+				heading_sm_mod:	"color--white  margin--small",
+				heading_r:		"Спасибо!<br>Анкета отправлена", 
+				heading_r_level:"h3", 
+				heading_r_mod:	"is--h2  color--white  fw--700  margin--tiny",
+				heading_r_sm:	"Мы свяжемся с вами, как только найдется подходящая вакансия.", 
+				heading_r_sm_level:	"p", 
+				heading_r_sm_mod:	"color--white  margin--large"
+			} %} #}
+		</main>
+		
+    	{% include "../block/common/footer/footer.twig" with {footer_prefix:"footer__"} %}
+
+    	{# {% include "../block/common/modals/include.twig"%} #}
+    	{% include "../block/common/script/script.twig"%}
+	</body>
+</html>

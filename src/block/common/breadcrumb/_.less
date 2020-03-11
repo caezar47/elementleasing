@@ -39,6 +39,9 @@
 			&::before,	
 			&::after{display: none}	
 		}
+		.breadcrumb__list.is--white &{
+			color: @white;
+		}
 
 	}
 	&list-link{
@@ -46,6 +49,9 @@
 		&:hover{color: @bread_color_active}
 		.breadcrumb__list-item.is--active &{
 			color: @bread_color_active;
+		}
+		.breadcrumb__list.is--white &{
+			color: @white;
 		}
 	}
 }

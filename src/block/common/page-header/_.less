@@ -25,18 +25,63 @@
 			font-size: 55%;
     		top: -1.15em;
 		}
-		&.is--catalog-screen{
-			display: none;
-			.media-breakpoint-up(@md; {
-				display: block;
-			});
+		&.is--leasing{
+			&-header{
+				margin-bottom: 10px;
+				//max-width: 400px;
+			}
+			&-header-sm{
+				max-width: 470px;
+				margin-bottom: 10px;
+			}
+			&-header-value{
+				font-size: 3.1em;
+				line-height: 2.1em;
+				align-self: flex-end;
+				span{
+					display: block;
+					font-size: 2.9em;
+					text-transform: uppercase;
+				}
+			}
+			&-condition-sm{				
+				max-width: 420px;
+				line-height: 1.5em;
+				.media-breakpoint-up(@md; {
+					margin-bottom: 57px;
+				});
+			}
+			&-formaliz{				
+				margin-bottom: 20px;
+			}
+			&-adv{				
+				.media-breakpoint-up(@md; {
+					margin-bottom: 6vw;
+				});
+			}
 		}
-		&.is--catalog-device{
-			display: block;
-			text-align: center;
-			.media-breakpoint-up(@md; {
+		&.is--catalog{
+			&-screen{
 				display: none;
-			});
+				.media-breakpoint-up(@md; {
+					display: block;
+				});
+			}
+			&-device{
+				display: block;
+				text-align: center;
+				.media-breakpoint-up(@md; {
+					display: none;
+				});
+			}
+		}
+		&.is--form{
+			&-leasing-base{
+				margin-bottom: 10px;
+			}
+			&-leasing-base-xs{
+				margin-bottom: 25px;				
+			}
 		}
 		&.is--line{
 			display: flex;

@@ -165,6 +165,7 @@
 	}
 	&item{
 		.btn-clearfix();
+		font-size: 0.88em;
 		display: inline-block;
 		transition: @trs-site; 	
 		color: @link_color;
@@ -177,11 +178,11 @@
 			}
 		}
 		&.is--next{
-			.icon-next(@c:'989898');
+			.icon-next(@c:'989898'; @w: 10px; @h: auto);
 			background-position: right 5px;
 			padding-right: 25px;
 			&:hover{
-				.icon-next();
+				.icon-next(@w: 10px; @h: auto);
 			}
 		}
 		&.is--md{
@@ -193,6 +194,16 @@
 					.icon-prev(@c:'989898'; @w: 12px; @h: auto;);
 				}
 			});
+		}
+		&.is--success{
+			color: @success;
+			&.is--next{
+				.icon-next(@w: 10px; @h: auto);
+				&:hover{
+					color: @white;
+					.icon-next(@c:'fff'; @w: 10px; @h: auto);
+				}
+			}
 		}
 		&:hover{			
 			color: @link_color_hover;
