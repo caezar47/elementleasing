@@ -195,13 +195,23 @@
 				}
 			});
 		}
-		&.is--success{
+		&.is--success-white{
 			color: @success;
 			&.is--next{
 				.icon-next(@w: 10px; @h: auto);
 				&:hover{
 					color: @white;
 					.icon-next(@c:'fff'; @w: 10px; @h: auto);
+				}
+			}
+		}
+		&.is--success{
+			color: @success;
+			&.is--next{
+				.icon-next(@w: 10px; @h: auto);
+				&:hover{
+					color: @success-h;
+					.icon-next(@c:'FFC266'; @w: 10px; @h: auto);
 				}
 			}
 		}

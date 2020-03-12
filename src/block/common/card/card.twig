@@ -28,6 +28,15 @@
 	{% endfor %}
 {% endif %}
 
+{% if view == "news_sm" %}
+	{% for value in list %}		
+	<article class="{{prefix}}item  {{mod}}">
+		<time class="{{prefix}}date  {{mod}}" datetime="{{value.date_iso}}">{{value.date}}</time>
+		<h4 class="{{prefix}}heading  {{mod}}"><a href="{{value.link}}">{{value.heading}}</a></h4>
+	</article>
+	{% endfor %}
+{% endif %}
+
 {% if view == "news_card" %}
 	<article class="{{prefix}}item  {{mod}}">
 		{% if img != null %}
@@ -134,6 +143,24 @@
 			</a>
 			<button type="button" class="{{prefix}}btn  {{mod}}">Запрос на лизинг</button>
 		</div>
+	</div>
+	{% endfor %}
+{% endif %}
+
+{% if view == "brand" %}
+	{% for value in list %}	
+	<picture class="{{prefix}}item  {{mod}}">
+		<img src="{{value.img}}" alt="" class="img-responsive">
+	</picture>
+	{% endfor %}
+{% endif %}
+
+{% if view == "partners" %}
+	{% for value in list %}	
+	<div>
+		<picture class="{{prefix}}item  {{mod}}">
+			<img src="{{value.img}}" alt="" class="img-responsive">
+		</picture>
 	</div>
 	{% endfor %}
 {% endif %}

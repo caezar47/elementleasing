@@ -48,6 +48,12 @@
 				margin: -10px -(@gutter_d) 3.8vw; 
 			});			
 		}
+		&.is--column{
+			flex-direction: column;
+			.media-breakpoint-up(@lg; {
+				flex-wrap: wrap;
+			});			
+		}
 	}
 	&item{	
 		padding: 10px @gutter_xs 0;
@@ -62,6 +68,12 @@
 			.media-breakpoint-up(@lg; {
 				padding: 10px @gutter_d 0; 
 			});			
+		}
+		&.is--column{
+			margin-bottom: 15px;
+			&:last-child{
+				margin-bottom: 0;
+			}			
 		}
 	}
 	&link{
@@ -85,6 +97,7 @@
 		}
 		&.is--default{
 			padding-bottom: 10px;
+			opacity: 0.3;
 			&::after{
 				content: '';
 				position: absolute;
@@ -100,6 +113,7 @@
 			&:hover,
 			.tabs__item.active &{
 				color: @primary;
+				opacity: 1;
 				&::after{
 					transform-origin: left;
 					transform: scale(1, 1);

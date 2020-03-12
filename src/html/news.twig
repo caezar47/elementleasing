@@ -7,6 +7,7 @@
     	{% include "../block/common/navbar/navbar.twig" with {navbar_prefix:"navbar__"} %}
 		<main class="content-block__panel">
 			{% include "../block/page/about/news.twig" with {
+				view: "news_page",
 				content_prefix:"content-block__", 
 				content_mod:"is--page-news", 
 				heading_group:"margin--default", 

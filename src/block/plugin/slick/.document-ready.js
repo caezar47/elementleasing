@@ -1,6 +1,7 @@
 'use strict';
 $(function() { 
 	var catalog = $('[data-slick-catalog]');
+	var partners = $('[data-slick-partners]');
 	var dots = $('[data-slick-dots]').data('slick-dots');
 	console.log(dots);
 
@@ -30,6 +31,24 @@ $(function() {
 		    {
 				breakpoint: 768,				
 		      	settings: "unslick"
+		    }
+		]
+	});
+
+	partners.slick({
+		slidesToShow: 5,
+		slidesToScroll: 1,
+		arrows: false,
+		dots: false,
+		infinite: true,
+		autoplay: true,
+  		autoplaySpeed: 4000,
+		responsive: [
+		    {
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 3,
+				}
 		    }
 		]
 	});

@@ -18,6 +18,9 @@
 			padding: 0;
 			//max-width: 1080px;
 		}
+		&[data-slick-partners] {
+			padding: 0;
+		}
 	}
 	&-list {
 		position: relative;
@@ -34,6 +37,9 @@
 		&.dragging {
 			cursor: pointer;
 			cursor: hand;
+		}
+		[data-slick-partners] &{
+			margin: 0 -@g;			
 		}
 		[data-slick-catalog] &{
 			overflow: visible;
@@ -110,6 +116,7 @@
 		[data-slider-slick="slick-gallery"] &{
 			padding: 0 15px;
 		}
+		[data-slick-partners] &,
 		[data-slick-catalog] &{
 			padding: 0 @g;
 		}

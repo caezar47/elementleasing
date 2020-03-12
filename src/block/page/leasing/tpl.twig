@@ -98,7 +98,7 @@
 					} %}
 				</div>
 				<picture>
-					<img src="{{path.img}}/default/leasing-formaliz.png" class="img-responsive" alt="">
+					<img src="{{path.img}}/default/leasing-formaliz.svg" class="img-responsive" alt="">
 				</picture>
 			</div>
 		</div>
@@ -132,18 +132,7 @@
 								<div class="{{prefix.card}}note  {{content_mod}}">{{value.note}}</div>
 							</div>
 						</div>
-						{% endfor %}
-						{# <div class="item">
-							<div class="{{prefix.card}}card  {{content_mod}}">
-								<div class="{{prefix.card}}heading  {{content_mod}}">2. Выгодные условия лизинговых программ</div>
-								<div class="{{prefix.card}}icon  {{content_mod}}">
-									<img src="http://via.placeholder.com/256x256" alt="">
-								</div>
-								<div class="{{prefix.card}}preview  {{content_mod}}"><img src="http://via.placeholder.com/640x360" alt=""></div>
-								
-								<div class="{{prefix.card}}note  {{content_mod}}">Лизинговые услуги относятся к расходам предприятия и позволяют снизить налог на прибыль компании, а также вернуть до 20% НДС от стоимости объекта лизинга.</div>
-							</div>
-						</div> #}
+						{% endfor %}						
 					</div>
 					<ol class="{{prefix.card}}carousel-indicators  {{content_mod}} carousel-indicators">
 						{% set i = 0 %}
@@ -159,6 +148,7 @@
 		</div>
 	</section>
 {% endif %}
+
 {% if view == "leasing_catalog" %}
 	<section class="{{content_prefix}}panel  {{content_mod}}">
 		<div class="{{content_prefix}}container container  {{content_mod}}">
@@ -220,8 +210,145 @@
 				} %}
 			</div>
 			<p class="align--right">
-				<a class="link__item  is--next  is--success" href="{{page.catalog}}">Весь каталог</a>
+				<a class="link__item  is--next  is--success-white" href="{{page.catalog}}">Весь каталог</a>
 			</p>
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "leasing_brand" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			<div class="{{content_prefix}}row  grid__row  {{content_mod}}">	
+				{% include "../../common/page-header/tpl.twig" with {
+					prefix:"page-header__", 
+					mod:heading_mod,
+					level:heading_level, 
+					attr:"data-grid-heading", 
+					heading:heading
+				} %}
+				<p data-grid-link><a href="#" class="link__item  is--next  is--success"  >Все бренды</a></p>				
+				<hr data-grid-hr>
+				{% include "../../common/card/card.twig" with {
+				 	view: "brand", 
+				 	prefix:prefix.card, 
+				 	mod:"is--brand", 
+				 	list: list
+				} %}
+			</div>
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "leasing_conditions" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
+				<div>	
+					{% include "../../common/page-header/tpl.twig" with {
+						prefix:"page-header__", 
+						mod:heading_mod,
+						level:heading_level, 
+						heading:heading
+					} %}
+					<ul class="{{prefix.tabs}}nav  is--default  is--column">
+						{% for value in list %}
+						<li class="{{prefix.tabs}}item  is--default  is--column  {{value.status}}">
+							<a class="{{prefix.tabs}}link  is--default" href="#{{tabs}}{{value.id}}" data-toggle="tab">{{value.name}}</a>
+						</li>
+						{% endfor %}
+					</ul>
+				</div>
+				<div>
+					{% for value in list %}
+					<div class="{{prefix.tabs}}pane  {{value.status}}" id="{{tabs}}{{value.id}}">
+						<div class="text__block  {{content_mod}}">
+							{{value.note}}
+						</div>
+					</div>
+					{% endfor %}
+				</div>				
+			</div>
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "leasing_partners" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
+				{% include "../../common/page-header/tpl.twig" with {
+					prefix:"page-header__", 
+					mod:heading_mod,
+					level:heading_level, 
+					heading:heading,
+					attr:"data-grid-heading"
+				} %}
+				{% include "../../common/page-header/tpl.twig" with {
+					prefix:"page-header__", 
+					mod:heading_sm_mod,
+					level:heading_sm_level, 
+					heading:heading_sm,
+					attr:"data-grid-note"
+				} %}
+				<p data-grid-link><a href="{{link}}" class="link__item  is--next  is--success"  >Все партнеры</a></p>
+				<hr data-grid-hr>
+			
+				<div class="{{content_prefix}}slider  {{content_mod}}" data-slick-partners>
+					{% include "../../common/card/card.twig" with {
+					 	view: "partners", 
+					 	prefix:prefix.card, 
+					 	mod:"is--partners", 
+					 	list: list
+					} %}
+				</div>
+			</div>
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "leasing_seo" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			<div class="panel-group" id="{{list_group}}" role="tablist" aria-multiselectable="true">
+				{% for value in list %}
+				<div class="{{prefix}}item  {{mod}}  panel">
+					<div class="{{prefix}}heading  {{mod}}" role="tab" id="{{value.h_id}}">
+						<a role="button" data-toggle="collapse" data-parent="#{{list_group}}" href="#{{value.id}}" {% if value.status == "active" %}aria-expanded="true"{% endif %} aria-controls="{{value.id}}">
+							{{value.name}}
+						</a>
+					</div>
+					<div id="{{value.id}}" class="panel-collapse collapse {% if value.status == "active" %}in{% endif %}" role="tabpanel" aria-labelledby="{{value.h_id}}">
+						<div class="{{prefix}}wrap {% if value.form == "true" %}	grid__row{% endif %}  {{mod}}">
+							<div class="text__block  {{mod}}">
+						        {{value.note}}
+						    </div>
+						    {% if value.form == "true" %}					    
+								{% include "../../common/form/form.twig" with {
+									view: 			"leasing_base", 
+									prefix:			"form__", 
+									mod:			"is--leasing-base", 
+									color:			"is--primary-light", 
+									ID: 			"f_leasing-base", 
+									heading:		"Запрос на лизинг", 
+									heading_level:	"h3", 
+									heading_mod:	"is--h3  fw--700  is--form-leasing-base",
+									heading_sm:		"Оставьте заявку, и наш консультант перезвонит!", 
+									heading_sm_level:"p", 
+									heading_sm_mod:	"is--h6  fw--100  is--form-leasing-base-xs",
+									heading_r:		"Спасибо!<br>Анкета отправлена", 
+									heading_r_level:"h3", 
+									heading_r_mod:	"is--h2 fw--700  margin--tiny",
+									heading_r_sm:	"Мы свяжемся с вами, как только найдется подходящая вакансия.", 
+									heading_r_sm_level:	"p", 
+									heading_r_sm_mod:	"margin--large"
+								}%}
+							{% endif %}
+					    </div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
 		</div>
 	</section>
 {% endif %}
