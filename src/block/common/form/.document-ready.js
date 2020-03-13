@@ -28,6 +28,10 @@ test.on('click', function(e) {
 	$(this).closest('.form__panel').find('.form__wrap').addClass('is--hidden');
 	$(this).closest('.form__panel').find('.form__bg').addClass('is--result');
 });
+$('[data-form-btn]').on('click', function(e) {
+	e.preventDefault();
+	$(this).next('.form__panel.is--md-open').addClass('is--visible');
+});
 $('form button[type="submit"]').on('click', function(e) {
 	e.preventDefault();
 });

@@ -6,44 +6,46 @@
 	<body>
     	{% include "../block/common/navbar/navbar.twig" with {navbar_prefix:"navbar__"} %}
 		<main class="content-block__panel">
-			{% include "../block/page/leasing/tpl.twig" with {
-				view:"leasing_header", 
-				content_prefix:"content-block__", 
-				content_mod:"is--leasing-header",
-				heading_mod:"is--h1  fw--700  color--white  is--leasing-header", 
-				heading_level:"h1", 
-				heading:"Грузовые<br> авто в лизинг", 
-				heading_sm_mod:"is--h4  color--white  is--leasing-header-sm", 
-				heading_sm_level:"p", 
-				heading_sm:"Поможем получить надежный грузовой транспорт для вашего бизнеса.", 
-				heading_val_mod:"fw--700  color--white  is--leasing-header-value", 
-				heading_val_level:"p", 
-				heading_val:"Аванс <span>от 20%</span>", 
-				bread_mod:"is--white",
-				bread:[
-					{name:"Главная", link:page.index},
-					{name:"Грузовые авто в лизинг"}
-				],
-				bg:[path.img,"/default/leasing-header.jpg"].join("")
-			} %}
+			<section class="content-block__panel  is--leasing-top">
+				{% include "../block/page/leasing/tpl.twig" with {
+					view:"leasing_header", 
+					content_prefix:"content-block__", 
+					content_mod:"is--leasing-header",
+					heading_mod:"is--h1  fw--700  color--white  is--leasing-header", 
+					heading_level:"h1", 
+					heading:"Грузовые авто в лизинг", 
+					heading_sm_mod:"is--h4  color--white  is--leasing-header-sm", 
+					heading_sm_level:"p", 
+					heading_sm:"Поможем получить надежный грузовой транспорт для вашего бизнеса.", 
+					heading_val_mod:"fw--700  color--white  is--leasing-header-value", 
+					heading_val_level:"p", 
+					heading_val:"Аванс <span>от 20%</span>", 
+					bread_mod:"is--white",
+					bread:[
+						{name:"Главная", link:page.index},
+						{name:"Грузовые авто в лизинг"}
+					],
+					bg:[path.img,"/default/leasing-header.jpg"].join("")
+				} %}
 
-			{% include "../block/page/leasing/tpl.twig" with {
-				view:"leasing_condition", 
-				content_prefix:"content-block__", 
-				content_mod:"is--leasing-condition",
-				heading_mod:"is--h1  fw--700  is--leasing-condition", 
-				heading_level:"h2", 
-				heading:"Условия лизинга", 
-				heading_sm_mod:"fw--100  is--h4  color--black-54  is--leasing-condition-sm", 
-				heading_sm_level:"p", 
-				heading_sm:"Для юридических лиц и&nbsp;индивидуальных предпринимателей", 
-				list:[
-					{label:"Аванс", value:"от 20%"},
-					{label:"Переплата в год", value:"от 6,0%"},
-					{label:"Срок лизинга", value:"от 12 до 36 мес."},
-					{value:"Скидка производителя"}
-				],
-			} %}
+				{% include "../block/page/leasing/tpl.twig" with {
+					view:"leasing_condition", 
+					content_prefix:"content-block__", 
+					content_mod:"is--leasing-condition",
+					heading_mod:"is--h1  fw--700  is--leasing-condition", 
+					heading_level:"h2", 
+					heading:"Условия лизинга", 
+					heading_sm_mod:"fw--100  is--h4  color--black-54  is--leasing-condition-sm", 
+					heading_sm_level:"p", 
+					heading_sm:"Для юридических лиц и&nbsp;индивидуальных предпринимателей", 
+					list:[
+						{label:"Аванс", value:"от 20%"},
+						{label:"Переплата в год", value:"от 6,0%"},
+						{label:"Срок лизинга", value:"от 12 до 36 мес."},
+						{value:"Скидка производителя", mod: "is--md-hidden"}
+					],
+				} %}
+			</section>
 
 			{% include "../block/page/leasing/tpl.twig" with {
 				view:"leasing_formaliz", 
@@ -104,7 +106,6 @@
 					}
 				],
 			} %}
-
 			{% include "../block/page/leasing/tpl.twig" with {
 				view:"leasing_catalog", 
 				content_prefix:"content-block__", 
@@ -142,7 +143,7 @@
 				list:[
 					{
 						id:"base",
-						status:"active",
+						status:"",
 						name:"Основные условия", 
 						note:'
 							<h3>Для ООО / ИП</h3>
@@ -155,7 +156,7 @@
 					},
 					{
 						id:"fin",
-						status:"",
+						status:"active",
 						name:"Финансовые преимущества", 
 						note:'
 							<h3>Для ООО</h3>
@@ -218,7 +219,7 @@
 				ID: 			"f_leasing", 
 				heading:		"Нужна техника в лизинг?", 
 				heading_level:	"h3", 
-				heading_mod:	"is--h1  color--white  fw--700  margin--tiny",
+				heading_mod:	"is--h1  color--white  fw--700  is--form-leasing",
 				heading_sm:		"Оставьте заявку, и наш консультант <br>перезвонит вам и отправит информацию на почту!", 
 				heading_sm_level:	"p", 
 				heading_sm_mod:	"color--white  fw--100  margin--medium",
@@ -284,7 +285,6 @@
 				content_prefix:"content-block__", 
 				content_mod:"is--leasing-programm"
 			} %}
-
 
 			{% include "../block/page/about/news.twig" with {
 				view:"news_leasing", 

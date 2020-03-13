@@ -23,8 +23,11 @@
 {% endif %}
 
 {% if view=="leasing_base" %}
-	<form action="#" class="{{prefix}}panel  {{mod}}">
-		<div class="{{prefix}}wrap  {{mod}}">
+	{% if open=="true" %}
+		<button type="button" data-form-btn class="btn__item  is--arrow  is--md  is--success">Запрос на лизинг</button>	
+	{% endif %}
+	<form action="#" class="{{prefix}}panel  {{mod}}  {{group}}">
+		<div class="{{prefix}}wrap  {{mod}}  {{group}}">
 			{% include "../../common/page-header/tpl.twig" with {
 				heading_view:heading_view, 
 				prefix:"page-header__", 
@@ -62,7 +65,7 @@
 				<button type="submit" data-test class="btn__item  is--arrow  is--md  is--primary">Отправить заявку</button>	
 			</div>
 		</div>
-		<div class="{{prefix}}result  {{mod}}">
+		<div class="{{prefix}}result  {{mod}}  {{group}}">
 			{% include "../../common/page-header/tpl.twig" with {
 				heading_view:heading_view, 
 				prefix:"page-header__", 
@@ -76,7 +79,9 @@
 				mod:heading_r_sm_mod, 
 				group:heading_r_sm_group, 
 				level:heading_r_sm_level, 
-				heading:heading_r_sm} %}
+				heading:heading_r_sm} 
+			%}
+			<div class="{{prefix}}bg  {{mod}}"><img src="{{path.img}}/default/train-success.svg" alt=""></div>
 		</div>
 	</form>
 {% endif %}

@@ -27,44 +27,79 @@
 		}
 		&.is--leasing{
 			&-header{
-				margin-bottom: 10px;
+				margin-bottom: 5px;
 				//max-width: 400px;
+				.media-breakpoint-up(@md; {
+					margin-bottom: 10px;
+				});
 			}
 			&-header-sm{
 				max-width: 470px;
 				margin-bottom: 10px;
+				.media-breakpoint-down(@md; {
+					font-size: 1.25em;
+					line-height: 1.55em;
+				});
 			}
 			&-header-value{
-				font-size: 3.1em;
-				line-height: 2.1em;
+				font-size: 2.1em;
+				line-height: 1.6em;
 				align-self: flex-end;
 				span{
 					display: block;
-					font-size: 2.9em;
+					font-size: 1.9em;
 					text-transform: uppercase;
 				}
+				.media-breakpoint-down(@md; {
+					display: none;
+				});
+				.media-breakpoint-up(@lg; {
+					font-size: 3.1em;
+					line-height: 2.1em;
+					span{
+						font-size: 2.9em;
+					}
+					
+				});
 			}
+			&-condition{
+				.media-breakpoint-down(@md; {
+					font-size: 1.2em;					
+				});
+			}			
 			&-condition-sm{				
 				max-width: 420px;
 				line-height: 1.5em;
-				.media-breakpoint-up(@md; {
+				margin-bottom: 20px;
+				.media-breakpoint-up(@lg; {
 					margin-bottom: 57px;
 				});
 			}
-			&-formaliz{				
-				margin-bottom: 20px;
+			&-formaliz{	
+				margin-bottom: 15px;			
+				.media-breakpoint-up(@md; {
+					margin-bottom: 20px;
+				});
 			}
-			&-adv{				
+			&-adv{
+				margin-bottom: 30px;				
 				.media-breakpoint-up(@md; {
 					margin-bottom: 6vw;
 				});
 			}
+			&-catalog{
+				.media-breakpoint-down(@md; {
+					margin-bottom: 35px;
+				});
+			}
 			&-conditions{				
+				margin-bottom: 15px;
 				.media-breakpoint-up(@md; {
 					margin-bottom: 40px;
 				});
 			}
 			&-news{				
+				margin-bottom: 20px;
 				.media-breakpoint-up(@md; {
 					margin-bottom: 40px;
 				});
@@ -86,11 +121,36 @@
 			}
 		}
 		&.is--form{
+			&-leasing{
+				.media-breakpoint-down(@md; {
+					font-size: 1.72em;
+					line-height: 1.2em;
+				});
+				.media-breakpoint-up(@md; {
+					margin-bottom: 15px;
+				});
+			}
 			&-leasing-base{
-				margin-bottom: 10px;
+				margin-bottom: 5px;
+				.media-breakpoint-up(@lg; {
+					margin-bottom: 10px;
+				});
 			}
 			&-leasing-base-xs{
-				margin-bottom: 25px;				
+				margin-bottom: 20px;
+				.media-breakpoint-up(@md; {
+					margin-bottom: 25px;
+				});				
+			}
+			&-leasing-base-result{
+				margin-bottom: 5px;
+				.media-breakpoint-down(@lg; {
+					font-size: 1.4em;
+				});
+				.media-breakpoint-up(@lg; {
+					margin-bottom: 15px;
+					font-size: 2em;
+				});
 			}
 		}
 		&.is--line{

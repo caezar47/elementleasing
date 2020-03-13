@@ -47,7 +47,7 @@
 					} %}	
 					<div class="{{content_prefix}}row  row  {{content_mod}}-label">
 						{% for value in list %}						
-						<p class="{{content_prefix}}label  cols  {{content_mod}}">{{value.label}} <span>{{value.value}}</span></li>
+						<p class="{{content_prefix}}label  cols  {{value.mod}}  {{content_mod}}">{{value.label}} <span>{{value.value}}</span></li>
 						{% endfor %}
 					</div>	
 				</div>	
@@ -55,6 +55,8 @@
 					{% include "../../common/form/form.twig" with {
 						view: 			"leasing_base", 
 						prefix:			prefix.form, 
+						open:			"true", 
+						group:			"is--md-open", 
 						mod:			"is--leasing-base", 
 						color:			"is--primary-light", 
 						ID: 			"f_leasing-base", 
@@ -64,12 +66,13 @@
 						heading_sm:		"Оставьте заявку, и наш консультант перезвонит!", 
 						heading_sm_level:"p", 
 						heading_sm_mod:	"is--h6  fw--100  is--form-leasing-base-xs",
-						heading_r:		"Спасибо!<br>Анкета отправлена", 
+						heading_r:		"Спасибо!<br> Заявка отправлена", 
 						heading_r_level:"h3", 
-						heading_r_mod:	"is--h2 fw--700  margin--tiny",
-						heading_r_sm:	"Мы свяжемся с вами, как только найдется подходящая вакансия.", 
+						heading_r_mod:	"is--h2 fw--700  is--form-leasing-base-result",
+						heading_r_sm:	"В ближайшее время наш консультант
+перезвонит вам и ответит на вопросы.", 
 						heading_r_sm_level:	"p", 
-						heading_r_sm_mod:	"margin--large"
+						heading_r_sm_mod:	"is--h6  fw--100"
 					} %}	
 				</div>	
 			</div>
@@ -123,12 +126,12 @@
 								<div class="{{prefix.card}}heading  {{content_mod}}">
 									{{value.name}}
 								</div>
-								<div class="{{prefix.card}}icon  {{content_mod}}">
-									<img src="{{value.icon}}" alt="" class="img-responsive">
-								</div>
 								<div class="{{prefix.card}}preview  {{content_mod}}">
 									<img src="{{value.preview}}" alt="">
-								</div>								
+								</div>	
+								<div class="{{prefix.card}}icon  {{content_mod}}">
+									<img src="{{value.icon}}" alt="" class="img-responsive">
+								</div>							
 								<div class="{{prefix.card}}note  {{content_mod}}">{{value.note}}</div>
 							</div>
 						</div>
@@ -351,144 +354,4 @@
 			</div>
 		</div>
 	</section>
-{% endif %}
-
-
-
-{% if view == "catalog_page"%}
-<div class="{{content_prefix}}row  grid__row   is--page-aside-sm  margin--huge">
-	{% include "../../common/aside/tpl.twig" with {
-		view: "filter_catalog",
-		prefix: "aside__",
-		heading: "Фильтры",
-		ID: "filter"
-	} %}
-	<div>
-		{% include "../../common/form/form.twig" with {
-			view: 			"search", 
-			prefix:			prefix.form, 
-			mod:			"is--search", 
-			group:			content_mod, 
-			color:			"is--primary-light", 
-			ID: 			"f_search", 
-			placeholder:	"Введите название техники",
-			btn_mod:		"",
-			btn_name:		"Поиск техники"
-		} %}
-
-		<div class="{{content_prefix}}row  grid__row  {{content_mod}}">		
-			{% include "../../common/card/card.twig" with {
-			 	view: "catalog", 
-			 	prefix:prefix.card, 
-			 	mod:"is--catalog", 
-			 	list: [
-			 		{
-			 			"heading":"Галичанин КС-55713-4", 
-			 			"type":"Автокран", 
-			 			"cost":"2 500 000", 
-			 			"leasing":"49 700", 
-			 			"time":"до 36 месяцев", 
-			 			"img":"http://via.placeholder.com/500x265"
-			 		},
-			 		{
-			 			"heading":"Клинцы КС-55713-1К-4", 
-			 			"type":"Автокран", 
-			 			"cost":"2 500 000", 
-			 			"leasing":"49 700", 
-			 			"time":"до 36 месяцев", 
-			 			"img":"http://via.placeholder.com/500x265"
-			 		},
-			 		{
-			 			"heading":"Клинцы КС-55713-1К-4", 
-			 			"type":"Автокран", 
-			 			"cost":"2 500 000", 
-			 			"leasing":"49 700", 
-			 			"time":"до 36 месяцев", 
-			 			"img":"http://via.placeholder.com/500x265"
-			 		},
-			 		{
-			 			"heading":"Клинцы КС-55713-1К-4", 
-			 			"type":"Автокран", 
-			 			"cost":"2 500 000", 
-			 			"leasing":"49 700", 
-			 			"time":"до 36 месяцев", 
-			 			"img":"http://via.placeholder.com/500x265"
-			 		},
-			 		{
-			 			"heading":"Клинцы КС-55713-1К-4", 
-			 			"type":"Автокран", 
-			 			"cost":"2 500 000", 
-			 			"leasing":"49 700", 
-			 			"time":"до 36 месяцев", 
-			 			"img":"http://via.placeholder.com/500x265"
-			 		},
-			 		{
-			 			"heading":"Клинцы КС-55713-1К-4", 
-			 			"type":"Автокран", 
-			 			"cost":"2 500 000", 
-			 			"leasing":"49 700", 
-			 			"time":"до 36 месяцев", 
-			 			"img":"http://via.placeholder.com/500x265"
-			 		}
-			 	]
-			} %}
-				<div class="{{content_prefix}}row  grid__row  {{content_mod}}  is--new">
-					<h2 class="{{prefix.heading}}heading  is--heading  is--line  fw--700  is--h3">Новинки в каталоге</h2>	
-					{% include "../../common/card/card.twig" with {
-					 	view: "catalog_new", 
-					 	prefix:prefix.card, 
-					 	mod:"is--catalog-new", 
-					 	list: [
-					 		{
-					 			"heading":"Автокран Ивановец КС-55713-1К-4",
-					 			"sale":"20%", 
-					 			"img":"http://via.placeholder.com/500x265"
-					 		},
-					 		{
-					 			"heading":"Автокран Ивановец КС-55713-1К-4",
-					 			"sale":"15%", 
-					 			"img":"http://via.placeholder.com/500x265"
-					 		},
-					 		{
-					 			"heading":"Автокран Ивановец КС-55713-1К-4",
-					 			"sale":"20%", 
-					 			"img":"http://via.placeholder.com/500x265"
-					 		}
-					 	]
-					} %}	
-				</div>	
-			{% include "../../common/card/card.twig" with {
-			 	view: "catalog", 
-			 	prefix:prefix.card, 
-			 	mod:"is--catalog", 
-			 	list: [
-			 		{
-			 			"heading":"Клинцы КС-55713-1К-4", 
-			 			"type":"Автокран", 
-			 			"cost":"2 500 000", 
-			 			"leasing":"49 700", 
-			 			"time":"до 36 месяцев", 
-			 			"img":"http://via.placeholder.com/500x265"
-			 		},
-			 		{
-			 			"heading":"Клинцы КС-55713-1К-4", 
-			 			"type":"Автокран", 
-			 			"cost":"2 500 000", 
-			 			"leasing":"49 700", 
-			 			"time":"до 36 месяцев", 
-			 			"img":"http://via.placeholder.com/500x265"
-			 		},
-			 		{
-			 			"heading":"Клинцы КС-55713-1К-4", 
-			 			"type":"Автокран", 
-			 			"cost":"2 500 000", 
-			 			"leasing":"49 700", 
-			 			"time":"до 36 месяцев", 
-			 			"img":"http://via.placeholder.com/500x265"
-			 		}
-			 	]
-			} %}
-		</div>
-	</div>
-</div>
 {% endif %}

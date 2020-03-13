@@ -194,7 +194,8 @@
 		</div>
 	</div>
 </nav>		<main class="content-block__panel">
-				<section class="content-block__panel  is--leasing-header" style="background-image: url(./img/default/leasing-header.jpg);">
+			<section class="content-block__panel  is--leasing-top">
+					<section class="content-block__panel  is--leasing-header" style="background-image: url(./img/default/leasing-header.jpg);">
 		<div class="content-block__container container  is--leasing-header">
 			<ul class="breadcrumb__list  is--white">
 		
@@ -205,7 +206,7 @@
 		<li class="breadcrumb__list-item is--active">Грузовые авто в лизинг</li>
 		</ul>			
 				
-	<h1 class="page-header__heading  is--h1  fw--700  color--white  is--leasing-header  " >Грузовые<br> авто в лизинг</h1>
+	<h1 class="page-header__heading  is--h1  fw--700  color--white  is--leasing-header  " >Грузовые авто в лизинг</h1>
 			
 				
 	<p class="page-header__heading  is--h4  color--white  is--leasing-header-sm  " >Поможем получить надежный грузовой транспорт для вашего бизнеса.</p>
@@ -223,10 +224,7 @@
 
 
 
-
-
-
-			
+				
 	<section class="content-block__panel  is--leasing-condition">
 		<div class="content-block__container container  is--leasing-condition">	
 			<div class="content-block__row  grid__row   is--leasing-condition">
@@ -239,19 +237,20 @@
 	
 					<div class="content-block__row  row  is--leasing-condition-label">
 												
-						<p class="content-block__label  cols  is--leasing-condition">Аванс <span>от 20%</span></li>
+						<p class="content-block__label  cols    is--leasing-condition">Аванс <span>от 20%</span></li>
 												
-						<p class="content-block__label  cols  is--leasing-condition">Переплата в год <span>от 6,0%</span></li>
+						<p class="content-block__label  cols    is--leasing-condition">Переплата в год <span>от 6,0%</span></li>
 												
-						<p class="content-block__label  cols  is--leasing-condition">Срок лизинга <span>от 12 до 36 мес.</span></li>
+						<p class="content-block__label  cols    is--leasing-condition">Срок лизинга <span>от 12 до 36 мес.</span></li>
 												
-						<p class="content-block__label  cols  is--leasing-condition"> <span>Скидка производителя</span></li>
+						<p class="content-block__label  cols  is--md-hidden  is--leasing-condition"> <span>Скидка производителя</span></li>
 											</div>	
 				</div>	
 				<div>
 					
-	<form action="#" class="form__panel  is--leasing-base">
-		<div class="form__wrap  is--leasing-base">
+			<button type="button" data-form-btn class="btn__item  is--arrow  is--md  is--success">Запрос на лизинг</button>	
+		<form action="#" class="form__panel  is--leasing-base  is--md-open">
+		<div class="form__wrap  is--leasing-base  is--md-open">
 				
 	<h3 class="page-header__heading  is--h3  fw--700  is--form-leasing-base  " >Запрос на лизинг</h3>
 				
@@ -276,7 +275,7 @@
 
 	
 				
-	<p class="form__item  is--leasing-base  ">
+	<p class="form__item  is--leasing-base  is--md-open">
 				<select class="form__control    is--leasing-base  is--primary-light" id="f_leasing-base[city]" name="f[Город]">
 							<option value="" selected disabled>Город</option>
 							<option value="" >Пункт1</option>
@@ -296,11 +295,13 @@
 				<button type="submit" data-test class="btn__item  is--arrow  is--md  is--primary">Отправить заявку</button>	
 			</div>
 		</div>
-		<div class="form__result  is--leasing-base">
+		<div class="form__result  is--leasing-base  is--md-open">
 				
-	<h3 class="page-header__heading  is--h2 fw--700  margin--tiny  " >Спасибо!<br>Анкета отправлена</h3>
+	<h3 class="page-header__heading  is--h2 fw--700  is--form-leasing-base-result  " >Спасибо!<br> Заявка отправлена</h3>
 				
-	<p class="page-header__heading  margin--large  " >Мы свяжемся с вами, как только найдется подходящая вакансия.</p>
+	<p class="page-header__heading  is--h6  fw--100  " >В ближайшее время наш консультант
+перезвонит вам и ответит на вопросы.</p>
+			<div class="form__bg  is--leasing-base"><img src="./img/default/train-success.svg" alt=""></div>
 		</div>
 	</form>
 
@@ -318,9 +319,7 @@
 
 
 
-
-
-
+			</section>
 
 			
 
@@ -378,9 +377,6 @@
 
 
 
-
-
-
 			
 
 
@@ -397,12 +393,12 @@
 								<div class="card__heading  is--leasing-adv">
 									1. Выгодные условия лизинговых программ
 								</div>
-								<div class="card__icon  is--leasing-adv">
-									<img src="./img/default/leasing-cup.svg" alt="" class="img-responsive">
-								</div>
 								<div class="card__preview  is--leasing-adv">
 									<img src="./img/default/leasing-adv1.svg" alt="">
-								</div>								
+								</div>	
+								<div class="card__icon  is--leasing-adv">
+									<img src="./img/default/leasing-cup.svg" alt="" class="img-responsive">
+								</div>							
 								<div class="card__note  is--leasing-adv">Лизинговые услуги относятся к расходам предприятия и позволяют снизить налог на прибыль компании, а также вернуть до 20% НДС от стоимости объекта лизинга.</div>
 							</div>
 						</div>
@@ -411,12 +407,12 @@
 								<div class="card__heading  is--leasing-adv">
 									2. Выгодные условия лизинговых программ
 								</div>
-								<div class="card__icon  is--leasing-adv">
-									<img src="http://via.placeholder.com/256x256" alt="" class="img-responsive">
-								</div>
 								<div class="card__preview  is--leasing-adv">
 									<img src="http://via.placeholder.com/640x360" alt="">
-								</div>								
+								</div>	
+								<div class="card__icon  is--leasing-adv">
+									<img src="http://via.placeholder.com/256x256" alt="" class="img-responsive">
+								</div>							
 								<div class="card__note  is--leasing-adv">Лизинговые услуги относятся к расходам предприятия и позволяют снизить налог на прибыль компании, а также вернуть до 20% НДС от стоимости объекта лизинга.</div>
 							</div>
 						</div>
@@ -432,10 +428,6 @@
 			</div>
 		</div>
 	</section>
-
-
-
-
 
 
 
@@ -564,9 +556,6 @@
 
 
 
-
-
-
 			
 
 
@@ -628,9 +617,6 @@
 
 
 
-
-
-
 			
 
 
@@ -644,10 +630,10 @@
 						
 	<h2 class="page-header__heading  is--h1  fw--700  is--leasing-conditions  " >Условия</h2>
 					<ul class="tabs__nav  is--default  is--column">
-												<li class="tabs__item  is--default  is--column  active">
+												<li class="tabs__item  is--default  is--column  ">
 							<a class="tabs__link  is--default" href="#conditionsbase" data-toggle="tab">Основные условия</a>
 						</li>
-												<li class="tabs__item  is--default  is--column  ">
+												<li class="tabs__item  is--default  is--column  active">
 							<a class="tabs__link  is--default" href="#conditionsfin" data-toggle="tab">Финансовые преимущества</a>
 						</li>
 												<li class="tabs__item  is--default  is--column  ">
@@ -656,7 +642,7 @@
 											</ul>
 				</div>
 				<div>
-										<div class="tabs__pane  active" id="conditionsbase">
+										<div class="tabs__pane  " id="conditionsbase">
 						<div class="text__block  is--leasing-conditions">
 							
 							<h3>Для ООО / ИП</h3>
@@ -668,7 +654,7 @@
 						
 						</div>
 					</div>
-										<div class="tabs__pane  " id="conditionsfin">
+										<div class="tabs__pane  active" id="conditionsfin">
 						<div class="text__block  is--leasing-conditions">
 							
 							<h3>Для ООО</h3>
@@ -727,9 +713,6 @@
 
 
 
-
-
-
 			
 
 	<form action="#" class="form__panel  is--leasing">
@@ -737,7 +720,7 @@
 		<div class="form__container  container">
 			<div class="form__wrap  is--leasing">
 					
-	<h3 class="page-header__heading  is--h1  color--white  fw--700  margin--tiny  " >Нужна техника в лизинг?</h3>
+	<h3 class="page-header__heading  is--h1  color--white  fw--700  is--form-leasing  " >Нужна техника в лизинг?</h3>
 					
 	<p class="page-header__heading  color--white  fw--100  margin--medium  " >Оставьте заявку, и наш консультант <br>перезвонит вам и отправит информацию на почту!</p>
 				<div class="form__row  grid__row  is--leasing">				
@@ -937,9 +920,6 @@
 	</section>
 
 
-
-
-
 			
 
 
@@ -964,8 +944,8 @@
 						    </div>
 						    					    
 								
-	<form action="#" class="form__panel  is--leasing-base">
-		<div class="form__wrap  is--leasing-base">
+		<form action="#" class="form__panel  is--leasing-base  ">
+		<div class="form__wrap  is--leasing-base  ">
 				
 	<h3 class="page-header__heading  is--h3  fw--700  is--form-leasing-base  " >Запрос на лизинг</h3>
 				
@@ -1010,11 +990,12 @@
 				<button type="submit" data-test class="btn__item  is--arrow  is--md  is--primary">Отправить заявку</button>	
 			</div>
 		</div>
-		<div class="form__result  is--leasing-base">
+		<div class="form__result  is--leasing-base  ">
 				
 	<h3 class="page-header__heading  is--h2 fw--700  margin--tiny  " >Спасибо!<br>Анкета отправлена</h3>
 				
 	<p class="page-header__heading  margin--large  " >Мы свяжемся с вами, как только найдется подходящая вакансия.</p>
+			<div class="form__bg  is--leasing-base"><img src="./img/default/train-success.svg" alt=""></div>
 		</div>
 	</form>
 
@@ -1026,9 +1007,6 @@
 							</div>
 		</div>
 	</section>
-
-
-
 
 			<section class="content-block__panel  is--leasing-programm">
 	<div class="content-block__container container  is--leasing-programm">
@@ -1081,7 +1059,6 @@
 		</div> 
 	</div>
 </section> 
-
 				<section class="content-block__panel  is--leasing-news">
 		<div class="content-block__container container  is--leasing-news">
 				
