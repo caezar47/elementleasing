@@ -7,7 +7,7 @@
     	{% include "../block/common/navbar/navbar.twig" with {navbar_prefix:"navbar__"} %}
 
 		<main class="content-block__panel">
-			{% include "../block/page/catalog/page.twig" with {
+			{% include "../block/page/catalog.twig" with {
 				view:"catalog_page", 
 				content_prefix:"content-block__", 
 				content_mod:"is--page-catalog", 
@@ -24,7 +24,7 @@
 					{name:"Каталог"}
 				] 
 			} %}
-			{% include "../block/page/catalog/page.twig" with {
+			{% include "../block/page/catalog.twig" with {
 				view:"catalog_adv", 
 				content_prefix:"content-block__", 
 				content_mod:"is--page-catalog-adv",

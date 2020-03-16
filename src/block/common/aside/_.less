@@ -107,7 +107,12 @@
 			line-height: 1.16em;
 		}
 		&-item{
-			margin-bottom: 5px;
+			margin-bottom: 15px;
+			.is--page-search &{
+				.media-breakpoint-down(@md; {
+					margin-bottom: 5px;
+				});
+			}
 			.media-breakpoint-up(@md; {
 				margin-bottom: 20px;
 			});

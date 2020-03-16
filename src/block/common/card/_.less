@@ -987,11 +987,14 @@
 			}
 			&-promo{
 				.heading-md();
-				color: @default;				
+				color: @white;				
 				font-weight: 700;
 				margin-bottom: 13px;
+				.media-breakpoint-up(@md; {	
+					color: @default;					
+				});
 				.media-breakpoint-up(@lg; {
-					margin-bottom: 25px;					
+					margin-bottom: 25px;				
 				});
 			}
 			&-promo-primary{
@@ -1265,10 +1268,13 @@
 				font-weight: 100;
 				margin-bottom: 5px;
 				.heading3();
-				color: @default;
-				&.is--status{
-					color: @success;
-				}
+				color: @white;
+				.media-breakpoint-up(@md; {					
+					color: @default;	
+					&.is--status{
+						color: @success;
+					}		
+				});
 				.media-breakpoint-up(@lg; {
 					margin-bottom: 25px;
 					&.is--cost{

@@ -1,3 +1,4 @@
+{% if view == "articles_page"%}
 <main class="{{content_prefix}}panel">
 	<div class="{{content_prefix}}container container">
 		{% include "../../common/breadcrumb/tpl.twig" with {
@@ -15,9 +16,6 @@
 				} %}
 			</div>
 			<div class="cols">
-				{% if view == "articles_card"%}
-					<a href="{{page.articles}}" class="{{prefix.link}}item  is--prev  is--md">Назад к статьям</a>
-				{% else %}
 				{% include "../../common/form/elem-tpl.twig" with {
 					view:"filter", 
 					prefix:prefix.form, 
@@ -34,11 +32,9 @@
 						{"name": "по популярности"}
 					]}
 				%}
-				{% endif %}
 			</div>
 		</div>	
 
-		{% if view == "articles_list"%}
 			{% include "../../common/card/card.twig" with {
 			 	view: "articles", 
 			 	prefix:prefix.card, 
@@ -105,7 +101,7 @@
 			 			"date_iso":"2019-10-11"
 			 		}
 			 	]} 
-			 %}
+			%}
 			
 			{% include "../../common/pagination/tpl.twig" with {
 			 	prev: "true", 
@@ -125,9 +121,32 @@
 			 		{name: "8"}
 			 	]
 			}%}
-		{% endif %}
+	</div>
+</main>
+{% endif %}
 
-		{% if view == "articles_card"%}
+{% if view == "articles_card"%}
+<main class="{{content_prefix}}panel">
+	<div class="{{content_prefix}}container container">
+		{% include "../../common/breadcrumb/tpl.twig" with {
+			prefix:prefix.breadcrumb, 
+			mod:bread_mod, 
+			bread:bread
+		} %}	
+		<div class="page-header__panel  row  {{heading_group}}  {{content_mod}}">
+			<div class="cols">
+				{% include "../../common/page-header/tpl.twig" with {
+					prefix:"page-header__", 
+					mod:heading_mod,
+					level:heading_level, 
+					heading:heading
+				} %}
+			</div>
+			<div class="cols">
+				<a href="{{page.articles}}" class="{{prefix.link}}item  is--prev  is--md">Назад к статьям</a>				
+			</div>
+		</div>
+
 		{% include "../../common/card/card.twig" with {
 		 	view: "news_card", 
 		 	prefix:prefix.card, 
@@ -137,6 +156,6 @@
 				date_iso:"2019-10-11", 
 				note:"<p>В&nbsp;Саратове Автопробег по&nbsp;традиции проходит осенью. Но&nbsp;холодная и&nbsp;дождливая погода ─ не&nbsp;повод для хандры, ведь у&nbsp;предпринимателей города появляется прекрасная возможность приобрести новую технику ГАЗ с&nbsp;ощутимой выгодой. </p><p>Илья Плешаков, менеджер лизинговых проектов, г. Саратов:<br> —&nbsp;С&nbsp;5&nbsp;по&nbsp;8&nbsp;ноября совместно с&nbsp;«АвтоцентрГАЗ-Лидер» мы&nbsp;ездили общаться с&nbsp;повторными и&nbsp;новыми клиентами, для которых провели презентацию ГАЗона полной массой 10&nbsp;тонн. График поездок из-за праздников был довольно плотный,<br> но&nbsp;свой план мы&nbsp;выполнили и&nbsp;встретились с&nbsp;представителями разных сфер бизнеса: грузовые перевозки, геологоразведочные работы, пассажирские перевозки, строительство и&nbsp;т.&nbsp;д. </p><p>Машину уже достаточно хорошо знают, но&nbsp;с&nbsp;удовольствием тестировали и&nbsp;ездили. Многих клиентов интересовала новинка от&nbsp;ГАЗ&nbsp;—<br> 3х-литровый Next на&nbsp;метане, т.&nbsp;к. именно небольшие коммерческие автомобили категории «В» являются приоритетным выбором большинства предприятий. Мы&nbsp;вручили сертификаты со&nbsp;скидкой участникам Автопробега и&nbsp;уже оформляем сделки.</p>"			 		
 	 	} %}
-		{% endif %}
 	</div>
 </main>
+{% endif %}

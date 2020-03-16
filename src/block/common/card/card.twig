@@ -102,11 +102,11 @@
 {% if view == "catalog" %}
 	{% for value in list %}		
 	<div class="{{prefix}}item  {{mod}}">
-		<a href="{{link}}" class="{{prefix}}preview  {{mod}}" data-grid-preview>
+		<a href="{{value.link}}" class="{{prefix}}preview  {{mod}}" data-grid-preview>
 			<img src="{{value.img}}" alt="{{value.heading}}" class="img-responsive">
 		</a>
 		<div class="{{prefix}}wrap  {{mod}}"  data-grid-wrap>
-			<h5 class="{{prefix}}heading  {{mod}}"><a href="{{link}}">{{value.heading}}</a></h5>
+			<h5 class="{{prefix}}heading  {{mod}}"><a href="{{value.link}}">{{value.heading}}</a></h5>
 			<p class="{{prefix}}value  {{mod}}  is--type">{{value.type}}</p>
 			<p class="{{prefix}}value  {{mod}}">Цена: <span>от {{value.cost}} ₽</span></p>
 			<p class="{{prefix}}value  {{mod}}">Лизинг: <span>{{value.leasing}} ₽/мес.</span></p>
@@ -120,11 +120,11 @@
 {% if view == "catalog_new" %}
 	{% for value in list %}		
 	<div class="{{prefix}}item  {{mod}}" data-text="Новинка!">
-		<p class="{{prefix}}preview  {{mod}}">
+		<a href="{{value.link}}" class="{{prefix}}preview  {{mod}}">
 			<img src="{{value.img}}" alt="{{value.heading}}" class="img-responsive">
-		</p>
+		</a>
 		<p class="{{prefix}}value  {{mod}}  is--sale" data-text="Аванс от&nbsp;" >{{value.sale}}</p>
-		<h5 class="{{prefix}}heading  {{mod}}">{{value.heading}}</h5>
+		<a href="{{value.link}}" class="{{prefix}}heading  {{mod}}">{{value.heading}}</a>
 	</div>
 	{% endfor %}
 {% endif %}
@@ -163,48 +163,4 @@
 		</picture>
 	</div>
 	{% endfor %}
-{% endif %}
-
-
-{# old #}
-{% if view == "preview" %}
-{% for value in list %}		
-<a href="{{value.link}}" class="{{prefix}}card  {{mod}}">
-	<div class="{{prefix}}preview  {{mod}}">
-		<img src="{{value.img}}" alt="{{value.heading}}" class="img-responsive">
-	</div>
-	<h5 class="{{prefix}}heading  {{mod}}">{{value.heading}}</h5>
-	<div class="{{prefix}}bg {{mod}}">
-		<div class="{{prefix}}view  {{mod}}"></div>
-	</div> 
-</a> 
-{% endfor %}
-{% endif %}
-
-{% if view == "gallery" %}
-{% for value in list %}	
-<div class="{{mod_elem}}">
-	<div class="{{prefix}}card  {{mod}}">
-		<a href="{{path.img}}{{value.img_fancy}}" data-fancybox="{{fancy}}" class="{{prefix}}preview  {{mod}}">
-			<img src="{{value.img}}" alt="" class="img-responsive">
-			<div class="{{prefix}}bg  {{mod}}">
-				<div class="{{prefix}}view  {{mod}}"></div>
-			</div>
-		</a>
-	</div>
-</div>
-{% endfor %}
-{% endif %}
-
-
-
-{% if view == "adv" %}
-{% for value in list %}		
-<div class="{{prefix}}card  {{mod}}">
-	<div class="{{prefix}}preview  {{mod}}">
-		{% include "../../common/svg-sprite/svg.twig" with {icon:value.icon} %}
-	</div>
-	<h5 class="{{prefix}}heading  {{mod}}">{{value.heading}}</h5>
-</div> 
-{% endfor %}
 {% endif %}

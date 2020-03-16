@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="ru-RU"> 
 	<head>	
-    	{% include "../block/common/head/head.twig" with {title:"Статьи"}  %}
+    	{% include "../block/common/head/head.twig" with {title:"Карта сайта"}  %}
 	</head>
 	<body>
     	{% include "../block/common/navbar/navbar.twig" with {navbar_prefix:"navbar__"} %}
 
-		{% include "../block/page/about/articles.twig" with {
-			view:"articles_page", 
+		{% include "../block/page/sitemap.twig" with {
+			view:"catalog_page", 
 			content_prefix:"content-block__", 
-			content_mod:"is--page-articles", 
-			heading_group:"margin--default", 
+			content_mod:"is--page-search", 
+			heading_group:"margin--large", 
 			heading_mod:"is--hXL  fw--700  color--primary-l", 
 			heading_level:"h1", 
-			heading:"Статьи", 
+			heading:"Карта сайта",
 			bread_mod:"",
 			bread:[
 				{name:"Главная", link:page.index},
-				{name:"Статьи"}
-			]
+				{name:"Карта сайта"}
+			] 
 		} %}
 		
     	{% include "../block/common/footer/footer.twig" with {footer_prefix:"footer__"} %}

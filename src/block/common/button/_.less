@@ -171,23 +171,31 @@
 		transition: @trs-site; 	
 		color: @link_color;
 		&.is--prev{
-			.icon-prev(@c:'989898');
-			background-position: left 5px;
-			padding-left: 25px;
+			.icon-prev(@c:'989898'; @w: 7px; @h: auto);
+			background-position: left 3px;
+			padding-left: 15px;
 			&:hover{
-				.icon-prev();
+				.icon-prev(@w: 7px; @h: auto);
 			}
+			.media-breakpoint-up(@md; {
+				background-position: left 4px;
+				.icon-prev(@c:'989898'; @w: 10px; @h: auto);
+				padding-left: 25px;
+				&:hover{
+					.icon-prev(@w: 10px; @h: auto);
+				}
+			}); 
 		}
 		&.is--next{
 			.icon-next(@c:'989898'; @w: 7px; @h: auto);
-			background-position: right 4px;
-			padding-right: 13px;
+			background-position: right 3px;
+			padding-right: 15px;
 			&:hover{
 				.icon-next(@w: 7px; @h: auto);
 			}
 			.media-breakpoint-up(@md; {
+				background-position: right 4px;
 				.icon-next(@c:'989898'; @w: 10px; @h: auto);
-				background-position: right 5px;
 				padding-right: 25px;
 				&:hover{
 					.icon-next(@w: 10px; @h: auto);
@@ -195,11 +203,12 @@
 			});
 		}
 		&.is--md{
+			background-position: left 6px;
 			.media-breakpoint-up(@md; {
 				font-size: 1.337em;
 				padding-left: 35px;
 				&.is--prev{
-					background-position: left 1px;
+					background-position: left 7px;
 					.icon-prev(@c:'989898'; @w: 12px; @h: auto;);
 				}
 			});

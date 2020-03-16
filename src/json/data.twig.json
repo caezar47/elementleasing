@@ -1,11 +1,11 @@
 {
 	"contacts":{
-		"name":"TPL",
-		"domain":"domain.domain",
-		"domain_link":"http://domain.domain/",
+		"name":"elementleasing",
+		"domain":"elementleasing.ru",
+		"domain_link":"https://elementleasing.ru/",
 		"color":"#F24F00",
 		"agreement_page":"agreement",
-		"copyright":"TPL",
+		"copyright":"elementleasing",
 		"email":"element@ulh.ru",
 		"phone":"+7 495 937 27 80",  
 		"phone_tel":"+74959372780",   
@@ -40,8 +40,7 @@
 		"search":"./search.html",
 		"404":"./404.html",
 		"sitemap":"./sitemap.html",
-		"style":"./style.html",
-		"agreement":"./agreement.html"
+		"style":"./style.html"
 	},
 	"prefix":{
 		"content":"content-block__",
