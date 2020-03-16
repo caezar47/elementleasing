@@ -218,6 +218,24 @@
 		&.is--seo{
 			font-weight: 100;
 		}
+		&.is--catalog{
+			&-card{
+				font-weight: 100;
+				.media-breakpoint-up(@md; {
+					max-width: 590px;
+				});
+				blockquote{
+					margin: 0;
+					padding: 0;
+					font-size: 0.88em;
+					line-height: 1.6em;
+					font-style: normal;
+					border: 0;
+					padding-top: 10px;
+					max-width: 350px;
+				}
+			}
+		}
 	}
 }
 

@@ -191,6 +191,41 @@
 	</section>
 {% endif %}
 
+{% if view == "catalog_card_header" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../common/breadcrumb/tpl.twig" with {
+				prefix:prefix.breadcrumb, 
+				mod:bread_mod, 
+				bread:bread
+			} %}			
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+		</div>
+	</section>
+{% endif %}
+{% if view == "catalog_card_desc" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../common/card/card.twig" with {
+			 	view: "catalog_card", 
+			 	prefix:prefix.card, 
+			 	mod:"is--catalog-card", 
+			 	heading:heading, 
+			 	type:"грейдер",				 		
+			 	cost:"4 950 000",				 		
+			 	leasing:"98 406",				 		
+			 	time:"36 месяцев",				 		
+			 	note:"<p>Автогрейдер ГС − 14.02 предназначен для выполнения больших объемов землеройных и&nbsp;профилировочных работ, при строительстве и&nbsp;содержании дорог. ГС − 14.02 комплектуется мощным двигателем 110 кВт и&nbsp;механической трансмиссией. Для автогрейдера имеется большой набор сменного рабочего оборудования (поворотный бульдозерный отвал, боковой грейдерный отвал, рыхлитель заднего расположения).</p>",				 		
+		 	} %}
+		</div>
+	</section>
+{% endif %}
+
 {% if view == "catalog_card"%}
 	<section class="{{content_prefix}}panel">
 		<div class="{{content_prefix}}container container">

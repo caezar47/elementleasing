@@ -6,27 +6,109 @@
 	<body>
     	{% include "../block/common/navbar/navbar.twig" with {navbar_prefix:"navbar__"} %}
 
-		<main class="content-block__panel">
+		<main class="content-block__panel">			
 			{% include "../block/page/catalog.twig" with {
-				view:"catalog_card", 
+				view:"catalog_card_header", 
 				content_prefix:"content-block__", 
-				content_mod:"is--page-catalog", 
-				heading_group:"margin--default", 
-				heading_mod:"is--hXL  fw--700  color--primary-l", 
+				content_mod:"is--page-catalog-header",
+				heading_mod:"is--hMD  fw--700  color--white  is--page-catalog-header", 
 				heading_level:"h1", 
-				heading:"Карточка каталога",
-				bread_mod:"",
+				heading:"RM-TEREX<br> RM-Terex ГС-14.02",
+				bread_mod:"is--white",
 				bread:[
 					{name:"Главная", link:page.index},
 					{name:"Каталог", link:page.catalog},
-					{name:"Карточка каталога"}
-				] 
+					{name:"RM-TEREX RM-Terex ГС-14.02"}
+				],
+				bg:[path.img,"/default/leasing-header.jpg"].join("")
 			} %}
+			{% include "../block/page/catalog.twig" with {
+				view:"catalog_card_desc", 
+				content_prefix:"content-block__",
+				heading:"RM-TEREX<br> RM-Terex ГС-14.02", 
+				content_mod:"is--page-catalog-desc"
+			} %}
+
+			{% include "../block/common/form/form.twig" with {
+				view: 			"leasing", 
+				prefix:			prefix.form, 
+				mod:			"is--leasing", 
+				color:			"is--primary", 
+				ID: 			"f_leasing", 
+				heading:		"Нужна техника в лизинг?", 
+				heading_level:	"h3", 
+				heading_mod:	"is--h1  color--white  fw--700  margin--tiny",
+				heading_sm:		"Оставьте заявку, и наш консультант <br>перезвонит вам и отправит информацию на почту!", 
+				heading_sm_level:	"p", 
+				heading_sm_mod:	"color--white  fw--100  margin--medium",
+				heading_r:		"Спасибо!<br>Заявка отправлена", 
+				heading_r_level:"h3", 
+				heading_r_mod:	"is--h1  color--white  fw--700  margin--tiny",
+				heading_r_sm:	"В ближайшее время наш консультант свяжется с вами!", 
+				heading_r_sm_level:	"p", 
+				heading_r_sm_mod:	"color--white  margin--large"
+			} %}
+
+			{% include "../block/page/catalog.twig" with {
+				view:"catalog_adv", 
+				content_prefix:"content-block__", 
+				content_mod:"is--page-catalog-card-adv",
+				heading_mod:"is--h1  fw--700  margin--tiny", 
+				heading_level:"h2", 
+				heading:"Вас может заинтересовать"
+			} %}
+
+			{% include "../block/page/index/programm.twig" with {
+				content_prefix:"content-block__", 
+				content_mod:"is--page-catalog-card-programm",
+				heading_mod:"is--h1  fw--700  is--catalog-card-programm", 
+				heading_level:"h2", 
+				heading:"Другие лизинговые продукты"
+			} %}
+ 
+			{# {% include "../block/common/map/tpl.twig" with {
+				view:"yandex",
+				prefix:prefix.map,
+				mod:content_mod,
+				city:"Москва", 
+				address:contacts.address, 
+				phone:contacts.phone, 
+				phone_tel:contacts.phone_tel, 
+				email:contacts.email,  
+				clock:"С 10:00 до 19:00<br>Суббота, воскресенье — выходной",
+				clock1:contacts.clock,
+				list:[
+					{
+						map_main:"true",
+						title:"Москва", 					 
+						address:contacts.address,  
+						phone:contacts.phone, 
+						email:contacts.email, 
+						clock:"С 10:00 до 19:00<br>Суббота, воскресенье — выходной",
+						coord:contacts.map_center
+					},
+					{
+						title:"Абакан", 					 
+						address:"655017, ул. Вяткина, д. 39, каб. № 209-А", 
+						phone:"+7 (3902) 298-798", 
+						clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+						coord:"53.726016 91.446205"
+					},
+					{
+						title:"Архангельск", 	
+						address:"163000, ул. Поморская, 5, оф. 313", 
+						phone:"+7 (8182) 20-03-50", 
+						email:"element29@ulh.ru", 
+						clock:"С 10:00 до 19:00 <br>Суббота, воскресенье — выходной",
+						coord:"64.534954 40.524161"
+					}
+				]
+			} %} #}
 		</main>
 		
     	{% include "../block/common/footer/footer.twig" with {footer_prefix:"footer__"} %}
 
     	{# {% include "../block/common/modals/include.twig"%} #}
-    	{% include "../block/common/script/script.twig"%}
+    	{% include "../block/common/script/script.twig" with {map: "view"}%}
 	</body>
 </html>

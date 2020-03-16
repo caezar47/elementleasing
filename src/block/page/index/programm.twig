@@ -1,5 +1,13 @@
 <section class="{{content_prefix}}panel  {{content_mod}}">
 	<div class="{{content_prefix}}container container  {{content_mod}}">
+		{% if heading %}
+			{% include "../../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+		{% endif %}
 		<div class="{{content_prefix}}row  grid__row  is--programm">
 			{% include "../../common/card/card.twig" with {
 				view:"programm", 

@@ -1,4 +1,18 @@
 {% if view == "yandex" %}
+	{# {% if dropdown == "true" %}
+
+	{% for value in list %}
+		<p><a href="#" {% if value.map_main == true %}data-map-base{% endif %}
+					data-coord 
+					data-city="{{value.title}}" 
+					data-phone="{{value.phone}}" 
+					data-email="{{value.email}}" 
+					data-c="{{value.coord}}" 
+					data-addr="{{value.address}}"
+				{% endif %}
+				>{{value.title}}</a></p>
+	{% endfor %} 	
+	{% endif %} #}
 <div class="{{prefix}}block  {{mod}}" id="yandex_map">
 	<div class="{{prefix}}panel  {{mod}}">
 		<p class="{{prefix}}heading  {{mod}}" data-map-heading>{{city}}</p>

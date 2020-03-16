@@ -147,6 +147,36 @@
 	{% endfor %}
 {% endif %}
 
+{% if view == "catalog_card" %}
+	<div class="{{prefix}}item  {{mod}}">
+		<div>
+			<p class="{{prefix}}heading  {{mod}}-sm">Тип: {{type}}</p>	
+			<h2 class="{{prefix}}heading  {{mod}}">{{heading}}</h2>
+			<p class="{{prefix}}heading  {{mod}}-desc">Дополнительные характеристики объекта:</p>	
+			<div class="{{prefix}}note  text__block  {{mod}}">
+				{{note}}
+				<blockquote>
+					*Информация не является публичной офертой, цена может отличаться от заявленной					
+				</blockquote>
+			</div>
+		</div>
+		<div class="{{prefix}}wrap  {{mod}}">
+			<p class="{{prefix}}value  {{mod}}">
+				Цена <span>от {{cost}} ₽</span>
+			</p>
+			<p class="{{prefix}}value  {{mod}}">
+				Лизинговый платеж <span>{{leasing}} ₽/мес</span>
+			</p>
+			<p class="{{prefix}}value  {{mod}}">
+				Срок <span>до {{time}}</span>
+			</p>
+			<p class="{{prefix}}value  {{mod}}  is--btn">
+				<a href="#" class="btn__item  is--white  {{mod}}">Оставить заявку на лизинг</a>
+			</p>
+		</div>
+	</div>
+{% endif %}
+
 {% if view == "brand" %}
 	{% for value in list %}	
 	<picture class="{{prefix}}item  {{mod}}">
