@@ -39,8 +39,7 @@
 						]}
 					%}
 				</div>
-			</div>	
-			{% if view == "catalog_page"%}
+			</div>
 			<div class="{{content_prefix}}row  grid__row   is--page-aside-sm  margin--huge">
 				{% include "../common/aside/tpl.twig" with {
 					view: "filter_catalog",
@@ -123,34 +122,34 @@
 						 		}
 						 	]
 						} %}
-							<div class="{{content_prefix}}row  grid__row  {{content_mod}}  is--new">
-								<h2 class="{{prefix.heading}}heading  is--heading  is--line  fw--700  is--h3">Новинки в каталоге</h2>	
-								{% include "../common/card/card.twig" with {
-								 	view: "catalog_new", 
-								 	prefix:prefix.card, 
-								 	mod:"is--catalog-new", 
-								 	list: [
-								 		{
-								 			"heading":"Автокран Ивановец КС-55713-1К-4",
-								 			"link":page.catalog_card, 
-								 			"sale":"20%", 
-								 			"img":"http://via.placeholder.com/500x265"
-								 		},
-								 		{
-								 			"heading":"Автокран Ивановец КС-55713-1К-4",
-								 			"link":page.catalog_card,
-								 			"sale":"15%", 
-								 			"img":"http://via.placeholder.com/500x265"
-								 		},
-								 		{
-								 			"heading":"Автокран Ивановец КС-55713-1К-4",
-								 			"link":page.catalog_card,
-								 			"sale":"20%", 
-								 			"img":"http://via.placeholder.com/500x265"
-								 		}
-								 	]
-								} %}	
-							</div>	
+						<div class="{{content_prefix}}row  grid__row  {{content_mod}}  is--new">
+							<h2 class="{{prefix.heading}}heading  is--heading  is--line  fw--700  is--h3">Новинки в каталоге</h2>	
+							{% include "../common/card/card.twig" with {
+							 	view: "catalog_new", 
+							 	prefix:prefix.card, 
+							 	mod:"is--catalog-new", 
+							 	list: [
+							 		{
+							 			"heading":"Автокран Ивановец КС-55713-1К-4",
+							 			"link":page.catalog_card, 
+							 			"sale":"20%", 
+							 			"img":"http://via.placeholder.com/500x265"
+							 		},
+							 		{
+							 			"heading":"Автокран Ивановец КС-55713-1К-4",
+							 			"link":page.catalog_card,
+							 			"sale":"15%", 
+							 			"img":"http://via.placeholder.com/500x265"
+							 		},
+							 		{
+							 			"heading":"Автокран Ивановец КС-55713-1К-4",
+							 			"link":page.catalog_card,
+							 			"sale":"20%", 
+							 			"img":"http://via.placeholder.com/500x265"
+							 		}
+							 	]
+							} %}	
+						</div>	
 						{% include "../common/card/card.twig" with {
 						 	view: "catalog", 
 						 	prefix:prefix.card, 
@@ -188,14 +187,26 @@
 					</div>
 				</div>
 			</div>
-			{% endif %}
 		</div>
 	</section>
 {% endif %}
 
-
 {% if view == "catalog_card"%}
-	
+	<section class="{{content_prefix}}panel">
+		<div class="{{content_prefix}}container container">
+			{% include "../common/breadcrumb/tpl.twig" with {
+				prefix:prefix.breadcrumb, 
+				mod:bread_mod, 
+				bread:bread
+			} %}
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+		</div>
+	</section>
 {% endif %}	
 
 {% if view == "catalog_adv" %}

@@ -1,11 +1,11 @@
 <main class="{{content_prefix}}panel  {{content_mod}}">
-	<div class="{{content_prefix}}container container  {{content_mod}}">
-		{% include "../../common/breadcrumb/tpl.twig" with {
+	<section class="{{content_prefix}}container container  {{content_mod}}">
+		{% include "../common/breadcrumb/tpl.twig" with {
 			prefix:prefix.breadcrumb, 
 			mod:bread_mod, 
 			bread:bread
 		} %}
-		{% include "../../common/page-header/tpl.twig" with {
+		{% include "../common/page-header/tpl.twig" with {
 			prefix:"page-header__", 
 			mod:heading_mod,
 			level:heading_level, 
@@ -14,7 +14,7 @@
 
 		<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
 			<div>
-				{% include "../../common/continfo/tpl.twig" with {
+				{% include "../common/continfo/tpl.twig" with {
 					view: "", 
 					prefix:"continfo__", 
 					mod:"is--email-tel", 
@@ -34,7 +34,7 @@
 							"label":"Для любых обращений"
 						}
 				]} %}
-				{# {% include "../../common/button/btn.twig" with {
+				{# {% include "../common/button/btn.twig" with {
 					view:"modal",
 					prefix:"btn__", 
 					mod:"is--lg  is--white", 
@@ -43,7 +43,7 @@
 					m_heading: "Заказать звонок", 
 					m_heading_sm: "Мы перезвоним вам в ближайшее время", m_btn:"Отправить"
 				} %} #}
-				{% include "../../common/button/btn.twig" with {
+				{% include "../common/button/btn.twig" with {
 					view:"link",
 					prefix:"btn__", 
 					mod:"is--lg  is--white", 
@@ -54,7 +54,7 @@
 				} %}
 			</div>
 			<div>
-				{% include "../../common/continfo/tpl.twig" with {
+				{% include "../common/continfo/tpl.twig" with {
 					view: "", 
 					prefix:"continfo__", 
 					mod:"is--office-main", 
@@ -72,15 +72,15 @@
 				} %}
 			</div>
 			<hr>
-			{% include "../../common/tabs/tpl.twig" with {
+			{% include "../common/tabs/tpl.twig" with {
 				view:"map",
 				tabs:"contacts_", 
 				prefix:prefix.tabs,
 				mod:content_mod
 			} %}
 		</div>	
-	</div>
-	{% include "../../common/map/tpl.twig" with {
+	</section>
+	{% include "../common/map/tpl.twig" with {
 		view:"yandex",
 		prefix:prefix.map,
 		mod:content_mod,

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+	<head>	
+    	{% include "../block/common/head/head.twig" with {title:"Каталог"}  %}
+	</head>
+	<body>
+    	{% include "../block/common/navbar/navbar.twig" with {navbar_prefix:"navbar__"} %}
+
+		<main class="content-block__panel">
+			{% include "../block/page/catalog.twig" with {
+				view:"catalog_card", 
+				content_prefix:"content-block__", 
+				content_mod:"is--page-catalog", 
+				heading_group:"margin--default", 
+				heading_mod:"is--hXL  fw--700  color--primary-l", 
+				heading_level:"h1", 
+				heading:"Карточка каталога",
+				bread_mod:"",
+				bread:[
+					{name:"Главная", link:page.index},
+					{name:"Каталог", link:page.catalog},
+					{name:"Карточка каталога"}
+				] 
+			} %}
+		</main>
+		
+    	{% include "../block/common/footer/footer.twig" with {footer_prefix:"footer__"} %}
+
+    	{# {% include "../block/common/modals/include.twig"%} #}
+    	{% include "../block/common/script/script.twig"%}
+	</body>
+</html>

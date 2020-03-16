@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="ru-RU"> 
 	<head>	
-    	{% include "../block/common/head/head.twig" with {title:"Вакансии"}  %}
+    	{% include "../block/common/head/head.twig" with {title:"Карточка вакансий"}  %}
 	</head>
 	<body>
     	{% include "../block/common/navbar/navbar.twig" with {navbar_prefix:"navbar__"} %}
 		<main class="content-block__panel">
 			{% include "../block/page/about/vacancies.twig" with {
-				view:"vacancies_page", 
+				view:"vacancies_card", 
 				content_prefix:"content-block__", 
 				content_mod:"is--page-vacancies", 
 				heading_group:"margin--default", 
 				heading_mod:"is--hXL  fw--700  color--primary-l", 
 				heading_level:"h1", 
-				heading:"Вакансии", 
+				heading:"Карточка вакансий", 
 				bread_mod:"",
 				bread:[
 					{name:"Главная", link:page.index},
-					{name:"Вакансии"}
+					{name:"Вакансии", link:page.vacancies},
+					{name:"Карточка вакансий"}
 				]
 			} %}
 			{% include "../block/common/form/form.twig" with {
