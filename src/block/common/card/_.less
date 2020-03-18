@@ -68,16 +68,13 @@
 		}
 		&.is--programm{
 			position: relative;
-			padding: 30px 30px 0;
+			background-color: @white;
+			padding: 30px 25px;
 			display: flex;
-			flex-direction: column;
-			
+			flex-direction: column;		
 			.media-breakpoint-down(@lg; {
-				border-top: 1px solid @white-e9;
-				&:last-child{
-					padding-bottom: 30px;
-					border-bottom: 1px solid @white-e9;
-				}
+				font-size: 18px;	
+				box-shadow: 0 4px 14px 0 rgba(0,52,156,0.25);
 			});
 			.media-breakpoint-up(@lg; {
 				padding: 45px 30px 60px;
@@ -261,7 +258,10 @@
 			&-promo{
 				position: relative;
 				.media-breakpoint-down(@md; {
-					margin-bottom: 40px;			
+					margin-bottom: 40px;
+					[data-slick-catalog] > *:last-child &{
+						margin-bottom: 0;
+					}			
 				});
 				.media-breakpoint-down(@lg; {
 					font-size: 16px;
@@ -331,7 +331,19 @@
 			&-card{
 				display: grid;
 				grid-gap: 30px;
-				grid-template-columns: 7fr 5fr;
+				.media-breakpoint-down(@md; {
+					font-size: 14px;
+					& > *:nth-child(2){
+						order: -1;
+					}
+				});
+				.media-breakpoint-up(@md; {
+					grid-gap: 30px;
+					grid-template-columns: 7fr 5fr;
+					& > *:nth-child(2){
+						align-self: flex-start;
+					}
+				});
 			}
 		}
 		&.is--leasing{
@@ -574,14 +586,24 @@
 				});
 			}
 			&-card{
-				position: relative;
-				z-index: 1;
-				box-shadow: 0 12px 34px 0 rgba(0,52,156,0.25);
-				background-color: @white;
-				.media-breakpoint-up(@md; {
-					margin-top: -90px;
-					padding: 45px 35px;
-				});
+				&{
+					position: relative;
+					z-index: 1;
+					.media-breakpoint-up(@md; {
+						margin-top: -90px;
+						padding: 45px 35px;
+						box-shadow: 0 12px 34px 0 rgba(0,52,156,0.25);
+						background-color: @white;
+					});
+				}
+				&-desc{
+					.media-breakpoint-down(@md; {
+						display: none;
+						&.is--active{
+							display: block;
+						}
+					});
+				}
 			}
 		}
 		&.is--seo{
@@ -1195,7 +1217,10 @@
 			.heading3();
 			color: @default;
 			font-weight: 700;
-			margin-bottom: 15px;
+			margin-bottom: 10px;
+			.media-breakpoint-up(@lg; {
+				margin-bottom: 15px;				
+			});
 		}
 		&.is--reviews{
 			.heading5();
@@ -1289,11 +1314,17 @@
 					.heading4();
 					margin-bottom: 15px;
 					color: @primary;
+					.media-breakpoint-down(@md; {
+						display: none;
+					});
 				}
 				&{
 					font-weight: 700;
 					.heading-md();	
-					margin-bottom: 45px;				
+					margin-bottom: 45px;
+					.media-breakpoint-down(@md; {
+						display: none;
+					});				
 				}
 				&-desc{
 					.heading4();
@@ -1398,12 +1429,20 @@
 		}	
 		&.is--programm{
 			color: @black-9a;
-			line-height: 1.63em;
-			margin-bottom: 20px;
+			font-size: 14px;
+			line-height: 1.5em;
+			font-weight: 100;
+			margin-bottom: 55px;
 			transition: @trs-site;
 			.card__item:hover &{
 				color: @default;
 			}
+			.media-breakpoint-up(@lg; {
+				font-weight: 400;
+				font-size: 1em;
+				line-height: 1.63em;
+				margin-bottom: 20px;				
+			});
 		}	
 		&.is--reviews{
 			font-weight: 100;
@@ -1495,6 +1534,7 @@
 	}
 	&value{
 		&.is--programm{
+			font-size: 0.78em;	
 			color: fadeout(@blue-08, 50%);
 			transition: @trs-site;
 			margin-top: auto;
@@ -1504,12 +1544,19 @@
 			span{
 				display: block;
 				font-weight: 700;
-				font-size: 1.8em;
-				line-height: 1.28em;
+				font-size: 2.3em;
+				line-height: 0.9em;
 			}
 			.card__item:hover &{
 				color: @success;
 			}
+			.media-breakpoint-up(@lg; {	
+				font-size: 1em;			
+				span{
+					font-size: 1.8em;
+					line-height: 1.28em;
+				}
+			});
 		}
 		&.is--catalog{
 			&{
@@ -1630,21 +1677,41 @@
 			&-card{
 				.heading4();
 				color: @black-98;
-				margin-bottom: 45px;
+				margin-bottom: 15px;
 				&:last-child{
 					margin-bottom: 0;
 				}
 				&.is--btn{
-					padding-top: 25px;
+					padding-top: 10px;
 					text-align: center;
 				}
 				span{
 					display: block;
 					font-weight: 700;
 					color: @default;
-					font-size: 1.53em;
-					line-height: 1.4em;
-				}
+					font-size: 1.7em;
+					line-height: 1.7em;
+				}	
+				&.is--desc{
+					.btn-clearfix();
+					float: right;
+					max-width: 100px;
+    				font-size: 0.88em;
+    				text-align: left;
+				}			
+				.media-breakpoint-up(@md; {
+					margin-bottom: 45px;
+					span{
+						font-size: 1.53em;
+						line-height: 1.4em;
+					}
+					&.is--btn{
+						padding-top: 25px;
+					}
+					&.is--desc{
+						display: none;
+					}
+				});
 			}
 		}
 	}

@@ -49,10 +49,10 @@
 						background-color: fadeout(@primary, 50%);
 					}
 					.breadcrumb__list{
-						margin-bottom: 30px;
+						margin-bottom: 20px;
 					}
 					.media-breakpoint-down(@md; {
-						min-height: 345px;
+						min-height: 305px;
 						font-size: 12px;
 					});
 					.media-breakpoint-up(@xl; {
@@ -64,6 +64,18 @@
 				}
 				&-desc{
 					overflow: visible;
+				}
+				&-card{
+					&-adv{
+						.media-breakpoint-down(@md; {
+							font-size: 12px;
+						});
+					}
+					&-leasing{
+						.media-breakpoint-down(@md; {
+							font-size: 12px;
+						});
+					}
 				}
 			}
 		}
@@ -385,19 +397,25 @@
 					});
 				}
 				&-desc{
+					padding-top: 20px;
+					padding-bottom: 60px;
 					.media-breakpoint-up(@lg; {
 						padding-top: 2.6vw;
 						padding-bottom: 5.8vw;
 					});
 				}
 				&-card-adv{
+					padding-top: 20px;
+					padding-bottom: 50px;
 					.media-breakpoint-up(@lg; {
 						padding-top: 5vw;
 						padding-bottom: 3.6vw;
 					});
 				}
 				&-card-leasing{
+					padding-top: 30px;
 					.media-breakpoint-up(@lg; {
+						padding-top: 4vw;
 						padding-bottom: 10vw;
 					});
 				}
@@ -781,7 +799,7 @@
 			}
 			&-leasing{
 				grid-template-columns: 100%;
-				.media-breakpoint-up(@lg; {
+				.media-breakpoint-up(@sm; {
 					grid-template-columns: repeat(3, 1fr);
 				});		
 			}

@@ -107,9 +107,12 @@
 		}
 		&.is--catalog{
 			&-card{
-				padding: 26px;
+				padding: 11px;
 				max-width: 390px;
 				width: 100%;
+				.media-breakpoint-up(@md; {
+					padding: 26px;
+				});
 			}
 		}
 		&.is--md{

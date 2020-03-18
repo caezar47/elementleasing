@@ -65,6 +65,35 @@
 				});
 			}
 		}
+		&.is--page{
+			&-catalog{
+				&-header{
+					&{
+						.media-breakpoint-up(@md; {
+							font-size: 1.85em;
+							line-height: 1.375em;
+						});
+					}
+					&-sm{
+						.media-breakpoint-up(@md; {
+							display: none;
+						});
+					}
+				}
+				&-card-adv{
+					margin-bottom: 35px;
+					.media-breakpoint-up(@md; {
+						margin-bottom: 15px;
+					});
+				}
+				&-card-adv{
+					margin-bottom: 35px;
+					.media-breakpoint-up(@md; {
+						margin-bottom: 15px;
+					});
+				}
+			}
+		}
 		&.is--leasing{
 			&-header{
 				margin-bottom: 5px;
@@ -154,6 +183,7 @@
 				});
 			}
 			&-card-programm{
+				margin-bottom: 30px;
 				.media-breakpoint-up(@md; {
 					margin-bottom: 5.1vw;
 				});

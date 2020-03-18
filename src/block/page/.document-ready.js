@@ -6,3 +6,9 @@ var result = $("[data-count]"),
         result.html("<span>"+index+"</span><span>/</span><span>"+count+"</span>");
 	};
 carousel.on('slid.bs.carousel', slideCarousel).trigger('slid.bs.carousel');
+
+var btn = $("[data-dropdown-btn]");
+btn.on('click', function(e) {
+	e.preventDefault();
+	$(this).closest('.card__item').find('[data-dropdown]').toggleClass('is--active');
+});

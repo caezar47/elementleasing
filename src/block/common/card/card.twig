@@ -149,7 +149,7 @@
 
 {% if view == "catalog_card" %}
 	<div class="{{prefix}}item  {{mod}}">
-		<div>
+		<div  class="{{prefix}}wrap  {{mod}}-desc" data-dropdown>
 			<p class="{{prefix}}heading  {{mod}}-sm">Тип: {{type}}</p>	
 			<h2 class="{{prefix}}heading  {{mod}}">{{heading}}</h2>
 			<p class="{{prefix}}heading  {{mod}}-desc">Дополнительные характеристики объекта:</p>	
@@ -161,6 +161,9 @@
 			</div>
 		</div>
 		<div class="{{prefix}}wrap  {{mod}}">
+			<button type="button" class="{{prefix}}value  {{mod}}  is--desc" data-dropdown-btn>
+				Дополнительные характеристики
+			</button>
 			<p class="{{prefix}}value  {{mod}}">
 				Цена <span>от {{cost}} ₽</span>
 			</p>
