@@ -151,73 +151,6 @@
 	</section>
 {% endif %}
 
-{% if view == "leasing_catalog" %}
-	<section class="{{content_prefix}}panel  {{content_mod}}">
-		<div class="{{content_prefix}}container container  {{content_mod}}">
-			{% include "../../common/page-header/tpl.twig" with {
-				prefix:"page-header__", 
-				mod:heading_mod,
-				level:heading_level, 
-				heading:heading
-			} %}			
-			<div class="{{content_prefix}}slider  {{content_mod}}" data-slick-catalog data-slick-dots="true">
-				{% include "../../common/card/card.twig" with {
-				 	view: "catalog_promo", 
-				 	prefix:prefix.card, 
-				 	mod:"is--catalog-promo-primary", 
-				 	list: [
-				 		{
-				 			"heading":"MAN TGS 18.400 4X2 BLS", 
-				 			"link":page.catalog_card, 
-				 			"cost":"20 000", 
-				 			"status":"Есть в наличии", 
-				 			"img":"http://via.placeholder.com/500x265"
-				 		},
-				 		{
-				 			"heading":"MAN TGS 18.400 4X2 BLS",
-				 			"link":page.catalog_card,  
-				 			"cost":"20 000", 
-				 			"status":"Есть в наличии", 
-				 			"img":"http://via.placeholder.com/500x265"
-				 		},
-				 		{
-				 			"heading":"MAN TGS 18.400 4X2 BLS",
-				 			"link":page.catalog_card,  
-				 			"cost":"20 000", 
-				 			"status":"Есть в наличии", 
-				 			"img":"http://via.placeholder.com/500x265"
-				 		},
-				 		{
-				 			"heading":"MAN TGS 18.400 4X2 BLS", 
-				 			"link":page.catalog_card, 
-				 			"cost":"20 000", 
-				 			"status":"Есть в наличии", 
-				 			"img":"http://via.placeholder.com/500x265"
-				 		},
-				 		{
-				 			"heading":"MAN TGS 18.400 4X2 BLS",
-				 			"link":page.catalog_card,  
-				 			"cost":"20 000", 
-				 			"status":"Есть в наличии", 
-				 			"img":"http://via.placeholder.com/500x265"
-				 		},
-				 		{
-				 			"heading":"MAN TGS 18.400 4X2 BLS",
-				 			"link":page.catalog_card,  
-				 			"cost":"20 000", 
-				 			"status":"Есть в наличии", 
-				 			"img":"http://via.placeholder.com/500x265"
-				 		}
-				 	]
-				} %}
-			</div>
-			<p class="align--right">
-				<a class="link__item  is--next  is--success-white" href="{{page.catalog}}">Весь каталог</a>
-			</p>
-		</div>
-	</section>
-{% endif %}
-
 {% if view == "leasing_brand" %}
 	<section class="{{content_prefix}}panel  {{content_mod}}">
 		<div class="{{content_prefix}}container container  {{content_mod}}">
@@ -353,4 +286,46 @@
 			</div>
 		</div>
 	</section>
+{% endif %}
+
+{% if view == "leasing_block" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% if heading %}
+				{% include "../../common/page-header/tpl.twig" with {
+					prefix:"page-header__", 
+					mod:heading_mod,
+					level:heading_level, 
+					heading:heading
+				} %}
+			{% endif %}
+			<div class="{{content_prefix}}row  grid__row  is--block-leasing">
+				{% include "../../common/card/card.twig" with {
+					view:"programm", 
+					prefix: prefix.card, 
+					mod:"is--programm", 
+					list: [
+						{
+							"heading":"Лизинг<br> с Trade-in", 
+							"link":"#", 
+							"note":"Приобретайте новую коммерческую технику в лизинг, в обмен на старую!",
+							"value":"от 15% <br>+ старая техника"
+						},
+						{
+							"heading":"Льготный лизинг",
+							"link":"#",  
+							"note":"Получите спецтехнику в лизинг со скидкой на аванс до 15% от ее стоимости!",
+							"value":"от 15%<br>&nbsp;"
+						},
+						{
+							"heading":"Лизинг<br> б/у техники", 
+							"link":"#", 
+							"note":"Получите спецтехнику в лизинг со скидкой на аванс до 15% от ее стоимости!",
+							"value":"от 20%<br>&nbsp;"
+						}
+					]
+				} %}
+			</div> 
+		</div>
+	</section> 
 {% endif %}

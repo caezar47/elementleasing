@@ -134,6 +134,14 @@
 			padding-top: 10px;
 		}
 	}
+
+	&.is--cols-3{
+		& > .cols{
+			.media-breakpoint-up(@sm; {
+				flex-basis: 100%/3;
+			});
+		}
+	}
 }
 .cols {
 	.make-cols();

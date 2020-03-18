@@ -11,8 +11,9 @@
 				view:"catalog_card_header", 
 				content_prefix:"content-block__", 
 				content_mod:"is--page-catalog-header",
-				heading_mod:"is--hMD  fw--700  color--white  is--page-catalog-header", 
+				heading_mod:"fw--700  color--white  is--page-catalog-header", 
 				heading_level:"h1", 
+				heading:"Галичанин<br> КС-55713-4",
 				heading:"RM-TEREX<br> RM-Terex ГС-14.02",
 				bread_mod:"is--white",
 				bread:[
@@ -22,6 +23,7 @@
 				],
 				bg:[path.img,"/default/leasing-header.jpg"].join("")
 			} %}
+
 			{% include "../block/page/catalog.twig" with {
 				view:"catalog_card_desc", 
 				content_prefix:"content-block__",
@@ -55,16 +57,19 @@
 				content_mod:"is--page-catalog-card-adv",
 				heading_mod:"is--h1  fw--700  margin--tiny", 
 				heading_level:"h2", 
-				heading:"Вас может заинтересовать"
+				heading:"Вас может заинтересовать",
+                card_mod:"is--catalog-promo",
+                slider_dots:"false"
 			} %}
 
-			{% include "../block/page/index/programm.twig" with {
-				content_prefix:"content-block__", 
-				content_mod:"is--page-catalog-card-programm",
+            {% include "../block/page/leasing/tpl.twig" with {
+                view:"leasing_block", 
+                content_prefix:"content-block__", 
+                content_mod:"is--page-catalog-card-leasing",
 				heading_mod:"is--h1  fw--700  is--catalog-card-programm", 
 				heading_level:"h2", 
 				heading:"Другие лизинговые продукты"
-			} %}
+            } %}
  
 			{# {% include "../block/common/map/tpl.twig" with {
 				view:"yandex",

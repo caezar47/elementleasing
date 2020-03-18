@@ -207,7 +207,7 @@
 	</section>
 {% endif %}
 
-{% if view == "news_leasing" %}
+{% if view == "news_block" %}
 	<section class="{{content_prefix}}panel  {{content_mod}}">
 		<div class="{{content_prefix}}container container  {{content_mod}}">
 			{% include "../../common/page-header/tpl.twig" with {
@@ -216,14 +216,14 @@
 				level:heading_level, 
 				heading:heading
 			} %}
-			<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
+			<div class="{{content_prefix}}row  grid__row  {{content_mod}}"> 
 				{% include "../../common/card/card.twig" with {
 				 	view: "news_sm", 
 				 	prefix:prefix.card, 
 				 	mod:"is--news-sm", 
 				 	list: [
 				 		{
-				 			"heading":"Осенняя хандра для ГАЗа не беда", 
+				 			"heading":"Осенняя хандра<br> для ГАЗа не беда", 
 				 			"link":page.news_card,
 				 			"date":"11.10.2019", 
 				 			"date_iso":"2019-10-11"
@@ -237,9 +237,11 @@
 				 	]
 				} %}
 			</div>
-			<p class="align--right">
-				<a href="{{link}}" class="link__item  is--next  is--success">Все новости</a>
+			{% if link %}
+			<p class="{{content_prefix}}link  {{content_mod}}">
+				<a class="link__item  is--next  is--success" href="{{link_href}}">{{link}}</a>
 			</p>
+			{% endif %}
 		</div>
 	</section>
 {% endif %}

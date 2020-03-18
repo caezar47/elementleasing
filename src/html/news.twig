@@ -21,10 +21,11 @@
 				],
 				bread:"Новости" 
 			} %}
-			{% include "../block/page/index/programm.twig" with {
-				content_prefix:"content-block__", 
-				content_mod:"is--page-news-programm"
-			} %}
+            {% include "../block/page/leasing/tpl.twig" with {
+                view:"leasing_block", 
+                content_prefix:"content-block__", 
+                content_mod:"is--page-news-leasing"
+            } %}
 		</main>
 		
     	{% include "../block/common/footer/footer.twig" with {footer_prefix:"footer__"} %}

@@ -25,6 +25,46 @@
 			font-size: 55%;
     		top: -1.15em;
 		}
+		&.is--block{
+			&-news{				
+				margin-bottom: 20px;
+				.media-breakpoint-up(@md; {
+					margin-bottom: 45px;
+				});
+			}
+		}
+		&.is--index{
+			&-adv{
+				padding-right: 60px;
+				margin-bottom: 15px;
+				.media-breakpoint-up(@lg; {
+					margin-bottom: 65px;
+					padding-right: 0;
+				});
+			}
+			&-catalog{
+				.media-breakpoint-down(@md; {
+					margin-bottom: 35px;
+				});
+			}
+			&-order{
+				&{
+					margin-bottom: 15px;
+				}
+				&-note{
+					margin-bottom: 45px;
+					.media-breakpoint-up(@md; {
+						line-height: 1.5em;
+					});
+				}
+			}
+			&-products{
+				margin-bottom: 20px;
+				.media-breakpoint-up(@lg; {
+					margin-bottom: 45px;
+				});
+			}
+		}
 		&.is--leasing{
 			&-header{
 				margin-bottom: 5px;
@@ -94,12 +134,6 @@
 			}
 			&-conditions{				
 				margin-bottom: 15px;
-				.media-breakpoint-up(@md; {
-					margin-bottom: 40px;
-				});
-			}
-			&-news{				
-				margin-bottom: 20px;
 				.media-breakpoint-up(@md; {
 					margin-bottom: 40px;
 				});

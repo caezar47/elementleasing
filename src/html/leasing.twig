@@ -106,14 +106,19 @@
 					}
 				],
 			} %}
-			{% include "../block/page/leasing/tpl.twig" with {
-				view:"leasing_catalog", 
-				content_prefix:"content-block__", 
-				content_mod:"is--leasing-catalog",
-				heading_mod:"is--hXL  fw--700  color--blue-08  is--leasing-catalog", 
-				heading_level:"h2", 
-				heading:"Каталог"
-			} %}
+
+            {% include "../block/page/catalog.twig" with {
+                view:"catalog_adv",  
+                content_prefix:"content-block__", 
+                content_mod:"is--leasing-catalog",
+                heading_mod:"is--hXL  fw--700  color--blue-08  is--leasing-catalog", 
+                heading_level:"h2", 
+                heading:"Каталог",
+                card_mod:"is--catalog-promo-primary",
+                slider_dots:"true",
+                link:"Весь каталог",
+                link_href:page.catalog
+            } %}
 
 			{% include "../block/page/leasing/tpl.twig" with {
 				view:"leasing_brand", 
@@ -267,7 +272,6 @@
 				content_mod:"is--leasing-seo",
 				prefix:prefix.card,
 				mod:"is--seo",
-				mod:"is--seo",
 				list_group: "articles",
 				list: [
 			 		{
@@ -287,30 +291,14 @@
 			} %}
 
 			{% include "../block/page/about/news.twig" with {
-				view:"news_leasing", 
+				view:"news_block", 
 				content_prefix:"content-block__", 
-				content_mod:"is--leasing-news",				
-				heading_mod:"is--h1  fw--700  is--leasing-news", 
+				content_mod:"is--block-news",				
+				heading_mod:"is--h1  fw--700  is--block-news", 
 				heading_level:"h2", 
 				heading:"Новости",
-				link:page.news,
-				list: [
-			 		{"img":[path.img,"/default/partners-02.svg"].join("")},
-			 		{"img":[path.img,"/default/partners-03.svg"].join("")},
-			 		{"img":[path.img,"/default/partners-04.svg"].join("")},
-			 		{"img":[path.img,"/default/partners-05.svg"].join("")},
-			 		{"img":[path.img,"/default/partners-06.svg"].join("")},
-			 		{"img":[path.img,"/default/partners-08.svg"].join("")},
-			 		{"img":[path.img,"/default/partners-10.svg"].join("")},
-			 		{"img":[path.img,"/default/partners-11.svg"].join("")},
-			 		{"img":[path.img,"/default/partners-12.svg"].join("")},
-			 		{"img":[path.img,"/default/partners-13.svg"].join("")},
-			 		{"img":[path.img,"/default/partners-14.svg"].join("")},
-			 		{"img":[path.img,"/default/partners-15.svg"].join("")},
-			 		{"img":[path.img,"/default/partners-16.svg"].join("")},
-			 		{"img":[path.img,"/default/partners-17.svg"].join("")},
-			 		{"img":[path.img,"/default/partners-18.png"].join("")},
-			 	]
+                link:"Все новости",
+                link_href:page.news
 			} %}
 
 		</main>

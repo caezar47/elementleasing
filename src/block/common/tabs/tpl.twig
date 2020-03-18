@@ -1,3 +1,39 @@
+{% if view == "index_adv" %}
+	<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
+		<ul class="{{prefix}}nav  {{mod}}  {{content_mod}}">
+			{% for value in list %}
+			<li class="{{prefix}}item  {{mod}} {{value.status}}">
+				<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}{{value.id}}" data-toggle="tab">{{value.name}}</a>
+			</li>
+			{% endfor %}
+		</ul>	
+		<div>
+			<div class="{{prefix}}controls  {{content_mod}}">
+				<button type="button" class="{{prefix}}controls-btn  is--prev  {{mod}}" id="prev"></button>		
+				<button type="button" class="{{prefix}}controls-btn  is--next  {{mod}}" id="next"></button>
+			</div>			
+			<div>		
+				{% for value in list %}
+				<div class="{{prefix}}pane  {{value.status}}  {{content_mod}}" id="{{tabs}}{{value.id}}">
+					<div class="text__block  {{content_mod}}">
+						{{value.note}}
+					</div>
+					{% if value.preview %}
+					<div class="{{prefix}}gallery  {{content_mod}}  row  is--cols-3  is--gutter">
+						{% for val in value.preview %}
+						<div class="cols">
+							<img src="{{val.preview}}" class="img-responsive" alt="">
+						</div>
+						{% endfor %}
+					</div>
+					{% endif %}
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+{% endif %}
+
 {% if view == "map" %}
 	<div class="{{prefix}}panel  {{mod}}">
 		<ul class="{{prefix}}nav  {{mod}}">
@@ -1127,42 +1163,20 @@
 {% endif %}
 
 {% if view == "leasing_formaliz" %}
-<div class="{{prefix}}panel  {{mod}}">
-	<ul class="{{prefix}}nav  {{mod}}">
+	<div class="{{prefix}}panel  {{mod}}">
+		<ul class="{{prefix}}nav  {{mod}}">
+			{% for value in list %}
+			<li class="{{prefix}}item  {{mod}} {{value.status}}">
+				<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}{{value.id}}" data-toggle="tab">{{value.name}}</a>
+			</li>
+			{% endfor %}
+		</ul>
 		{% for value in list %}
-		<li class="{{prefix}}item  {{mod}} {{value.status}}">
-			<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}{{value.id}}" data-toggle="tab">{{value.name}}</a>
-		</li>
-		{% endfor %}
-	</ul>
-	{% for value in list %}
-	<div class="{{prefix}}pane  {{value.status}}  {{mod}}" id="{{tabs}}{{value.id}}">
-		<div class="text__block  {{group}}">
-			{{value.note}}
+		<div class="{{prefix}}pane  {{value.status}}  {{mod}}" id="{{tabs}}{{value.id}}">
+			<div class="text__block  {{group}}">
+				{{value.note}}
+			</div>
 		</div>
+		{% endfor %}
 	</div>
-	{% endfor %}
-</div>
 {% endif %}
-{# <div class="{{prefix}}panel">
-	<ul class="{{prefix}}nav  {{mod}}">
-		<li class="{{prefix}}item  {{mod}} active">
-			<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}1" data-toggle="tab">Вкладка 1</a>
-		</li>
-		<li class="{{prefix}}item  {{mod}}">
-			<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}2" data-toggle="tab">Вкладка 2</a>
-		</li>
-		<li class="{{prefix}}item  {{mod}}">
-			<a class="{{prefix}}link  {{mod}}" href="#{{tabs}}3" data-toggle="tab">Вкладка 3</a>
-		</li>
-	</ul>
-</div>
-<div class="{{prefix}}pane  active" id="{{tabs}}1">
-	Вкладка 1
-</div>
-<div class="{{prefix}}pane" id="{{tabs}}2">
-	Вкладка 2
-</div>
-<div class="{{prefix}}pane" id="{{tabs}}3">
-	Вкладка 3
-</div> #}

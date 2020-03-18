@@ -1,5 +1,16 @@
 .social__{  
 	&block{
+		&.is--index{
+			&-header{
+				display: none;
+				.media-breakpoint-up(@md; {
+					display: block;
+					position: absolute;
+					bottom: 90px;
+					right: 0px;
+				});
+			}
+		}
 		&.is--footer{
 			padding-top: 10px;
 		}
@@ -8,10 +19,21 @@
 		align-items: center;		
 		margin-left: -(@soc_gutter);
 		margin-right: -(@soc_gutter);
+		&.is--index{
+			&-header{
+				flex-direction: column;
+				margin: -(@soc_gutter - 6) 0;
+			}
+		}
 	}
 	&cols{
 		padding-left: @soc_gutter;
 		padding-right: @soc_gutter;
+		&.is--index{
+			&-header{
+				padding: @soc_gutter - 6 0;
+			}
+		}
 	}
 	&heading{	
 	}
@@ -19,16 +41,16 @@
 		display: block;
 		width: @soc_size;
 		height: @soc_size;
-		//border: 2px solid @soc_border;
-		//border-radius: @soc_border_radius;
-		//padding: 6px;
 		.media-breakpoint-up(@xl; {
 			width: @soc_size - 8;
 			height: @soc_size - 8;
 		});
-		&, &:focus{color: @soc_color;} 
-		svg{display: block;}
-		&.is--footer{
+		&, &:focus{color: @soc_color;}  
+		svg{display: block;}		
+		&.is--index{
+			&-header{
+				&, &:focus{color: @black-98;}  
+			}
 		}
 		&.is--soc-vk{
 			&:hover{

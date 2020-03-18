@@ -208,6 +208,7 @@
 		</div>
 	</section>
 {% endif %}
+
 {% if view == "catalog_card_desc" %}
 	<section class="{{content_prefix}}panel  {{content_mod}}">
 		<div class="{{content_prefix}}container container  {{content_mod}}">
@@ -254,11 +255,11 @@
 				heading:heading
 			} %}
 			
-			<div data-slick-catalog  data-slick-dots="false">
+			<div data-slick-catalog  data-slick-dots="{{slider_dots}}">
 				{% include "../common/card/card.twig" with {
 				 	view: "catalog_promo", 
 				 	prefix:prefix.card, 
-				 	mod:"is--catalog-promo", 
+				 	mod:card_mod, 
 				 	list: [
 				 		{
 				 			"heading":"MAN TGS 18.400 4X2 BLS", 
@@ -305,6 +306,11 @@
 				 	]
 				} %}
 			</div>
+			{% if link %}
+			<p class="{{content_prefix}}link  is--block-slider">
+				<a class="link__item  is--next  is--success-white" href="{{link_href}}">{{link}}</a>
+			</p>
+			{% endif %}
 		</div>
 	</section>
 {% endif %}	
