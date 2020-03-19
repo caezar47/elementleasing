@@ -2,6 +2,7 @@
 $(function() { 
 	var catalog = $('[data-slick-catalog]');
 	var partners = $('[data-slick-partners]');
+	var finance = $('[data-slick-finance]');
 	var dots = $('[data-slick-dots]').data('slick-dots');
 	console.log(dots);
 
@@ -31,6 +32,41 @@ $(function() {
 		    {
 				breakpoint: 768,				
 		      	settings: "unslick"
+		    }
+		]
+	});
+
+	finance.slick({
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		arrows: true,
+		dots: dots,
+		infinite: false,
+		//centerMode: true,
+  		//centerPadding: '60px',
+		//infinite: true,
+		//autoplay: true,
+  		//autoplaySpeed: 4000,
+		prevArrow: prevArrow,
+		nextArrow: nextArrow,
+		responsive: [
+		    {
+				breakpoint: 991,
+				settings: {
+					slidesToShow: 3,
+				}
+		    },
+		    {
+				breakpoint: 767,
+				settings: {
+					slidesToShow: 2,
+				}
+		    },
+		    {
+				breakpoint: 576,
+				settings: {
+					slidesToShow: 1, 
+				}
 		    }
 		]
 	});

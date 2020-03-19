@@ -1,0 +1,93 @@
+{% if view == "investors_header"%}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../common/breadcrumb/tpl.twig" with {
+				prefix:prefix.breadcrumb, 
+				mod:bread_mod, 
+				bread:bread
+			} %}	
+
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "investors_info"%}
+	<section class="{{content_prefix}}panel  {{content_mod}}" {% if bg %}style="background-image: url({{bg}})"{% endif %}>
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_n_mod,
+				level:heading_n_level, 
+				heading:heading_n
+			} %}
+			<a href="{{docs}}" class="btn__item  is--lg  is--success" target="_blank">{{docs_name}}</a>
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "investors_docs"%}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+			<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
+				{% include "../common/card/card.twig" with {
+				 	view: "docs_card", 
+				 	prefix:prefix.card, 
+				 	mod:"is--docs-card", 
+				 	list:list
+				} %}
+			</div>
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "investors_finance" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+			
+			<div class="{{content_prefix}}slider  {{content_mod}}">
+				<div data-slick-finance  data-slick-dots="{{slider_dots}}">
+					{% include "../common/card/card.twig" with {
+					 	view: "finance", 
+					 	prefix:prefix.card, 
+					 	mod:"is--finance", 
+					 	list: list
+					} %}
+				</div>
+				<div class="{{content_prefix}}slider-note  {{content_mod}}">
+					<p>*Финансовые показатели по МСФО</p>
+					<p>**Аннуализированный показатель</p>
+				</div>
+			</div>
+			{#
+			{% if link %}
+			<p class="{{content_prefix}}link  is--block-slider">
+				<a class="link__item  is--next  is--success-white" href="{{link_href}}">{{link}}</a>
+			</p>
+			{% endif %} #}
+		</div>
+	</section>
+{% endif %}	

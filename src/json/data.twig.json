@@ -26,6 +26,7 @@
 	"page":{
 		"index":"./",
 		"leasing":"./leasing.html",
+		"investors":"./investors.html",
 		"menedzhment":"./menedzhment.html",
 		"news":"./news.html",
 		"news_card":"./news-card.html",
