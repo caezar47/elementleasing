@@ -1,27 +1,221 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="ru-RU"> 
 	<head>	
-    	{% include "../block/common/head/head.twig" with {title:"Карточка статьи"}  %}
+    	{% include "../block/common/head/head.twig" with {title:"Информационная статья"}  %}
 	</head>
 	<body>
     	{% include "../block/common/navbar/navbar.twig" with {navbar_prefix:"navbar__"} %}
 		<main class="content-block__panel">
-			{% include "../block/page/about/articles.twig" with {
-				view:"articles_card", 
+			<section class="content-block__panel  is--leasing-top">
+				{% include "../block/page/leasing/tpl.twig" with {
+					view:"leasing_header", 
+					content_prefix:"content-block__", 
+					content_mod:"is--leasing-header",
+					heading_mod:"is--h1  fw--700  color--white  is--leasing-header", 
+					heading_level:"h1", 
+					heading:"Спецтехника в лизинг", 
+					heading_sm_mod:"is--h4  color--white  is--leasing-header-sm", 
+					heading_sm_level:"p", 
+					heading_sm:"Профинансируем лизинг спецтехники и поможем с выбором надежного поставщика!", 
+					heading_val_mod:"fw--700  color--white  is--leasing-header-value", 
+					heading_val_level:"p", 
+					heading_val:"Аванс <span>от 20%</span>", 
+					bread_mod:"is--white",
+					bread:[
+						{name:"Главная", link:page.index},
+						{name:"Грузовые авто в лизинг"}
+					],
+					bg:[path.img,"/default/leasing-header.png"].join("")
+				} %}
+
+				{% include "../block/page/leasing/tpl.twig" with {
+					view:"leasing_condition", 
+					content_prefix:"content-block__", 
+					content_mod:"is--leasing-condition",
+					heading_mod:"is--h1  fw--700  is--leasing-condition", 
+					heading_level:"h2", 
+					heading:"Условия лизинга", 
+					heading_sm_mod:"fw--100  is--h4  color--black-54  is--leasing-condition-sm", 
+					heading_sm_level:"p", 
+					heading_sm:"Для юридических лиц и&nbsp;индивидуальных предпринимателей", 
+					list:[
+						{label:"Аванс", value:"от 20%"},
+						{label:"Переплата в год", value:"от 6,0%"},
+						{label:"Срок лизинга", value:"от 12 до 36 мес."},
+						{value:"Скидка производителя", mod: "is--md-hidden"}
+					],
+				} %}
+			</section>
+
+			{% include "../block/page/leasing/tpl.twig" with {
+				view:"leasing_formaliz", 
 				content_prefix:"content-block__", 
-				content_mod:"is--page-news-card", 
-				heading_group:"margin--default", 
-				heading_mod:"is--hXL  fw--700  color--primary-l", 
-				heading_level:"h1", 
-				heading:"Статьи", 
-				heading_sm:"Полуприцеп рефрижератор б/у в лизинг", 
-				bread_mod:"",
-				bread:[
-					{name:"Главная", link:page.index},
-					{name:"Статьи", link:page.articles},
-					{name:"Полуприцеп рефрижератор б/у в лизинг"}
+				content_mod:"is--leasing-formaliz",
+				heading_mod:"is--h1  fw--700  is--leasing-formaliz", 
+				heading_level:"h2", 
+				heading:"Кто может оформить лизинг?",  
+				list:[
+					{
+						id:"entity",
+						status:"active",
+						name:"Юридическое лицо", 
+						note:'
+							<h3>Для всех форм собственности, включая ООО, ЗАО, ОАО</h3>
+							<p>У нас вы можете приобрести в лизинг любую модель грузовых автомобилей.</p>
+							<h3>Чтобы получить технику в лизинг:</h3>
+							<p>Нужно иметь не менее 20% собственных средств от ее стоимости.</p>
+							<p>Максимальный срок договора составляет 36 месяцев.</p>
+						'
+					},
+					{
+						id:"ip",
+						status:"",
+						name:"ИП",
+						note:'
+							<h3>Для всех форм собственности, включая ООО, ЗАО, ОАО</h3>
+							<p>У нас вы можете приобрести в лизинг любую модель грузовых автомобилей.</p>
+							<h3>Чтобы получить технику в лизинг:</h3>
+							<p>Нужно иметь не менее 25% собственных средств от ее стоимости.</p>
+							<p>Максимальный срок договора составляет 48 месяцев.</p>
+						'
+					}
+				],
+			} %}
+
+			{% include "../block/page/leasing/tpl.twig" with {
+				view:"leasing_adv", 
+				content_prefix:"content-block__", 
+				content_mod:"is--leasing-adv",
+				heading_mod:"is--h1  fw--700  color--white  is--leasing-adv", 
+				heading_level:"h2", 
+				heading:"Преимущества работы <br>с Элемент Лизинг",  
+				list:[
+					{
+						status:"active",
+						name:"1. Выгодные условия лизинговых программ", 
+						icon:[path.img,"/default/leasing-cup.svg"].join(""), 
+						preview:[path.img,"/default/leasing-adv1.svg"].join(""),
+						note:'Лизинговые услуги относятся к расходам предприятия и позволяют снизить налог на прибыль компании, а также вернуть до 20% НДС от стоимости объекта лизинга.'
+					},
+					{
+						status:"",
+						name:"2. Выгодные условия лизинговых программ", 
+						icon:"http://via.placeholder.com/256x256", 
+						preview:"http://via.placeholder.com/640x360", 
+						note:'Лизинговые услуги относятся к расходам предприятия и позволяют снизить налог на прибыль компании, а также вернуть до 20% НДС от стоимости объекта лизинга.'
+					}
+				],
+			} %}
+
+            {% include "../block/page/catalog.twig" with {
+                view:"catalog_adv",  
+                content_prefix:"content-block__", 
+                content_mod:"is--leasing-catalog",
+                heading_mod:"is--hXL  fw--700  color--blue-08  is--leasing-catalog", 
+                heading_level:"h2", 
+                heading:"Каталог",
+                card_mod:"is--catalog-promo-primary",
+                slider_dots:"true",
+                link:"Весь каталог",
+                link_href:page.catalog
+            } %}
+
+			{% include "../block/page/leasing/tpl.twig" with {
+				view:"leasing_brand", 
+				content_prefix:"content-block__", 
+				content_mod:"is--leasing-brand",				
+				heading_mod:"is--h1  fw--700  is--leasing-brand", 
+				heading_level:"h2", 
+				heading:"Бренды-поставщики",
+				list: [
+			 		{"img":[path.img,"/default/brand-liebherr.svg"].join("")},
+			 		{"img":[path.img,"/default/brand-shacman.svg"].join("")},
+			 		{"img":[path.img,"/default/brand-caterpiller.svg"].join("")},
+			 		{"img":[path.img,"/default/brand-komatsu.svg"].join("")},
+			 		{"img":[path.img,"/default/brand-doosan.svg"].join("")},
+			 		{"img":[path.img,"/default/brand-jac.svg"].join("")}
+			 	]
+			} %}
+
+			{% include "../block/page/leasing/tpl.twig" with {
+				view:"leasing_conditions", 
+				content_prefix:"content-block__", 
+				content_mod:"is--leasing-conditions",				
+				heading_mod:"is--h1  fw--700  is--leasing-conditions", 
+				heading_level:"h2", 
+				heading:"Условия",  
+				tabs:"conditions",  
+				list:[
+					{
+						id:"base",
+						status:"",
+						name:"Основные условия", 
+						note:'
+							<h3>Для ООО / ИП</h3>
+							<p>Аванс от&nbsp;20%</p>
+							<p>Срок от&nbsp;12&nbsp;до&nbsp;36&nbsp;мес.Переплата в&nbsp;год от&nbsp;6,0%</p>
+							<p>Любой график платежей</p>
+							<p>Наличие скидок производителя</p>
+							<blockquote>ГАЗели можно приобрести с&nbsp;авансом от&nbsp;10%. Размер авансового платежа зависит от&nbsp;финансового состояния вашего бизнеса. Максимальный размер аванса составляет 49%. Чем выше ваш аванс, тем меньше лизинговые платежи и&nbsp;переплата за&nbsp;полученный в&nbsp;лизинг автомобиль. Вы&nbsp;выбираете сами удобные для вас условия лизинга.</blockquote>
+						'
+					},
+					{
+						id:"fin",
+						status:"active",
+						name:"Финансовые преимущества", 
+						note:'
+							<h3>Для ООО</h3>
+							<p>Использование денежных средств на&nbsp;развитие бизнеса. </p>
+							<p>Отсутствие необходимости извлекать деньги из&nbsp;оборота. </p>
+							<p>Зачет НДС&nbsp;— НДС выделяется в&nbsp;составе лизинговых платежей и&nbsp;принимается к&nbsp;зачету при стандартном налогообложении. </p>
+							<p>Уменьшение налога на&nbsp;прибыль&nbsp;— отнесение лизинговых платежей на&nbsp;себестоимость продукции/услуг в&nbsp;полном объеме. </p>
+							<p> Возможность получить скидку от&nbsp;производителя на&nbsp;определенные модели</p>
+							<hr>
+							<h3>Для ИП</h3>
+							<p>Использование денежных средств на&nbsp;развитие бизнеса.</p>
+							<p>Отсутствие необходимости извлекать деньги из&nbsp;оборота.</p>
+							<p>Уменьшение налога на&nbsp;прибыль&nbsp;— отнесение лизинговых платежей на&nbsp;себестоимость продукции/услуг в&nbsp;полном объеме.</p>
+							<p>Возможность получить скидку от&nbsp;производителя на&nbsp;определенные модели.</p>
+							<blockquote>ГАЗели можно приобрести с&nbsp;авансом от&nbsp;10%. Размер авансового платежа зависит от&nbsp;финансового состояния вашего бизнеса. Максимальный размер аванса составляет 49%. Чем выше ваш аванс, тем меньше лизинговые платежи и&nbsp;переплата за&nbsp;полученный в&nbsp;лизинг автомобиль. Вы&nbsp;выбираете сами удобные для вас условия лизинга.</blockquote>
+						'
+					},
+					{
+						id:"doc",
+						status:"",
+						name:"Необходимые документы", 
+						note:'
+							<h3>Для ООО</h3>							
+							<ul>
+								<li>Устав.</li>
+								<li>Текст изменений в&nbsp;учредительные документы, зарегистрированных после даты регистрации Устава с&nbsp;отметкой налоговой.</li>
+								<li>Выписка из&nbsp;реестра акционеров (АО)/пайщиков (ПО)/членов кооператива.</li>
+								<li>Копия паспорта руководителя.</li>
+								<li>Копия(и) паспорта(ов) поручителя(ей)-физического(их) лиц(а) при необходимости предоставления поручительства.</li>
+								<li>Согласие на&nbsp;обработку персональных данных поручителя(ей)-физического(их) лиц(а)/руководителя.</li>
+								<li>Бухгалтерская отчетность за&nbsp;последний отчетный период с&nbsp;подтверждением отправки в&nbsp;налоговую инспекцию.</li>
+								<li>Документы, подтверждающие договорные взаимоотношения с&nbsp;заказчиками <nobr>(2-3).</nobr></li>
+								<li>ПТС/ ПСМ на&nbsp;транспортные средств/спецтехнику в&nbsp;собственности.</li>
+								<li>Банковские реквизиты.</li>
+							</ul>
+							<p>Для подтверждения представленной информации Элемент Лизинг вправе запросить другие документы.</p>
+							<hr>
+							<h3>Для ИП</h3>
+							<ul> 
+								<li>Копия паспорта индивидуального предпринимателя.</li>
+								<li>Копия(и) паспорта(ов) поручителя(ей)-физическое(их) лиц(а).</li>
+								<li>Согласие на&nbsp;обработку персональных данных индивидуального предпринимателя, поручителя(ей)- физического(их) лиц(а).</li>
+								<li>Анкета иностранного публичного должностного лица лизингополучателя (при необходимости).</li>
+								<li>Бухгалтерская отчетность за&nbsp;последний отчетный период с&nbsp;подтверждением отправки в&nbsp;налоговую инспекцию.</li>
+								<li>Документы, подтверждающие договорные взаимоотношения с&nbsp;заказчиками <nobr>(2-3).</nobr></li>
+								<li>ПТС/ ПСМ на&nbsp;транспортные средств/спецтехнику в&nbsp;собственности.</li>
+								<li>Банковские реквизиты.</li>
+							</ul>
+							<p>Для подтверждения представленной информации Элемент Лизинг вправе запросить другие документы.</p>
+						'
+					}
 				]
 			} %}
+
 			{% include "../block/common/form/form.twig" with {
 				view: 			"leasing", 
 				prefix:			prefix.form, 
@@ -30,7 +224,7 @@
 				ID: 			"f_leasing", 
 				heading:		"Нужна техника в лизинг?", 
 				heading_level:	"h3", 
-				heading_mod:	"is--h1  color--white  fw--700  margin--tiny",
+				heading_mod:	"is--h1  color--white  fw--700  is--form-leasing",
 				heading_sm:		"Оставьте заявку, и наш консультант <br>перезвонит вам и отправит информацию на почту!", 
 				heading_sm_level:	"p", 
 				heading_sm_mod:	"color--white  fw--100  margin--medium",
@@ -42,13 +236,74 @@
 				heading_r_sm_mod:	"color--white  margin--large"
 			} %}
 
+			{% include "../block/page/leasing/tpl.twig" with {
+				view:"leasing_partners", 
+				content_prefix:"content-block__", 
+				content_mod:"is--leasing-partners",				
+				heading_mod:"is--h1  fw--700  is--leasing-partners", 
+				heading_level:"h2", 
+				heading:"Партнеры", 			
+				heading_sm_mod:"fw--100  is--leasing-partners-sm", 
+				heading_sm_level:"p", 
+				heading_sm:"Работаем с большим количеством крупных производителей техники, а также наши банковские партнеры всегда будут готовы помочь с лизингом!", 
+				link:"#",
+				list: [
+			 		{"img":[path.img,"/default/partners-02.svg"].join("")},
+			 		{"img":[path.img,"/default/partners-03.svg"].join("")},
+			 		{"img":[path.img,"/default/partners-04.svg"].join("")},
+			 		{"img":[path.img,"/default/partners-05.svg"].join("")},
+			 		{"img":[path.img,"/default/partners-06.svg"].join("")},
+			 		{"img":[path.img,"/default/partners-08.svg"].join("")},
+			 		{"img":[path.img,"/default/partners-10.svg"].join("")},
+			 		{"img":[path.img,"/default/partners-11.svg"].join("")},
+			 		{"img":[path.img,"/default/partners-12.svg"].join("")},
+			 		{"img":[path.img,"/default/partners-13.svg"].join("")},
+			 		{"img":[path.img,"/default/partners-14.svg"].join("")},
+			 		{"img":[path.img,"/default/partners-15.svg"].join("")},
+			 		{"img":[path.img,"/default/partners-16.svg"].join("")},
+			 		{"img":[path.img,"/default/partners-17.svg"].join("")},
+			 		{"img":[path.img,"/default/partners-18.png"].join("")},
+			 	]
+			} %}
+
+			{% include "../block/page/leasing/tpl.twig" with {
+				view:"leasing_seo", 
+				content_prefix:"content-block__", 
+				content_mod:"is--leasing-seo",
+				prefix:prefix.card,
+				mod:"is--seo",
+				list_group: "articles",
+				list: [
+			 		{
+			 			"status":"",
+			 			"form":"true",
+			 			"h_id":"heading_item1",
+			 			"id":"item1",
+			 			"name":"Спецтехника в лизинг",
+			 			"note":"<p>Если вы&nbsp;юридическое лицо, в&nbsp;том числе&nbsp;ИП, то&nbsp;вы&nbsp;можете купить экскаватор в&nbsp;лизинг в&nbsp;нашей компании. Для того чтобы узнать все условия и&nbsp;нюансы, рекомендуем вам заполнить заявку на&nbsp;лизинг, которая располагается внизу сайта или просто позвоните нам по&nbsp;телефону. </p><p>Список контактов и&nbsp;городов, в&nbsp;которых мы&nbsp;присутствуем, вы&nbsp;можете посмотреть в&nbsp;разделе «офисы продаж». </p><p>Рано или поздно любой бизнес понимает, что для дальнейшего роста необходимо расширяться, но&nbsp;далеко не&nbsp;всегда бывает достаточного количества денежных средств, чтобы приобрести требуемое имущество. Некоторые рассматривают кредитования, однако пообщавшись с&nbsp;банками и&nbsp;изучив рынок, понимают, что в&nbsp;большинстве случаев лизинг оказывается выгоднее и&nbsp;доступнее. В&nbsp;чем&nbsp;же заключается выгода лизинга по&nbsp;сравнению с&nbsp;кредитованием? </p><p>Стоит отметить очень важную особенность лизинга, а&nbsp;именно налоговые преференции по&nbsp;налогу на&nbsp;прибыль. </p><p>В&nbsp;бухгалтерском учете все платежи по&nbsp;лизингу проводятся в&nbsp;качестве затрат и&nbsp;тому есть объяснение: вы&nbsp;берете не&nbsp;кредит за&nbsp;который покупаете экскаватор, а&nbsp;получаете экскаватор от&nbsp;лизинговой компании, которая покупает его и&nbsp;передает вам в&nbsp;аренду, за&nbsp;что вы&nbsp;и&nbsp;платите каждый месяц определенную сумму. А&nbsp;в&nbsp;случае с&nbsp;кредитом на&nbsp;затраты записывается только часть процентов, а&nbsp;не&nbsp;весь ежемесячный платеж. В&nbsp;итоге вам окажется заметно выгодней работать именно по&nbsp;лизинговой схеме. </p><p>Купить экскаватор в&nbsp;лизинг&nbsp;— намного проще и&nbsp;выгодней, чем банковские кредиты!</p>",
+			 		},
+			 	]
+			} %}
+			
             {% include "../block/page/leasing/tpl.twig" with {
                 view:"leasing_block", 
                 content_prefix:"content-block__", 
-                content_mod:"is--page-news-leasing"
+                content_mod:"is--leasing-programm"
             } %}
-		</main>
 
+			{% include "../block/page/about/news.twig" with {
+				view:"news_block", 
+				content_prefix:"content-block__", 
+				content_mod:"is--block-news",				
+				heading_mod:"is--h1  fw--700  is--block-news", 
+				heading_level:"h2", 
+				heading:"Новости",
+                link:"Все новости",
+                link_href:page.news
+			} %}
+
+		</main>
+		
     	{% include "../block/common/footer/footer.twig" with {footer_prefix:"footer__"} %}
 
     	{# {% include "../block/common/modals/include.twig"%} #}

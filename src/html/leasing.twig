@@ -284,11 +284,12 @@
 			 		},
 			 	]
 			} %}
-
-			{% include "../block/page/index/programm.twig" with {
-				content_prefix:"content-block__", 
-				content_mod:"is--leasing-programm"
-			} %}
+			
+            {% include "../block/page/leasing/tpl.twig" with {
+                view:"leasing_block", 
+                content_prefix:"content-block__", 
+                content_mod:"is--leasing-programm"
+            } %}
 
 			{% include "../block/page/about/news.twig" with {
 				view:"news_block", 
