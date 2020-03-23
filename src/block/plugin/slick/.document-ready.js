@@ -4,7 +4,7 @@ $(function() {
 	var partners = $('[data-slick-partners]');
 	var finance = $('[data-slick-finance]');
 	var dots = $('[data-slick-dots]').data('slick-dots');
-	console.log(dots);
+	//console.log(dots);
 
 	var header = $('[data-slider-slick="slick-header"]');	
 	var gallery = $('[data-slider-slick="slick-gallery"]');	

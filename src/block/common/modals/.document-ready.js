@@ -1,4 +1,4 @@
-var modal_btn_show = $('[data-toggle="modal"]');
+/*var modal_btn_show = $('[data-toggle="modal"]');
 modal_btn_show.on('click', function(e) {
 
 	var modal = $(this).attr('data-target');
@@ -17,4 +17,4 @@ modal_btn_show.on('click', function(e) {
 	modal_heading_small.text(modal_heading_small_value);
 	modal_form_heading.attr({'value':modal_heading_value});
 	modal_btn_heading.text(modal_btn_heading_value);
-});
+});*/

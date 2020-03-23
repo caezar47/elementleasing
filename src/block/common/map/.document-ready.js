@@ -14,6 +14,7 @@ function init(){
     });
 
 	var object = $("[data-coord]");
+	var scrollto = $("[data-scrollto]");
     for(var i = 0; i < object.length; i++) {
 		var arCoord = object[i].dataset.c;
     	var arCoord = arCoord.split(" ");
@@ -40,14 +41,19 @@ function init(){
 		var currEmail = $(this).attr("data-email");
 		var currClock = $(this).attr("data-clock");
 		//console.log(curr_cood);
-		$('#yandex_map').find('[data-map-heading]').text(currCity);
-		$('#yandex_map').find('[data-map-address]').text(currAdres);
-		$('#yandex_map').find('[data-map-email]').text(currEmail);
-		$('#yandex_map').find('[data-map-clock]').text(currClock);
+		$('.map__block').find('[data-map-heading]').text(currCity);
+		$('.map__block').find('[data-map-address]').text(currAdres);
+		$('.map__block').find('[data-map-email]').text(currEmail);
+		$('.map__block').find('[data-map-clock]').text(currClock);
 		myMap.setCenter(curr_cood, 16);
+		$(this).closest('.dropdown__nav').find('.dropdown__nav-link').removeClass("is--active");
+		$(this).closest('.dropdown__card').find('.dropdown__toggle').text($(this).text());
+		$(this).addClass("is--active");
+	});
+	scrollto.click(function(e) {
+		e.preventDefault();
 		$('html, body').animate({
-			scrollTop: ($('#yandex_map').offset().top - 111)
+			scrollTop: ($('.map__block').offset().top - 111)
 		}, 777);
 	});
-
 }
