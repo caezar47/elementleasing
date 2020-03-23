@@ -3,8 +3,8 @@
 	<div class="{{prefix}}container  container  {{mod}}  {{group}}">
 		{% if dropdown == "true" %}
 		<div class="{{dropdown_prefix}}card  dropdown  {{group}}">
-			<a href="#" class="{{dropdown_prefix}}toggle  dropdown-toggle" data-toggle="dropdown">Выберите город из списка</a>
-			<div class="{{dropdown_prefix}}nav  dropdown-menu  ">			
+			<a href="#" class="{{dropdown_prefix}}toggle  dropdown-toggle  is--xl" data-toggle="dropdown"><span>Выберите город из списка</span></a>
+			<div class="{{dropdown_prefix}}nav  dropdown-menu  is--xl">			
 				<ul class="{{dropdown_prefix}}nav-list">			    
 				{% for value in list %}
 					<li class="{{dropdown_prefix}}nav-item">
