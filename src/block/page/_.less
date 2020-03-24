@@ -10,10 +10,12 @@
 			}
 			&-catalog{
 				background-color: @primary;
+				z-index: 1;
 			}
 			&-order{
 				display: none;
 				.media-breakpoint-up(@md; {
+					margin-top: -1px;
 					display: block;
 					background-color: @primary-a;
 					clip-path: polygon(0 0%,100% 0,100% 75%,0 100%);
@@ -28,7 +30,7 @@
 		&.is--page{
 			&-investors{
 				&-info{
-					background-color: @primary;
+					background-color: @blue-08;
 					background-repeat: no-repeat;
 					background-size: 325px auto;
 					background-position: center bottom 85px;
@@ -297,7 +299,13 @@
 			&-products{
 				padding-top: 35px;
 				.media-breakpoint-up(@lg; {
-					padding-bottom: 5.9vw;
+					padding-top: 3.5vw;
+					padding-bottom: 4.7vw;
+				});
+			}
+			&-programm{
+				.media-breakpoint-up(@lg; {
+					padding-bottom: 4vw;
 				});
 			}
 		}
@@ -515,6 +523,7 @@
 						margin-right: -15px;
 						background-size: cover;
 						background-position:center;
+						padding: 30px 45px;
 						&::before{
 							content: '';
 							position: absolute;
@@ -529,6 +538,11 @@
 				.media-breakpoint-up(@lg; {					
 					&>*:nth-child(2){
 						margin-right: -19vw;
+					}
+				});
+				.media-breakpoint-up(@xxl; {					
+					&>*:nth-child(2){
+						margin-right: -21.5vw;
 					}
 				});
 			}

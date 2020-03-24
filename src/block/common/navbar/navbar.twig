@@ -13,7 +13,7 @@
 							<a href="{{page.search}}" class="{{navbar_prefix}}header-icon">{% include "../svg-sprite/svg.twig" with {icon:"search"} %}</a>
 						</div>
 						<div class="cols">
-							<a href="#" class="{{navbar_prefix}}header-icon">{% include "../svg-sprite/svg.twig" with {icon:"pointer"} %}</a>
+							<a href="{{page.contacts}}" class="{{navbar_prefix}}header-icon">{% include "../svg-sprite/svg.twig" with {icon:"pointer"} %}</a>
 						</div>
 						<div class="cols">
 							<a href="#" class="{{navbar_prefix}}header-icon">{% include "../svg-sprite/svg.twig" with {icon:"login"} %}</a>
@@ -84,7 +84,7 @@
 						    ]} %}
 							{% set navbar = [
 								{"name":"Оборудование", "link":"","mod":""},
-								{"name":"Инвесторам", "link":"","mod":""}
+								{"name":"Инвесторам", "link":page.investors,"mod":""}
 							] %}
 						    {% for value in navbar %}
 							<li class="{{navbar_prefix}}nav-item  {{value.mod }}"><a href="{{value.link}}" class="{{navbar_prefix}}nav-link"><span>{{value.name}}</span></a></li>

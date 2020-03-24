@@ -443,7 +443,8 @@
 				font-size: 18px;
 				min-height: 310px;
 				max-width: 100%;
-				padding: 20px 40px 60px;
+				//padding: 20px 40px 60px;
+				padding: 20px 25px 60px;
 			});
 			&:hover{
 				background-color: @white;
@@ -483,7 +484,7 @@
 					margin-top: -1px;				
 					padding: 0 20px 60px 40px;
 		   			clip-path: polygon(0 0%,100% 0,100% 87%,0 100%);
-					background-color: @primary; 
+					background-color: @blue-08; 
 				});
 			}
 		}
@@ -911,6 +912,7 @@
 					justify-content: center;
 					overflow: hidden;
 					max-width: 555px;
+					min-height: 600px;
 					background-color: @primary-a;
 					clip-path: polygon(0 10%,100% 5.5%,100% 94%,0 98.5%);
 					img{
@@ -1196,7 +1198,7 @@
 			   			}	
 						&[aria-expanded="true"]{
 							color: @white;
-							background-color: @primary;
+							background-color: @blue-08;
 							padding-top: 82px;
 							padding-bottom: 20px;
 							&::after{
@@ -1450,6 +1452,7 @@
 			margin-bottom: 10px;
 			.card__item:hover &{
 				//font-size: 1.8em;
+				transform: scale(1.25);
 			}
 		}
 	}
@@ -1548,10 +1551,14 @@
 			font-weight: 100;
 			text-align: center;
 			line-height: 1.65em;
+			transition: @trs-site;
 			.media-breakpoint-down(@md; {
 				max-width: 170px;
 				margin: 0 auto;
 			});
+			.card__item:hover &{
+				transform: scale(1.25);
+			}
 		}
 	}	
 	&sign{

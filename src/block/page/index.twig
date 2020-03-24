@@ -93,6 +93,12 @@
 					<a href="#" class="btn__item  is--arrow  is--md  is--success">Отправить заявку</a>
 				</div>
 				<div {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+					{% include "../common/page-header/tpl.twig" with {
+						prefix:"page-header__", 
+						mod:heading_v_mod,
+						level:heading_v_level, 
+						heading:heading_v
+					} %}
 				</div>
 			</div>
 		</div>
