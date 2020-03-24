@@ -352,13 +352,32 @@
 			}
 		}
 		&.is--brand{
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			background-color: @white;
 			border: 1px solid @blue-light;
 			transition: @trs-site;
 			margin: -1px;
+			padding: 20px;
 			img{
 				opacity: 0.5;
 				transition: @trs-site;
+    			height: 95px;
+    			object-fit: contain;
+    			object-position: center;
+    			.media-breakpoint-up(@sm; {
+    				height: 200px;    				
+    			});
+    			.media-breakpoint-up(@md; {
+    				height: 145px;    				
+    			});
+    			.media-breakpoint-up(@lg; {
+    				height: 210px;    				
+    			});
+    			.media-breakpoint-up(@xl; {
+    				height: 245px;    				
+    			});
 			}
 			&:hover{
 				z-index: 1;
