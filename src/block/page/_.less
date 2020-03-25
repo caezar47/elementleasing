@@ -884,17 +884,18 @@
 					display: grid;
 				    grid-gap: 30px 16px;
 					grid-template-columns: repeat(3, 1fr);
+				});
+				.media-breakpoint-up(@lg; {
+				    grid-gap: 0;
 				});		
 			}
 			&-adv{
-				grid-template-columns: 100%;
 				.media-breakpoint-up(@lg; {
+					display: grid;
+					grid-gap: 30px 16px;
 					grid-template-columns: 5fr 7fr;
-					& > *:nth-child(1){
-						margin-top: 10px;
-						.tabs__item{
-							margin-bottom: 30px;
-						}
+					& > *:nth-child(2){
+						order: -1;
 					}
 				});
 			}
@@ -1050,6 +1051,15 @@
 				padding-top: 25px;
 				.media-breakpoint-up(@sm; {
 					padding-top: 60px;	
+				});
+			}
+		}
+	}
+	&gallery{
+		&.is--block{
+			&-adv{
+				.media-breakpoint-down(@lg; {						
+					display: none;
 				});
 			}
 		}

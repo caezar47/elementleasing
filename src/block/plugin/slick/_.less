@@ -27,6 +27,9 @@
 				padding-bottom: 0;
 			});
 		}
+		&[data-slick-adv]{
+			position: static;
+		}
 	}
 	&-list {
 		position: relative;
@@ -69,6 +72,12 @@
 		}
 		.slick-dotted &{
 			margin-bottom: 45px;
+		}
+		[data-slick-adv] &{
+			margin-bottom: 0;
+			.media-breakpoint-down(@lg; {
+				overflow: visible;
+			});
 		}
 	} 
 	&-track,
@@ -233,6 +242,23 @@
 				}
 			});		
 		}
+		[data-slick-adv] &{
+			top: 20px;
+			bottom: inherit;
+			left: inherit;
+			.btn-clearfix();
+			width: 32px;
+			height: 32px;
+			background-position: center;
+			&.is--prev{
+				.icon-prev(@w: 7px; @h: auto; @c: '333');
+				right: 40px;
+			}
+			&.is--next{
+				.icon-next(@w: 7px; @h: auto; @c: '333');
+				right: 0;
+			}		
+		}
 	}
 	&-dots {
 		z-index: 5;
@@ -263,6 +289,64 @@
 				background: @slider_dots_bg_active;
 			}
 		}
+		[data-slick-adv] &{
+			.media-breakpoint-down(@lg; {						
+				display: none;
+			});
+			display: flex;
+			flex-direction: column;
+			text-align: left;
+			margin: 10px 0 0;
+			li{
+				padding: 0;
+				margin: 0 0 30px;
+				&:last-child{
+					margin-bottom: 0;
+				}
+				a{
+					position: relative;
+					display: inline-block;
+					font-weight: 700;
+					opacity: 0.3;
+					&::after{
+						content: '';
+						position: absolute;
+						bottom: 0px;
+						left: 0;
+						width: 100%;
+						height: 2px;
+						background-color: @primary;
+						transform-origin: right;
+						transition: transform 0.4s;
+						transform: scale(0, 1);				
+					}
+					&:hover{
+						color: @primary;
+						opacity: 1;
+						&::after{
+							transform-origin: left;
+							transform: scale(1, 1);
+						}
+					}
+					.media-breakpoint-up(@md; {
+						.heading4();
+						padding-bottom: 10px;
+						&::after{
+							bottom: 3px;
+							height: 4px;			
+						}
+					});
+				}
+				&.slick-active a{
+					color: @primary;
+					opacity: 1;
+					&::after{
+						transform-origin: left;
+						transform: scale(1, 1);
+					}
+				}
+			}
+		}
 	}
 	&-count{
 		[data-slick-header] &{
@@ -286,4 +370,4 @@
 }
 .slick-arrow.slick-hidden {
 	display: none;
-}   
+} 

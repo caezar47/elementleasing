@@ -5,6 +5,7 @@ $(function() {
 	var partners = $('[data-slick-partners]');
 	var finance = $('[data-slick-finance]');
 	var leasing = $('[data-slick-leasing]');
+	var adv = $('[data-slick-adv]');
 	var dots = $('[data-slick-dots]').data('slick-dots');
 	//console.log(dots);
 
@@ -31,7 +32,37 @@ $(function() {
 		nextArrow: nextArrow,
 		fade: true
 	});	
-	
+	adv.slick({
+		slide: '.content-block__slider-slide',
+		slidesToShow: 1,
+		slidesToScroll: 1,		
+		prevArrow: prevArrow,
+		nextArrow: nextArrow,
+		fade: true,
+		customPaging: function(slick, index) {
+	      var d = $(slick.$slides[index]).find('[data-thumb]').data('thumb'); 
+	      var d = $(slick.$slides[index]).data('thumb'); 
+	      console.log(d);
+	      return '<a>'+d+'</a>';
+	    },
+		responsive: [
+		    {
+				breakpoint: 3000,
+				settings: {
+					arrows: false,
+					dots: true,
+				}
+				
+		    },
+		    {
+				breakpoint: 991,
+				settings: {
+					dots: false,
+					arrows: true,
+				}
+		    }
+		]
+	});
 	catalog.slick({
 		slidesToShow: 2,
 		slidesToScroll: 2,

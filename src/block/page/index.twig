@@ -84,7 +84,41 @@
 	</section>
 {% endif %}
  #}
+
 {% if view == "index_adv" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+			<div class="{{content_prefix}}row  {{block_mod}}"  data-slick-adv>
+				{% for value in list %}
+				<div class="{{content_prefix}}slider-slide  {{block_mod}}" data-thumb="{{value.name}}">
+					<div class="text__block  {{block_mod}}">
+						{{value.note}}
+					</div>
+					{% if value.preview %}
+					<div class="{{content_prefix}}gallery  {{block_mod}}  row  is--cols-3  is--gutter">
+						{% for val in value.preview %}
+						<div class="cols">
+							<img src="{{val.preview}}" class="img-responsive" alt="">
+						</div>
+						{% endfor %}
+					</div>
+					{% endif %}
+				</div>
+				{% endfor %}
+					
+			</div>
+			
+		</div>
+	</section>
+{% endif %}
+
+{# {% if view == "index_adv" %}
 	<section class="{{content_prefix}}panel  {{content_mod}}">
 		<div class="{{content_prefix}}container container  {{content_mod}}">
 			{% include "../common/page-header/tpl.twig" with {
@@ -105,7 +139,7 @@
 			} %}
 		</div>
 	</section>
-{% endif %}
+{% endif %} #}
 
 {% if view == "index_order" %}
 	<section class="{{content_prefix}}panel  {{content_mod}}">
