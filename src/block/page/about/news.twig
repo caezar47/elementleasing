@@ -17,6 +17,23 @@
 				</div>			
 				<div class="cols">
 					{% include "../../common/form/elem-tpl.twig" with {
+						view: "select", 
+						prefix:prefix.form, 
+						mod:"is--filter", 
+						form_id:ID,
+						id:"city", 
+						label:"Сортировать:", 
+						form_id:"filter", 
+						id:"select",  
+						attr:"data-select-inline", 
+						list: [
+							{"name": "по дате","status": "selected"},
+							{"name": "по новизне"},
+							{"name": "по популярности"}
+						]
+					} %}
+					{# 
+					{% include "../../common/form/elem-tpl.twig" with {
 						view:"filter", 
 						prefix:prefix.form, 
 						mod:"", 
@@ -31,7 +48,7 @@
 							{"name": "по новизне"},
 							{"name": "по популярности"}
 						]}
-					%}
+					%} #}
 				</div>
 			</div>	
 			<div class="{{content_prefix}}row  grid__row   is--page-aside">

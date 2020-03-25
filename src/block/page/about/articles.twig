@@ -17,21 +17,21 @@
 				</div>
 				<div class="cols">
 					{% include "../../common/form/elem-tpl.twig" with {
-						view:"filter", 
+						view: "select", 
 						prefix:prefix.form, 
-						mod:"", 
-						color:"", 
-						group:"", 
+						mod:"is--filter", 
+						form_id:ID,
+						id:"city", 
 						label:"Сортировать:", 
 						form_id:"filter", 
-						id:"select", 
-						name:"Сортировать", 
+						id:"select",  
+						attr:"data-select-inline", 
 						list: [
 							{"name": "по дате","status": "selected"},
 							{"name": "по новизне"},
 							{"name": "по популярности"}
-						]}
-					%}
+						]
+					} %}
 				</div>
 			</div>	
 

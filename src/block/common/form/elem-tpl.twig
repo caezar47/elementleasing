@@ -11,7 +11,7 @@
 		{% if label %}
 		<label class="{{prefix}}label  {{mod}}" for="{{form_id}}[{{id}}]">{{label}}</label>
 		{% endif %}
-		<select class="{{prefix}}control  {{value.validate}}  {{mod}}  {{color}}" id="{{form_id}}[{{id}}]" name="f[{{name}}]">
+		<select class="{{prefix}}control  {{value.validate}}  {{mod}}  {{color}}" id="{{form_id}}[{{id}}]" name="f[{{name}}]"  {{attr}}>
 			{% for value in list %}
 				<option value="{{value.val}}" {{value.status}}>{{value.name}}</option>
 			{% endfor %}	
@@ -47,19 +47,6 @@
 	</div>
 {% endif %}
 
-{% if view == "filter" %}
-	<p class="{{prefix}}filter  {{mod}}  {{group}}">
-		{% if label %}
-		<label class="{{prefix}}filter-label  {{mod}}" for="{{form_id}}[{{id}}]">{{label}}</label>
-		{% endif %}
-		<select class="{{prefix}}filter-select  {{mod}}  {{color}}" id="{{form_id}}[{{id}}]" name="f[{{name}}]">
-			{% for value in list %}
-				<option value="{{value.val}}" {{value.status}}>{{value.name}}</option>
-			{% endfor %}	
-		</select>
-	</p>
-{% endif %}
-
 {% if view == "agreement" %}
 	<div class="{{prefix}}item  {{mod}}  is--agreement">
 		<input type="hidden" name="f[Согласие на обработку персональных данных]" value="Да">
@@ -82,7 +69,21 @@
 	</label>
 {% endif %}
 
-{% if view == "range" %}
+
+{# {% if view == "filter" %}
+	<p class="{{prefix}}filter  {{mod}}  {{group}}">
+		{% if label %}
+		<label class="{{prefix}}filter-label  {{mod}}" for="{{form_id}}[{{id}}]">{{label}}</label>
+		{% endif %}
+		<select class="{{prefix}}filter-select  {{mod}}  {{color}}" id="{{form_id}}[{{id}}]" name="f[{{name}}]">
+			{% for value in list %}
+				<option value="{{value.val}}" {{value.status}}>{{value.name}}</option>
+			{% endfor %}	
+		</select>
+	</p>
+{% endif %} #}
+
+{# {% if view == "range" %}
 	<div class="{{prefix}}item  {{mod}}  {{mod_elem}}">
 		<div class="{{prefix}}label  {{mod}}  {{mod_elem}}">
 			{{label}}
@@ -108,4 +109,4 @@
 			</div>
 		</button>	
 	</div>
-{% endif %}
+{% endif %} #}

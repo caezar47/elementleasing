@@ -47,11 +47,17 @@
 					{"type":"text", "id":"fio", "form_id":ID, "name":"fio", "placeholder":"Имя"},
 					{"type":"tel", "id":"tel", "form_id":ID, "name":"Телефон", "placeholder":"Телефон"}
 				]} %}
-				{% include "../dropdown/tpl.twig" with {
-					prefix:"dropdown__", 
-					color:color,  
-					label:"Город", 
+				{% include "elem-tpl.twig" with {
+					view: "select", 
+					prefix:prefix, 
+					mod:mod, 
+					form_id:ID,
+					id:"city", 
+					name:"Город", 
+					color:color, 
+					attr:"data-select-primary-l", 
 					list: [
+						{"name": "Город", "status":"disabled selected"},
 						{"name": "Абакан"},
 						{"name": "Архангельск"},
 						{"name": "Астрахань"},
@@ -59,7 +65,7 @@
 						{"name": "Белгород"},
 						{"name": "Благовещенск"},
 						{"name": "Брянск"}
-					] 
+					]
 				} %}
 				<button type="submit" data-test class="btn__item  is--arrow  is--md  is--primary">Отправить заявку</button>	
 			</div>
@@ -107,8 +113,29 @@
 				<div class="{{prefix}}row  grid__row  {{mod}}">				
 					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
 						{"type":"text", "id":"fio", "form_id":ID, "name":"fio", "placeholder":"Имя"}
-					]} %}		
-					{% include "../dropdown/tpl.twig" with {
+					]} %}	
+					{% include "elem-tpl.twig" with {
+						view: "select", 
+						prefix:prefix, 
+						mod:mod, 
+						color:color, 
+						form_id:ID,
+						id:"city", 
+						name:"Город", 
+						attr:"data-select-primary", 
+						placeholder:"Город", 
+						list: [
+							{"name": "Город", "status":"disabled selected"},
+							{"name": "Абакан"},
+							{"name": "Архангельск"},
+							{"name": "Астрахань"},
+							{"name": "Барнаул"},
+							{"name": "Белгород"},
+							{"name": "Благовещенск"},
+							{"name": "Брянск"}
+						]
+					} %}
+					{# {% include "../dropdown/tpl.twig" with {
 						prefix:"dropdown__", 
 						color:color,  
 						label:"Город", 
@@ -121,7 +148,7 @@
 							{"name": "Благовещенск"},
 							{"name": "Брянск"}
 						] 
-					} %}		
+					} %} #}		
 					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
 						{"type":"tel", "id":"tel", "form_id":ID, "name":"Телефон", "placeholder":"Телефон"},
 						{"type":"email", "id":"email", "form_id":ID, "name":"Email", "placeholder":"E-mail"}

@@ -6,7 +6,32 @@ var input = $(".form__control");
 var reset = $(".form__reset");
 var test = $("[data-test]");
 var filter_view = $("[data-filter-view]");
- 
+
+var select_default = $("[data-select-default]");
+var select_primary = $("[data-select-primary]");
+var select_primary_l = $("[data-select-primary-l]");
+var select_inline = $("[data-select-inline]");
+
+select_default.select2({
+	minimumResultsForSearch: -1,
+});
+select_primary.select2({
+	minimumResultsForSearch: -1,
+	containerCssClass: "is--primary",
+	dropdownCssClass: "is--primary"
+});
+
+select_primary_l.select2({
+	minimumResultsForSearch: -1,
+	containerCssClass: "is--primary-light",
+	dropdownCssClass: "is--primary-light"
+});
+select_inline.select2({
+	minimumResultsForSearch: -1,
+	containerCssClass: "is--inline",
+	dropdownCssClass: "is--inline"
+});
+
 /*
 phone.mask("+7 (999) 999-99-99",{placeholder:"+7 (___) ___-__-__"});
 form_panel.validationEngine(

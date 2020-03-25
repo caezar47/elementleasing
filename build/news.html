@@ -174,6 +174,7 @@
 
 
 
+
 		<div class="form__text  is--login"><a href="#">Забыли пароль?</a></div>
 		<div class="form__btn  is--login  tabs__pane  active" id="login-clients">
 			<button type="submit" class="btn__item  is--success  is--arrow  is--md">Войти в кабинет</button>
@@ -211,12 +212,9 @@
 				</div>			
 				<div class="cols">
 					
-
-
-
-	<p class="form__filter    ">
-				<label class="form__filter-label  " for="filter[select]">Сортировать:</label>
-				<select class="form__filter-select    " id="filter[select]" name="f[Сортировать]">
+	<p class="form__item  is--filter  ">
+				<label class="form__label  is--filter" for="[city]">Сортировать:</label>
+				<select class="form__control    is--filter  " id="[city]" name="f[]"  data-select-inline>
 							<option value="" selected>по дате</option>
 							<option value="" >по новизне</option>
 							<option value="" >по популярности</option>
@@ -228,6 +226,11 @@
 
 
 
+
+
+
+
+					
 				</div>
 			</div>	
 			<div class="content-block__row  grid__row   is--page-aside">

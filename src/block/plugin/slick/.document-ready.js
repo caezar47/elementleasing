@@ -42,7 +42,6 @@ $(function() {
 		customPaging: function(slick, index) {
 	      var d = $(slick.$slides[index]).find('[data-thumb]').data('thumb'); 
 	      var d = $(slick.$slides[index]).data('thumb'); 
-	      console.log(d);
 	      return '<a>'+d+'</a>';
 	    },
 		responsive: [
