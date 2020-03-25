@@ -198,43 +198,36 @@
         <main class="content-block__panel">            
             	<section class="content-block__panel  is--index-header">
 		<div class="content-block__container container  is--index-header">	
-			<div class="content-block__slider   is--index-header">
-				<div id="slider_index_header" class="card__carousel  carousel slide  is--index-header" data-ride="carousel" data-carousel-count>
-					<div class="card__carousel-inner  is--index-header  carousel-inner" role="listbox">
-												<div class="item  active">
-							<div class="card__item  is--index-header">
-								<div class="card__wrap  is--index-header">
-									<div class="card__preview  is--index-header">
-										<img src="./img/default/index-slider-item1.svg" alt="" class="img-responsive">
-									</div>
-									<div>
-										<p class="card__heading  is--index-header">Лизинг по трем документам</p>
-										<div class="card__note  is--index-header"><p>Одобрение на следующий день</p><p>Срок от 12 месяцев</p><p>Для юридических лиц и ИП</p></div>
-									</div>
+			<div class="content-block__slider  is--index-header" data-slick-header>
+				<div class="slick-count"></div>
+									<div class="content-block__slider-slide">
+						<div class="card__item  is--index-header">
+							<div class="card__wrap  is--index-header">
+								<div class="card__preview  is--index-header">
+									<img src="./img/default/index-slider-item1.svg" alt="" class="img-responsive">
+								</div>
+								<div>
+									<p class="card__heading  is--index-header">Лизинг по трем документам</p>
+									<div class="card__note  is--index-header"><p>Одобрение на следующий день</p><p>Срок от 12 месяцев</p><p>Для юридических лиц и ИП</p></div>
 								</div>
 							</div>
 						</div>
-												<div class="item  ">
-							<div class="card__item  is--index-header">
-								<div class="card__wrap  is--index-header">
-									<div class="card__preview  is--index-header">
-										<img src="http://via.placeholder.com/365x300" alt="" class="img-responsive">
-									</div>
-									<div>
-										<p class="card__heading  is--index-header">Лизинг по трем документам</p>
-										<div class="card__note  is--index-header"><p>Одобрение на следующий день</p><p>Срок от 12 месяцев</p><p>Для юридических лиц и ИП</p></div>
-									</div>
-								</div>
-							</div>
-						</div>
-												
 					</div>
-																<div class="card__carousel-count  is--index-header" data-count></div>
-										
-					<a class="card__carousel-control  is--index-header  is--left" href="#slider_index_header" role="button" data-slide="prev"><span class="sr-only">Предыдущий слайд</span></a>
-					<a class="card__carousel-control  is--index-header  is--right" href="#slider_index_header" role="button" data-slide="next"><span class="sr-only">Следующий слайд</span></a>
-				</div>
-				<div class="social__block  is--index-header">
+									<div class="content-block__slider-slide">
+						<div class="card__item  is--index-header">
+							<div class="card__wrap  is--index-header">
+								<div class="card__preview  is--index-header">
+									<img src="http://via.placeholder.com/365x300" alt="" class="img-responsive">
+								</div>
+								<div>
+									<p class="card__heading  is--index-header">Лизинг по трем документам</p>
+									<div class="card__note  is--index-header"><p>Одобрение на следующий день</p><p>Срок от 12 месяцев</p><p>Для юридических лиц и ИП</p></div>
+								</div>
+							</div>
+						</div>
+					</div>
+							</div>
+			<div class="social__block  is--index-header">
 	<div class="social__row row  is--index-header">
 			
 		<div class="social__cols cols  is--index-header">
@@ -258,8 +251,7 @@
 </svg>			</a>
 		</div>
 			</div>
-</div>			</div>
-		</div>
+</div>		</div>
 	</section>
 
 
@@ -587,38 +579,41 @@
 
 	<section class="content-block__panel  is--index-programm">
 		<div class="content-block__container container  is--index-programm">
-						<div class="content-block__row  grid__row  is--block-leasing">
+						<div class="content-block__row  is--block-leasing" data-slick-leasing>
 				
 
 
 
-			
-	<a href="" class="card__item  is--programm">
-		<p class="card__heading  is--programm">Льготный<br> лизинг</p>
-		<div class="card__note  is--programm">Приобретайте новую коммерческую технику в лизинг, в обмен на старую!</div>
-		<p class="card__value  is--programm">
-			Аванс 
-			<span>от 15%</span>
-		</p>			
-	</a>
-			
-	<a href="" class="card__item  is--programm">
-		<p class="card__heading  is--programm">Лизинг<br> с Trade-in</p>
-		<div class="card__note  is--programm">Получите спецтехнику в лизинг со скидкой на аванс до 15% от ее стоимости!</div>
-		<p class="card__value  is--programm">
-			Аванс 
-			<span>от 15%</span>
-		</p>			
-	</a>
-			
-	<a href="" class="card__item  is--programm">
-		<p class="card__heading  is--programm">Лизинг<br> б/у техники</p>
-		<div class="card__note  is--programm">Получите спецтехнику в лизинг со скидкой на аванс до 15% от ее стоимости!</div>
-		<p class="card__value  is--programm">
-			Аванс 
-			<span>от 20%</span>
-		</p>			
-	</a>
+		<div>		
+		<a href="" class="card__item  is--programm">
+			<p class="card__heading  is--programm">Льготный<br> лизинг</p>
+			<div class="card__note  is--programm">Приобретайте новую коммерческую технику в лизинг, в обмен на старую!</div>
+			<p class="card__value  is--programm">
+				Аванс 
+				<span>от 15%</span>
+			</p>			
+		</a>
+	</div>
+		<div>		
+		<a href="" class="card__item  is--programm">
+			<p class="card__heading  is--programm">Лизинг<br> с Trade-in</p>
+			<div class="card__note  is--programm">Получите спецтехнику в лизинг со скидкой на аванс до 15% от ее стоимости!</div>
+			<p class="card__value  is--programm">
+				Аванс 
+				<span>от 15%</span>
+			</p>			
+		</a>
+	</div>
+		<div>		
+		<a href="" class="card__item  is--programm">
+			<p class="card__heading  is--programm">Лизинг<br> б/у техники</p>
+			<div class="card__note  is--programm">Получите спецтехнику в лизинг со скидкой на аванс до 15% от ее стоимости!</div>
+			<p class="card__value  is--programm">
+				Аванс 
+				<span>от 20%</span>
+			</p>			
+		</a>
+	</div>
 	
 
 

@@ -1,6 +1,40 @@
 {% if view == "index_header" %}
 	<section class="{{content_prefix}}panel  {{content_mod}}">
 		<div class="{{content_prefix}}container container  {{content_mod}}">	
+			<div class="{{content_prefix}}slider  {{content_mod}}" data-slick-header>
+				<div class="slick-count"></div>
+				{% for value in list %}
+					<div class="{{content_prefix}}slider-slide">
+						<div class="{{prefix.card}}item  {{content_mod}}">
+							<div class="{{prefix.card}}wrap  {{content_mod}}">
+								<div class="{{prefix.card}}preview  {{content_mod}}">
+									<img src="{{value.preview}}" alt="" class="img-responsive">
+								</div>
+								<div>
+									<p class="{{prefix.card}}heading  {{content_mod}}">{{value.name}}</p>
+									<div class="{{prefix.card}}note  {{content_mod}}">{{value.note}}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+			{% include "../common/social/tpl.twig" with {
+				prefix:"social__",
+				group:"is--index-header", 
+				mod:"is--index-header", 
+				list:[
+					{name:"soc-vk", link:soc.vk},
+					{name:"soc-inst", link:soc.inst},
+					{name:"soc-fb", link:soc.fb}
+				]} 
+			%}
+		</div>
+	</section>
+{% endif %}
+{# {% if view == "index_header" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">	
 			<div class="{{content_prefix}}slider   {{content_mod}}">
 				<div id="{{carousel_id}}" class="{{prefix.card}}carousel  carousel slide  {{content_mod}}" data-ride="carousel" {% if carousel_count == "true" %}data-carousel-count{% endif %}>
 					<div class="{{prefix.card}}carousel-inner  {{content_mod}}  carousel-inner" role="listbox">
@@ -49,7 +83,7 @@
 		</div>
 	</section>
 {% endif %}
-
+ #}
 {% if view == "index_adv" %}
 	<section class="{{content_prefix}}panel  {{content_mod}}">
 		<div class="{{content_prefix}}container container  {{content_mod}}">

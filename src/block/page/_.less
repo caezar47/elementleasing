@@ -264,6 +264,7 @@
 		
 		&.is--index{
 			&-header{
+				position: relative;
 				padding-top: 25px;
 				padding-left: 0;
 				padding-right: 0;
@@ -879,8 +880,9 @@
 				});
 			}
 			&-leasing{
-				grid-template-columns: 100%;
-				.media-breakpoint-up(@sm; {
+				.media-breakpoint-up(@md; {
+					display: grid;
+				    grid-gap: 30px 16px;
 					grid-template-columns: repeat(3, 1fr);
 				});		
 			}
@@ -950,35 +952,26 @@
 	}	  
 	&slider{
 		&{
+			&.is--index{
+				&-header{
+					position: relative;
+					max-width: 640px;
+					margin: 0 auto;
+					.media-breakpoint-up(@lg; {
+						max-width: 900px;
+					});
+					.media-breakpoint-up(@xl; {
+						max-width: 1000px;
+					});
+				}
+			}
 			&.is--page{
 				&-investors{
 					&-finance{
-						// &::after{
-						// 	content: attr(data-text);
-						// 	position: absolute;
-						// 	top: 0;
-						// 	bottom: 0;
-						// 	left: 0;
-						// 	padding-left: 15px;
-						// 	background-color: @blue-08;
-						// 	color: @white;
-						// 	font-size: 0.88em;
-						// 	font-weight: 100;
-						// 	max-width: 30.6vw;
-						// 	padding-top: 35px;
-						// }
 						.media-breakpoint-up(@xl; {
 						    padding-top: 40px;
 						    padding-bottom: 50px;
-						    //padding-left: 30vw;
 						});
-						/*.media-breakpoint-up(@xxl; {
-						    padding-left: 34vw;
-							&::after{
-								padding-left: 18.3vw;
-								max-width: 38.6vw;
-							}
-						});*/
 						.media-breakpoint-up(@xl; {
 							[data-slick-finance]{
 								max-width: 74%;
@@ -993,11 +986,6 @@
 							}
 						});
 					}
-				}
-			}
-			&.is--index{
-				&-header{
-					position: relative;
 				}
 			}
 			&.is--leasing{

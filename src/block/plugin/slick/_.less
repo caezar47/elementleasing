@@ -61,6 +61,12 @@
 				//margin-left: 200px;
 			});
 		}
+		[data-slick-leasing] &{
+			overflow: visible;
+			.media-breakpoint-down(@md; {
+				margin: 0 -8px;
+			});
+		}
 		.slick-dotted &{
 			margin-bottom: 45px;
 		}
@@ -136,6 +142,11 @@
 		[data-slick-finance] &{
 			padding: 0 8px;
 		}
+		[data-slick-leasing] &{
+			.media-breakpoint-down(@md; {				
+				padding: 0 8px;
+			});
+		}
 	}
 	&-btn{
 		.btn-clearfix();
@@ -145,14 +156,14 @@
 		width: @slider_btn_width;
 		height: @slider_btn_width;
 		color: @slider_btn_color;
+		background-position: center;
+		//background-repeat: no-repeat;
 		//padding: @slider_btn_padding;
-		//background-color: @slider_btn_bg;
+		//background-color: @slider_btn_bg;`
 		//border-width: @slider_btn_border;
 		//border-style: solid;
 		//border-color: @slider_btn_border_color;
 		//border-radius: @slider_btn_radius;
-		background-position: center;
-		//background-repeat: no-repeat;
 		&.is--prev{
 			left: -15px;
 			.icon-prev(@c: fff; @w: 6px; @h: auto);
@@ -184,6 +195,44 @@
 				}
 			}			
 		});
+
+		[data-slick-header] &{
+			bottom: inherit;
+			left: inherit;
+			&.is--prev{
+			    top: 5px;
+				right: 45px;
+				.icon-prev(@w: 7px; @h: auto; @c: '333')
+			}
+			&.is--next{
+			    top: 5px;
+			    right: 2px;
+				.icon-next(@w: 7px; @h: auto; @c: '333')
+			}
+			.media-breakpoint-up(@md; {
+				width: 18px;
+				height: 32px;
+				&.is--prev{
+					top: 115px;
+					.icon-prev(@w: 18px; @h: auto; @c: '333')
+				}
+				&.is--next{
+					top: 35px;
+					.icon-next(@w: 18px; @h: auto; @c: '333')
+				}	
+				&.is--prev,
+				&.is--next{
+					left: -50px;
+					right: inherit;
+				}
+			});
+			.media-breakpoint-up(@xl; {				
+				&.is--prev,
+				&.is--next{
+					left: -100px;
+				}
+			});		
+		}
 	}
 	&-dots {
 		z-index: 5;
@@ -213,6 +262,25 @@
 			&.slick-active button{
 				background: @slider_dots_bg_active;
 			}
+		}
+	}
+	&-count{
+		[data-slick-header] &{
+			display: none;
+			.media-breakpoint-up(@md; {
+				display: block;
+				position: absolute;
+				right: -50px;
+				top: 35px;
+				font-size: 1.8em;
+				line-height: 1.25em;
+				font-weight: 700;
+				display: flex;
+				flex-direction: column;
+			});
+			.media-breakpoint-up(@xl; {				
+				right: -100px;
+			});	
 		}
 	}
 }
