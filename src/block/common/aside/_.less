@@ -99,12 +99,10 @@
 			list-style: none;
 			margin: 0;
 			padding: 0;
-			//.media-breakpoint-up(@xl; {
-				//font-size: @b-fs + 6;
-				//line-height: @b-lh + 4;
+			//.media-breakpoint-up(@md; {
+				font-size: 1.33em;
+				line-height: 1.16em;
 			//});
-			font-size: 1.33em;
-			line-height: 1.16em;
 		}
 		&-item{
 			margin-bottom: 15px;
@@ -134,7 +132,9 @@
 				color: @success;
 				position: absolute;
     			top: -1%;
+    			right: 0%;
 				font-size: 0.55em;
+				transform: translate(100%, 0);
 			}
 			&::after{
 				content: '';

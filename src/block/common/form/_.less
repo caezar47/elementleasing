@@ -509,22 +509,27 @@
 			-webkit-appearance: none;
 			margin: 0;
 		}
+		&[type=tel] {   
+		    -webkit-appearance: none;
+		    -moz-appearance: none;
+		    appearance: none;  
+		}
 		//text-align: center;
 		color: @input_t_color;
 		font-size: @input_t_fs - 5;
-		line-height: @input_t_lh;
+		line-height: @input_t_lh + 1;
 		transition: @trs-site;
 		&::-moz-placeholder{
 			transition: @trs-site;
 			color: @input_plh_color;
 			font-size: @input_plh_fs - 5;
-			line-height: @input_plh_lh;
+			line-height: @input_plh_lh + 1;
 		}
 		&::-webkit-input-placeholder {
 			transition: @trs-site;
 			color: @input_plh_color;
 			font-size: @input_plh_fs - 5;
-			line-height: @input_plh_lh;
+			line-height: @input_plh_lh + 1;
 			//text-transform: uppercase;
 			//letter-spacing: 0.5px;
 		}
@@ -538,12 +543,15 @@
 		}
 		textarea&{
 			height: @input_height_textarea;
-			padding: 15px;
+			padding: 5px 15px;
 			background-color: @input_bg;
 			border-width: @input_border_width;
 			border-style: solid;
 			border-color: @input_border_color;
 			border-radius: @input_radius;
+			.media-breakpoint-up(@md; {
+				padding: 10px 15px;
+			});
 			&:focus{
 				border-color: @input_focus_border_color;
 			}	
@@ -563,7 +571,10 @@
 			background-color: @primary;
 			border-color: @white;
 			color: @white;
-			font-size: 0.82em;
+			font-size: 12px;
+			.media-breakpoint-up(@md; {
+				font-size: 0.85em;
+			});
 			&::-moz-placeholder{
 				color: @white;
 			}
@@ -603,16 +614,16 @@
 		}
 		.media-breakpoint-up(@lg; {  
 			font-size: @input_t_fs;
-			line-height: @input_t_lh; 
+			line-height: @input_t_lh + 1; 
 			height: @input_height;	
 			padding: 10px 15px;
 			&::-moz-placeholder{
 				font-size: @input_plh_fs;
-				line-height: @input_plh_lh;
+				line-height: @input_plh_lh + 1;
 			}
 			&::-webkit-input-placeholder {
 				font-size: @input_plh_fs;
-				line-height: @input_plh_lh;
+				line-height: @input_plh_lh + 1;
 			}
 			select&{  
 				height: @input_height;
@@ -1064,7 +1075,7 @@
 			.btn-clearfix();
 			width: 40px;
 			height: 40px;
-			padding: 12px;
+			padding: 10px;
 			color: @primary;
 			.media-breakpoint-up(@lg; {
 				display: none;
