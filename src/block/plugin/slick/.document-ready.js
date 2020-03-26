@@ -126,7 +126,7 @@ $(function() {
 		slidesToScroll: 1,
 		arrows: true,
 		dots: dots,
-		infinite: false,
+		infinite: true,
 		//centerMode: true,
   		//centerPadding: '60px',
 		//infinite: true,
