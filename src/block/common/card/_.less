@@ -65,6 +65,12 @@
 					}
 				});
 			}
+			&-sm{
+				padding-right: 70px;
+				.media-breakpoint-up(@xl; {
+					padding-right: 200px;
+				});
+			}
 		}
 		&.is--programm{
 			position: relative;
@@ -618,9 +624,11 @@
 			}
 			&-promo-primary{
 				position: absolute;
-				top: -15px;
+				top: -25px;
+				padding: 10px 16px;
 				right: 0;
-				max-width: 185px;
+				max-width: 200px;
+				transition: @trs-site;
 				.media-breakpoint-down(@md; {
 					//position: relative;
 					z-index: 2;
@@ -628,17 +636,20 @@
 				});
 				.media-breakpoint-up(@md; {
 					max-width: 200px;
-					padding: 10px 16px;
-					right: -100px;
+					right: -80px;
 				    max-width: 405px;
 	    			padding: 30px;
-					transition: @trs-site;
-					opacity: 0;
+					//right: -100px;
+					//opacity: 0;
 					.card__item:hover &{
-						opacity: 1;
-						right: -80px;
+						background-color: @white;
+						//opacity: 1;
+						//right: -80px;
 					}					
 				});
+					.card__item:hover &{
+						background-color: @white;
+					}
 			}
 			&-search{
 				.media-breakpoint-down(@md; {
@@ -1083,8 +1094,15 @@
 					}
 				});
 				.media-breakpoint-up(@md; {
-					height: 320px;					
+					transition: @trs-site;
+					height: 320px;
+					.card__item:hover &{
+						box-shadow: 0 12px 34px 0 rgba(0,0,0,0.5);
+					}					
 				});
+
+					
+				
 			}
 			&-search{
 				.media-breakpoint-down(@md; {
@@ -1269,6 +1287,10 @@
 			}
 			&-sm{
 				font-weight: 700;
+
+//				.media-breakpoint-up(@xl; {
+					line-height: 1.5em;
+//				});
 				//max-width: 350px;
 				a{
 					color: @default;
@@ -1360,6 +1382,9 @@
 				.media-breakpoint-up(@lg; {
 					margin-bottom: 25px;					
 				});
+				.card__item:hover &{
+					color: @default;
+				}
 			}
 			&-search{
 				font-size: 1.55em;
@@ -1742,6 +1767,7 @@
 				margin-bottom: 5px;
 				.heading3();
 				color: @white;
+				transition: @trs-site;
 				.media-breakpoint-up(@lg; {
 					margin-bottom: 25px;
 					&.is--cost{
@@ -1755,6 +1781,12 @@
 						margin: 0;
 					}			
 				});
+				.card__item:hover &{
+					color: @default;
+				}
+				.card__item:hover &.is--status{
+					color: @success;
+				}	
 			}
 			&-search{
 				font-weight: 100;
@@ -1887,10 +1919,10 @@
 				padding-right: 40px;
 				.icon-next(@c:'333';@w: 10px; @h: auto);
 				background-position: center right 25px;
-				box-shadow: 0 4px 14px 0 rgba(0,52,156,0.5);
+				//box-shadow: 0 4px 14px 0 rgba(0,52,156,0.5);
 				.card__item:hover &{
 					border-color: @white;
-					box-shadow: 0 8px 20px 0 rgba(0,52,156,0.5);
+					box-shadow: 0 12px 34px 0 rgba(0,0,84,0.5);
 				}
 				.media-breakpoint-up(@md; {
 					margin-top: 25px;
