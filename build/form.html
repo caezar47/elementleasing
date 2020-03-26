@@ -2,7 +2,7 @@
 <html dir="ltr" lang="ru-RU"> 
 	<head>	
     	<meta charset="utf-8">	
-<title>Карточка вакансий | elementleasing.ru</title>
+<title>Формы | elementleasing.ru</title>
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +20,7 @@
 <meta name="theme-color" content="#ffffff">
 
 <link href="./css/style.css" rel="stylesheet">	</head>
-	<body>
+    <body>
     	<nav class="navbar__block  ">
 	<div class="navbar__header">
 		<div class="navbar__container container  is--header">
@@ -195,62 +195,33 @@
 			</div>
 		</div>
 	</div>
-</nav>		<main class="content-block__panel">
+</nav>
+        <main class="content-block__panel">
+            <section class="content-block__panel  ">
+	<div class="content-block__container container  ">	
+		<ul class="breadcrumb__list  ">
+	</ul>	
 			
-	<section class="content-block__panel">
-		<div class="content-block__container container">
-			<ul class="breadcrumb__list  ">
-		
-		<li class="breadcrumb__list-item">
-		<a href="./" class="breadcrumb__list-link">Главная</a>
-	</li>
-			
-		<li class="breadcrumb__list-item">
-		<a href="./vacancies.html" class="breadcrumb__list-link">Вакансии</a>
-	</li>
-			
-		<li class="breadcrumb__list-item is--active">Карточка вакансий</li>
-		</ul>	
+	<h1 class="page-header__heading  is--hXL  fw--700  color--primary-l  " >Формы</h1>
+		<div class="grid__row  is--columns-6">
+			<div>
 				
-	<h1 class="page-header__heading  is--hXL  fw--700  color--primary-l  " >Карточка вакансий</h1>
-		
-		</div>
-	</section>
-
-			
 
 
-
-
-	<form action="#" class="form__panel  is--vacancies">
-		<div class="form__container  container  is--vacancies">
-			<div class="form__wrap  is--vacancies">
-					
-	<h3 class="page-header__heading  is--h2  color--white  fw--700  margin--tiny  " >Не нашли вакансию?</h3>
-					
-	<p class="page-header__heading  color--white  margin--small  " >Расскажите о себе, и мы свяжемся с вами, если&nbsp;найдется подходящая вакансия!</p>
-	
-
-				<div class="form__row  grid__row  is--vacancies">
+	<form action="#" class="form__panel  is--leasing-order    ">
+		<div class="form__wrap  is--leasing-order    ">
+				
+	<h3 class="page-header__heading  is--h3  fw--700  is--form-leasing-order  " >Заявка на лизинг</h3>
+			<ol class="form__step  is--leasing-order">
+				<li class="form__step-item  is--leasing-order  is--active">Основная информация</li>
+				<li class="form__step-item  is--leasing-order">Данные компании</li>
+				<li class="form__step-item  is--leasing-order">Ваши контакты</li>
+			</ol>
+			<div class="form__step-pane  is--leasing-order  is--active">				
+				<div class="form__row  grid__row  is--leasing-order">				
 							
-	<p class="form__item  is--vacancies  ">
-		<input type="text" class="form__control    is--vacancies  is--primary" id="f_leasing[fio]" name="f[fio]" placeholder="Фамилия и Имя" >
-	</p>
-		
-	<p class="form__item  is--vacancies  ">
-		<input type="text" class="form__control    is--vacancies  is--primary" id="f_leasing[bithday]" name="f[bithday]" placeholder="Дата рождения" onfocus="(this.type='date')">
-	</p>
-		
-	<p class="form__item  is--vacancies  ">
-		<input type="text" class="form__control    is--vacancies  is--primary" id="f_leasing[city]" name="f[city]" placeholder="Город планируемой работы" >
-	</p>
-		
-	<p class="form__item  is--vacancies  ">
-		<input type="email" class="form__control    is--vacancies  is--primary" id="f_leasing[email]" name="f[Email]" placeholder="E-mail" >
-	</p>
-		
-	<p class="form__item  is--vacancies  ">
-		<input type="tel" class="form__control    is--vacancies  is--primary" id="f_leasing[tel]" name="f[Телефон]" placeholder="Телефон" >
+	<p class="form__item  is--leasing-order  ">
+		<input type="text" class="form__control    is--leasing-order  is--primary-light" id="f_leasing-order[item]" name="f[Объект лизинга]" placeholder="Объект лизинга" >
 	</p>
 	
 
@@ -263,43 +234,137 @@
 
 
 					
-					
+	<p class="form__item  is--leasing-order    ">
+				<select class="form__control    is--leasing-order  is--primary-light" id="f_leasing-order[time]" name="f[Срок лизинга]"  data-select-primary-l>
+							<option value="" disabled selected>Срок лизинга</option>
+							<option value="" >36 месяцев</option>
+							<option value="" >24 месяца</option>
+							<option value="" >12 месяцев</option>
+				
+		</select>
+	</p>
 
 
 
 
-
-	<label class="form__file  is--vacancies  is--primary">
-		<input type="file"  class="form__file-input  is--vacancies  is--primary" id="f_leasing[file]" name="f[Загрузите сюда резюме]">
-		<span class="form__file-name  is--vacancies  is--primary" data-heading="Прикрепить резюме">Прикрепить резюме</span>
-	</label>
-
-
-
-
-					
-
-
-
-
-	
-	<div class="form__item  is--vacancies  ">
-		<textarea class="form__control form-control   is--vacancies  is--primary" id="f_leasing[comments]" name="f[Расскажите, почему вы хотите у нас работать?]" placeholder="Расскажите, почему вы хотите у нас работать?"></textarea>
-	</div>
 
 
 
 
 
 	
-						
+							
+	<p class="form__item  is--leasing-order  ">
+		<input type="text" class="form__control    is--leasing-order  is--primary-light" id="f_leasing-order[payment]" name="f[Размер аванса в рублях]" placeholder="Размер аванса в рублях" >
+	</p>
+	
+
+
+
+
+
+
+
+
+
+					<button type="button" class="btn__item  is--arrow  is--md  is--primary">Продолжить</button>	
+				</div>
+			</div>
+			<div class="form__step-pane  is--leasing-order">				
+				<div class="form__row  grid__row  is--leasing-order">				
+							
+	<p class="form__item  is--leasing-order  ">
+		<input type="text" class="form__control    is--leasing-order  is--primary-light" id="f_leasing-order[fio]" name="f[ФИО]" placeholder="ФИО" >
+	</p>
+		
+	<p class="form__item  is--leasing-order  ">
+		<input type="text" class="form__control    is--leasing-order  is--primary-light" id="f_leasing-order[company]" name="f[Название компании]" placeholder="Название компании" >
+	</p>
+	
+
+
+
+
+
+
+
+
+
+ 
+					
+	<p class="form__item  is--leasing-order    ">
+				<select class="form__control    is--leasing-order  is--primary-light" id="f_leasing-order[legal]" name="f[]"  data-select-primary-l>
+							<option value="" disabled selected>Правовая форма</option>
+							<option value="" >Юридическое лицо</option>
+							<option value="" >ИП</option>
+							<option value="" >Физическое лицо</option>
+				
+		</select>
+	</p>
+
+
+
+
+
+
+
+
+
+					<button type="button" class="btn__item  is--arrow  is--md  is--primary">Продолжить</button>	
+				</div>
+			</div>
+			<div class="form__step-pane  is--leasing-order">				
+				<div class="form__row  grid__row  is--leasing-order">				
+							
+	<p class="form__item  is--leasing-order  ">
+		<input type="email" class="form__control    is--leasing-order  is--primary-light" id="f_leasing-order[email]" name="f[E-mail]" placeholder="Ваш E-mail" >
+	</p>
+		
+	<p class="form__item  is--leasing-order  ">
+		<input type="tel" class="form__control    is--leasing-order  is--primary-light" id="f_leasing-order[tel]" name="f[Телефон]" placeholder="Ваш телефон" >
+	</p>
+	
+
+
+
+
+
+
+
+
+
+ 
+					
+	<p class="form__item  is--leasing-order    ">
+				<select class="form__control    is--leasing-order  is--primary-light" id="f_leasing-order[city]" name="f[]"  data-select-primary-l>
+							<option value="" disabled selected>Ваш город</option>
+							<option value="" >Абакан</option>
+							<option value="" >Архангельск</option>
+							<option value="" >Астрахань</option>
+							<option value="" >Барнаул</option>
+							<option value="" >Белгород</option>
+							<option value="" >Благовещенск</option>
+							<option value="" >Брянск</option>
+				
+		</select>
+	</p>
+
+
+
+
+
+
+
+
+
+					<button type="button" class="btn__item  is--arrow  is--md  is--primary">Отправить заявку</button>	
 					
 
 
-	<div class="form__item  is--sm  ">
-				<label class="form__checkbox  is--sm  is--primary  ">
-			<input class="form__checkbox-input  is--sm  is--primary" type="checkbox" id="f_leasing[agreement]" name="f[Согласие с условиями передачи информации]" checked>
-			<span class="form__checkbox-icon  is--sm  is--primary"></span>
+	<div class="form__item  is--sm  is--agreement    ">
+				<label class="form__checkbox  is--sm  is--agreement  is--primary-light  ">
+			<input class="form__checkbox-input  is--sm  is--agreement  is--primary-light" type="checkbox" id="f_leasing-order[agreement]" name="f[Согласие с условиями передачи информации]" checked>
+			<span class="form__checkbox-icon  is--sm  is--agreement  is--primary-light"></span>
 			Соглашаюсь с условиями передачи информации
 		</label>
 			</div>
@@ -310,23 +375,25 @@
 
 
 
-					<button type="submit" data-test class="btn__item  is--success">Отправить</button>
 				</div>
 			</div>
-			<div class="form__result  is--vacancies">
-					
-	<h3 class="page-header__heading  is--h2  color--white  fw--700  margin--tiny  " >Спасибо!<br>Анкета отправлена</h3>
-					
-	<p class="page-header__heading  color--white  margin--large  " >Мы свяжемся с вами, как только найдется подходящая вакансия.</p>
-				<div class="form__result-img  is--vacancies">
-					<svg class="icon-svg icon-checked" role="img">
-	<use xlink:href="./img/svg/sprite.svg#checked"></use>
-</svg>				</div>
-			</div>
+		</div>
+		<div class="form__result  is--leasing-order    ">
+				
+	<h3 class="page-header__heading  is--h2 fw--700  is--form-leasing-order-result  " >Спасибо!<br> Заявка отправлена</h3>
+				
+	<p class="page-header__heading  is--h6  fw--100  " >В ближайшее время наш консультант перезвонит вам и ответит на вопросы.</p>
+			<div class="form__bg  is--leasing-order"><img src="./img/default/train-success.svg" alt=""></div>
 		</div>
 	</form>
-		</main>
-		
+
+
+			</div>
+		</div>
+	</div>
+</section>           
+        </main>
+
     	<footer class="footer__block">	
 	<div class="footer__container container">
 		<div class="footer__row  grid__row">
@@ -441,7 +508,7 @@
 		</div>	
 	</div>
 </footer>
-    	
+        
     	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -454,4 +521,4 @@
 svg4everybody();
 document.createElement("picture");
 </script> 	</body>
-</html>
+</html> 

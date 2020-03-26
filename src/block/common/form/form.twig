@@ -176,6 +176,130 @@
 	</form>
 {% endif %}
 
+{% if view=="leasing_order" %}
+	<form action="#" class="{{prefix}}panel  {{mod}}  {{group}}">
+		<div class="{{prefix}}wrap  {{mod}}  {{group}}">
+			{% include "../../common/page-header/tpl.twig" with {
+				heading_view:heading_view, 
+				prefix:"page-header__", 
+				mod:heading_mod, 
+				group:heading_group, 
+				level:heading_level, 
+				heading:heading} %}
+			<ol class="{{prefix}}step  {{mod}}">
+				<li class="{{prefix}}step-item  {{mod}}  is--active">Основная информация</li>
+				<li class="{{prefix}}step-item  {{mod}}">Данные компании</li>
+				<li class="{{prefix}}step-item  {{mod}}">Ваши контакты</li>
+			</ol>
+			<div class="{{prefix}}step-pane  {{mod}}  is--active">				
+				<div class="{{prefix}}row  grid__row  {{mod}}">				
+					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
+						{"type":"text", "id":"item", "form_id":ID, "name":"Объект лизинга", "placeholder":"Объект лизинга"},
+					]} %}
+					{% include "elem-tpl.twig" with {
+						view: "select", 
+						prefix:prefix, 
+						mod:mod, 
+						form_id:ID,
+						id:"time", 
+						name:"Срок лизинга", 
+						color:color, 
+						attr:"data-select-primary-l", 
+						list: [
+							{"name": "Срок лизинга", "status":"disabled selected"},
+							{"name": "36 месяцев"},
+							{"name": "24 месяца"},
+							{"name": "12 месяцев"}
+						]
+					} %}	
+					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
+						{"type":"text", "id":"payment", "form_id":ID, "name":"Размер аванса в рублях", "placeholder":"Размер аванса в рублях"}
+					]} %}
+					<button type="button" class="btn__item  is--arrow  is--md  is--primary">Продолжить</button>	
+				</div>
+			</div>
+			<div class="{{prefix}}step-pane  {{mod}}">				
+				<div class="{{prefix}}row  grid__row  {{mod}}">				
+					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
+						{"type":"text", "id":"fio", "form_id":ID, "name":"ФИО", "placeholder":"ФИО"},
+						{"type":"text", "id":"company", "form_id":ID, "name":"Название компании", "placeholder":"Название компании"}
+					]} %} 
+					{% include "elem-tpl.twig" with {
+						view: "select", 
+						prefix:prefix, 
+						mod:mod, 
+						form_id:ID,
+						id:"legal", 
+						name:"", 
+						color:color, 
+						attr:"data-select-primary-l", 
+						list: [
+							{"name": "Правовая форма", "status":"disabled selected"},
+							{"name": "Юридическое лицо"},
+							{"name": "ИП"},
+							{"name": "Физическое лицо"}
+						]
+					} %}
+					<button type="button" class="btn__item  is--arrow  is--md  is--primary">Продолжить</button>	
+				</div>
+			</div>
+			<div class="{{prefix}}step-pane  {{mod}}">				
+				<div class="{{prefix}}row  grid__row  {{mod}}">				
+					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
+						{"type":"email", "id":"email", "form_id":ID, "name":"E-mail", "placeholder":"Ваш E-mail"},
+						{"type":"tel", "id":"tel", "form_id":ID, "name":"Телефон", "placeholder":"Ваш телефон"}
+					]} %} 
+					{% include "elem-tpl.twig" with {
+						view: "select", 
+						prefix:prefix, 
+						mod:mod, 
+						form_id:ID,
+						id:"city", 
+						name:"", 
+						color:color, 
+						attr:"data-select-primary-l", 
+						list: [
+							{"name": "Ваш город", "status":"disabled selected"},
+							{"name": "Абакан"},
+							{"name": "Архангельск"},
+							{"name": "Астрахань"},
+							{"name": "Барнаул"},
+							{"name": "Белгород"},
+							{"name": "Благовещенск"},
+							{"name": "Брянск"}
+						]
+					} %}
+					<button type="button" class="btn__item  is--arrow  is--md  is--primary">Отправить заявку</button>	
+					{% include "elem-tpl.twig" with {
+						view:"checkbox", 
+						prefix:prefix, 
+						mod:"is--sm  is--agreement", 
+						color:color, 
+						list: [{"id":"agreement", "form_id":ID, "status":"checked", "name":"Согласие с условиями передачи информации", "label":"Соглашаюсь с условиями передачи информации"}] } %}
+				</div>
+			</div>
+		</div>
+		<div class="{{prefix}}result  {{mod}}  {{group}}">
+			{% include "../../common/page-header/tpl.twig" with {
+				heading_view:heading_view, 
+				prefix:"page-header__", 
+				mod:heading_r_mod, 
+				group:heading_r_group, 
+				level:heading_r_level, 
+				heading:heading_r} %}
+			{% include "../../common/page-header/tpl.twig" with {
+				heading_view:heading_view, 
+				prefix:"page-header__", 
+				mod:heading_r_sm_mod, 
+				group:heading_r_sm_group, 
+				level:heading_r_sm_level, 
+				heading:heading_r_sm} 
+			%}
+			<div class="{{prefix}}bg  {{mod}}"><img src="{{path.img}}/default/train-success.svg" alt=""></div>
+		</div>
+	</form>
+{% endif %}
+
 {% if view=="search" %}
 	<form action="#" class="{{prefix}}search  {{mod}}  {{group}}">
 		<p class="{{prefix}}search-input  {{mod}}">

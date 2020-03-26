@@ -30,6 +30,7 @@
 		&.is--aic{align-items: center;}
 		&.is--jcsb{justify-content: space-between;}
 		&.is--columns-2{
+			grid-template-columns: 100%;
 			.media-breakpoint-up(@sm; {
 				grid-template-columns: repeat(2, 1fr);				
 			});
@@ -89,6 +90,7 @@
 			});
 		}
 		&.is--columns-6{
+			grid-template-columns: 100%;
 			.media-breakpoint-up(@md; {
 				grid-template-columns: repeat(2, 1fr);	
 				& > .is--full{
