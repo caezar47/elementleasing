@@ -58,11 +58,11 @@
 						left: 30px;
 						right: 70px;
 					}
-					&:hover{
+					/*&:hover{
 						&::before{
 							clip-path: polygon(0 0,100% 7%,100% 100%,0% 93%);
 						}
-					}
+					}*/
 				});
 			}
 			&-order{
@@ -413,15 +413,17 @@
 			    margin: 0 -16px;
 			    padding: 25px 16px 5px;
 			    background-color: @white;
+		    	.form__item.is--agreement{
+					max-width: 200px;
+		    	}
 			    .media-breakpoint-down(@lg; {
 			    	.btn__item{
 			    		margin-top: 8px;
     					padding: 8px 15px;
     					order: 1;
 			    	}
-			    	is--agreement{
+		    		.form__item.is--agreement{
 			    		margin-top: -10px;
-						max-width: 200px;
 						margin-bottom: -30px;
 			    	}
 			    });
@@ -983,7 +985,7 @@
 			align-items: center;
 			font-size: @check_fs;
 			line-height: @check_lh;
-			color: @success;
+			//color: @success;
 			/*&.is--danger,
 			&.is--white{
 				color: @check_w_color;
@@ -991,6 +993,9 @@
 			& + &{margin-top: 5px}
 			transition: @trs-site;
 			&.is--primary{
+				color: @success;
+			}
+			&.is--success{
 				color: @success;
 			}
 			&.is--sm{    
@@ -1042,14 +1047,14 @@
 				background-position: center;
 				transform: scale(3);
 				opacity: 0;
-				.icon-checked(@c: 'F99F1B');
+				.icon-checked(@c: '333');
 				transition: @trs-site;
 			}
 			.form__checkbox-input:focus + &{
-				border-color: @check_focus_border_color;
+				//border-color: @check_focus_border_color;
 			}
 			.form__checkbox-input:checked + &{
-				border-color: @check_focus_border_color;
+				//border-color: @check_focus_border_color;
 				&::after{
 					opacity: 1;
 					transform: scale(1);
@@ -1065,6 +1070,12 @@
 			}
 			&.is--primary{
 				background-color: @primary;
+				border-color: @success;
+				&::after{
+					.icon-checked(@c: 'F99F1B');
+				}
+			}
+			&.is--success{
 				border-color: @success;
 				&::after{
 					.icon-checked(@c: 'F99F1B');

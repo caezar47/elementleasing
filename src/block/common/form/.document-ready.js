@@ -64,8 +64,10 @@ filter_view.on('click', function(e) {
 	e.preventDefault();
 	$(this).closest('.aside__filter').find('.form__checkbox.is--hidden').toggleClass('is--visible');
 });
+/*
 $('.form__step-item').on('click', function(e) {
 	e.preventDefault();
 	$(this).parent('.form__step').find('.form__step-item').removeClass('is--active');
 	$(this).addClass('is--active');
 });
+*/
