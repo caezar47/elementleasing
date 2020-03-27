@@ -51,6 +51,9 @@
 				.media-breakpoint-down(@lg; {
 					font-size: 16px;
 					max-width: 375px;
+					.card__wrap.is--seo &{
+						display: none;
+					}
 				});	
 				.media-breakpoint-up(@lg; {		
 					padding: 40px 0 60px 100px;
@@ -582,6 +585,10 @@
 				width: 100%!important;
 				max-width: 100%;
 			});
+			.card__wrap.is--seo &{
+				width: 100%!important;
+				max-width: 100%;				
+			}
 		}
 	}
 	&label{

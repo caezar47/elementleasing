@@ -198,7 +198,7 @@
 				.media-breakpoint-down(@md; {
 					font-size: 12px;
 				});
-				background-color: @white-f9;
+				background-color: #FDFDFD;
 			}
 		}
 	}
@@ -2211,28 +2211,34 @@
 			transition: @trs-site;
 			margin: -1px;
 			padding: 20px;
+			height: 120px;
+			.media-breakpoint-up(@md; {
+				height: 145px;    				
+			});
+			.media-breakpoint-up(@lg; {
+				height: 210px;    				
+			});
+			.media-breakpoint-up(@xl; {
+				height: 285px;    				
+			});
 			img{
 				opacity: 0.5;
 				transition: @trs-site;
-    			height: 95px;
     			object-fit: contain;
     			object-position: center;
-    			.media-breakpoint-up(@sm; {
-    				height: 200px;    				
-    			});
-    			.media-breakpoint-up(@md; {
-    				height: 145px;    				
-    			});
-    			.media-breakpoint-up(@lg; {
-    				height: 210px;    				
-    			});
-    			.media-breakpoint-up(@xl; {
-    				height: 245px;    				
-    			});
+    			max-width: 70%;
+    			max-height: 70%;
 			}
+			.media-breakpoint-up(@md; {				
+				img{
+	    			max-width: 60%;
+	    			max-height: 60%;
+				}  				
+			});
 			&:hover{
 				z-index: 1;
 				box-shadow: 0 12px 34px 0 rgba(0,52,156,0.25);
+				border-color: @white;
 				img{
 					opacity: 1;
 				}
@@ -2249,7 +2255,7 @@
 				opacity: 0.4;
 				transition: @trs-site;
 			}
-			.slick-current &,
+			.slick-active &,
 			&:hover{
 				img{
 					opacity: 1;
@@ -2998,10 +3004,27 @@
 				display: none;
 				.media-breakpoint-up(@md; {
 					display: block;
-					max-width: 225px;
+					width: 225px;
 					background-color: #65C5FC;
 					box-shadow: 0 12px 34px 0 #000054;
 					padding: 70px 35px;
+					margin-top: -46%;
+					margin-bottom: 50px;
+					img{
+						width: 100%;
+					}
+				});
+
+				.media-breakpoint-up(@md; {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					width: 220px;
+					height: 300px;
+					background-color: #65C5FC;
+					box-shadow: 0 12px 34px 0 #000054;
+					//padding: 70px 35px;
+					padding: 35px;
 					margin-top: -46%;
 					margin-bottom: 50px;
 					img{
@@ -3014,9 +3037,11 @@
 					bottom: 50px;
 					left: 100px;
 					bottom: 50px;
-					max-width: 390px;
+					width: 390px;
+					height: 480px; 
 					margin: 0;
-					padding: 110px 65px;
+					//padding: 110px 65px;
+					padding: 65px;
 				});
 			}
 		}
@@ -3293,19 +3318,19 @@
 				display: block;
 				color: @default;
 				padding: 15px 35px 15px 0;
-				.icon-next(@c: '333'; @w: 7px; @h: auto);
+				.icon-bottom(@c: '333'; @w: 12px; @h: auto);
 				background-position: right center;
 				&[aria-expanded="true"]{
-					.icon-next(@c: '33333300'; @w: 7px; @h: auto);
+					.icon-top(@c: '333'; @w: 12px; @h: auto);
 				}
 			}
 			.media-breakpoint-up(@lg; {
 				.heading3();
 				a{
 					padding: 35px 35px 35px 0;
-					.icon-next(@c: '333'; @w: 18px; @h: auto);
+					.icon-bottom(@c: '333'; @w: 18px; @h: auto);
 					&[aria-expanded="true"]{
-						.icon-next(@c: '33333300'; @w: 18px; @h: auto);
+						.icon-top(@c: '333'; @w: 18px; @h: auto);
 					}
 				}				
 			});			
@@ -4336,6 +4361,9 @@
 				.media-breakpoint-down(@lg; {
 					font-size: 16px;
 					max-width: 375px;
+					.card__wrap.is--seo &{
+						display: none;
+					}
 				});	
 				.media-breakpoint-up(@lg; {		
 					padding: 40px 0 60px 100px;
@@ -4867,6 +4895,10 @@
 				width: 100%!important;
 				max-width: 100%;
 			});
+			.card__wrap.is--seo &{
+				width: 100%!important;
+				max-width: 100%;				
+			}
 		}
 	}
 	&label{
@@ -7331,6 +7363,9 @@
 			.media-breakpoint-up(@lg; {
 				padding: 0;
 				margin-bottom: 15px;
+				.content-block__panel.is--leasing-conditions &{
+					margin-bottom: 25px;
+				}
 				&:last-child{
 					margin-bottom: 0;
 				}
@@ -7483,12 +7518,15 @@
 					&::before{
 						content: '';
 						position: absolute;
-						top: 8px;
+						top: 5px;
 						left: 0px;
 						width: 7px;
 						height: 7px;
 						background-color: @b-color-a-hover;
 						border-radius: 50%;
+						.media-breakpoint-up(@md; {
+							top: 9px;
+						});
 					}
 				}
 			}
@@ -7611,6 +7649,16 @@
 				.media-breakpoint-down(@md; {
 					font-size: 13px;
 				});
+				ul{
+					&.is--styled{
+						& > li{
+							padding-left: 0;
+							&::before{
+								display: none;
+							}
+						}
+					}
+				}
 				.media-breakpoint-up(@lg; {
   					padding: 50px 45px 70px;
 	  				p, div{

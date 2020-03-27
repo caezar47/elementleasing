@@ -78,12 +78,15 @@
 					&::before{
 						content: '';
 						position: absolute;
-						top: 8px;
+						top: 5px;
 						left: 0px;
 						width: 7px;
 						height: 7px;
 						background-color: @b-color-a-hover;
 						border-radius: 50%;
+						.media-breakpoint-up(@md; {
+							top: 9px;
+						});
 					}
 				}
 			}
@@ -206,6 +209,16 @@
 				.media-breakpoint-down(@md; {
 					font-size: 13px;
 				});
+				ul{
+					&.is--styled{
+						& > li{
+							padding-left: 0;
+							&::before{
+								display: none;
+							}
+						}
+					}
+				}
 				.media-breakpoint-up(@lg; {
   					padding: 50px 45px 70px;
 	  				p, div{
