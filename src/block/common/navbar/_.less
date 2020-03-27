@@ -213,10 +213,10 @@
 			.media-breakpoint-up(@xl; {
 				top: @navbar_screen;
 				width: 100%;
-		    	transform: translate(0, -100%);
+		    	//transform: translate(0, -100%);
 				max-height: ~"calc(100vh - @{navbar_screen})"; 
 			    &.is--open{
-			    	transform: translate(0, 0); 
+			    	//transform: translate(0, 0); 
 			   	}
 			});
 		}	
@@ -246,10 +246,13 @@
 					background-color: @navbar_collapse_menu_bg;
 				}
 				&:nth-child(3){
-					padding-top: 50px;
-					padding-bottom: 70px;
-					padding-left: 93px;	
-					padding-right: 63px;
+					display: flex;
+    				align-items: center;
+    				justify-content: center;
+					padding: 15px 0px 15px 15px;
+					.form__panel.is--login{
+						max-width: 265px;
+					}
 				}
 			});
 		}

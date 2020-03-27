@@ -110,13 +110,17 @@
 			&.is--login{
 				display: flex;
 				margin: 0;
-				margin-bottom: 30px;
+				margin-bottom: 20px;
 				padding: 0;
 				list-style: none;
 				font-size: 0.88em;
     			line-height: 0.91em;
 				//font-size: @b-fs - 2;
 				//line-height: @b-lh - 2;
+				.media-breakpoint-up(@lg; {
+					margin-bottom: 30px;
+					
+				});
 			}
 		}
 		&-item{
