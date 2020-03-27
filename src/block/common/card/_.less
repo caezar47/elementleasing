@@ -515,10 +515,15 @@
 				text-align: right;
 				.media-breakpoint-up(@lg; {	
 					text-align: left;				
-					margin-top: -1px;				
+					//margin-top: -1px;				
 					padding: 0 20px 60px 40px;
 		   			clip-path: polygon(0 0%,100% 0,100% 87%,0 100%);
 					background-color: @blue-08; 
+					transition: @trs-site;
+					opacity: 0;
+					[aria-expanded="true"] &{
+						opacity: 1;
+					}
 				});
 			}
 		}
@@ -1252,8 +1257,11 @@
 					}		
 					.media-breakpoint-up(@lg; {	
 						color: fadeout(@blue-08, 50%);
+						background-color: fadeout(@blue-08, 100%);
 						padding: 35px 40px 5px; 					
 		   				clip-path: polygon(0 20%,100% 0,100% 100%,0 100%);
+						position: relative;
+						margin-bottom: -1px;
 			   			&::after{
 			   				margin-top: 10px;
 	    					margin-left: 45px;
@@ -1261,9 +1269,9 @@
 			   			}	
 						&[aria-expanded="true"]{
 							color: @white;
-							background-color: @blue-08;
 							padding-top: 82px;
 							padding-bottom: 20px;
+							background-color: @blue-08;
 							&::after{
 				   				.icon-top(@c:'fff'; @w: 20px; @h: auto);
 				   			}
