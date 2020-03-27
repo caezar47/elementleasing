@@ -2,8 +2,10 @@
 	&item{
 		&.is--index{
 			&-header{
+				display: block;
 				margin-top: 50px;
 				margin-bottom: 20px;
+				color: @default;
 				.media-breakpoint-down(@lg; {
 					font-size: 12px;
 				});
@@ -66,10 +68,7 @@
 				});
 			}
 			&-sm{
-				padding-right: 70px;
-				.media-breakpoint-up(@xl; {
-					padding-right: 200px;
-				});
+				padding-right: 60px;
 			}
 		}
 		&.is--programm{
@@ -636,20 +635,18 @@
 				});
 				.media-breakpoint-up(@md; {
 					max-width: 200px;
+					top: 5px;
 					right: -80px;
 				    max-width: 405px;
-	    			padding: 30px;
+	    			padding: 0;
 					//right: -100px;
 					//opacity: 0;
 					.card__item:hover &{
-						background-color: @white;
+						//background-color: @white;
 						//opacity: 1;
 						//right: -80px;
 					}					
 				});
-					.card__item:hover &{
-						background-color: @white;
-					}
 			}
 			&-search{
 				.media-breakpoint-down(@md; {
@@ -1287,11 +1284,7 @@
 			}
 			&-sm{
 				font-weight: 700;
-
-//				.media-breakpoint-up(@xl; {
 					line-height: 1.5em;
-//				});
-				//max-width: 350px;
 				a{
 					color: @default;
 					.card__item:hover &{
@@ -1382,9 +1375,9 @@
 				.media-breakpoint-up(@lg; {
 					margin-bottom: 25px;					
 				});
-				.card__item:hover &{
+				/*.card__item:hover &{
 					color: @default;
-				}
+				}*/
 			}
 			&-search{
 				font-size: 1.55em;
@@ -1781,12 +1774,12 @@
 						margin: 0;
 					}			
 				});
-				.card__item:hover &{
+				/*.card__item:hover &{
 					color: @default;
 				}
 				.card__item:hover &.is--status{
 					color: @success;
-				}	
+				}*/	
 			}
 			&-search{
 				font-weight: 100;
