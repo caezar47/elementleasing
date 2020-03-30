@@ -187,11 +187,11 @@
 				level:heading_level, 
 				heading:heading} %}
 			<ol class="{{prefix}}step  {{mod}}">
-				<li class="{{prefix}}step-item  {{mod}}  is--active">Основная информация</li>
-				<li class="{{prefix}}step-item  {{mod}}">Данные компании</li>
-				<li class="{{prefix}}step-item  {{mod}}">Ваши контакты</li>
+				<li class="{{prefix}}step-item  {{mod}}  {{active_one}}">Основная информация</li>
+				<li class="{{prefix}}step-item  {{mod}}  {{active_two}}">Данные компании</li>
+				<li class="{{prefix}}step-item  {{mod}}  {{active_three}}">Ваши контакты</li>
 			</ol>
-			<div class="{{prefix}}step-pane  {{mod}}  is--active">				
+			<div class="{{prefix}}step-pane  {{mod}}  {{active_one}}">			
 				<div class="{{prefix}}row  grid__row  {{mod}}">				
 					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
 						{"type":"text", "id":"item", "form_id":ID, "name":"Объект лизинга", "placeholder":"Объект лизинга"},
@@ -218,11 +218,11 @@
 					<button type="button" class="btn__item  is--arrow  is--md  is--primary">Продолжить</button>	
 				</div>
 			</div>
-			<div class="{{prefix}}step-pane  {{mod}}">				
+			<div class="{{prefix}}step-pane  {{mod}}  {{active_two}}">			
 				<div class="{{prefix}}row  grid__row  {{mod}}">				
 					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
 						{"type":"text", "id":"fio", "form_id":ID, "name":"ФИО", "placeholder":"ФИО"},
-						{"type":"text", "id":"company", "form_id":ID, "name":"Название компании", "placeholder":"Название компании"}
+						{"type":"text", "id":"company", "form_id":ID, "name":"Название компании", "placeholder":"Название компании","error": "true"}
 					]} %} 
 					{% include "elem-tpl.twig" with {
 						view: "select", 
@@ -232,7 +232,8 @@
 						id:"legal", 
 						name:"", 
 						color:color, 
-						attr:"data-select-primary-l", 
+						attr:"data-select-primary-l",
+						error: "true", 
 						list: [
 							{"name": "Правовая форма", "status":"disabled selected"},
 							{"name": "Юридическое лицо"},
@@ -243,7 +244,7 @@
 					<button type="button" class="btn__item  is--arrow  is--md  is--primary">Продолжить</button>	
 				</div>
 			</div>
-			<div class="{{prefix}}step-pane  {{mod}}">				
+			<div class="{{prefix}}step-pane  {{mod}}  {{active_three}}">		
 				<div class="{{prefix}}row  grid__row  {{mod}}">				
 					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
 						{"type":"email", "id":"email", "form_id":ID, "name":"E-mail", "placeholder":"Ваш E-mail"},
@@ -269,7 +270,7 @@
 							{"name": "Брянск"}
 						]
 					} %}
-					<button type="button" class="btn__item  is--arrow  is--md  is--primary">Отправить заявку</button>	
+					<button type="button" data-test class="btn__item  is--arrow  is--md  is--primary">Отправить заявку</button>	
 					{% include "elem-tpl.twig" with {
 						view:"checkbox", 
 						prefix:prefix, 

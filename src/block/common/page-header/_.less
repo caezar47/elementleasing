@@ -278,11 +278,24 @@
 				});
 			}
 			&-leasing-order{
-				margin-bottom: 15px;
-				.media-breakpoint-up(@lg; {
-					border-bottom: 1px solid @blue-light;
-					padding-bottom: 20px;						
-				});
+				&{
+					margin-bottom: 15px;
+					.media-breakpoint-up(@lg; {
+						border-bottom: 1px solid @blue-light;
+						padding-bottom: 20px;						
+					});
+				}
+				&-result{
+					margin-bottom: 15px;
+					.media-breakpoint-up(@md; {
+						margin-bottom: 10px;
+					});
+				}
+				&-result-note{
+					max-width: 450px;
+					font-size: .88em;
+    				line-height: 1.55em;
+				}
 			}
 		}
 		&.is--line{
