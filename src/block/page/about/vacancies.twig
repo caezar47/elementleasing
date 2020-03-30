@@ -132,7 +132,16 @@
 				mod:heading_mod,
 				level:heading_level, 
 				heading:heading
-			} %}		
+			} %}	
+			<div class="text__block  {{content_mod}}">
+				{% include "../../common/page-header/tpl.twig" with {
+					prefix:"page-header__", 
+					mod:heading_sm_mod,
+					level:heading_sm_level, 
+					heading:heading_sm
+				} %}	
+				{{note}}
+			</div>
 		</div>
 	</section>
 {% endif %}

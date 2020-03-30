@@ -122,6 +122,61 @@
 				});
 			}
 		}
+		&.is--page{
+			&-vacancies{
+				&-card{
+					font-weight: 100;
+					max-width: 880px;
+					.media-breakpoint-down(@md; {
+						font-size: 12px;
+					});
+					p, div{
+						position: relative;
+						font-size: 1.2em;
+						line-height: 1.5em;
+						margin-bottom: 5px;
+					}
+					h2,
+					h3,
+					h4,
+					h5{
+						font-weight: 700;
+						margin-bottom: 15px;
+					}
+					* + h3{
+						padding-top: 20px;
+					}
+					.media-breakpoint-up(@md; {
+						p, div{
+							margin-bottom: 20px;
+							padding-left: 90px;
+							font-size: 1.33em;
+							line-height: 1.5em;
+						}
+						h2,
+						h3,
+						h4,
+						h5{
+							margin-bottom: 35px;						
+							& + *{
+								&::before{
+									content: '';
+									position: absolute;
+									left: 0;
+									top: 15px;
+									height: 1px;
+									width: 80px;
+									background-color: @white-e9;
+								}
+							}
+						}
+						* + h3{
+							padding-top: 40px;
+						}
+					});
+				}
+			}
+		}
 		&.is--leasing{
 			&-formaliz{
 				font-weight: 100;
@@ -143,7 +198,6 @@
 					padding-top: 20px;
 				}
 				.media-breakpoint-up(@md; {
-
 					p, div{
 						margin-bottom: 20px;
 						padding-left: 90px;
@@ -265,8 +319,7 @@
 				}
 			}
 		}
-		&.is--block{
-			
+		&.is--block{			
 			&-adv{
 				font-weight: 100;
 				p, div{
