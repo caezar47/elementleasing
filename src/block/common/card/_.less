@@ -460,6 +460,22 @@
   					border-color: fadeout(#E5F6FF, 100%);
   				}
 			}
+			&-download{
+				position: relative;
+				display: block;
+				padding: 30px 55px 30px 15px;
+				margin: 0 -15px;
+				border-bottom: 2px solid @white-e9;
+				transition: @trs-site;
+				.media-breakpoint-down(@md; {
+					font-size: 12px;
+					padding: 20px 55px 20px 15px;
+				});
+				&:hover{
+					background-color: @white-f8;
+					border-bottom-color: @white-f8;
+				}
+			}
 		}
 		&.is--finance{
 			font-size: 16px;
@@ -705,6 +721,14 @@
 					margin-top: 20px;
 				}
 			});
+		}
+		&.is--docs{
+			&-download{
+				margin-bottom: 30px;
+				.media-breakpoint-up(@lg; {
+					margin-bottom: 80px;
+				});
+			}
 		}
 	}
 	&carousel{
@@ -1211,6 +1235,22 @@
 				});
 			}
 		}
+		&.is--docs{
+			&-download{
+				color: @black-98;
+				width: 26px;
+				height: 26px;
+				position: absolute;
+				top: 50%;
+				right: 15px;
+				transform: translateY(-50%);
+				transition: @trs-site;
+				.card__item:hover &{
+					color: @success;
+				}
+
+			}
+		}
 	}
 	&heading{
 		transition: @trs-site;
@@ -1519,6 +1559,12 @@
 					//font-size: 1.8em;
 				}
 			}
+			&-download{
+				color: @default;
+				font-weight: 700;
+				font-size: 1.34em;
+    			line-height: 1.34em;
+			}
 		}
 		&.is--finance{
 			color: @success;
@@ -1694,6 +1740,13 @@
 			.media-breakpoint-up(@md; {
 				margin-bottom: 15px;
 			});
+		}
+		&.is--docs{
+			&-download{
+    			display: block;
+				margin-bottom: 10px;
+				color: @black-98;
+			}
 		}
 	}
 	&value{

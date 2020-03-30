@@ -207,6 +207,19 @@
 	</a>
 	{% endfor %}
 {% endif %}
+
+{% if view == "docs_download" %}
+	{% for value in list %}	
+	<a href="{{value.link}}" class="{{prefix}}item  {{mod}}">
+		<time class="{{prefix}}date  {{mod}}" datetime="{{value.date_iso}}">{{value.date}}</time>	
+		<p class="{{prefix}}heading  {{mod}}">{{value.name}}</p>
+		<p class="{{prefix}}icon  {{mod}}">
+			{% include "../svg-sprite/svg.twig" with {icon:"download"} %}
+		</p>		
+	</a>
+	{% endfor %}
+{% endif %}
+
 {% if view == "finance" %}
 	{% for value in list %}	
 	<div>

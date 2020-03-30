@@ -1,5 +1,13 @@
 .page-header__{
 	&panel{
+		&.is--page{
+			&-securities{
+				margin-bottom: 30px;
+				.media-breakpoint-up(@lg; {
+					margin-bottom: 45px;
+				});
+			}
+		}
 		align-items: center;
 		& > .cols{
 			.media-breakpoint-down(@sm; {
@@ -136,6 +144,14 @@
 					margin-bottom: 35px;
 					.media-breakpoint-up(@md; {
 						margin-bottom: 15px;
+					});
+				}
+			}
+			&-securities{
+				&-sm{
+					margin-bottom: 10px;
+					.media-breakpoint-up(@lg; {
+						margin-bottom: 20px;
 					});
 				}
 			}

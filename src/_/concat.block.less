@@ -1067,63 +1067,6 @@
 		}
 	}
 }
-.breadcrumb__{
-	@gutter: 9px;
-	@gutter_top: 5px;
-	&list{
-		list-style: none;
-		display: flex;
-		flex-wrap: wrap;
-		padding: 0;
-		margin-top: -(@gutter_top);		
-		margin-left: -@gutter;
-		margin-right: -@gutter;	
-		margin-bottom: 15px;	
-		.media-breakpoint-down(@md; {
-			font-size: 16px;
-		});
-		.media-breakpoint-up(@xl; {
-			margin-bottom: 25px;
-		});
-	} 
-	&list-item{
-		position: relative;	
-		padding-top: @gutter_top;
-		padding-left: @gutter;
-		padding-right: @gutter;	
-		color: @bread_color;
-		font-size: 0.77em;
-		line-height: 1.33em;
-		font-weight: 100;		
-		&:after{
-			content: '/'; 
-			position: absolute;
-			bottom: 0%;
-			transform: translate(50%, 0%);		
-			right: 0;
-		}	
-		&.is--active{
-			font-weight: 400;
-			color: @bread_color_active;
-			&::before,	
-			&::after{display: none}	
-		}
-		.breadcrumb__list.is--white &{
-			color: @white;
-		}
-
-	}
-	&list-link{
-		&, &:focus{color: @bread_color;}
-		&:hover{color: @bread_color_active}
-		.breadcrumb__list-item.is--active &{
-			color: @bread_color_active;
-		}
-		.breadcrumb__list.is--white &{
-			color: @white;
-		}
-	}
-}
 .aside__{
 	&block{
 		.media-breakpoint-down(@xl; {			
@@ -1579,6 +1522,63 @@
 	}
 }
 */
+.breadcrumb__{
+	@gutter: 9px;
+	@gutter_top: 5px;
+	&list{
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		padding: 0;
+		margin-top: -(@gutter_top);		
+		margin-left: -@gutter;
+		margin-right: -@gutter;	
+		margin-bottom: 15px;	
+		.media-breakpoint-down(@md; {
+			font-size: 16px;
+		});
+		.media-breakpoint-up(@xl; {
+			margin-bottom: 25px;
+		});
+	} 
+	&list-item{
+		position: relative;	
+		padding-top: @gutter_top;
+		padding-left: @gutter;
+		padding-right: @gutter;	
+		color: @bread_color;
+		font-size: 0.77em;
+		line-height: 1.33em;
+		font-weight: 100;		
+		&:after{
+			content: '/'; 
+			position: absolute;
+			bottom: 0%;
+			transform: translate(50%, 0%);		
+			right: 0;
+		}	
+		&.is--active{
+			font-weight: 400;
+			color: @bread_color_active;
+			&::before,	
+			&::after{display: none}	
+		}
+		.breadcrumb__list.is--white &{
+			color: @white;
+		}
+
+	}
+	&list-link{
+		&, &:focus{color: @bread_color;}
+		&:hover{color: @bread_color_active}
+		.breadcrumb__list-item.is--active &{
+			color: @bread_color_active;
+		}
+		.breadcrumb__list.is--white &{
+			color: @white;
+		}
+	}
+}
 .btn__{
 	&clearfix{
 		.btn-clearfix();
@@ -2306,6 +2306,22 @@
   					border-color: fadeout(#E5F6FF, 100%);
   				}
 			}
+			&-download{
+				position: relative;
+				display: block;
+				padding: 30px 55px 30px 15px;
+				margin: 0 -15px;
+				border-bottom: 2px solid @white-e9;
+				transition: @trs-site;
+				.media-breakpoint-down(@md; {
+					font-size: 12px;
+					padding: 20px 55px 20px 15px;
+				});
+				&:hover{
+					background-color: @white-f8;
+					border-bottom-color: @white-f8;
+				}
+			}
 		}
 		&.is--finance{
 			font-size: 16px;
@@ -2551,6 +2567,14 @@
 					margin-top: 20px;
 				}
 			});
+		}
+		&.is--docs{
+			&-download{
+				margin-bottom: 30px;
+				.media-breakpoint-up(@lg; {
+					margin-bottom: 80px;
+				});
+			}
 		}
 	}
 	&carousel{
@@ -3057,6 +3081,22 @@
 				});
 			}
 		}
+		&.is--docs{
+			&-download{
+				color: @black-98;
+				width: 26px;
+				height: 26px;
+				position: absolute;
+				top: 50%;
+				right: 15px;
+				transform: translateY(-50%);
+				transition: @trs-site;
+				.card__item:hover &{
+					color: @success;
+				}
+
+			}
+		}
 	}
 	&heading{
 		transition: @trs-site;
@@ -3365,6 +3405,12 @@
 					//font-size: 1.8em;
 				}
 			}
+			&-download{
+				color: @default;
+				font-weight: 700;
+				font-size: 1.34em;
+    			line-height: 1.34em;
+			}
 		}
 		&.is--finance{
 			color: @success;
@@ -3540,6 +3586,13 @@
 			.media-breakpoint-up(@md; {
 				margin-bottom: 15px;
 			});
+		}
+		&.is--docs{
+			&-download{
+    			display: block;
+				margin-bottom: 10px;
+				color: @black-98;
+			}
 		}
 	}
 	&value{
@@ -6730,6 +6783,14 @@
 }
 .page-header__{
 	&panel{
+		&.is--page{
+			&-securities{
+				margin-bottom: 30px;
+				.media-breakpoint-up(@lg; {
+					margin-bottom: 45px;
+				});
+			}
+		}
 		align-items: center;
 		& > .cols{
 			.media-breakpoint-down(@sm; {
@@ -6866,6 +6927,14 @@
 					margin-bottom: 35px;
 					.media-breakpoint-up(@md; {
 						margin-bottom: 15px;
+					});
+				}
+			}
+			&-securities{
+				&-sm{
+					margin-bottom: 10px;
+					.media-breakpoint-up(@lg; {
+						margin-bottom: 20px;
 					});
 				}
 			}

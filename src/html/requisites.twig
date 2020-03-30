@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+	<head>	
+    	{% include "../block/common/head/head.twig" with {title:"Реквизиты"}  %}
+	</head>
+	<body>
+    	{% include "../block/common/navbar/navbar.twig" with {navbar_prefix:"navbar__"} %}
+		<main class="content-block__panel">
+            {% include "../block/page/investors.twig" with {
+                view:"requisites_page", 
+                content_prefix:"content-block__", 
+                content_mod:"is--page-requisites",
+				heading_mod:"is--hXL  fw--700  color--primary-l  margin--default",
+                heading_mod:"is--h1  fw--700  is--page-investors-docs", 
+                heading_level:"h2", 
+                heading:"Реквизиты", 
+				bread:[
+					{name:"Главная", link:page.index},
+					{name:"Инвесторам", link:page.investors},
+					{name:"Реквизиты"}
+				],
+                list:[
+                    {
+                        name:"Порядок оплаты расходов по изготовлению копий документов", 
+			 			"date":"20.11.2019 15:37:00", 
+			 			"date_iso":"09.10.2019",
+                        link:"#",
+                    },
+                    {
+                        name:"Образец требования для юридического лица", 
+			 			"date":"20.11.2019 15:37:00", 
+			 			"date_iso":"09.10.2019",
+                        link:"#",
+                    },
+                    {
+                        name:"Образец требования для физического лица", 
+			 			"date":"20.11.2019 15:37:00", 
+			 			"date_iso":"09.10.2019",
+                        link:"#",
+                    }
+                ],
+            } %}
+		</main>
+		
+    	{% include "../block/common/footer/footer.twig" with {footer_prefix:"footer__"} %}
+
+    	{# {% include "../block/common/modals/include.twig"%} #}
+    	{% include "../block/common/script/script.twig"%}
+	</body>
+</html>
