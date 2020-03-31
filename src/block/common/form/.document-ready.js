@@ -1,3 +1,34 @@
+//Все формы 
+var form_submit = $("[data-form-submit]");
+var form_visible = $("[data-form-visible]");
+
+form_visible.on('click', function(e) {
+	e.preventDefault();
+	$(this).next('.form__panel.is--md-open').addClass('is--visible');
+});
+
+form_submit.on('click', function(e) {
+	e.preventDefault();
+	var wrap = $(this).closest(".form__wrap"),
+		controls = wrap.find("input,select"),
+		isValid = true;
+
+	$(".form__item").removeClass("is--error");
+	for(var i=0; i<controls.length; i++){
+		if (!controls[i].validity.valid){
+			isValid = false;
+			$(controls[i]).closest(".form__item").addClass("is--error");
+		}		
+	}
+	if (isValid){
+		$(this).closest('.form__panel').find('.form__result').addClass('is--visible');
+		$(this).closest('.form__panel').find('.form__wrap').addClass('is--hidden');
+		$(this).closest('.form__panel').find('.form__bg').addClass('is--result');
+		$(this).closest('.form__panel').find('.form__bg').addClass('is--result');
+	}
+});
+//Все формы - end's
+
 // споллер показать все для фильтров
 var filter_view = $("[data-filter-view]");
 filter_view.on('click', function(e) {
@@ -48,37 +79,6 @@ var file = $('.form__file-input');
 file.on('change', function(e) {
     $(this).siblings('.form__file-name').html($(this).val().replace(/.*(\/|\\)/, '')+'<br> Заменить файл');
 });
-
-//Все формы 
-var form_submit = $("[data-form-submit]");
-var form_visible = $("[data-form-visible]");
-
-form_visible.on('click', function(e) {
-	e.preventDefault();
-	$(this).next('.form__panel.is--md-open').addClass('is--visible');
-});
-
-form_submit.on('click', function(e) {
-	e.preventDefault();
-	var wrap = $(this).closest(".form__wrap"),
-		controls = wrap.find("input,select"),
-		isValid = true;
-
-	$(".form__item").removeClass("is--error");
-	for(var i=0; i<controls.length; i++){
-		if (!controls[i].validity.valid){
-			isValid = false;
-			$(controls[i]).closest(".form__item").addClass("is--error");
-		}		
-	}
-	if (isValid){
-		$(this).closest('.form__panel').find('.form__result').addClass('is--visible');
-		$(this).closest('.form__panel').find('.form__wrap').addClass('is--hidden');
-		$(this).closest('.form__panel').find('.form__bg').addClass('is--result');
-		$(this).closest('.form__panel').find('.form__bg').addClass('is--result');
-	}
-});
-//Все формы - end's
 
 
 //Форма запрос лисинга

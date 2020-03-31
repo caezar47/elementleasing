@@ -372,18 +372,42 @@
 
 				<div class="{{prefix}}row  grid__row  {{mod}}">
 					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
-						{"type":"text", "id":"fio", "form_id":ID, "name":"fio", "placeholder":"Фамилия и Имя"},
-						{view: "date","type":"text", "id":"bithday", "form_id":ID, "name":"bithday", "placeholder":"Дата рождения"},
-						{"type":"text", "id":"city", "form_id":ID, "name":"city", "placeholder":"Город планируемой работы"},
-						{"type":"email", "id":"email", "form_id":ID, "name":"Email", "placeholder":"E-mail"},
-						{"type":"tel", "id":"tel", "form_id":ID, "name":"Телефон", "placeholder":"Телефон"}
+						{"type":"text", "id":"fio", "form_id":ID,"required": "required", "name":"fio", "placeholder":"Фамилия и Имя"},
+						{view: "date","type":"text", "id":"bithday", "form_id":ID,"required": "required", "name":"bithday", "placeholder":"Дата рождения"}
 					]} %}
-					{# <div class="{{prefix}}drag  {{color}}  {{mod}}">Перетащите или загрузите сюда резюме</div> #}
+
+					{% include "elem-tpl.twig" with {
+						view: "select", 
+						prefix:prefix, 
+						mod:mod, 
+						color:color, 
+						form_id:ID, 
+						required: "required",
+						id:"city", 
+						name:"Город", 
+						attr:"data-select-primary", 
+						placeholder:"Город планируемой работы", 
+						list: [
+							{"name": "Город планируемой работы", "status":"disabled selected"},
+							{"name": "Абакан"},
+							{"name": "Архангельск"},
+							{"name": "Астрахань"},
+							{"name": "Барнаул"},
+							{"name": "Белгород"},
+							{"name": "Благовещенск"},
+							{"name": "Брянск"}
+						]
+					} %}
+
+					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
+						{"type":"email", "id":"email", "form_id":ID,"required": "required", "name":"Email", "placeholder":"E-mail"},
+						{"type":"tel", "id":"tel", "form_id":ID,"required": "required", "name":"Телефон", "placeholder":"Телефон"}
+					]} %}
 					{% include "elem-tpl.twig" with {view:"file", prefix:prefix, mod:mod, color:color, id:"file", form_id:ID, name:"Загрузите сюда резюме" } %}
 					{% include "elem-tpl.twig" with {view: "textarea", prefix:prefix, mod:mod, color:color, id:"comments", "form_id":ID, name:"Расскажите, почему вы хотите у нас работать?", placeholder:"Расскажите, почему вы хотите у нас работать?"} %}	
 						
 					{% include "elem-tpl.twig" with {view:"checkbox", prefix:prefix, mod:"is--sm", color:color, list: [{"id":"agreement", "form_id":ID, "status":"checked", "name":"Согласие с условиями передачи информации", "label":"Соглашаюсь с условиями передачи информации"}] } %}
-					<button type="submit" data-test class="btn__item  is--success">Отправить</button>
+					<button type="submit" data-form-submit class="btn__item  is--success">Отправить</button>
 				</div>
 			</div>
 			<div class="{{prefix}}result  {{mod}}">
