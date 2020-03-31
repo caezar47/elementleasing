@@ -158,12 +158,14 @@
 			<li class="form__tabs-item  is--login"><a class="form__tabs-link  is--login"  href="#login-partners" data-toggle="tab">Партнеру</a></li>
 		</ul>
 				
-	<p class="form__item  is--login    "  >
-		<input type="text" class="form__control    is--login  " id="login[email]" name="f[Email]" placeholder="E-mail" >
+	<p class="form__item  is--login  "  >
+		<input type="text" class="form__control    is--login  "  placeholder="E-mail" >
+		
 	</p>
 		
-	<p class="form__item  is--login    "  >
-		<input type="password" class="form__control    is--login  " id="login[passoword]" name="f[Пароль]" placeholder="Пароль" >
+	<p class="form__item  is--login  "  >
+		<input type="password" class="form__control    is--login  "  placeholder="Пароль" >
+		
 	</p>
 	
 
@@ -208,20 +210,27 @@
 				
 
 
-	<form action="#" class="form__panel  is--leasing-order    ">
+	<form action="#" class="form__panel  is--leasing-order    "  data-step-form>
 		<div class="form__wrap  is--leasing-order    ">
 				
 	<h3 class="page-header__heading  is--h3  fw--700  is--form-leasing-order  " >Заявка на лизинг</h3>
 			<ol class="form__step  is--leasing-order">
-				<li class="form__step-item  is--leasing-order  is--active">Основная информация</li>
-				<li class="form__step-item  is--leasing-order  ">Данные компании</li>
-				<li class="form__step-item  is--leasing-order  ">Ваши контакты</li>
+				<li class="form__step-item  is--leasing-order">
+					<a href="#f_leasing-order-step1" class="form__step-link  is--leasing-order  is--active">Основная информация</a> 	
+				</li>
+				<li class="form__step-item  is--leasing-order">
+					<a href="#f_leasing-order-step2" disabled class="form__step-link  is--leasing-order  ">Данные компании</a> 	
+				</li>
+				<li class="form__step-item  is--leasing-order">
+					<a href="#f_leasing-order-step3" disabled class="form__step-link  is--leasing-order  ">Ваши контакты</a> 	
+				</li>
 			</ol>
-			<div class="form__step-pane  is--leasing-order  is--active">			
+			<div class="form__step-pane  is--leasing-order  " id="f_leasing-order-step1">			
 				<div class="form__row  grid__row  is--leasing-order">				
 							
-	<p class="form__item  is--leasing-order    "  >
-		<input type="text" class="form__control    is--leasing-order  is--primary-light" id="f_leasing-order[item]" name="f[Объект лизинга]" placeholder="Объект лизинга" >
+	<p class="form__item  is--leasing-order  "  data-error="Обязательно к заполнению">
+		<input type="text" class="form__control    is--leasing-order  is--primary-light" required placeholder="Объект лизинга" >
+		
 	</p>
 	
 
@@ -234,8 +243,8 @@
 
 
 					
-	<p class="form__item  is--leasing-order      "  >
-				<select class="form__control    is--leasing-order  is--primary-light" id="f_leasing-order[time]" name="f[Срок лизинга]"  data-select-primary-l>
+	<p class="form__item  is--leasing-order      "  data-error="Обязательно к заполнению">
+				<select class="form__control  is--leasing-order  is--primary-light" id="f_leasing-order[time]" name="f[Срок лизинга]"  data-select-primary-l  required>
 							<option value="" disabled selected>Срок лизинга</option>
 							<option value="" >36 месяцев</option>
 							<option value="" >24 месяца</option>
@@ -254,8 +263,9 @@
 
 	
 							
-	<p class="form__item  is--leasing-order    "  >
-		<input type="text" class="form__control    is--leasing-order  is--primary-light" id="f_leasing-order[payment]" name="f[Размер аванса в рублях]" placeholder="Размер аванса в рублях" >
+	<p class="form__item  is--leasing-order  "  data-error="Обязательно к заполнению">
+		<input type="number" class="form__control    is--leasing-order  is--primary-light" required placeholder="Размер аванса в рублях" >
+		
 	</p>
 	
 
@@ -267,18 +277,20 @@
 
 
 
-					<button type="button" class="btn__item  is--arrow  is--md  is--primary">Продолжить</button>	
+					<button type="button" class="btn__item  is--arrow  is--md  is--primary" data-step-next>Продолжить</button>	
 				</div>
 			</div>
-			<div class="form__step-pane  is--leasing-order  ">			
+			<div class="form__step-pane  is--leasing-order  " id="f_leasing-order-step2">			
 				<div class="form__row  grid__row  is--leasing-order">				
 							
-	<p class="form__item  is--leasing-order    "  >
-		<input type="text" class="form__control    is--leasing-order  is--primary-light" id="f_leasing-order[fio]" name="f[ФИО]" placeholder="ФИО" >
+	<p class="form__item  is--leasing-order  "  data-error="Обязательно к заполнению">
+		<input type="text" class="form__control    is--leasing-order  is--primary-light" required placeholder="ФИО" >
+		
 	</p>
 		
-	<p class="form__item  is--leasing-order    is--error"  data-error="Обязательно к заполнению">
-		<input type="text" class="form__control    is--leasing-order  is--primary-light" id="f_leasing-order[company]" name="f[Название компании]" placeholder="Название компании" >
+	<p class="form__item  is--leasing-order  "  data-error="Обязательно к заполнению">
+		<input type="text" class="form__control    is--leasing-order  is--primary-light" required placeholder="Название компании" >
+		
 	</p>
 	
 
@@ -292,8 +304,8 @@
 
  
 					
-	<p class="form__item  is--leasing-order      is--error"  data-error="Обязательно к заполнению">
-				<select class="form__control    is--leasing-order  is--primary-light" id="f_leasing-order[legal]" name="f[]"  data-select-primary-l>
+	<p class="form__item  is--leasing-order      "  data-error="Обязательно к заполнению">
+				<select class="form__control  is--leasing-order  is--primary-light" id="f_leasing-order[legal]" name="f[]"  data-select-primary-l  required>
 							<option value="" disabled selected>Правовая форма</option>
 							<option value="" >Юридическое лицо</option>
 							<option value="" >ИП</option>
@@ -310,18 +322,20 @@
 
 
 
-					<button type="button" class="btn__item  is--arrow  is--md  is--primary">Продолжить</button>	
+					<button type="button" class="btn__item  is--arrow  is--md  is--primary" data-step-next>Продолжить</button>	
 				</div>
 			</div>
-			<div class="form__step-pane  is--leasing-order  ">		
+			<div class="form__step-pane  is--leasing-order  " id="f_leasing-order-step3">		
 				<div class="form__row  grid__row  is--leasing-order">				
 							
-	<p class="form__item  is--leasing-order    "  >
-		<input type="email" class="form__control    is--leasing-order  is--primary-light" id="f_leasing-order[email]" name="f[E-mail]" placeholder="Ваш E-mail" >
+	<p class="form__item  is--leasing-order  "  data-error="Обязательно к заполнению">
+		<input type="email" class="form__control    is--leasing-order  is--primary-light" required placeholder="Ваш E-mail" >
+		
 	</p>
 		
-	<p class="form__item  is--leasing-order    "  >
-		<input type="tel" class="form__control    is--leasing-order  is--primary-light" id="f_leasing-order[tel]" name="f[Телефон]" placeholder="Ваш телефон" >
+	<p class="form__item  is--leasing-order  "  data-error="Обязательно к заполнению">
+		<input type="tel" class="form__control    is--leasing-order  is--primary-light" required placeholder="Ваш телефон" >
+		
 	</p>
 	
 
@@ -335,8 +349,8 @@
 
  
 					
-	<p class="form__item  is--leasing-order      "  >
-				<select class="form__control    is--leasing-order  is--primary-light" id="f_leasing-order[city]" name="f[]"  data-select-primary-l>
+	<p class="form__item  is--leasing-order      "  data-error="Обязательно к заполнению">
+				<select class="form__control  is--leasing-order  is--primary-light" id="f_leasing-order[city]" name="f[]"  data-select-primary-l  required>
 							<option value="" disabled selected>Ваш город</option>
 							<option value="" >Абакан</option>
 							<option value="" >Архангельск</option>
@@ -357,7 +371,7 @@
 
 
 
-					<button type="button" data-test class="btn__item  is--arrow  is--md  is--primary">Отправить заявку</button>	
+					<button type="button" data-step-finish class="btn__item  is--arrow  is--md  is--primary">Отправить заявку</button>	
 					
 
 
@@ -389,376 +403,7 @@
 
 
 			</div>
-			<div>
-				
-
-
-	<form action="#" class="form__panel  is--leasing-order    ">
-		<div class="form__wrap  is--leasing-order    ">
-				
-	<h3 class="page-header__heading  is--h3  fw--700  is--form-leasing-order  " >Заявка на лизинг</h3>
-			<ol class="form__step  is--leasing-order">
-				<li class="form__step-item  is--leasing-order  ">Основная информация</li>
-				<li class="form__step-item  is--leasing-order  is--active">Данные компании</li>
-				<li class="form__step-item  is--leasing-order  ">Ваши контакты</li>
-			</ol>
-			<div class="form__step-pane  is--leasing-order  ">			
-				<div class="form__row  grid__row  is--leasing-order">				
-							
-	<p class="form__item  is--leasing-order    "  >
-		<input type="text" class="form__control    is--leasing-order  is--primary-light" id="f1_leasing-order[item]" name="f[Объект лизинга]" placeholder="Объект лизинга" >
-	</p>
-	
-
-
-
-
-
-
-
-
-
-					
-	<p class="form__item  is--leasing-order      "  >
-				<select class="form__control    is--leasing-order  is--primary-light" id="f1_leasing-order[time]" name="f[Срок лизинга]"  data-select-primary-l>
-							<option value="" disabled selected>Срок лизинга</option>
-							<option value="" >36 месяцев</option>
-							<option value="" >24 месяца</option>
-							<option value="" >12 месяцев</option>
-				
-		</select>
-	</p>
-
-
-
-
-
-
-
-
-
-	
-							
-	<p class="form__item  is--leasing-order    "  >
-		<input type="text" class="form__control    is--leasing-order  is--primary-light" id="f1_leasing-order[payment]" name="f[Размер аванса в рублях]" placeholder="Размер аванса в рублях" >
-	</p>
-	
-
-
-
-
-
-
-
-
-
-					<button type="button" class="btn__item  is--arrow  is--md  is--primary">Продолжить</button>	
-				</div>
-			</div>
-			<div class="form__step-pane  is--leasing-order  is--active">			
-				<div class="form__row  grid__row  is--leasing-order">				
-							
-	<p class="form__item  is--leasing-order    "  >
-		<input type="text" class="form__control    is--leasing-order  is--primary-light" id="f1_leasing-order[fio]" name="f[ФИО]" placeholder="ФИО" >
-	</p>
-		
-	<p class="form__item  is--leasing-order    is--error"  data-error="Обязательно к заполнению">
-		<input type="text" class="form__control    is--leasing-order  is--primary-light" id="f1_leasing-order[company]" name="f[Название компании]" placeholder="Название компании" >
-	</p>
-	
-
-
-
-
-
-
-
-
-
- 
-					
-	<p class="form__item  is--leasing-order      is--error"  data-error="Обязательно к заполнению">
-				<select class="form__control    is--leasing-order  is--primary-light" id="f1_leasing-order[legal]" name="f[]"  data-select-primary-l>
-							<option value="" disabled selected>Правовая форма</option>
-							<option value="" >Юридическое лицо</option>
-							<option value="" >ИП</option>
-							<option value="" >Физическое лицо</option>
-				
-		</select>
-	</p>
-
-
-
-
-
-
-
-
-
-					<button type="button" class="btn__item  is--arrow  is--md  is--primary">Продолжить</button>	
-				</div>
-			</div>
-			<div class="form__step-pane  is--leasing-order  ">		
-				<div class="form__row  grid__row  is--leasing-order">				
-							
-	<p class="form__item  is--leasing-order    "  >
-		<input type="email" class="form__control    is--leasing-order  is--primary-light" id="f1_leasing-order[email]" name="f[E-mail]" placeholder="Ваш E-mail" >
-	</p>
-		
-	<p class="form__item  is--leasing-order    "  >
-		<input type="tel" class="form__control    is--leasing-order  is--primary-light" id="f1_leasing-order[tel]" name="f[Телефон]" placeholder="Ваш телефон" >
-	</p>
-	
-
-
-
-
-
-
-
-
-
- 
-					
-	<p class="form__item  is--leasing-order      "  >
-				<select class="form__control    is--leasing-order  is--primary-light" id="f1_leasing-order[city]" name="f[]"  data-select-primary-l>
-							<option value="" disabled selected>Ваш город</option>
-							<option value="" >Абакан</option>
-							<option value="" >Архангельск</option>
-							<option value="" >Астрахань</option>
-							<option value="" >Барнаул</option>
-							<option value="" >Белгород</option>
-							<option value="" >Благовещенск</option>
-							<option value="" >Брянск</option>
-				
-		</select>
-	</p>
-
-
-
-
-
-
-
-
-
-					<button type="button" data-test class="btn__item  is--arrow  is--md  is--primary">Отправить заявку</button>	
-					
-
-
-	<div class="form__item  is--sm  is--agreement    ">
-				<label class="form__checkbox  is--sm  is--agreement  is--success  ">
-			<input class="form__checkbox-input  is--sm  is--agreement  is--success" type="checkbox" id="f1_leasing-order[agreement]" name="f[Согласие с условиями передачи информации]" checked>
-			<span class="form__checkbox-icon  is--sm  is--agreement  is--success"></span>
-			Соглашаюсь с условиями передачи информации
-		</label>
-			</div>
-
-
-
-
-
-
-
-				</div>
-			</div>
-		</div>
-		<div class="form__result  is--leasing-order    ">
-				
-	<h3 class="page-header__heading  is--h3 fw--700  is--form-leasing-order-result  " >Спасибо,<br> Заявка отправлена!</h3>
-				
-	<p class="page-header__heading  fw--100    is--form-leasing-order-result-note  " >После получения вашей заявки, наш консультант перезвонит вам, расскажет подробнее об условиях приобретении нужной вам техники, а также пришлет всю информацию на почту.</p>
-			<div class="form__bg  is--leasing-order"><img src="./img/default/train-success.svg" alt=""></div>
-		</div>
-	</form>
-
-
-			</div>
-			<div>
-				
-
-
-	<form action="#" class="form__panel  is--leasing-order    ">
-		<div class="form__wrap  is--leasing-order    ">
-				
-	<h3 class="page-header__heading  is--h3  fw--700  is--form-leasing-order  " >Заявка на лизинг</h3>
-			<ol class="form__step  is--leasing-order">
-				<li class="form__step-item  is--leasing-order  ">Основная информация</li>
-				<li class="form__step-item  is--leasing-order  ">Данные компании</li>
-				<li class="form__step-item  is--leasing-order  is--active">Ваши контакты</li>
-			</ol>
-			<div class="form__step-pane  is--leasing-order  ">			
-				<div class="form__row  grid__row  is--leasing-order">				
-							
-	<p class="form__item  is--leasing-order    "  >
-		<input type="text" class="form__control    is--leasing-order  is--primary-light" id="f2_leasing-order[item]" name="f[Объект лизинга]" placeholder="Объект лизинга" >
-	</p>
-	
-
-
-
-
-
-
-
-
-
-					
-	<p class="form__item  is--leasing-order      "  >
-				<select class="form__control    is--leasing-order  is--primary-light" id="f2_leasing-order[time]" name="f[Срок лизинга]"  data-select-primary-l>
-							<option value="" disabled selected>Срок лизинга</option>
-							<option value="" >36 месяцев</option>
-							<option value="" >24 месяца</option>
-							<option value="" >12 месяцев</option>
-				
-		</select>
-	</p>
-
-
-
-
-
-
-
-
-
-	
-							
-	<p class="form__item  is--leasing-order    "  >
-		<input type="text" class="form__control    is--leasing-order  is--primary-light" id="f2_leasing-order[payment]" name="f[Размер аванса в рублях]" placeholder="Размер аванса в рублях" >
-	</p>
-	
-
-
-
-
-
-
-
-
-
-					<button type="button" class="btn__item  is--arrow  is--md  is--primary">Продолжить</button>	
-				</div>
-			</div>
-			<div class="form__step-pane  is--leasing-order  ">			
-				<div class="form__row  grid__row  is--leasing-order">				
-							
-	<p class="form__item  is--leasing-order    "  >
-		<input type="text" class="form__control    is--leasing-order  is--primary-light" id="f2_leasing-order[fio]" name="f[ФИО]" placeholder="ФИО" >
-	</p>
-		
-	<p class="form__item  is--leasing-order    is--error"  data-error="Обязательно к заполнению">
-		<input type="text" class="form__control    is--leasing-order  is--primary-light" id="f2_leasing-order[company]" name="f[Название компании]" placeholder="Название компании" >
-	</p>
-	
-
-
-
-
-
-
-
-
-
- 
-					
-	<p class="form__item  is--leasing-order      is--error"  data-error="Обязательно к заполнению">
-				<select class="form__control    is--leasing-order  is--primary-light" id="f2_leasing-order[legal]" name="f[]"  data-select-primary-l>
-							<option value="" disabled selected>Правовая форма</option>
-							<option value="" >Юридическое лицо</option>
-							<option value="" >ИП</option>
-							<option value="" >Физическое лицо</option>
-				
-		</select>
-	</p>
-
-
-
-
-
-
-
-
-
-					<button type="button" class="btn__item  is--arrow  is--md  is--primary">Продолжить</button>	
-				</div>
-			</div>
-			<div class="form__step-pane  is--leasing-order  is--active">		
-				<div class="form__row  grid__row  is--leasing-order">				
-							
-	<p class="form__item  is--leasing-order    "  >
-		<input type="email" class="form__control    is--leasing-order  is--primary-light" id="f2_leasing-order[email]" name="f[E-mail]" placeholder="Ваш E-mail" >
-	</p>
-		
-	<p class="form__item  is--leasing-order    "  >
-		<input type="tel" class="form__control    is--leasing-order  is--primary-light" id="f2_leasing-order[tel]" name="f[Телефон]" placeholder="Ваш телефон" >
-	</p>
-	
-
-
-
-
-
-
-
-
-
- 
-					
-	<p class="form__item  is--leasing-order      "  >
-				<select class="form__control    is--leasing-order  is--primary-light" id="f2_leasing-order[city]" name="f[]"  data-select-primary-l>
-							<option value="" disabled selected>Ваш город</option>
-							<option value="" >Абакан</option>
-							<option value="" >Архангельск</option>
-							<option value="" >Астрахань</option>
-							<option value="" >Барнаул</option>
-							<option value="" >Белгород</option>
-							<option value="" >Благовещенск</option>
-							<option value="" >Брянск</option>
-				
-		</select>
-	</p>
-
-
-
-
-
-
-
-
-
-					<button type="button" data-test class="btn__item  is--arrow  is--md  is--primary">Отправить заявку</button>	
-					
-
-
-	<div class="form__item  is--sm  is--agreement    ">
-				<label class="form__checkbox  is--sm  is--agreement  is--success  ">
-			<input class="form__checkbox-input  is--sm  is--agreement  is--success" type="checkbox" id="f2_leasing-order[agreement]" name="f[Согласие с условиями передачи информации]" checked>
-			<span class="form__checkbox-icon  is--sm  is--agreement  is--success"></span>
-			Соглашаюсь с условиями передачи информации
-		</label>
-			</div>
-
-
-
-
-
-
-
-				</div>
-			</div>
-		</div>
-		<div class="form__result  is--leasing-order    ">
-				
-	<h3 class="page-header__heading  is--h3 fw--700  is--form-leasing-order-result  " >Спасибо,<br> Заявка отправлена!</h3>
-				
-	<p class="page-header__heading  fw--100    is--form-leasing-order-result-note  " >После получения вашей заявки, наш консультант перезвонит вам, расскажет подробнее об условиях приобретении нужной вам техники, а также пришлет всю информацию на почту.</p>
-			<div class="form__bg  is--leasing-order"><img src="./img/default/train-success.svg" alt=""></div>
-		</div>
-	</form>
-
-
-			</div>
+			
 			<div>
 				<button type="button" class="btn__item  " data-toggle="modal" data-target="#modal-leasing">Форма в модальном окне</button>
 
@@ -894,20 +539,27 @@
 									
 
 
-	<form action="#" class="form__panel  is--leasing-order    ">
+	<form action="#" class="form__panel  is--leasing-order    "  >
 		<div class="form__wrap  is--leasing-order    ">
 				
 	<h3 class="page-header__heading  is--h3  fw--700  is--form-leasing-order  " >Заявка на лизинг</h3>
 			<ol class="form__step  is--leasing-order">
-				<li class="form__step-item  is--leasing-order  ">Основная информация</li>
-				<li class="form__step-item  is--leasing-order  ">Данные компании</li>
-				<li class="form__step-item  is--leasing-order  is--active">Ваши контакты</li>
+				<li class="form__step-item  is--leasing-order">
+					<a href="#fm_leasing-order-step1" class="form__step-link  is--leasing-order  is--active">Основная информация</a> 	
+				</li>
+				<li class="form__step-item  is--leasing-order">
+					<a href="#fm_leasing-order-step2" disabled class="form__step-link  is--leasing-order  ">Данные компании</a> 	
+				</li>
+				<li class="form__step-item  is--leasing-order">
+					<a href="#fm_leasing-order-step3" disabled class="form__step-link  is--leasing-order  ">Ваши контакты</a> 	
+				</li>
 			</ol>
-			<div class="form__step-pane  is--leasing-order  ">			
+			<div class="form__step-pane  is--leasing-order  " id="fm_leasing-order-step1">			
 				<div class="form__row  grid__row  is--leasing-order">				
 							
-	<p class="form__item  is--leasing-order    "  >
-		<input type="text" class="form__control    is--leasing-order  is--primary-light" id="fm_leasing-order[item]" name="f[Объект лизинга]" placeholder="Объект лизинга" >
+	<p class="form__item  is--leasing-order  "  data-error="Обязательно к заполнению">
+		<input type="text" class="form__control    is--leasing-order  is--primary-light" required placeholder="Объект лизинга" >
+		
 	</p>
 	
 
@@ -920,8 +572,8 @@
 
 
 					
-	<p class="form__item  is--leasing-order      "  >
-				<select class="form__control    is--leasing-order  is--primary-light" id="fm_leasing-order[time]" name="f[Срок лизинга]"  data-select-primary-l>
+	<p class="form__item  is--leasing-order      "  data-error="Обязательно к заполнению">
+				<select class="form__control  is--leasing-order  is--primary-light" id="fm_leasing-order[time]" name="f[Срок лизинга]"  data-select-primary-l  required>
 							<option value="" disabled selected>Срок лизинга</option>
 							<option value="" >36 месяцев</option>
 							<option value="" >24 месяца</option>
@@ -940,8 +592,9 @@
 
 	
 							
-	<p class="form__item  is--leasing-order    "  >
-		<input type="text" class="form__control    is--leasing-order  is--primary-light" id="fm_leasing-order[payment]" name="f[Размер аванса в рублях]" placeholder="Размер аванса в рублях" >
+	<p class="form__item  is--leasing-order  "  data-error="Обязательно к заполнению">
+		<input type="number" class="form__control    is--leasing-order  is--primary-light" required placeholder="Размер аванса в рублях" >
+		
 	</p>
 	
 
@@ -953,18 +606,20 @@
 
 
 
-					<button type="button" class="btn__item  is--arrow  is--md  is--primary">Продолжить</button>	
+					<button type="button" class="btn__item  is--arrow  is--md  is--primary" data-step-next>Продолжить</button>	
 				</div>
 			</div>
-			<div class="form__step-pane  is--leasing-order  ">			
+			<div class="form__step-pane  is--leasing-order  " id="fm_leasing-order-step2">			
 				<div class="form__row  grid__row  is--leasing-order">				
 							
-	<p class="form__item  is--leasing-order    "  >
-		<input type="text" class="form__control    is--leasing-order  is--primary-light" id="fm_leasing-order[fio]" name="f[ФИО]" placeholder="ФИО" >
+	<p class="form__item  is--leasing-order  "  data-error="Обязательно к заполнению">
+		<input type="text" class="form__control    is--leasing-order  is--primary-light" required placeholder="ФИО" >
+		
 	</p>
 		
-	<p class="form__item  is--leasing-order    is--error"  data-error="Обязательно к заполнению">
-		<input type="text" class="form__control    is--leasing-order  is--primary-light" id="fm_leasing-order[company]" name="f[Название компании]" placeholder="Название компании" >
+	<p class="form__item  is--leasing-order  "  data-error="Обязательно к заполнению">
+		<input type="text" class="form__control    is--leasing-order  is--primary-light" required placeholder="Название компании" >
+		
 	</p>
 	
 
@@ -978,8 +633,8 @@
 
  
 					
-	<p class="form__item  is--leasing-order      is--error"  data-error="Обязательно к заполнению">
-				<select class="form__control    is--leasing-order  is--primary-light" id="fm_leasing-order[legal]" name="f[]"  data-select-primary-l>
+	<p class="form__item  is--leasing-order      "  data-error="Обязательно к заполнению">
+				<select class="form__control  is--leasing-order  is--primary-light" id="fm_leasing-order[legal]" name="f[]"  data-select-primary-l  required>
 							<option value="" disabled selected>Правовая форма</option>
 							<option value="" >Юридическое лицо</option>
 							<option value="" >ИП</option>
@@ -996,18 +651,20 @@
 
 
 
-					<button type="button" class="btn__item  is--arrow  is--md  is--primary">Продолжить</button>	
+					<button type="button" class="btn__item  is--arrow  is--md  is--primary" data-step-next>Продолжить</button>	
 				</div>
 			</div>
-			<div class="form__step-pane  is--leasing-order  is--active">		
+			<div class="form__step-pane  is--leasing-order  " id="fm_leasing-order-step3">		
 				<div class="form__row  grid__row  is--leasing-order">				
 							
-	<p class="form__item  is--leasing-order    "  >
-		<input type="email" class="form__control    is--leasing-order  is--primary-light" id="fm_leasing-order[email]" name="f[E-mail]" placeholder="Ваш E-mail" >
+	<p class="form__item  is--leasing-order  "  data-error="Обязательно к заполнению">
+		<input type="email" class="form__control    is--leasing-order  is--primary-light" required placeholder="Ваш E-mail" >
+		
 	</p>
 		
-	<p class="form__item  is--leasing-order    "  >
-		<input type="tel" class="form__control    is--leasing-order  is--primary-light" id="fm_leasing-order[tel]" name="f[Телефон]" placeholder="Ваш телефон" >
+	<p class="form__item  is--leasing-order  "  data-error="Обязательно к заполнению">
+		<input type="tel" class="form__control    is--leasing-order  is--primary-light" required placeholder="Ваш телефон" >
+		
 	</p>
 	
 
@@ -1021,8 +678,8 @@
 
  
 					
-	<p class="form__item  is--leasing-order      "  >
-				<select class="form__control    is--leasing-order  is--primary-light" id="fm_leasing-order[city]" name="f[]"  data-select-primary-l>
+	<p class="form__item  is--leasing-order      "  data-error="Обязательно к заполнению">
+				<select class="form__control  is--leasing-order  is--primary-light" id="fm_leasing-order[city]" name="f[]"  data-select-primary-l  required>
 							<option value="" disabled selected>Ваш город</option>
 							<option value="" >Абакан</option>
 							<option value="" >Архангельск</option>
@@ -1043,7 +700,7 @@
 
 
 
-					<button type="button" data-test class="btn__item  is--arrow  is--md  is--primary">Отправить заявку</button>	
+					<button type="button" data-step-finish class="btn__item  is--arrow  is--md  is--primary">Отправить заявку</button>	
 					
 
 

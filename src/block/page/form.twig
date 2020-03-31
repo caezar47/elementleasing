@@ -16,12 +16,11 @@
 				{% include "../common/form/form.twig" with {
 					view: 			"leasing_order", 
 					prefix:			prefix.form, 
-					open:			"true", 
 					group:			"  ", 
 					mod:			"is--leasing-order", 
 					color:			"is--primary-light", 
 					ID: 			"f_leasing-order", 
-					active_one: 	"is--active", 
+					form_data: 		"data-step-form", 
 
 					heading:		"Заявка на лизинг", 
 					heading_level:	"h3", 
@@ -38,7 +37,7 @@
 					heading_r_sm_mod:	"fw--100    is--form-leasing-order-result-note"
 				} %}
 			</div>
-			<div>
+			{# <div>
 				{% include "../common/form/form.twig" with {
 					view: 			"leasing_order", 
 					prefix:			prefix.form, 
@@ -89,7 +88,7 @@
 					heading_r_sm_level:	"p", 
 					heading_r_sm_mod:	"fw--100    is--form-leasing-order-result-note"
 				} %}
-			</div>
+			</div> #}
 			<div>
 				{% include "../common/button/btn.twig" with {
 					view:"modal",

@@ -32,8 +32,8 @@ select_inline.select2({
 	dropdownCssClass: "is--inline"
 });
 
-/*
 phone.mask("+7 (999) 999-99-99",{placeholder:"+7 (___) ___-__-__"});
+/*
 form_panel.validationEngine(
 	'attach', {
 		promptPosition : "bottomLeft",
@@ -64,10 +64,64 @@ filter_view.on('click', function(e) {
 	e.preventDefault();
 	$(this).closest('.aside__filter').find('.form__checkbox.is--hidden').toggleClass('is--visible');
 });
-/*
-$('.form__step-item').on('click', function(e) {
+
+var navListItems = $('.form__step-link'),
+      allWells = $('.form__step-pane'),
+      allNextBtn = $('[data-step-next]'),
+      allResultBtn = $('[data-step-finish]');
+
+allWells.hide();
+navListItems.click(function (e) {
 	e.preventDefault();
-	$(this).parent('.form__step').find('.form__step-item').removeClass('is--active');
-	$(this).addClass('is--active');
+	var $target = $($(this).attr('href')),
+	    $item = $(this);
+
+	if (!$item.attr('disabled')) {
+		$item.closest('.form__wrap').find(navListItems).removeClass('is--active');
+		$item.addClass('is--active');
+		$item.closest('.form__wrap').find(allWells).hide();
+		$target.show();
+		$target.find('input:eq(0)').focus();
+	}
 });
-*/
+
+allNextBtn.click(function(){
+	var curStep = $(this).closest(".form__step-pane"),
+		curStepBtn = curStep.attr("id"),
+		nextStepWizard = $('.form__step-link[href="#' + curStepBtn + '"]').parent().next().children("a"),
+		curInputs = curStep.find("input,select"),
+		isValid = true;
+
+	$(".form__item").removeClass("is--error");
+	for(var i=0; i<curInputs.length; i++){
+		if (!curInputs[i].validity.valid){
+			isValid = false;
+			$(curInputs[i]).closest(".form__item").addClass("is--error");
+		}		
+	}
+	if (isValid)
+		nextStepWizard.removeAttr('disabled').trigger('click');
+});
+allResultBtn.click(function(){
+	var curStep = $(this).closest(".form__step-pane"),
+		curStepBtn = curStep.attr("id"),
+		nextStepWizard = $('.form__step-link[href="#' + curStepBtn + '"]').parent().next().children("a"),
+		curInputs = curStep.find("input,select"),
+		isValid = true;
+
+	$(".form__item").removeClass("is--error");
+	for(var i=0; i<curInputs.length; i++){
+		if (!curInputs[i].validity.valid){
+			isValid = false;
+			$(curInputs[i]).closest(".form__item").addClass("is--error");
+		}		
+	}
+	if (isValid){
+		$(this).closest('.form__panel').find('.form__result').addClass('is--visible');
+		$(this).closest('.form__panel').find('.form__wrap').addClass('is--hidden');
+		$(this).closest('.form__panel').find('.form__bg').addClass('is--result');
+	}
+
+});
+
+$('.form__step-link:not([disabled])').trigger('click');

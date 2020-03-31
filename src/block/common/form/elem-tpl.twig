@@ -1,17 +1,18 @@
 {% if view == "input" %}
 	{% for value in list %}	
-	<p class="{{prefix}}item  {{mod}}  {{value.mod_elem}}  {% if value.error == "true" %}is--error{% endif %}"  {% if value.error == "true" %}data-error="Обязательно к заполнению"{% endif %}>
-		<input type="{{value.type}}" class="{{prefix}}control  {{value.validate}}  {{mod}}  {{color}}" id="{{value.form_id}}[{{value.id}}]" name="f[{{value.name}}]" placeholder="{{value.placeholder}}" {% if value.view == "date" %}onfocus="(this.type='date')"{% endif %}>
+	<p class="{{prefix}}item  {{mod}}  {{value.mod_elem}}"  {% if value.required == "required" %}data-error="Обязательно к заполнению"{% endif %}>
+		<input type="{{value.type}}" class="{{prefix}}control  {{value.validate}}  {{mod}}  {{color}}" {{value.required}} placeholder="{{value.placeholder}}" {% if value.view == "date" %}onfocus="(this.type='date')"{% endif %}>
+		{# <input type="{{value.type}}" class="{{prefix}}control  {{value.validate}}  {{mod}}  {{color}}" id="{{value.form_id}}[{{value.id}}]" name="f[{{value.name}}]" placeholder="{{value.placeholder}}" {% if value.view == "date" %}onfocus="(this.type='date')"{% endif %}> #}
 	</p>
 	{% endfor %}
 {% endif %}
 
 {% if view == "select" %}
-	<p class="{{prefix}}item  {{mod}}  {{group}}  {% if error == "true" %}is--error{% endif %}"  {% if error == "true" %}data-error="Обязательно к заполнению"{% endif %}>
+	<p class="{{prefix}}item  {{mod}}  {{group}}  {% if error == "true" %}is--error{% endif %}"  {% if required == "required" %}data-error="Обязательно к заполнению"{% endif %}>
 		{% if label %}
 		<label class="{{prefix}}label  {{mod}}" for="{{form_id}}[{{id}}]">{{label}}</label>
 		{% endif %}
-		<select class="{{prefix}}control  {{value.validate}}  {{mod}}  {{color}}" id="{{form_id}}[{{id}}]" name="f[{{name}}]"  {{attr}}>
+		<select class="{{prefix}}control  {{mod}}  {{color}}" id="{{form_id}}[{{id}}]" name="f[{{name}}]"  {{attr}}  {{required}}>
 			{% for value in list %}
 				<option value="{{value.val}}" {{value.status}}>{{value.name}}</option>
 			{% endfor %}	
