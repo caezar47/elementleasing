@@ -252,7 +252,7 @@
 				</div>	
 				<div>
 					
-			<button type="button" data-form-btn class="btn__item  is--arrow  is--md  is--success">Запрос на лизинг</button>	
+			<button type="button" data-form-visible class="btn__item  is--arrow  is--md  is--success">Запрос на лизинг</button>	
 		<form action="#" class="form__panel  is--leasing-base  is--md-open">
 		<div class="form__wrap  is--leasing-base  is--md-open">
 				
@@ -261,13 +261,13 @@
 	<p class="page-header__heading  is--h6  fw--100  is--form-leasing-base-xs  " >Оставьте заявку, и наш консультант перезвонит!</p>
 			<div class="form__row  grid__row  is--leasing-base">				
 						
-	<p class="form__item  is--leasing-base  "  >
-		<input type="text" class="form__control    is--leasing-base  is--primary-light"  placeholder="Имя" >
+	<p class="form__item  is--leasing-base  "  data-error="Обязательно к заполнению">
+		<input type="text" class="form__control    is--leasing-base  is--primary-light" required placeholder="Имя" >
 		
 	</p>
 		
-	<p class="form__item  is--leasing-base  "  >
-		<input type="tel" class="form__control    is--leasing-base  is--primary-light"  placeholder="Телефон" >
+	<p class="form__item  is--leasing-base  "  data-error="Обязательно к заполнению">
+		<input type="tel" class="form__control    is--leasing-base  is--primary-light" required placeholder="Телефон" >
 		
 	</p>
 	
@@ -281,8 +281,8 @@
 
 
 				
-	<p class="form__item  is--leasing-base  is--md-open  "  >
-				<select class="form__control  is--leasing-base  is--primary-light" id="f_leasing-base[city]" name="f[Город]"  data-select-primary-l  >
+	<p class="form__item  is--leasing-base  is--md-open  "  data-error="Обязательно к заполнению">
+				<select class="form__control  is--leasing-base  is--primary-light" id="f_leasing-base[city]" name="f[Город]"  data-select-primary-l  required>
 							<option value="" disabled selected>Город</option>
 							<option value="" >Абакан</option>
 							<option value="" >Архангельск</option>
@@ -303,7 +303,7 @@
 
 
 
-				<button type="submit" data-test class="btn__item  is--arrow  is--md  is--primary">Отправить заявку</button>	
+				<button type="submit" data-form-submit class="btn__item  is--arrow  is--md  is--primary">Отправить заявку</button>	
 			</div>
 		</div>
 		<div class="form__result  is--leasing-base  is--md-open">
@@ -730,8 +730,8 @@
 	<p class="page-header__heading  color--white  fw--100  is--form-leasing-xs  " >Оставьте заявку, и наш консультант <br>перезвонит вам и отправит информацию на почту!</p>
 				<div class="form__row  grid__row  is--leasing">				
 							
-	<p class="form__item  is--leasing  "  >
-		<input type="text" class="form__control    is--leasing  is--primary"  placeholder="Имя" >
+	<p class="form__item  is--leasing  "  data-error="Обязательно к заполнению">
+		<input type="text" class="form__control    is--leasing  is--primary" required placeholder="Имя" >
 		
 	</p>
 	
@@ -746,8 +746,8 @@
 
 	
 					
-	<p class="form__item  is--leasing    "  >
-				<select class="form__control  is--leasing  is--primary" id="f_leasing[city]" name="f[Город]"  data-select-primary  >
+	<p class="form__item  is--leasing    "  data-error="Обязательно к заполнению">
+				<select class="form__control  is--leasing  is--primary" id="f_leasing[city]" name="f[Город]"  data-select-primary  required>
 							<option value="" disabled selected>Город</option>
 							<option value="" >Абакан</option>
 							<option value="" >Архангельск</option>
@@ -768,15 +768,15 @@
 
 
 
+	
 							
-							
-	<p class="form__item  is--leasing  "  >
-		<input type="tel" class="form__control    is--leasing  is--primary"  placeholder="Телефон" >
+	<p class="form__item  is--leasing  "  data-error="Обязательно к заполнению">
+		<input type="tel" class="form__control    is--leasing  is--primary" required placeholder="Телефон" >
 		
 	</p>
 		
-	<p class="form__item  is--leasing  "  >
-		<input type="email" class="form__control    is--leasing  is--primary"  placeholder="E-mail" >
+	<p class="form__item  is--leasing  "  data-error="Обязательно к заполнению">
+		<input type="email" class="form__control    is--leasing  is--primary" required placeholder="E-mail" >
 		
 	</p>
 	
@@ -789,7 +789,7 @@
 
 
 
-					<button type="submit" data-test class="btn__item  is--arrow  is--md  is--success">Отправить заявку</button>	
+					<button type="submit" data-form-submit class="btn__item  is--arrow  is--md  is--success">Отправить заявку</button>	
 				</div>
 			</div>
 			<div class="form__result  is--leasing">
@@ -964,13 +964,13 @@
 	<p class="page-header__heading  is--h6  fw--100  is--form-leasing-base-xs  " >Оставьте заявку, и наш консультант перезвонит!</p>
 			<div class="form__row  grid__row  is--leasing-base">				
 						
-	<p class="form__item  is--leasing-base  "  >
-		<input type="text" class="form__control    is--leasing-base  is--primary-light"  placeholder="Имя" >
+	<p class="form__item  is--leasing-base  "  data-error="Обязательно к заполнению">
+		<input type="text" class="form__control    is--leasing-base  is--primary-light" required placeholder="Имя" >
 		
 	</p>
 		
-	<p class="form__item  is--leasing-base  "  >
-		<input type="tel" class="form__control    is--leasing-base  is--primary-light"  placeholder="Телефон" >
+	<p class="form__item  is--leasing-base  "  data-error="Обязательно к заполнению">
+		<input type="tel" class="form__control    is--leasing-base  is--primary-light" required placeholder="Телефон" >
 		
 	</p>
 	
@@ -984,8 +984,8 @@
 
 
 				
-	<p class="form__item  is--leasing-base    "  >
-				<select class="form__control  is--leasing-base  is--primary-light" id="f_leasing-base-seo[city]" name="f[Город]"  data-select-primary-l  >
+	<p class="form__item  is--leasing-base    "  data-error="Обязательно к заполнению">
+				<select class="form__control  is--leasing-base  is--primary-light" id="f_leasing-base-seo[city]" name="f[Город]"  data-select-primary-l  required>
 							<option value="" disabled selected>Город</option>
 							<option value="" >Абакан</option>
 							<option value="" >Архангельск</option>
@@ -1006,7 +1006,7 @@
 
 
 
-				<button type="submit" data-test class="btn__item  is--arrow  is--md  is--primary">Отправить заявку</button>	
+				<button type="submit" data-form-submit class="btn__item  is--arrow  is--md  is--primary">Отправить заявку</button>	
 			</div>
 		</div>
 		<div class="form__result  is--leasing-base  ">

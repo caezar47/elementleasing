@@ -24,7 +24,7 @@
 
 {% if view=="leasing_base" %}
 	{% if open=="true" %}
-		<button type="button" data-form-btn class="btn__item  is--arrow  is--md  is--success">Запрос на лизинг</button>	
+		<button type="button" data-form-visible class="btn__item  is--arrow  is--md  is--success">Запрос на лизинг</button>	
 	{% endif %}
 	<form action="#" class="{{prefix}}panel  {{mod}}  {{group}}">
 		<div class="{{prefix}}wrap  {{mod}}  {{group}}">
@@ -44,8 +44,8 @@
 				heading:heading_sm} %}
 			<div class="{{prefix}}row  grid__row  {{mod}}">				
 				{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
-					{"type":"text", "id":"fio", "form_id":ID, "name":"fio", "placeholder":"Имя"},
-					{"type":"tel", "id":"tel", "form_id":ID, "name":"Телефон", "placeholder":"Телефон"}
+					{"type":"text", "id":"fio", "form_id":ID, "required": "required", "name":"fio", "placeholder":"Имя"},
+					{"type":"tel", "id":"tel", "form_id":ID, "required": "required", "name":"Телефон", "placeholder":"Телефон"}
 				]} %}
 				{% include "elem-tpl.twig" with {
 					view: "select", 
@@ -53,6 +53,7 @@
 					mod:mod, 
 					form_id:ID,
 					id:"city", 
+					required: "required",
 					name:"Город", 
 					color:color, 
 					attr:"data-select-primary-l", 
@@ -67,7 +68,7 @@
 						{"name": "Брянск"}
 					]
 				} %}
-				<button type="submit" data-test class="btn__item  is--arrow  is--md  is--primary">Отправить заявку</button>	
+				<button type="submit" data-form-submit class="btn__item  is--arrow  is--md  is--primary">Отправить заявку</button>	
 			</div>
 		</div>
 		<div class="{{prefix}}result  {{mod}}  {{group}}">
@@ -112,14 +113,15 @@
 					heading:heading_sm} %}
 				<div class="{{prefix}}row  grid__row  {{mod}}">				
 					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
-						{"type":"text", "id":"fio", "form_id":ID, "name":"fio", "placeholder":"Имя"}
+						{"type":"text", "id":"fio", "form_id":ID, "required": "required", "name":"fio", "placeholder":"Имя"}
 					]} %}	
 					{% include "elem-tpl.twig" with {
 						view: "select", 
 						prefix:prefix, 
 						mod:mod, 
 						color:color, 
-						form_id:ID,
+						form_id:ID, 
+						required: "required",
 						id:"city", 
 						name:"Город", 
 						attr:"data-select-primary", 
@@ -134,26 +136,12 @@
 							{"name": "Благовещенск"},
 							{"name": "Брянск"}
 						]
-					} %}
-					{# {% include "../dropdown/tpl.twig" with {
-						prefix:"dropdown__", 
-						color:color,  
-						label:"Город", 
-						list: [
-							{"name": "Абакан"},
-							{"name": "Архангельск"},
-							{"name": "Астрахань"},
-							{"name": "Барнаул"},
-							{"name": "Белгород"},
-							{"name": "Благовещенск"},
-							{"name": "Брянск"}
-						] 
-					} %} #}		
+					} %}	
 					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
-						{"type":"tel", "id":"tel", "form_id":ID, "name":"Телефон", "placeholder":"Телефон"},
-						{"type":"email", "id":"email", "form_id":ID, "name":"Email", "placeholder":"E-mail"}
+						{"type":"tel", "id":"tel", "form_id":ID, "required": "required", "name":"Телефон", "placeholder":"Телефон"},
+						{"type":"email", "id":"email", "form_id":ID, "required": "required", "name":"Email", "placeholder":"E-mail"}
 					]} %}
-					<button type="submit" data-test class="btn__item  is--arrow  is--md  is--success">Отправить заявку</button>	
+					<button type="submit" data-form-submit class="btn__item  is--arrow  is--md  is--success">Отправить заявку</button>	
 				</div>
 			</div>
 			<div class="{{prefix}}result  {{mod}}">

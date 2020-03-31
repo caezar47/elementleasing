@@ -1,70 +1,87 @@
-var form_panel = $("[data-form-validation]");
-var phone = $(".form__control[type='tel']");
-var file = $('.form__file-input');
-var file_name = $('.form__file-name');
-var input = $(".form__control");
-var reset = $(".form__reset");
-var test = $("[data-test]");
+// споллер показать все для фильтров
 var filter_view = $("[data-filter-view]");
+filter_view.on('click', function(e) {
+	e.preventDefault();
+	$(this).closest('.aside__filter').find('.form__checkbox.is--hidden').toggleClass('is--visible');
+});
+// споллер показать все для фильтров - end's
 
+// подключение плагина select2
 var select_default = $("[data-select-default]");
-var select_primary = $("[data-select-primary]");
-var select_primary_l = $("[data-select-primary-l]");
-var select_inline = $("[data-select-inline]");
-
 select_default.select2({
 	minimumResultsForSearch: -1,
 });
+
+var select_primary = $("[data-select-primary]");
 select_primary.select2({
 	minimumResultsForSearch: -1,
 	containerCssClass: "is--primary",
 	dropdownCssClass: "is--primary"
 });
 
+var select_primary_l = $("[data-select-primary-l]");
 select_primary_l.select2({
 	minimumResultsForSearch: -1,
 	containerCssClass: "is--primary-light",
 	dropdownCssClass: "is--primary-light"
 });
+
+var select_inline = $("[data-select-inline]");
 select_inline.select2({
 	minimumResultsForSearch: -1,
 	containerCssClass: "is--inline",
 	dropdownCssClass: "is--inline"
 });
+// подключение плагина select2 - end's
 
-phone.mask("+7 (999) 999-99-99",{placeholder:"+7 (___) ___-__-__"});
-/*
-form_panel.validationEngine(
-	'attach', {
-		promptPosition : "bottomLeft",
-		//scrollOffset: 200,		
-		scroll: false
-});
-input.on("input", function () {
-	$(this).siblings('.form__result').addClass('is--open');
-	$(this).siblings('.form__clear').addClass('is--active');
-});*/
-file.on('change', function(e) {
-    $(this).siblings('.form__file-name').html($(this).val().replace(/.*(\/|\\)/, '')+'<br> Заменить файл');
-});
-test.on('click', function(e) {
-	e.preventDefault();
-	$(this).closest('.form__panel').find('.form__result').addClass('is--visible');
-	$(this).closest('.form__panel').find('.form__wrap').addClass('is--hidden');
-	$(this).closest('.form__panel').find('.form__bg').addClass('is--result');
-});
-$('[data-form-btn]').on('click', function(e) {
-	e.preventDefault();
-	$(this).next('.form__panel.is--md-open').addClass('is--visible');
-});
+//сброс функции кнопки submit
 $('form button[type="submit"]').on('click', function(e) {
 	e.preventDefault();
 });
-filter_view.on('click', function(e) {
-	e.preventDefault();
-	$(this).closest('.aside__filter').find('.form__checkbox.is--hidden').toggleClass('is--visible');
+
+// маска для поля ввода телефона
+var phone = $(".form__control[type='tel']");
+phone.mask("+7 (999) 999-99-99",{placeholder:"+7 (___) ___-__-__"});
+
+// кастомизация поля прикрепления файла
+var file = $('.form__file-input');
+file.on('change', function(e) {
+    $(this).siblings('.form__file-name').html($(this).val().replace(/.*(\/|\\)/, '')+'<br> Заменить файл');
 });
 
+//Все формы 
+var form_submit = $("[data-form-submit]");
+var form_visible = $("[data-form-visible]");
+
+form_visible.on('click', function(e) {
+	e.preventDefault();
+	$(this).next('.form__panel.is--md-open').addClass('is--visible');
+});
+
+form_submit.on('click', function(e) {
+	e.preventDefault();
+	var wrap = $(this).closest(".form__wrap"),
+		controls = wrap.find("input,select"),
+		isValid = true;
+
+	$(".form__item").removeClass("is--error");
+	for(var i=0; i<controls.length; i++){
+		if (!controls[i].validity.valid){
+			isValid = false;
+			$(controls[i]).closest(".form__item").addClass("is--error");
+		}		
+	}
+	if (isValid){
+		$(this).closest('.form__panel').find('.form__result').addClass('is--visible');
+		$(this).closest('.form__panel').find('.form__wrap').addClass('is--hidden');
+		$(this).closest('.form__panel').find('.form__bg').addClass('is--result');
+		$(this).closest('.form__panel').find('.form__bg').addClass('is--result');
+	}
+});
+//Все формы - end's
+
+
+//Форма запрос лисинга
 var navListItems = $('.form__step-link'),
       allWells = $('.form__step-pane'),
       allNextBtn = $('[data-step-next]'),
@@ -121,7 +138,7 @@ allResultBtn.click(function(){
 		$(this).closest('.form__panel').find('.form__wrap').addClass('is--hidden');
 		$(this).closest('.form__panel').find('.form__bg').addClass('is--result');
 	}
-
 });
 
 $('.form__step-link:not([disabled])').trigger('click');
+//Форма запрос лисинга - end's

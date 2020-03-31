@@ -315,8 +315,8 @@
 	<p class="page-header__heading  color--white  fw--100  is--form-leasing-xs  " >Оставьте заявку, и наш консультант <br>перезвонит вам и отправит информацию на почту!</p>
 				<div class="form__row  grid__row  is--leasing">				
 							
-	<p class="form__item  is--leasing  "  >
-		<input type="text" class="form__control    is--leasing  is--primary"  placeholder="Имя" >
+	<p class="form__item  is--leasing  "  data-error="Обязательно к заполнению">
+		<input type="text" class="form__control    is--leasing  is--primary" required placeholder="Имя" >
 		
 	</p>
 	
@@ -331,8 +331,8 @@
 
 	
 					
-	<p class="form__item  is--leasing    "  >
-				<select class="form__control  is--leasing  is--primary" id="f_leasing[city]" name="f[Город]"  data-select-primary  >
+	<p class="form__item  is--leasing    "  data-error="Обязательно к заполнению">
+				<select class="form__control  is--leasing  is--primary" id="f_leasing[city]" name="f[Город]"  data-select-primary  required>
 							<option value="" disabled selected>Город</option>
 							<option value="" >Абакан</option>
 							<option value="" >Архангельск</option>
@@ -353,15 +353,15 @@
 
 
 
+	
 							
-							
-	<p class="form__item  is--leasing  "  >
-		<input type="tel" class="form__control    is--leasing  is--primary"  placeholder="Телефон" >
+	<p class="form__item  is--leasing  "  data-error="Обязательно к заполнению">
+		<input type="tel" class="form__control    is--leasing  is--primary" required placeholder="Телефон" >
 		
 	</p>
 		
-	<p class="form__item  is--leasing  "  >
-		<input type="email" class="form__control    is--leasing  is--primary"  placeholder="E-mail" >
+	<p class="form__item  is--leasing  "  data-error="Обязательно к заполнению">
+		<input type="email" class="form__control    is--leasing  is--primary" required placeholder="E-mail" >
 		
 	</p>
 	
@@ -374,7 +374,7 @@
 
 
 
-					<button type="submit" data-test class="btn__item  is--arrow  is--md  is--success">Отправить заявку</button>	
+					<button type="submit" data-form-submit class="btn__item  is--arrow  is--md  is--success">Отправить заявку</button>	
 				</div>
 			</div>
 			<div class="form__result  is--leasing">
