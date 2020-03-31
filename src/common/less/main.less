@@ -20,19 +20,15 @@ body {
 			padding-bottom: @navbar_bottom;
 		});
 	}
-	
-	@media @media-point-device-lg{padding-top: @navbar_device;}
+	padding-top: @navbar_device;
+	.media-breakpoint-up(@lg; {
+		padding-top: @navbar_screen;
+	});
+	@media @media-point-device-lg{}
 	@media @media-point-xs{
 		overflow-x: hidden; 
 		width: 100%;
 	}
-	@media @media-point-md2{padding-top: @navbar_md;}
-	@media @media-point-screen-lg{padding-top: @navbar_screen;}
-	@media @media-point-lg{padding-top: @navbar_lg;}
-	@media @media-point-xl{padding-top: @navbar_xl;}
-	@media @media-point-xxl{padding-top: @navbar_xxl;}
-	@media @media-point-device-lg{
-	}	
 
 	&::before{
 		content: '';
@@ -42,7 +38,7 @@ body {
 		height: 100%;
 		opacity: 0;
 		background: fadeout(@black, 20%);
-		transition: @trs-site;;
+		transition: @trs-site;
 		visibility: hidden;
 	}
 	html.is--open-navbar &{
