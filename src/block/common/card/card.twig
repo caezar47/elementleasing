@@ -200,6 +200,23 @@
 	{% endfor %}
 {% endif %}
 
+{% if view == "partners_card" %}
+	{% for value in list %}		
+	<a href="//{{value.link}}" target="_blank" rel="nofollow" class="{{prefix}}item  {{mod}}">
+		<div class="{{prefix}}wrap  {{mod}}">
+			<p class="{{prefix}}heading  {{mod}}">{{value.heading}}</p>
+			{% if value.img %}	
+			<p class="{{prefix}}preview  {{mod}}">
+				<img src="{{value.img}}" alt="{{value.heading}}" class="img-responsive">
+			</p>
+			{% endif %}
+		</div>	
+		<div class="{{prefix}}note  {{mod}}">{{value.note}}</div>
+		<div class="{{prefix}}value  {{mod}}">{{value.link}}</div>
+	</a>
+	{% endfor %}
+{% endif %}
+
 {% if view == "docs_card" %}
 	{% for value in list %}	
 	<a href="{{value.link}}" class="{{prefix}}item  {{mod}}">

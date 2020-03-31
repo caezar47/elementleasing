@@ -403,21 +403,41 @@
 			}
 		}
 		&.is--partners{
-			display: flex;
-			max-width: 240px;
-			height: 80px;
-			align-items: center;
-			img{
-				.img-fit(@fit: contain);
-				object-position: center;
-				opacity: 0.4;
-				transition: @trs-site;
-			}
-			.slick-active &,
-			&:hover{
+			&{
+				display: flex;
+				max-width: 240px;
+				height: 80px;
+				align-items: center;
 				img{
-					opacity: 1;
+					.img-fit(@fit: contain);
+					object-position: center;
+					opacity: 0.4;
+					transition: @trs-site;
 				}
+				.slick-active &,
+				&:hover{
+					img{
+						opacity: 1;
+					}
+				}
+			}
+			&-card{
+				display: flex;
+				flex-direction: column;
+				background-color: @white;
+				box-shadow: 0 2px 4px 1px rgba(0,52,156,0.25);
+				color: @default;
+				font-weight: 100;
+				font-size: 16px;
+				height: 100%;
+				padding: 15px 0 30px;
+				&:hover{
+					box-shadow: 0 8px 14px 1px rgba(0,52,156,0.25);
+				}
+				.media-breakpoint-up(@lg; {
+					font-size: 18px;
+					min-height: 350px;
+				});
 			}
 		}
 		&.is--seo{
@@ -728,6 +748,16 @@
 				.media-breakpoint-up(@lg; {
 					margin-bottom: 80px;
 				});
+			}
+		}
+		&.is--partners{
+			&-card{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			    padding: 0 15px 15px;
+    			height: 77px;
+    			margin-bottom: 2px;
 			}
 		}
 	}
@@ -1174,6 +1204,18 @@
 				});
 			}
 		}
+		&.is--partners{
+			&-card{
+				margin-left: 15px;
+				img{
+					width: 100%;
+					max-width: 145px;
+					max-height: 62px;
+					object-fit: contain;
+					object-position: center;
+				}
+			}
+		}
 	}
 	&icon {
 		&.is--index{
@@ -1578,6 +1620,13 @@
 				transform: scale(1.25);
 			}*/
 		}
+		&.is--partners{
+			&-card{
+				font-size: 1.37em;
+				line-height: 1.2em;
+				font-weight: 700;
+			}
+		}
 	}
 	&note{
 		&.is--index{
@@ -1682,6 +1731,14 @@
 			/*.card__item:hover &{
 				transform: scale(1.25);
 			}*/
+		}
+		&.is--partners{
+			&-card{
+				font-size: 0.88em;
+				line-height: 1.55em;
+				padding: 0 15px;
+				margin-bottom: 15px;
+			}
 		}
 	}	
 	&sign{
@@ -1936,6 +1993,19 @@
 						display: none;
 					}
 				});
+			}
+		}
+		&.is--partners{
+			&-card{
+				font-weight: 400;
+				font-size: 0.8em;
+				padding: 0 15px;
+				margin-top: auto;
+				color: @black-98;
+				transition: @trs-site;
+				.card__item:hover &{
+					color: @success;
+				}
 			}
 		}
 	}

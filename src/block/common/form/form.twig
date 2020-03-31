@@ -92,6 +92,7 @@
 	</form>
 {% endif %}
 
+
 {% if view=="leasing" %}
 	<form action="#" class="{{prefix}}panel  {{mod}}">
 		<div class="{{prefix}}bg  {{mod}}"><img src="{{path.img}}/default/train.svg" alt=""></div>
@@ -348,6 +349,59 @@
 			<button type="submit" class="btn__item  {{btn_mod}}">{{btn_name}}</button>
 		</p>
 		<button type="submit" class="{{prefix}}search-icon  {{mod}}  {{color}}">{% include "../svg-sprite/svg.twig" with {icon:"search"} %}</button>
+	</form>
+{% endif %}
+
+{% if view=="partners" %}
+	<form action="#" class="{{prefix}}panel  {{mod}}  {{group}}">			
+		<div class="{{prefix}}row  {{mod}}">
+			{% include "elem-tpl.twig" with {
+				view: "select", 
+				prefix:prefix, 
+				mod:mod, 
+				form_id:ID,
+				id:"city", 
+				name:"Город", 
+				color:color, 
+				attr:"data-select-primary-l", 
+				list: [
+					{"name": "Город", "status":"disabled selected"},
+					{"name": "Абакан"},
+					{"name": "Архангельск"},
+					{"name": "Астрахань"},
+					{"name": "Барнаул"},
+					{"name": "Белгород"},
+					{"name": "Благовещенск"},
+					{"name": "Брянск"}
+				]
+			} %}	
+			{% include "elem-tpl.twig" with {
+				view: "select", 
+				prefix:prefix, 
+				mod:mod, 
+				form_id:ID,
+				id:"type", 
+				name:"Марка", 
+				color:color, 
+				attr:"data-select-primary-l", 
+				list: [
+					{"name": "Марка", "status":"disabled selected"},
+					{"name": "Volvo"},
+					{"name": "КамАз"},
+					{"name": "IVECO"},
+					{"name": "Scania"},
+					{"name": "MAN"},
+					{"name": "DAF"},
+					{"name": "МАЗ"},
+					{"name": "Renault"},
+					{"name": "УРАЛ"},
+					{"name": "Mercedes-Benz"},
+					{"name": "HOWO"}
+				]
+			} %}		
+			<button type="submit" class="btn__item  is--arrow  is--primary  is--submit">Поиск</button>	
+			<button type="reset" class="btn__item    is--reset">Сброс настроек</button>	
+		</div>
 	</form>
 {% endif %}
 

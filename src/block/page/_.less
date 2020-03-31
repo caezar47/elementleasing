@@ -704,6 +704,16 @@
 					}
 				});
 			}
+			&-partners{
+				grid-template-columns: 100%;
+				grid-gap: 24px 16px;
+				.media-breakpoint-up(@sm; {
+					grid-template-columns: repeat(2, 1fr)
+				});
+				.media-breakpoint-up(@lg; {
+					grid-template-columns: repeat(3, 1fr)
+				});
+			}
 		}
 		&.is--leasing{
 			&-condition{
@@ -715,7 +725,7 @@
 					& > *:nth-child(1){
 						padding-top: 30px;
 					}
-					[data-form-btn]{
+					[data-form-visible]{
 						display: none;
 					}
 				});
@@ -724,9 +734,6 @@
 					grid-template-columns: 7fr 5fr;
 					& > *:nth-child(1){
 						padding-top: 30px;
-					}
-					[data-form-btn]{
-						display: none;
 					}
 				});
 			}

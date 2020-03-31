@@ -13,7 +13,7 @@
 		text-align: center;	
 		color: @btn_color;
 		border-radius: @btn_radius;
-		padding: 13px 15px;
+		//padding: 13px 15px;
 		padding: 14px 13px 10px;
 		border-width: 1px;
 		border-style: solid;
@@ -120,6 +120,33 @@
 			font-size: 0.88em;
 			line-height: 1.4em;
 			min-width: 248px;
+		}
+		&.is--submit{
+			font-size: 0.75em;
+			line-height: 1.3em;
+			padding: 7px 13px 6px;
+			.media-breakpoint-up(@lg; {
+				padding: 14px 13px 10px;				
+				font-size: 0.88em;
+				line-height: 1.4em;
+			});
+
+		}
+		&.is--reset{
+			font-size: 0.75em;
+			line-height: 1.3em;
+			background-color: fadeout(@white, 100%);
+			border-color: fadeout(@white, 100%);
+			color: @black-9c;
+			padding: 7px 13px 6px;
+			&:hover{
+				color: @success;
+			}
+			.media-breakpoint-up(@lg; {
+				padding: 14px 13px 10px;				
+				font-size: 0.88em;
+				line-height: 1.4em;
+			});
 		}
 		//old
 		/*
