@@ -83,9 +83,10 @@ file.on('change', function(e) {
 
 //Форма запрос лисинга
 var navListItems = $('.form__step-link'),
-      allWells = $('.form__step-pane'),
-      allNextBtn = $('[data-step-next]'),
-      allResultBtn = $('[data-step-finish]');
+    allWells = $('.form__step-pane'),
+    allNextBtn = $('[data-step-next]'),
+    allResetBtn = $('[data-step-reset]'),
+    allResultBtn = $('[data-step-finish]');
 
 allWells.hide();
 navListItems.click(function (e) {
@@ -138,6 +139,18 @@ allResultBtn.click(function(){
 		$(this).closest('.form__panel').find('.form__wrap').addClass('is--hidden');
 		$(this).closest('.form__panel').find('.form__bg').addClass('is--result');
 	}
+});
+allResetBtn.click(function(e){
+	e.preventDefault();
+	var $item = $(this);
+	$item.closest('.form__panel').find('.form__control').val('').removeAttr('selected');
+	$item.closest('.form__panel').find(allWells).hide();
+	$item.closest('.form__panel').find(allWells).eq(0).show();
+	$item.closest('.form__panel').find('.form__result').removeClass('is--visible');
+	$item.closest('.form__panel').find('.form__wrap').removeClass('is--hidden');
+	$item.closest('.form__panel').find('.form__bg').removeClass('is--result');
+	$item.closest('.form__panel').find('.form__step-link').removeClass('is--active').attr({'disabled':''});
+	$item.closest('.form__panel').find('.form__step-item').eq(0).children("a").addClass('is--active').removeAttr('disabled');
 });
 
 $('.form__step-link:not([disabled])').trigger('click');

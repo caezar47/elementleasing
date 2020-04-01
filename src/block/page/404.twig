@@ -19,16 +19,11 @@
 			<div>
 				<ul class="{{content_prefix}}nav  {{content_mod}}">
 					<li class="{{content_prefix}}nav-item  {{content_mod}}">Рекомендуем посмотреть:</li>
+					{% for value in list %}
 					<li class="{{content_prefix}}nav-item  {{content_mod}}">
-						<a href="#" class="{{content_prefix}}nav-link  {{content_mod}}">Главная</a>
+						<a href="{{value.link}}" class="{{content_prefix}}nav-link  {{content_mod}}">{{value.name}}</a>
 					</li>
-					<li class="{{content_prefix}}nav-item  {{content_mod}}">
-						<a href="#" class="{{content_prefix}}nav-link  {{content_mod}}">Каталог техники</a>
-					</li>
-					<li class="{{content_prefix}}nav-item  {{content_mod}}">
-						<a href="#" class="{{content_prefix}}nav-link  {{content_mod}}">Лизинговые программы</a>
-					</li>
-					
+				{% endfor %}					
 				</ul>
 				{% include "../common/form/form.twig" with {
 					view: 			"search", 
