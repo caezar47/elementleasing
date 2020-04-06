@@ -12,3 +12,12 @@ btn.on('click', function(e) {
 	e.preventDefault();
 	$(this).closest('.card__item').find('[data-dropdown]').toggleClass('is--active');
 });
+/*
+$('#articles').on('hidden.bs.collapse',function(e){
+	if($(e.target).hasClass('panel-collapse')){
+        $(e.target).collapse('show');
+        //e.preventDefault();
+		//e.stopPropagation();
+  	}
+});
+*/

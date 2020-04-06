@@ -356,19 +356,23 @@
 						font-weight: 400;
 						margin-bottom: 40px;
 						margin-left: -15px;
-						font-size: 12px;
+						//font-size: 12px;
 					});
 				}
 			}
 		}
 		&-item{
+			padding: 0;
+			.media-breakpoint-down(@lg; {
+				flex: 1 1 0;
+			});
 		}
 		&-link{
 			&.is--leasing{
 				&-order{
 					display: block;
 					transition: @trs-site;
-					padding: 7px 16px;
+					padding: 7px 15px;
 					cursor: pointer;
 					color: @black-9a;
 					&.is--active{
@@ -383,11 +387,11 @@
 						&.is--active{
 							cursor: default;
 							color: @primary;
-							font-size: 16px;
+							//font-size: 16px;
 							background-color: fadeout(@white, 100%);
 							.icon-next(@c: '004d99');
 						}
-						&:last-child{
+						.form__step-item:last-child &{
 							background: none;
 						}
 					});
