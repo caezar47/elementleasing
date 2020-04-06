@@ -7,6 +7,11 @@ form_visible.on('click', function(e) {
 	$(this).next('.form__panel.is--md-open').addClass('is--visible');
 });
 
+//сброс функции кнопки submit
+/*$('form button[type="submit"]').on('click', function(e) {
+	e.preventDefault();
+});*/
+
 form_submit.on('click', function(e) {
 	e.preventDefault();
 	var wrap = $(this).closest(".form__wrap"),
@@ -26,6 +31,7 @@ form_submit.on('click', function(e) {
 		$(this).closest('.form__panel').find('.form__bg').addClass('is--result');
 		$(this).closest('.form__panel').find('.form__bg').addClass('is--result');
 	}
+	return false;
 });
 //Все формы - end's
 
@@ -65,10 +71,6 @@ select_inline.select2({
 });
 // подключение плагина select2 - end's
 
-//сброс функции кнопки submit
-$('form button[type="submit"]').on('click', function(e) {
-	e.preventDefault();
-});
 
 // маска для поля ввода телефона
 var phone = $(".form__control[type='tel']");
