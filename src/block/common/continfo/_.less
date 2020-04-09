@@ -18,11 +18,22 @@
 					font-size: 16px;
 				});
 				.media-breakpoint-up(@md; {
-					padding: 50px 40px;
+					padding: 51px 40px;
 				});
 			}
 			&-card{
 				max-width: 340px;
+				height: 100%;
+			    display: flex;
+			    flex-direction: column;
+			    & > *:nth-child(3){
+			    	margin-top: auto;
+			    }
+			    .media-breakpoint-up(@md; {
+			    	& > *:last-child{
+				    	line-height: 1.8em;
+				    }
+			    });			    
 			}
 		}
 	}
@@ -31,7 +42,7 @@
 			&-main{
 				display: flex;
 				flex-wrap: wrap;
-				align-items: center;
+				align-items: flex-end;
 				justify-content: space-between;
 				margin-bottom: 20px;
 				.media-breakpoint-down(@md; {
@@ -64,6 +75,7 @@
 		&.is--office{
 			&-main{
 				font-size: 0.77em;
+				line-height: 2.5em;
 				a{
 					color: @success;					
 					&:hover{
@@ -116,7 +128,7 @@
 					}
 				});
 				.media-breakpoint-up(@md; {
-					margin-bottom: 20px;
+					margin-bottom: 17px;
 					&.is--address{
 						margin-bottom: 4vw;
 					}
@@ -131,10 +143,11 @@
 				}
 				.media-breakpoint-up(@md; {
 					font-weight: 700;
-					margin-bottom: 10px;					
+					margin-bottom: 5px;					
 					&.is--address{
 						font-weight: 400;
-						margin-bottom: 15px;
+						margin-bottom: 15px;    
+						//min-height: 55px;
 					}
 				});
 			}

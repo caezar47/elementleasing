@@ -189,7 +189,7 @@
 				{% if list %}
 				<div class="panel-group" id="{{list_group}}" role="tablist" aria-multiselectable="true">
 					{% for value in list %}
-					<div class="{{prefix}}item  {{content_mod}}  panel">
+					<div class="{{prefix}}item  {{content_mod}}  panel  {% if value.status == "active" %}is--open{% endif %}">
 						<div class="{{prefix}}heading  {{content_mod}}" role="tab" id="{{value.h_id}}">
 							<a role="button" data-toggle="collapse" data-parent="#{{list_group}}" href="#{{value.id}}" {% if value.status == "active" %}aria-expanded="true"{% endif %} aria-controls="{{value.id}}">
 								<p class="{{prefix}}icon  {{content_mod}}">

@@ -1,6 +1,6 @@
 {% if view == "catalog_page" %}
 	<section class="{{content_prefix}}panel">
-		<div class="{{content_prefix}}container container">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
 			{% include "../common/breadcrumb/tpl.twig" with {
 				prefix:prefix.breadcrumb, 
 				mod:bread_mod, 
@@ -40,7 +40,7 @@
 					%}
 				</div>
 			</div>
-			<div class="{{content_prefix}}row  grid__row   is--page-aside-sm  margin--huge">
+			<div class="{{content_prefix}}row  grid__row   is--page-aside-sm">
 				{% include "../common/aside/tpl.twig" with {
 					view: "filter_catalog",
 					prefix: "aside__",
@@ -73,7 +73,7 @@
 						 			"cost":"2 500 000", 
 						 			"leasing":"49 700", 
 						 			"time":"до 36 месяцев", 
-						 			"img":"http://via.placeholder.com/500x265"
+						 			"img":"https://new.elementleasing.ru/upload/resize_cache/iblock/286/600_600_1/286ce5e9e543389bc4365449d6d80171.png"
 						 		},
 						 		{
 						 			"heading":"Клинцы КС-55713-1К-4", 			
@@ -82,7 +82,7 @@
 						 			"cost":"2 500 000", 
 						 			"leasing":"49 700", 
 						 			"time":"до 36 месяцев", 
-						 			"img":"http://via.placeholder.com/500x265"
+						 			"img":"https://new.elementleasing.ru/upload/resize_cache/iblock/764/600_600_1/764cb4be9dcec9916a8dc910648a36fb.jpg"
 						 		},
 						 		{
 						 			"heading":"Клинцы КС-55713-1К-4", 			
@@ -149,42 +149,27 @@
 							 		}
 							 	]
 							} %}	
-						</div>	
-						{% include "../common/card/card.twig" with {
-						 	view: "catalog", 
-						 	prefix:prefix.card, 
-						 	mod:"is--catalog", 
-						 	list: [
-						 		{
-						 			"heading":"Клинцы КС-55713-1К-4", 
-						 			"link":page.catalog_card,
-						 			"type":"Автокран", 
-						 			"cost":"2 500 000", 
-						 			"leasing":"49 700", 
-						 			"time":"до 36 месяцев", 
-						 			"img":"http://via.placeholder.com/500x265"
-						 		},
-						 		{
-						 			"heading":"Клинцы КС-55713-1К-4", 
-						 			"link":page.catalog_card,
-						 			"type":"Автокран", 
-						 			"cost":"2 500 000", 
-						 			"leasing":"49 700", 
-						 			"time":"до 36 месяцев", 
-						 			"img":"http://via.placeholder.com/500x265"
-						 		},
-						 		{
-						 			"heading":"Клинцы КС-55713-1К-4",
-						 			"link":page.catalog_card, 
-						 			"type":"Автокран", 
-						 			"cost":"2 500 000", 
-						 			"leasing":"49 700", 
-						 			"time":"до 36 месяцев", 
-						 			"img":"http://via.placeholder.com/500x265"
-						 		}
-						 	]
-						} %}
+						</div>
 					</div>
+
+					{% include "../common/pagination/tpl.twig" with {
+					 	prev: "true", 
+					 	next: "true", 
+					 	view: "news", 
+					 	prefix:prefix.pagination,
+					 	group: "is--pagination", 
+					 	active: "2",
+					 	list: [
+					 		{name: "1"},
+					 		{name: "2"},
+					 		{name: "3"},
+					 		{name: "4"},
+					 		{name: "5"},
+					 		{name: "6"},
+					 		{name: "7"},
+					 		{name: "8"}
+					 	]
+					}%}
 				</div>
 			</div>
 		</div>
