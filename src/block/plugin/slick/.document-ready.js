@@ -127,29 +127,28 @@ $(function() {
 		arrows: true,
 		dots: dots,
 		infinite: true,
-		//centerMode: true,
-  		//centerPadding: '60px',
-		//infinite: true,
-		//autoplay: true,
-  		//autoplaySpeed: 4000,
+		variableWidth: true,
 		prevArrow: prevArrow,
 		nextArrow: nextArrow,
 		responsive: [
 		    {
 				breakpoint: 991,
 				settings: {
+					variableWidth: false,
 					slidesToShow: 3,
 				}
 		    },
 		    {
 				breakpoint: 767,
 				settings: {
+					variableWidth: false,
 					slidesToShow: 2,
 				}
 		    },
 		    {
 				breakpoint: 576,
 				settings: {
+					variableWidth: false,
 					slidesToShow: 1, 
 				}
 		    }

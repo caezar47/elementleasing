@@ -15,16 +15,16 @@
 
 {% if view == "news" %}
 	{% for value in list %}		
-	<article class="{{prefix}}item  {{mod}}">
+	<a href="{{value.link}}" class="{{prefix}}item  {{mod}}">
 		<div class="{{prefix}}wrap  {{mod}}">
-			<h4 class="{{prefix}}heading  {{mod}}"><a href="{{value.link}}">{{value.heading}}</a></h4>
+			<h4 class="{{prefix}}heading  {{mod}}">{{value.heading}}</h4>
 			<div class="{{prefix}}note  {{mod}}">{{value.note}}</div>
 			<time class="{{prefix}}date  {{mod}}" datetime="{{value.date_iso}}">{{value.date}}</time>
 		</div>	
-		<a href="{{value.link}}" class="{{prefix}}preview  {{mod}}">
+		<picture class="{{prefix}}preview  {{mod}}">
 			<img src="{{value.img}}" alt="{{value.heading}}" class="img-responsive">
-		</a>
-	</article>
+		</picture>
+	</a>
 	{% endfor %}
 {% endif %}
 

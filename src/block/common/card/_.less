@@ -49,14 +49,19 @@
 		&.is--news{
 			&{
 				display: flex;
+				color: @default;
 				.media-breakpoint-down(@md; {
 					font-size: 16px;
 				});
 				.media-breakpoint-up(@md; {
 					min-height: 315px;
-					box-shadow: 0 12px 34px 1px rgba(0,52,156,0.25);
+					box-shadow: 0 2px 4px 1px rgba(0,52,156,0.25);
 					background-color: @white;
 					flex-direction: column;
+					transition: @trs-site;
+					&:hover{
+						box-shadow: 0 12px 34px 1px rgba(0,52,156,0.25);
+					}
 				});
 			}
 			&-card{
@@ -523,7 +528,7 @@
 			.media-breakpoint-up(@md; {
 				font-size: 18px;
 				min-height: 310px;
-				max-width: 100%;
+				max-width: 290px;
 				//padding: 20px 40px 60px;
 				padding: 20px 25px 60px;
 			});
@@ -1403,11 +1408,9 @@
 				margin-bottom: 5px;
 				margin-bottom: 10px;
 				.heading5();
-				a{
-					color: @default;
-					.card__item:hover &{
-						color: @primary;
-					}
+				color: @default;
+				.card__item:hover &{
+					color: @primary;
 				}
 				.media-breakpoint-up(@md; {
 					.card__item:nth-child(1) &,
