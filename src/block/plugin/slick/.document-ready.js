@@ -5,6 +5,7 @@ $(function() {
 	var partners = $('[data-slick-partners]');
 	var finance = $('[data-slick-finance]');
 	var leasing = $('[data-slick-leasing]');
+	var leasing_adv = $('[data-slick-leasing-adv]');
 	var adv = $('[data-slick-adv]');
 	var dots = $('[data-slick-dots]').data('slick-dots');
 	//console.log(dots);
@@ -120,6 +121,25 @@ $(function() {
 		    }
 		]
 	});
+	leasing_adv.slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: true,
+		dots: true,
+		autoplay: true,
+  		autoplaySpeed: 4000,
+		prevArrow: prevArrow,
+		nextArrow: nextArrow,
+		fade: true,
+		responsive: [
+		    {
+				breakpoint: 992,
+				settings: {
+					arrows: false,
+				}
+		    }
+		]
+	});
 
 	finance.slick({
 		slidesToShow: 4,
@@ -173,6 +193,16 @@ $(function() {
 		]
 	});
 
+	//leasing_adv.find('.slick-current').next().addClass('next');
+	
+	/*	$('[] .slick-btn.is--next').on('click', function(){
+	        var nExt = $('.slick-current').next().next();
+	        var pRev = $('.slick-current').prev().prev();
+	        $('.slick-active').removeClass('grd');
+	        nExt.addClass('grd');
+	        pRev.addClass('grd');
+
+	})*/
 	/*window.addEventListener("resize", function() {
 	  if (window.innerWidth <= 768) {
 	    catalog.slick('unslick');

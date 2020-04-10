@@ -116,6 +116,37 @@
 				level:heading_level, 
 				heading:heading
 			} %}		
+			<div class="{{content_prefix}}slider   {{content_mod}}" data-slick-leasing-adv>				
+				{% for value in list %}
+				<div class="item  {{value.status}}">
+					<div class="{{prefix.card}}item  {{content_mod}}">
+						<div class="{{prefix.card}}heading  {{content_mod}}">
+							{{value.name}}
+						</div>
+						<div class="{{prefix.card}}preview  {{content_mod}}">
+							<img src="{{value.preview}}" alt="">
+						</div>	
+						<div class="{{prefix.card}}icon  {{content_mod}}">
+							<img src="{{value.icon}}" alt="" class="img-responsive">
+						</div>							
+						<div class="{{prefix.card}}note  {{content_mod}}">{{value.note}}</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+{% endif %}
+
+{# {% if view == "leasing_adv" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}		
 			<div class="{{content_prefix}}slider   {{content_mod}}">
 				<div id="carousel-example-generic" class="{{prefix.card}}carousel  carousel slide  {{content_mod}}" data-ride="carousel">
 					<div class="{{prefix.card}}carousel-inner  {{content_mod}}  carousel-inner" role="listbox">
@@ -149,7 +180,7 @@
 			</div>
 		</div>
 	</section>
-{% endif %}
+{% endif %} #}
 
 {% if view == "leasing_brand" %}
 	<section class="{{content_prefix}}panel  {{content_mod}}">
