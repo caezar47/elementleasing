@@ -1015,6 +1015,8 @@
 					.media-breakpoint-up(@xl; {
 						max-width: 1000px;
 					});
+					*{visibility: hidden;}
+					&.slick-initialized *{ visibility: visible; }
 				}
 			}
 			&.is--page{
