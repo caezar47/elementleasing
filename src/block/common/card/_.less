@@ -1468,6 +1468,11 @@
     			line-height: 1.25em;
 				font-weight: 700;
 				margin-bottom: 10px;
+   				overflow: hidden;
+   				height: 90px;
+				.media-breakpoint-up(@sm; {
+					height: 55px;
+				});
 				.media-breakpoint-up(@md; {
 					.heading5();
 					margin-bottom: 0;
@@ -1690,7 +1695,7 @@
 			&-card{
 				margin-bottom: 25px;
 				.media-breakpoint-up(@md; {
-					margin-bottom: 4vw;
+					margin-bottom: 80px;
 				});
 			}	
 		}	
