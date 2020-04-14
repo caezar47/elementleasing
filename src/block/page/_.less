@@ -941,6 +941,13 @@
 				});		
 			}
 			&-adv{
+				opacity: 0;
+				transition: opacity 0.3s 0.5s ;
+				*{visibility: hidden;}
+				&.slick-initialized *{ visibility: visible;}
+				&.slick-initialized{
+					opacity: 1;
+				}
 				.media-breakpoint-up(@lg; {
 					display: grid;
 					grid-gap: 30px 16px;

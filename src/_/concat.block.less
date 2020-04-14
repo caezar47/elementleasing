@@ -941,6 +941,13 @@
 				});		
 			}
 			&-adv{
+				opacity: 0;
+				transition: opacity 0.3s 0.5s ;
+				*{visibility: hidden;}
+				&.slick-initialized *{ visibility: visible;}
+				&.slick-initialized{
+					opacity: 1;
+				}
 				.media-breakpoint-up(@lg; {
 					display: grid;
 					grid-gap: 30px 16px;
@@ -2990,9 +2997,10 @@
 					justify-content: center;
 					overflow: hidden;
 					max-width: 555px;
-					min-height: 600px;
+					height: 840px;
 					background-color: @primary-a;
-					clip-path: polygon(0 10%,100% 5.5%,100% 94%,0 98.5%);
+					//clip-path: polygon(0 10%,100% 5.5%,100% 94%,0 98.5%);
+					clip-path: polygon(0 8%,100% 4%,100% 94%,0 98.5%);
 					img{
 						max-width: 636px;
 					}
@@ -5031,6 +5039,7 @@
 						grid-row: 2;
 						grid-column: 3;
 						justify-content: flex-end;
+						max-width: 248px;
 					}				
 				});
 			}
