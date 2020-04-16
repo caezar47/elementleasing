@@ -1057,6 +1057,10 @@
 					});
 				}
 			}
+			&[data-slick-catalog]{
+				*{visibility: hidden;}
+				&.slick-initialized *{ visibility: visible; }		
+			}
 		}
 		&-note{
 			&.is--page{

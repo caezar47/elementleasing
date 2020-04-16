@@ -63,36 +63,36 @@ $(function() {
 		    }
 		]
 	});
-	catalog.slick({
-		slidesToShow: 2,
-		slidesToScroll: 2,
-		arrows: false,
-		dots: dots,
-		infinite: false,
-		//centerMode: true,
-  		//centerPadding: '60px',
-		//infinite: true,
-		//autoplay: true,
-  		//autoplaySpeed: 4000,
-		prevArrow: prevArrow,
-		nextArrow: nextArrow,
-		// responsive: [
-		//     {
-		// 		breakpoint: 768,				
-		//       	settings: "unslick"
-		//     }
-		// ]
-		responsive: [
-		    {
-				breakpoint: 576,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1,
-					dots: false,
-				}
-		    }
-		]
-	});
+	
+	function slickCatalog() {
+		catalog.slick({
+			slidesToShow: 2,
+			slidesToScroll: 2,
+			arrows: false,
+			dots: dots,
+			infinite: false,
+			prevArrow: prevArrow,
+			nextArrow: nextArrow,
+			responsive: [
+			    {
+					breakpoint: 576,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						dots: false,
+					}
+			    }
+			]
+		});
+	}
+	function destroySlickCatalog() {
+		if (catalog.hasClass('slick-initialized')) {
+			catalog.slick('destroy');
+		}      
+	}
+	slickCatalog();
+	//destroySlickCatalog();
+
 	leasing.slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,

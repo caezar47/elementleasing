@@ -30,33 +30,18 @@
 		width: auto;	
 		margin: 0px auto;
 		max-width: @modal_width;
-		.modal__block.fade &{
-			left: -100%;
-		}
+		top: 50%;
+		transform: translateY(-50%);
+		left: -100%;
 		.modal__block.in &{
 			left: 0;
 		}
 		.media-breakpoint-up(@md; {		
-			.modal__block.fade &{
-				top: 0;
-				left: inherit;
-			}
+			left: inherit;			
 			.modal__block.in &{
-				top: 5%;
 				left: inherit;
 			}
 		});
-		/*
-		.media-breakpoint-up(@md; {	
-			margin: 10px auto;
-		});
-		.media-breakpoint-up(@lg; {
-			width: @modal_width;	
-			margin: 0px auto;
-			&.is--lg{
-				width: @modal_width + 320;
-			}
-		});*/
 	}
 	&body {
 		position: relative;

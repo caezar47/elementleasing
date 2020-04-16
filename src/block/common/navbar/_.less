@@ -4,11 +4,14 @@
 		width: 100%;
 		z-index: 100;
 		top: 0;
-		left: 0;	 
-		//background: @navbar_bg_device;
-		//.media-breakpoint-up(@xl; {		
-		//});
-		//@media print{display: none;}
+		left: 0;	
+		.media-breakpoint-up(@xl; {
+			box-shadow: 0 1px 6px 0 fadeout(#cbcbcb, 60%);
+			transition: @trs-site;
+			html.is--open-navbar &{
+				box-shadow: 0 1px 6px 0 fadeout(#cbcbcb, 100%);
+			}
+		}); 
 	}
 	//header
 	&header{
@@ -23,6 +26,25 @@
 		.media-breakpoint-up(@xl; {
 			padding-top: 25px;
 			padding-bottom: 25px;
+			&::before{
+				content: '';
+				position: absolute;
+				z-index: 2;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+				background: fadeout(@black, 26%);
+				transition: @trs-site;
+				visibility: hidden;
+			}
+			html.is--open-navbar &{
+				&::before{
+					opacity: 1;
+					visibility: visible;
+				}			
+			}
 		});	
 		&-row{
 			align-items: center;
@@ -211,10 +233,12 @@
 				width: 100%;				
 			});
 			.media-breakpoint-up(@xl; {
-				top: @navbar_screen;
+				top: 0;
+				padding-top: @navbar_screen;
 				width: 100%;
 		    	//transform: translate(0, -100%);
-				max-height: ~"calc(100vh - @{navbar_screen})"; 
+				//max-height: ~"calc(100vh - @{navbar_screen})"; 
+				max-height: 100vh; 
 			    &.is--open{
 			    	//transform: translate(0, 0); 
 			   	}

@@ -246,7 +246,7 @@
 				heading:heading
 			} %}
 			
-			<div data-slick-catalog  data-slick-dots="{{slider_dots}}">
+			<div class="{{content_prefix}}slider  {{content_mod}}" data-slick-catalog  data-slick-dots="{{slider_dots}}">
 				{% include "../common/card/card.twig" with {
 				 	view: "catalog_promo", 
 				 	prefix:prefix.card, 
