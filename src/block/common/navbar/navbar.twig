@@ -38,18 +38,24 @@
 				<div class="{{navbar_prefix}}collapse-row  grid__row">
 					<div class="{{navbar_prefix}}collapse-cols">
 						<ul class="{{navbar_prefix}}nav">
-						    {% include "item-drop.twig" with {prefix:navbar_prefix, mod:"", name:"ГАЗ", list : [
-						    	{"name":"По трем документам", "link":page.leasing, "mod":""},
-						    	{"name":"Микроаванс", "link":"", "mod":""},
-						    	{"name":"Лизинг без переплаты", "link":"", "mod":""},
-						    	{"name":"Лизинг с trade-in", "link":"", "mod":""},
-						    	{"name":"Для стартапов", "link":"", "mod":""},
-						    	{"name":"Одобрение за 1 день", "link":"", "mod":""},
-						    	{"name":"ГАЗель NEXT", "link":"", "mod":""},
-						    	{"name":"ГАЗон NEXT", "link":"", "mod":""},
-						    	{"name":"ГАЗель Бизнес", "link":"", "mod":""},
-						    	{"name":"Б/У ГАЗель", "link":"", "mod":""}
-						    ]} %}
+						    {% include "item-drop.twig" with {
+						    	prefix:navbar_prefix, 
+						    	mod:"", 
+						    	name:"ГАЗ", 
+						    	link:page.leasing,
+						    	list : [
+							    	{"name":"По трем документам", "link":page.leasing, "mod":""},
+							    	{"name":"Микроаванс", "link":"", "mod":""},
+							    	{"name":"Лизинг без переплаты", "link":"", "mod":""},
+							    	{"name":"Лизинг с trade-in", "link":"", "mod":""},
+							    	{"name":"Для стартапов", "link":"", "mod":""},
+							    	{"name":"Одобрение за 1 день", "link":"", "mod":""},
+							    	{"name":"ГАЗель NEXT", "link":"", "mod":""},
+							    	{"name":"ГАЗон NEXT", "link":"", "mod":""},
+							    	{"name":"ГАЗель Бизнес", "link":"", "mod":""},
+							    	{"name":"Б/У ГАЗель", "link":"", "mod":""}
+							    ]} 
+							%}
 
 						    {% include "item-drop.twig" with {prefix:navbar_prefix, mod:"", name:"Коммерческая техника", list : [
 						    	{"name":"Лизинг по трем документам", "link":"", "mod":""},

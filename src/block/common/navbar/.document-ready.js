@@ -14,7 +14,6 @@ $(document.body).on('click', function(event) {
 		$(collapse).removeClass("is--open");
 	}		
 });
-
 var url = window.location.pathname;
 //var url = window.location.href;
 $('.navbar__nav a[href="'+url+'"]').parent().addClass('is--active'); 
@@ -34,3 +33,8 @@ $('.azbn__search-dropdown').on('shown.bs.dropdown', function(e) {
 });
 
 
+if ($(window).width() > 1199) {
+	$('.navbar__nav-item.dropdown > a').on('click', function(e) {
+		location.href = this.href;
+	});	
+}

@@ -100,7 +100,7 @@
 					<div class="text__block  {{block_mod}}">
 						{{value.note}}
 					</div>
-					{% if value.preview %}
+					{# {% if value.preview %}
 					<div class="{{content_prefix}}gallery  {{block_mod}}  row  is--cols-3  is--gutter">
 						{% for val in value.preview %}
 						<div class="cols">
@@ -108,7 +108,12 @@
 						</div>
 						{% endfor %}
 					</div>
-					{% endif %}
+					{% endif %} #}
+					<div class="{{content_prefix}}gallery  {{block_mod}}">
+						<div class="cols">
+							<img src="{{path.img}}/default/index-adv.svg" class="img-responsive" alt="">
+						</div>
+					</div>
 				</div>
 				{% endfor %}
 					
