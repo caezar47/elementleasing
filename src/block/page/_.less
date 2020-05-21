@@ -26,6 +26,11 @@
 					font-size: 12px;
 				});
 			}
+			&-programm{				
+				.media-breakpoint-down(@lg; {
+					background-color: #FAFDFF;
+				});
+			}
 		}
 		&.is--page{
 			&-investors{
@@ -217,6 +222,11 @@
 				});
 				background-color: #FDFDFD;
 			}
+			&-programm{				
+				.media-breakpoint-down(@lg; {
+					background-color: #FAFDFF;
+				});
+			}
 		}
 	}
 	&container{	
@@ -316,12 +326,17 @@
 			}
 			&-products{
 				padding-top: 35px;
+				padding-bottom: 0;
 				.media-breakpoint-up(@lg; {
 					padding-top: 4.2vw;
 					padding-bottom: 5.8vw;
 				});
 			}
 			&-programm{
+				.media-breakpoint-down(@lg; {
+					padding-top: 65px;
+					padding-bottom: 65px;
+				});
 				.media-breakpoint-up(@lg; {
 					//padding-bottom: 4vw;
 				});
@@ -396,13 +411,17 @@
 			}
 			&-seo{
 				padding-top: 55px;
-				padding-bottom: 20px;
+				padding-bottom: 0px;
 				.media-breakpoint-up(@lg; {
 					padding-top: 5.2vw;
 					padding-bottom: 6vw;
 				});
 			}
-			&-programm{
+			&-programm{				
+				.media-breakpoint-down(@lg; {
+					padding-top: 65px;
+					padding-bottom: 65px;
+				});
 				padding-top: 15px;
 			}
 		}
@@ -535,6 +554,7 @@
 		}
 		&.is--block{			
 			&-news{
+				padding-top: 30px;
 				.media-breakpoint-up(@lg; {
 					padding-top: 3.6vw;
 					padding-bottom: 3.6vw;
@@ -930,10 +950,37 @@
 				});
 			}
 			&-leasing{
+				.media-breakpoint-down(@md; {
+					.slick-track{
+						display: flex;
+						.slick-slide{
+							display: flex;
+							position: relative;
+							height: auto;
+							
+						}
+					}
+				});
+				.media-breakpoint-down(@sm; {
+					.slick-track{
+						.slick-slide{
+							&.slick-current{
+								transform: translateY(-10px);
+								.card__item{
+									box-shadow: 0 12px 34px 0 rgba(0,52,156,0.25);
+								}
+							}
+						}
+					}
+				});
 				.media-breakpoint-up(@md; {
 					display: grid;
 				    grid-gap: 30px 16px;
 					grid-template-columns: repeat(3, 1fr);
+					& > *{
+						display: flex;
+						width: 100%;						
+					}
 				});
 				.media-breakpoint-up(@lg; {
 				    grid-gap: 0;
@@ -1049,6 +1096,15 @@
 				}
 			}
 			&.is--leasing{
+				/*&-partners{
+					.card__item.is--partners{
+						opacity: 0.4;
+						transition: @trs-site;
+					}
+					.slick-current .card__item.is--partners{
+						opacity: 1;
+					}
+				}*/
 				&-catalog{
 					margin-bottom: 50px;
 					.media-breakpoint-up(@md; {
@@ -1057,8 +1113,26 @@
 				}
 			}
 			&[data-slick-catalog]{
-				*{visibility: hidden;}
-				&.slick-initialized *{ visibility: visible; }		
+				.media-breakpoint-down(@md; {
+					display: grid;
+					grid-gap:  40px 30px;
+					grid-template-columns: repeat(2, 1fr);
+					& > *{
+						display: none;
+						&:nth-child(1),
+						&:nth-child(2){
+							display: block;
+						}
+					}
+				});
+				.media-breakpoint-down(@sm; {
+					grid-template-columns: 100%;
+				});
+				.media-breakpoint-up(@md; {
+					*{visibility: hidden;}
+					&.slick-initialized *{ visibility: visible; }	
+					
+				});	
 			}
 		}
 		&-note{
@@ -1103,6 +1177,7 @@
 				padding-top: 50px;
 				.media-breakpoint-down(@md; {
 					font-size: 14px;
+					font-weight: 500;
 				});
 				.media-breakpoint-up(@md; {
 					padding-top: 5.3vw;
@@ -1111,6 +1186,9 @@
 			&-news{
 				text-align: right;
 				padding-top: 25px;
+				.media-breakpoint-down(@md; {
+					font-weight: 500;
+				});
 				.media-breakpoint-up(@sm; {
 					padding-top: 60px;	
 				});

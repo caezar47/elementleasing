@@ -92,7 +92,6 @@
 	</form>
 {% endif %}
 
-
 {% if view=="leasing" %}
 	<form action="#" class="{{prefix}}panel  {{mod}}">
 		<div class="{{prefix}}bg  {{mod}}"><img src="{{path.img}}/default/train.svg" alt=""></div>
@@ -344,7 +343,7 @@
 {% if view=="search" %}
 	<form action="#" class="{{prefix}}search  {{mod}}  {{group}}">
 		<p class="{{prefix}}search-input  {{mod}}">
-			<input type="text" class="{{prefix}}control  {{mod}}  {{color}}" placeholder="{{placeholder}}">
+			<input type="text" class="{{prefix}}control  {{mod}}  {{color}}" placeholder="{{placeholder}}" autofocus>
 		</p>		
 		<p class="{{prefix}}search-btn  {{mod}}">
 			<button type="submit" class="btn__item  {{btn_mod}}">{{btn_name}}</button>

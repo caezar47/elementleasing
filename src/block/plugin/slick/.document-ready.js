@@ -75,12 +75,15 @@ $(function() {
 			nextArrow: nextArrow,
 			responsive: [
 			    {
-					breakpoint: 576,
-					settings: {
+					breakpoint: 768,
+					/*settings: {
+
 						slidesToShow: 1,
 						slidesToScroll: 1,
 						dots: false,
-					}
+					}*/
+
+					settings: "unslick"
 			    }
 			]
 		});
@@ -115,6 +118,7 @@ $(function() {
 		    {
 				breakpoint: 576,
 				settings: {
+					variableWidth: true,
 					slidesToShow: 1,
 					slidesToScroll: 1, 
 				}
@@ -180,6 +184,8 @@ $(function() {
 		slidesToScroll: 1,
 		arrows: false,
 		dots: false,
+		centerMode: true,
+		variableWidth: false,
 		infinite: true,
 		autoplay: true,
   		autoplaySpeed: 4000,
