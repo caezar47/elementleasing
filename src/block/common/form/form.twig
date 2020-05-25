@@ -24,7 +24,16 @@
 
 {% if view=="leasing_base" %}
 	{% if open=="true" %}
-		<button type="button" data-form-visible class="btn__item  is--arrow  is--md  is--success">Запрос на лизинг</button>	
+		{% include "../../common/button/btn.twig" with {
+			view:"btn",
+			prefix:"btn__", 
+			mod:"is--next  is--size-md  is--success", 
+			type:"button", 
+			attr:"data-form-visible", 
+			icon:"arrow-next", 
+			name:"Запрос на лизинг" 
+		} %}
+		{# <button type="button" data-form-visible class="btn__item  is--arrow  is--md  is--success">Запрос на лизинг</button>	 #}
 	{% endif %}
 	<form action="#" class="{{prefix}}panel  {{mod}}  {{group}}">
 		<div class="{{prefix}}wrap  {{mod}}  {{group}}">

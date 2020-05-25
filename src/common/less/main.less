@@ -112,6 +112,13 @@ p{
 }
 .margin_generator();
 .font_weight_generator();
+.hidden--{
+	&md{
+		.media-breakpoint-down(@md; {
+			display: none;
+		});
+	}
+}
 /*
 ._czr__loader{
 	position: fixed;

@@ -28,6 +28,21 @@
 			background-color: @btn_active_bg_color;
 			border-color: @btn_active_border_color;
 		}
+		//new
+		&.is--next{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			font-size: 16px;
+			line-height: 18px;
+			padding: 11px 25px 11px 15px;
+		}
+		&.is--size{
+			&-md{}
+		}
+
+
 		&.is--arrow{
 			text-align: left;
 			padding-right: 30px;
@@ -187,6 +202,18 @@
 				padding: 8px 1vw;
 			});
 		}*/	
+	}
+	&icon{		
+		svg{display: block;}
+		&.is--next{
+			width: 6px;
+			height: 10px;
+			margin-left: 8px;
+		}
+		&.is--size{
+			&-md{
+			}
+		}
 	}
 }
 .link__{
