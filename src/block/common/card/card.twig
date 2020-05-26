@@ -72,6 +72,7 @@
 {% if view == "reviews" %}
 	{% for value in list %}		
 	<article class="{{prefix}}item  {{mod}}">
+		<div class="{{prefix}}bg  {{mod}}"></div>
 		<div class="{{prefix}}wrap  {{mod}}">
 			<h4 class="{{prefix}}heading  {{mod}}" data-grid-heading>{{value.firm}}</h4>
 			<time class="{{prefix}}date  {{mod}}" data-grid-date datetime="{{value.date_iso}}">{{value.date}}</time>

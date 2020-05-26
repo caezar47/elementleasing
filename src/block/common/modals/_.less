@@ -28,7 +28,7 @@
 		transition: all 0.5s;
 		position: relative;
 		width: auto;	
-		margin: 0px auto;
+		margin: 0px 15px;
 		max-width: @modal_width;
 		top: 50%;
 		transform: translateY(-50%);
@@ -36,12 +36,17 @@
 		.modal__block.in &{
 			left: 0;
 		}
-		.media-breakpoint-up(@md; {		
+		.media-breakpoint-up(@md; {	
+			margin: 0px auto;	
 			left: inherit;			
 			.modal__block.in &{
 				left: inherit;
 			}
 		});
+
+		//top: 0%;
+		//transform: translateY(15px);
+		//left: 0;
 	}
 	&body {
 		position: relative;

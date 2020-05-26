@@ -1,5 +1,5 @@
 var toggleButton = $('[data-aside-toggle="dropdown"]');
-$('.aside__block').closest('body').addClass('is--aside-bottom');
+$('.aside__block.is--bottom').closest('body').addClass('is--aside-bottom');
 
 toggleButton.on('click', function(e) {
 	e.preventDefault();

@@ -1,20 +1,43 @@
 .aside__{
 	&block{
 		.media-breakpoint-down(@xl; {			
-			position: fixed;
+			//position: fixed;
+			//left: 0;
+			//width: 100%;
+			//height: ~"calc(100% - @{navbar_device})";
+			//bottom: 0;
+			//transform: translateY(~"calc(100% - @{navbar_bottom})");
+			//overflow: hidden;
 			background-color: @white;
-			left: 0;
-			width: 100%;
-			height: ~"calc(100% - @{navbar_device})";
-			z-index: 95;
-			bottom: 0;
-			transform: translateY(~"calc(100% - @{navbar_bottom})");
 			transition: @trs-site;
-			overflow: hidden;
+			&.is--sticky{
+				z-index: 1000;
+				.sticky-wrapper.is-sticky &{
+					width: 100%!important;
+				}				
+				margin-left: -15px;
+				margin-right: -15px;
+				.is--open-navbar &{
+					opacity: 0;
+					visibility: hidden;
+				}
+
+			}
+			&.is--bottom{
+				position: fixed;
+				z-index: 10;
+				left: 0;
+				margin: 0;
+				width: 100%;
+				height: ~"calc(100% - @{navbar_device})";
+				bottom: 0;
+				transform: translateY(~"calc(100% - @{navbar_bottom})");
+				overflow: hidden;
+				&.open{
+					transform: translateY(0);
+				}
+			}
 		});	
-		&.open{
-			transform: translateY(0);
-		}
 		.dropdown-backdrop{display: none;}
 	}
 	&header{
@@ -71,12 +94,30 @@
 	}
 	&dropdown{
 		&{
+			//display: none;
 			position: relative;
 			height: ~"calc(100% - @{navbar_bottom})";
 			padding-left: 15px;
 	    	padding-right: 15px;    
 	    	margin-right: auto;
 		    margin-left: auto;
+
+			.media-breakpoint-down(@xl; {
+				.aside__block.is--sticky &{
+					width: 100%;
+					position: absolute;
+					height: ~"calc(100vh - @{navbar_device} - 46px - @{navbar_bottom})";
+					z-index: 5;
+					background-color: @white;
+					display: none;					
+				}
+				.aside__block.is--sticky.open &{
+					display: block;
+				}
+				.sticky-wrapper.is-sticky &{
+					height: ~"calc(100vh - @{navbar_device} - @{navbar_bottom})";
+				}
+			});
 			.media-breakpoint-up(@xl; {			
 				height: auto;
 				padding: 0;

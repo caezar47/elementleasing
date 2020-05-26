@@ -22,9 +22,12 @@
 		display: block;
 		color: @pagin_color;
 		text-align: center;
-		font-weight: 700;
+		font-weight: 500;
 	    padding: 0px 5px;
     	min-width: 26px;	
+    	.media-breakpoint-up(@lg; {
+    		font-weight: 700;
+    	});
 		&.is--prev,
 		&.is--next{
 			min-width: 13px;

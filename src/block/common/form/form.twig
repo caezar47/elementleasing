@@ -150,7 +150,9 @@
 						{"type":"tel", "id":"tel", "form_id":ID, "required": "required", "name":"Телефон", "placeholder":"Телефон"},
 						{"type":"email", "id":"email", "form_id":ID, "required": "required", "name":"Email", "placeholder":"E-mail"}
 					]} %}
+
 					<button type="submit" data-form-submit class="btn__item  is--arrow  is--md  is--success">Отправить заявку</button>	
+
 				</div>
 			</div>
 			<div class="{{prefix}}result  {{mod}}">
@@ -233,7 +235,18 @@
 							"placeholder":"Размер аванса в рублях"
 						}
 					]} %}
-					<button type="button" class="btn__item  is--arrow  is--md  is--primary" data-step-next>Продолжить</button>	
+
+					{% include "../../common/button/btn.twig" with {
+						view:"btn",
+						prefix:"btn__", 
+						mod:"is--next  is--size-md  is--primary", 
+						type:"button", 
+						attr:"data-step-next", 
+						icon:"arrow-next", 
+						name:"Продолжить" 
+					} %}
+
+					{# <button type="button" class="btn__item  is--arrow  is--md  is--primary" data-step-next>Продолжить</button>	 #}
 				</div>
 			</div>
 			<div class="{{prefix}}step-pane  {{mod}}  {{active_two}}" id="{{ID}}-step2">			
@@ -273,7 +286,17 @@
 							{"name": "Физическое лицо"}
 						]
 					} %}
-					<button type="button" class="btn__item  is--arrow  is--md  is--primary" data-step-next>Продолжить</button>	
+					{% include "../../common/button/btn.twig" with {
+						view:"btn",
+						prefix:"btn__", 
+						mod:"is--next  is--size-md  is--primary", 
+						type:"button", 
+						attr:"data-step-next", 
+						icon:"arrow-next", 
+						name:"Продолжить" 
+					} %}
+
+					{# <button type="button" class="btn__item  is--arrow  is--md  is--primary" data-step-next>Продолжить</button>	 #}
 				</div>
 			</div>
 			<div class="{{prefix}}step-pane  {{mod}}  {{active_three}}" id="{{ID}}-step3">		
@@ -317,7 +340,16 @@
 							{"name": "Брянск"}
 						]
 					} %}
-					<button type="button" data-step-finish class="btn__item  is--arrow  is--md  is--primary">Отправить заявку</button>	
+					{% include "../../common/button/btn.twig" with {
+						view:"btn",
+						prefix:"btn__", 
+						mod:"is--next  is--size-md  is--primary", 
+						type:"button", 
+						attr:"data-step-finish", 
+						icon:"arrow-next", 
+						name:"Отправить заявку" 
+					} %}
+					{# <button type="button" data-step-finish class="btn__item  is--arrow  is--md  is--primary">Отправить заявку</button>	 #}
 					{% include "elem-tpl.twig" with {
 						view:"checkbox", 
 						prefix:prefix, 

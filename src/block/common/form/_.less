@@ -611,10 +611,11 @@
 		height: @input_height - 16;
 		padding: 5px 15px;
 		box-shadow: none;
+		&[type="number"],
 		&[type="text"]{
 			-webkit-appearance: none;
 		}
-		&[type=number]{ -moz-appearance: textfield; }
+		//&[type=number]{ -moz-appearance: textfield; }
 		&[type=number]::-webkit-inner-spin-button,
 		&[type=number]::-webkit-outer-spin-button {
 			-webkit-appearance: none;
