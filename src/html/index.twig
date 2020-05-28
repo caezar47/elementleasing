@@ -36,6 +36,69 @@
             } %}
 
             {% include "../block/page/index.twig" with {
+                view:"index_products",  
+                content_prefix:"content-block__", 
+                content_mod:"is--index-products",
+                heading_mod:"is--h1  fw--700  is--index-products", 
+                heading_level:"h3", 
+                heading:"Наши лизинговые продукты",
+                preview:[path.img,"/default/index-products.svg"].join(""),
+                prefix:"card__", 
+                list_group: "articles",
+                list: [
+                    {
+                        "status":"active",
+                        "h_id":"heading_item1",
+                        "id":"item1",
+                        "name":"Лизинг б/у техники",
+                        "icon":"docs",
+                        "link":"#",
+                        "note":"<p>Аванс от 10%<br>От 12 до 48 месяцев<br>Скидки до 125 000 рублей</p>",
+                    },
+                    {
+                        "status":"",
+                        "h_id":"heading_item2",
+                        "id":"item2",
+                        "name":"Лизинг за 1<br> рабочий день",
+                        "icon":"one-day",
+                        "link":"#",
+                        "note":"<p>Лизинг по трём документам позволяет вам быстро получить нужную технику для бизнеса без лишней потери времени на сбор документов. Вы прилагаете только те окументы, которые у вас есть под рукой.</p>",
+                    },
+                    {
+                        "status":"",
+                        "h_id":"heading_item3",
+                        "id":"item3",
+                        "name":"Минимальная<br> переплата",
+                        "icon":"coin",
+                        "link":"#",
+                        "note":"<p>Лизинг по трём документам позволяет вам быстро получить нужную технику для бизнеса без лишней потери времени на сбор документов. Вы прилагаете только те окументы, которые у вас есть под рукой.</p>",
+                    },
+                    {
+                        "status":"",
+                        "h_id":"heading_item4",
+                        "id":"item4",
+                        "name":"Минимальный<br> аванс",
+                        "icon":"wallet",
+                        "link":"#",
+                        "note":"<p>Лизинг по трём документам позволяет вам быстро получить нужную технику для бизнеса без лишней потери времени на сбор документов. Вы прилагаете только те окументы, которые у вас есть под рукой.</p>",
+                    }
+                ]
+            } %}
+
+            {% include "../block/page/catalog.twig" with {
+                view:"catalog_adv",  
+                content_prefix:"content-block__", 
+                content_mod:"is--index-catalog",
+                heading_mod:"is--hXL  fw--700  color--blue-08  is--index-catalog", 
+                heading_level:"h2", 
+                heading:"Каталог",
+                card_mod:"is--catalog-promo-primary",
+                slider_dots:"true",
+                link:"Весь каталог",
+                link_href:page.catalog
+            } %}
+{# 
+            {% include "../block/page/index.twig" with {
                 view:"index_adv", 
                 content_prefix:"content-block__", 
                 content_mod:"is--index-adv",
@@ -93,20 +156,7 @@
                         '
                     }
                 ],
-            } %}
-
-            {% include "../block/page/catalog.twig" with {
-                view:"catalog_adv",  
-                content_prefix:"content-block__", 
-                content_mod:"is--index-catalog",
-                heading_mod:"is--hXL  fw--700  color--blue-08  is--index-catalog", 
-                heading_level:"h2", 
-                heading:"Каталог",
-                card_mod:"is--catalog-promo-primary",
-                slider_dots:"true",
-                link:"Весь каталог",
-                link_href:page.catalog
-            } %}
+            } %} #}
 
             {% include "../block/page/index.twig" with {
                 view:"index_order",  
@@ -122,57 +172,6 @@
                 heading_v_level:"p", 
                 heading_v:"ОТ 20%",
                 bg:[path.img,"/default/index-order.jpg"].join(""),
-            } %}
-
-            {% include "../block/page/index.twig" with {
-                view:"index_products",  
-                content_prefix:"content-block__", 
-                content_mod:"is--index-products",
-                heading_mod:"is--h1  fw--700  is--index-products", 
-                heading_level:"h3", 
-                heading:"Лизинговые продукты",
-                heading:"Наши лизинговые продукты",
-                preview:[path.img,"/default/index-products.svg"].join(""),
-                prefix:"card__", 
-                list_group: "articles",
-                list: [
-                    {
-                        "status":"active",
-                        "h_id":"heading_item1",
-                        "id":"item1",
-                        "name":"Лизинг б/у техники",
-                        "icon":"docs",
-                        "link":"#",
-                        "note":"<p>Аванс от 10%<br>От 12 до 48 месяцев<br>Скидки до 125 000 рублей</p>",
-                    },
-                    {
-                        "status":"",
-                        "h_id":"heading_item2",
-                        "id":"item2",
-                        "name":"Лизинг за 1<br> рабочий день",
-                        "icon":"one-day",
-                        "link":"#",
-                        "note":"<p>Лизинг по трём документам позволяет вам быстро получить нужную технику для бизнеса без лишней потери времени на сбор документов. Вы прилагаете только те окументы, которые у вас есть под рукой.</p>",
-                    },
-                    {
-                        "status":"",
-                        "h_id":"heading_item3",
-                        "id":"item3",
-                        "name":"Минимальная<br> переплата",
-                        "icon":"coin",
-                        "link":"#",
-                        "note":"<p>Лизинг по трём документам позволяет вам быстро получить нужную технику для бизнеса без лишней потери времени на сбор документов. Вы прилагаете только те окументы, которые у вас есть под рукой.</p>",
-                    },
-                    {
-                        "status":"",
-                        "h_id":"heading_item4",
-                        "id":"item4",
-                        "name":"Минимальный<br> аванс",
-                        "icon":"wallet",
-                        "link":"#",
-                        "note":"<p>Лизинг по трём документам позволяет вам быстро получить нужную технику для бизнеса без лишней потери времени на сбор документов. Вы прилагаете только те окументы, которые у вас есть под рукой.</p>",
-                    }
-                ]
             } %}
 
             {% include "../block/page/leasing/tpl.twig" with {

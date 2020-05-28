@@ -56,7 +56,7 @@
 			overflow: visible;
 			margin: 0 -@g;
 			.media-breakpoint-up(@md; {
-				padding: 25px 0;
+				padding: 35px 0 35px;
 			});
 		}
 		[data-slick-finance] &{
@@ -237,26 +237,22 @@
 			.media-breakpoint-up(@md; {
 				width: 18px;
 				height: 32px;
+				top: 50%;
 				&.is--prev{
-					top: 115px;
+					right: inherit;
+					left: -33px;
 					.icon-prev(@w: 18px; @h: auto; @c: '333')
 				}
 				&.is--next{
-					top: 35px;
+					right: -33px;
 					.icon-next(@w: 18px; @h: auto; @c: '333')
 				}	
 				&.is--prev,
 				&.is--next{
-					left: -50px;
-					right: inherit;
-				}
+					top: 46%;
+					transform: translateY(-50%);
+				}	
 			});
-			.media-breakpoint-up(@xl; {				
-				&.is--prev,
-				&.is--next{
-					left: -100px;
-				}
-			});		
 		}
 		[data-slick-adv] &{
 			top: 20px;

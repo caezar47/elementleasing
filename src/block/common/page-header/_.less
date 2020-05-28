@@ -43,11 +43,17 @@
 			&-news{				
 				margin-bottom: 20px;
 				.media-breakpoint-up(@md; {
-					margin-bottom: 45px;
+					margin-bottom: 36px;
 				});
 			}
 		}
 		&.is--index{
+			&-products{
+				margin-bottom: 20px;
+				.media-breakpoint-up(@lg; {
+					margin-bottom: 75px;
+				});
+			}
 			&-adv{
 				padding-right: 60px;
 				margin-bottom: 15px;
@@ -57,9 +63,11 @@
 				});
 			}
 			&-catalog{
-				.media-breakpoint-down(@md; {
-					margin-bottom: 35px;
+				margin-bottom: 35px;
+				.media-breakpoint-up(@md; {
+					margin-bottom: 5px;
 				});
+
 			}
 			&-order{
 				&{
@@ -80,12 +88,6 @@
 						font-size: 9em;
 					});
 				}
-			}
-			&-products{
-				margin-bottom: 20px;
-				.media-breakpoint-up(@lg; {
-					margin-bottom: 45px;
-				});
 			}
 		}
 		&.is--page{

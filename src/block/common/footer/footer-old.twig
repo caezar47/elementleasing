@@ -1,0 +1,85 @@
+<footer class="{{footer_prefix}}block">	
+	<div class="{{footer_prefix}}container container">
+		<div class="{{footer_prefix}}row  grid__row">
+			<div class="{{footer_prefix}}cols  is--tel">
+				<a href="tel:{{contacts.phone_tel}}" class="{{footer_prefix}}tel">{{contacts.phone}}</a>
+				<p>Москва</p>
+			</div>
+			<div class="{{footer_prefix}}cols  is--nav">	
+				<ul class="{{footer_prefix}}nav">
+					<li class="is--heading">Коммерческая техника</li>
+					<li><a href="#">Льготный лизинг</a></li>
+					<li><a href="#">Лизинг по трем документам</a></li>
+					<li><a href="#">Автобусы в лизинг</a></li>
+					<li><a href="#">Микроавтобусы в лизинг</a></li>
+					<li><a href="#">Лизинг для стартапов</a></li>
+					<li><a href="#">Лизинг с trade-in</a></li>
+					<li><a href="#">Лизинг б/у техники</a></li>
+					<li><a href="#">Автомобили УРАЛ в лизинг</a></li>
+				</ul>
+			</div>	
+			<div class="{{footer_prefix}}cols  is--nav">
+				<ul class="{{footer_prefix}}nav">
+					<li class="is--heading">ГАЗ в лизинг</li>
+					<li><a href="#">По трем документам</a></li>
+					<li><a href="#">С минимальным авансом</a></li>
+					<li><a href="#">ГАЗ в лизинг без переплаты</a></li>
+					<li><a href="#">ГАЗ в лизинг с trade-in</a></li>
+					<li><a href="#">ГАЗ для стартапов</a></li>
+					<li><a href="#">Одобрение за 1 день</a></li>
+					<li><a href="#">ГАЗель NEXT в лизинг</a></li>
+					<li><a href="#">ГАЗон NEXT в лизинг</a></li>
+					<li><a href="#">ГАЗель Бизнес в лизинг</a></li>
+					<li><a href="#">Б/У ГАЗель в лизинг</a></li>
+				</ul>
+			</div>
+			<div class="{{footer_prefix}}cols  is--nav">
+				<ul class="{{footer_prefix}}nav">
+					<li class="is--heading">Спецтехника в лизинг</li>
+					<li><a href="#">RM-TEREX в лизинг</a></li>
+					<li><a href="#">Техника ХТЗ в лизинг</a></li>
+					<li><a href="#">Тракторы МТЗ в лизинг</a></li>
+					<li><a href="#">Экскаваторы в лизинг</a></li>
+					<li><a href="#">Складская техника в лизинг</a></li>
+					<li><a href="#">Автокраны в лизинг</a></li>
+					<li><a href="#">Бульдозеры в лизинг</a></li>
+					<li><a href="#">Льготный лизинг спецтехники</a></li>
+				</ul>
+			</div>
+			<hr class="{{footer_prefix}}cols  is--line">		
+			<div class="{{footer_prefix}}cols  is--search">
+				{% include "../form/form.twig" with {
+					view: 			"search", 
+					prefix:			prefix.form, 
+					mod:			"is--search",  
+					color:			"is--success-black", 
+					ID: 			"f_search", 
+					placeholder:	"Что вы ищете?",
+					btn_mod:		"",
+					btn_name:		"Поиск техники"
+				} %}
+			</div>			
+			<div class="{{footer_prefix}}cols  is--copyright">
+				<p class="{{footer_prefix}}logo"><img src="{{path.img}}/default/logo-footer.svg" class="img-responsive" alt=""></p>
+				<div>
+					<p class="{{footer_prefix}}copyright">© Элемент Лизинг, 2010-2020</p>
+					<p class="{{footer_prefix}}copyright"><a href="http://playhard.agency/" target="_blank">Разработка сайта – Playhard</a></p>
+				</div>
+			</div>	
+			<div class="{{footer_prefix}}cols  is--nav-default">
+				<ul class="{{footer_prefix}}nav">
+					<li class="is--hidden"><a href="#">Коммерческая техника</a></li>
+					<li class="is--hidden"><a href="#">ГАЗ в лизинг</a></li>
+					<li class="is--hidden"><a href="#">Спецтехника в лизинг</a></li>
+					<li><a href="{{page.articles}}">Статьи</a></li>
+					<li><a href="#">Техническая поддержка</a></li>
+					<li><a href="#">Карта сайта</a></li>
+				</ul>
+			</div>
+			<div class="{{footer_prefix}}cols  is--social">
+				<p>Следите за нами в соцсетях</p>
+				{% include "../../common/social/tpl.twig" with {prefix:"social__",group:"is--footer", list:[{name:"soc-vk", link:soc.vk},{name:"soc-inst", link:soc.inst},{name:"soc-fb", link:soc.fb}]} %}
+			</div>
+		</div>	
+	</div>
+</footer>

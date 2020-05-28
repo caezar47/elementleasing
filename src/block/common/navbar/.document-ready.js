@@ -37,4 +37,13 @@ if ($(window).width() > 1199) {
 	$('.navbar__nav-item.dropdown > a').on('click', function(e) {
 		location.href = this.href;
 	});	
+	$('.navbar__nav-item.dropdown > a').on('click', function(e) {
+		location.href = this.href;
+	});	
+	$('.navbar__nav-item.is--full.dropdown').on('mousemove', function(e) {	
+		$(html).addClass("is--open-navbar");
+	});	
+	$('.navbar__nav-item.is--full.dropdown').on('mouseout', function(e) {	
+		$(html).removeClass("is--open-navbar");
+	});	
 }

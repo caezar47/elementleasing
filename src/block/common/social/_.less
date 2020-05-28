@@ -6,13 +6,22 @@
 				.media-breakpoint-up(@md; {
 					display: block;
 					position: absolute;
-					bottom: 145px;
+					bottom: 74px;
+					right: 64px;
+				});
+				.media-breakpoint-up(@xl; {
+					right: 40px;
+				});
+				.media-breakpoint-up(@xxl; {
 					right: 15px;
 				});
 			}
 		}
 		&.is--footer{
 			padding-top: 10px;
+			.media-breakpoint-up(@md; {
+				padding-top: 20px;
+			});
 		}
 	}
 	&row{ 
@@ -21,8 +30,8 @@
 		margin-right: -(@soc_gutter);
 		&.is--index{
 			&-header{
-				flex-direction: column;
-				margin: -(@soc_gutter - 6) 0;
+				//flex-direction: column;
+				margin: 0 -(@soc_gutter + 2) ;
 			}
 		}
 	}
@@ -31,7 +40,7 @@
 		padding-right: @soc_gutter;
 		&.is--index{
 			&-header{
-				padding: @soc_gutter - 6 0;
+				padding: 0 @soc_gutter + 2 ;
 			}
 		}
 	}

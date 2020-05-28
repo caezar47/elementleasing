@@ -7,21 +7,8 @@
 						<img src="{{path.img}}/default/logo-header.svg" class="img-responsive" alt="">
 					</a>
 				</div>
-				<div class="{{navbar_prefix}}header-cols cols  is--icon">
-					<div class="{{navbar_prefix}}header-icon-row  row">
-						<div class="cols">
-							<a href="{{page.search}}" class="{{navbar_prefix}}header-icon">{% include "../svg-sprite/svg.twig" with {icon:"search"} %}</a>
-						</div>
-						<div class="cols">
-							<a href="{{page.contacts}}" class="{{navbar_prefix}}header-icon">{% include "../svg-sprite/svg.twig" with {icon:"pointer"} %}</a>
-						</div>
-						<div class="cols">
-							<a href="#" class="{{navbar_prefix}}header-icon">{% include "../svg-sprite/svg.twig" with {icon:"login"} %}</a>
-						</div>
-					</div>
-				</div>
 				<div class="{{navbar_prefix}}header-cols cols  is--hamb">
-					<button class="{{navbar_prefix}}hamburger" data-name="Меню" data-hamburger>
+					<button class="{{navbar_prefix}}hamburger" data-hamburger>
 						<span class="{{navbar_prefix}}hamburger-icon">
 							<span class="{{navbar_prefix}}hamburger-line  is--left"></span>
 							<span class="{{navbar_prefix}}hamburger-line  is--center"></span>
@@ -35,96 +22,233 @@
 	<div class="{{navbar_prefix}}collapse" >
 		<div class="{{navbar_prefix}}collapse-inner">	
 			<div class="{{navbar_prefix}}container  container  is--collapse">
-				<div class="{{navbar_prefix}}collapse-row  grid__row">
-					<div class="{{navbar_prefix}}collapse-cols">
+				<div class="{{navbar_prefix}}collapse-row">
+					<div class="{{navbar_prefix}}collapse-cols  is--logotip">
+						<a class="{{navbar_prefix}}logotip" href="{{page.index}}">
+							<img src="{{path.img}}/default/logo-header.svg" class="img-responsive" alt="">
+						</a>
+					</div>			
+					<div class="{{navbar_prefix}}collapse-cols  is--navbar-xs">
 						<ul class="{{navbar_prefix}}nav">
-						    {% include "item-drop.twig" with {
+						    {% include "item-drop-new.twig" with {
+						    	view: "xs",
 						    	prefix:navbar_prefix, 
 						    	mod:"", 
-						    	name:"ГАЗ", 
-						    	link:page.leasing,
+						    	name:"Информация", 
+						    	link:"#",
 						    	list : [
-							    	{"name":"По трем документам", "link":page.leasing, "mod":""},
-							    	{"name":"Микроаванс", "link":"", "mod":""},
-							    	{"name":"Лизинг без переплаты", "link":"", "mod":""},
-							    	{"name":"Лизинг с trade-in", "link":"", "mod":""},
-							    	{"name":"Для стартапов", "link":"", "mod":""},
-							    	{"name":"Одобрение за 1 день", "link":"", "mod":""},
-							    	{"name":"ГАЗель NEXT", "link":"", "mod":""},
-							    	{"name":"ГАЗон NEXT", "link":"", "mod":""},
-							    	{"name":"ГАЗель Бизнес", "link":"", "mod":""},
-							    	{"name":"Б/У ГАЗель", "link":"", "mod":""}
-							    ]} 
-							%}
-
-						    {% include "item-drop.twig" with {prefix:navbar_prefix, mod:"", name:"Коммерческая техника", list : [
-						    	{"name":"Лизинг по трем документам", "link":"", "mod":""},
-						    	{"name":"Автобусы", "link":"", "mod":""},
-						    	{"name":"Микроавтобусы", "link":"", "mod":""},
-						    	{"name":"Для стартапов", "link":"", "mod":""},
-						    	{"name":"Лизинг с Trade-in", "link":"", "mod":""},
-						    	{"name":"Лизинг б/у техники", "link":"", "mod":""}
-						    ]} %}
-						    {% include "item-drop.twig" with {prefix:navbar_prefix, mod:"", name:"Грузовые авто", list : [
-						    	{"name":"Volvo", "link":"", "mod":""},
-						    	{"name":"КамАз", "link":"", "mod":""},
-						    	{"name":"IVECO", "link":"", "mod":""},
-						    	{"name":"Scania", "link":"", "mod":""},
-						    	{"name":"MAN", "link":"", "mod":""},
-						    	{"name":"DAF", "link":"", "mod":""},
-						    	{"name":"МАЗ", "link":"", "mod":""},
-						    	{"name":"Renault", "link":"", "mod":""},
-						    	{"name":"УРАЛ", "link":"", "mod":""},
-						    	{"name":"Mercedes-Benz", "link":"", "mod":""},
-						    	{"name":"HOWO", "link":"", "mod":""}
-						    ]} %}
-						    {% include "item-drop.twig" with {prefix:navbar_prefix, mod:"", name:"Спецтехника", list : [
-						    	{"name":"RM-TEREX", "link":"", "mod":""},
-						    	{"name":"Тракторы МТЗ", "link":"", "mod":""},
-						    	{"name":"Экскаваторы", "link":"", "mod":""},
-						    	{"name":"Складская техника", "link":"", "mod":""},
-						    	{"name":"Автокраны", "link":"", "mod":""},
-						    	{"name":"XGMA", "link":"", "mod":""},
-						    	{"name":"Бульдозеры", "link":"", "mod":""},
-						    	{"name":"Техника ХТЗ в лизинг", "link":"", "mod":""}
-						    ]} %}
-							{% set navbar = [
-								{"name":"Оборудование", "link":"","mod":""},
-								{"name":"Инвесторам", "link":page.investors,"mod":""}
-							] %}
-						    {% for value in navbar %}
-							<li class="{{navbar_prefix}}nav-item  {{value.mod }}"><a href="{{value.link}}" class="{{navbar_prefix}}nav-link"><span>{{value.name}}</span></a></li>
-						    {% endfor %}
-						    {% include "item-drop.twig" with {prefix:navbar_prefix, mod:"", name:"О компании", list : [
-						    	{"name":"Отзывы", "link":page.reviews, "mod":""},
-						    	{"name":"Новости", "link":page.news, "mod":""},
-						    	{"name":"Новости для инвесторов", "link":"", "mod":""},
-						    	{"name":"Руководство", "link":page.menedzhment, "mod":""},
-						    	{"name":"Цифры и факты", "link":"", "mod":""},
-						    	{"name":"Преимущества", "link":"", "mod":""},
-						    	{"name":"Вакансии", "link":page.vacancies, "mod":""}
-						    ]} %}
+									{"name":"Рекомендации по учету субсидий по льготному лизингу", "link":"", "mod":""},
+							    	{"name":"Специальная оценка условий труда", "link":"", "mod":""},
+							    	{"name":"Реквизиты по банкам", "link":"", "mod":""},
+							    	{"name":"Медиа", "link":"", "mod":""},
+							    	{"name":"Документы", "link":"", "mod":""},    	
+							    ]
+							}%}
+						    {% include "item-drop-new.twig" with {
+						    	view: "xs",
+						    	prefix:navbar_prefix, 
+						    	mod:"", 
+						    	name:"О компании", 
+						    	link:"#",
+						    	list : [
+							    	{"name":"Отзывы", "link":page.reviews, "mod":""},
+							    	{"name":"Новости", "link":page.news, "mod":""},
+							    	{"name":"Новости для инвесторов", "link":"", "mod":""},
+							    	{"name":"Руководство", "link":page.menedzhment, "mod":""},
+							    	{"name":"Вакансии", "link":page.vacancies, "mod":""}, 	
+							    	{"name":"Наши офисы", "link":page.contacts, "mod":""}, 	
+							    ]
+							}%}
 							{% set navbar = [
 								{"name":"Каталог", "link":page.catalog,"mod":""},
-								{"name":"Офисы продаж", "link":page.contacts,"mod":""}
+								{"name":"Инвесторам", "link":page.investors,"mod":""},
 							] %}
 						    {% for value in navbar %}
-							<li class="{{navbar_prefix}}nav-item  {{value.mod }}"><a href="{{value.link}}" class="{{navbar_prefix}}nav-link"><span>{{value.name}}</span></a></li>
+							<li class="{{navbar_prefix}}nav-item  {{value.mod}}"><a href="{{value.link}}" class="{{navbar_prefix}}nav-link  {{value.mod}}">{{value.name}}</a></li>
 						    {% endfor %}
 						</ul>
 					</div>
-					<div class="{{navbar_prefix}}collapse-cols"></div>
-					<div class="{{navbar_prefix}}collapse-cols">
-						{% include "../form/form.twig" with {
-							view: "login", 
-							prefix:"form__",
-							ID: "login",
-							mod:"is--login", 
-							heading:"Вход в личный кабинет", 
-							heading_mod:"is--h4  color--white-f6  margin--narrow", 
-							heading_level:"p", 
-							btn_name:"Отправить" 
-						} %} 
+
+					<div class="{{navbar_prefix}}collapse-cols  is--icon">
+						<div class="{{navbar_prefix}}header-icon-row  row">
+							<div class="cols">
+								{% include "../form/form.twig" with {
+									view: 			"search", 
+									prefix:			prefix.form, 
+									mod:			"is--navbar",  
+									color:			"", 
+									ID: 			"fn_search", 
+									placeholder:	"Поиск по сайту",
+								} %}
+							</div>
+							<div class="cols">
+								<a href="{{page.contacts}}" class="{{navbar_prefix}}header-icon">{% include "../svg-sprite/svg.twig" with {icon:"pointer"} %}</a>
+							</div>
+							<div class="cols">
+								<a href="#" class="{{navbar_prefix}}header-icon">{% include "../svg-sprite/svg.twig" with {icon:"login"} %}</a>
+							</div>
+						</div>
+					</div>
+					<hr class="{{navbar_prefix}}collapse-cols  is--line">
+					<div class="{{navbar_prefix}}collapse-cols  is--navbar">
+						<ul class="{{navbar_prefix}}nav  is--full">
+						    {% include "item-drop-new.twig" with {
+						    	view: "full",
+						    	prefix:navbar_prefix, 
+						    	mod:"is--full", 
+						    	name:"ГАЗ в лизинг", 
+						    	link:page.leasing,
+						    	list : [
+						    		{
+										sublist:[
+											{"name":"По трем документам", "link":page.leasing, "mod":""},
+									    	{"name":"Микроаванс", "link":"", "mod":""},
+									    	{"name":"Лизинг без переплаты", "link":"", "mod":""},
+									    	{"name":"Лизинг с trade-in", "link":"", "mod":""},
+									    	{"name":"Для стартапов", "link":"", "mod":""},
+									    	{"name":"Одобрение за 1 день", "link":"", "mod":""},
+										]
+						    		},
+						    		{
+										sublist:[
+											{"name":"ГАЗель NEXT", "link":"", "mod":""},
+									    	{"name":"ГАЗон NEXT", "link":"", "mod":""},
+									    	{"name":"ГАЗель Бизнес", "link":"", "mod":""},
+									    	{"name":"Б/У ГАЗель", "link":"", "mod":""}
+										]
+						    		},						    	
+							    ],
+							    card_prefix:"card__",
+							    card_mod:"is--navbar",
+							    card_preview: [path.img,"/default/card-navbar-item1.svg"].join(""),
+							    card_heading: "Лизинг без поручителей", 
+							    card_note: "Без кредитного анализа, упрощенная процедура оформления, до 36 месяцев", 
+							}%}
+						    {% include "item-drop-new.twig" with {
+						    	view: "full",
+						    	prefix:navbar_prefix, 
+						    	mod:"is--full", 
+						    	name:"Коммерческая техника", 
+						    	link:page.leasing,
+						    	list : [
+						    		{
+										sublist:[
+											{"name":"Льготный лизинг", "link":"", "mod":""},
+											{"name":"Лизинг по трем документам", "link":"", "mod":""},
+									    	{"name":"Автобусы", "link":"", "mod":""},
+									    	{"name":"Микроавтобусы", "link":"", "mod":""},
+										]
+						    		},
+						    		{
+										sublist:[
+									    	{"name":"Для стартапов", "link":"", "mod":""},
+									    	{"name":"Лизинг с Trade-in", "link":"", "mod":""},
+									    	{"name":"Лизинг б/у техники", "link":"", "mod":""}
+										]
+						    		},						    	
+							    ],
+							    card_prefix:"card__",
+							    card_mod:"is--navbar",
+							    card_preview: [path.img,"/default/card-navbar-item2.svg"].join(""),
+							    card_heading: "Лизинг по трем документам", 
+							    card_note: "Упрощенная процедура оформления", 
+							}%}
+						    {% include "item-drop-new.twig" with {
+						    	view: "full",
+						    	prefix:navbar_prefix, 
+						    	mod:"is--full", 
+						    	name:"Грузовые авто", 
+						    	link:page.leasing,
+						    	list : [
+						    		{
+										sublist:[
+											{"name":"Volvo", "link":"", "mod":""},
+											{"name":"КамАз", "link":"", "mod":""},
+									    	{"name":"IVECO", "link":"", "mod":""},
+									    	{"name":"Scania", "link":"", "mod":""},
+									    	{"name":"MAN", "link":"", "mod":""},
+									    	{"name":"DAF", "link":"", "mod":""},
+										]
+						    		},
+						    		{
+										sublist:[
+									    	{"name":"МАЗ", "link":"", "mod":""},
+									    	{"name":"Renault", "link":"", "mod":""},
+									    	{"name":"УРАЛ", "link":"", "mod":""},
+									    	{"name":"Mercedes-Benz", "link":"", "mod":""},
+									    	{"name":"HOWO", "link":"", "mod":""},
+										]
+						    		},						    	
+							    ],
+							    card_prefix:"card__",
+							    card_mod:"is--navbar",
+							    card_preview: [path.img,"/default/card-navbar-item3.svg"].join(""),
+							    card_heading: "Одобрение за 1 час", 
+							    card_note: "Оставьте заявку и получите предварительное решение по лизингу всего через 1 час", 
+							}%} 
+						    {% include "item-drop-new.twig" with {
+						    	view: "full",
+						    	prefix:navbar_prefix, 
+						    	mod:"is--full", 
+						    	name:"Спецтехника", 
+						    	link:page.leasing,
+						    	list : [
+						    		{
+										sublist:[
+											{"name":"RM-TEREX", "link":"", "mod":""},
+											{"name":"Тракторы МТЗ", "link":"", "mod":""},
+											{"name":"Экскаваторы", "link":"", "mod":""},
+									    	{"name":"Складская техника", "link":"", "mod":""},
+										]
+						    		},
+						    		{
+										sublist:[
+									    	{"name":"Автокраны", "link":"", "mod":""},
+									    	{"name":"XGMA", "link":"", "mod":""},
+									    	{"name":"Бульдозеры", "link":"", "mod":""},
+									    	{"name":"Техника ХТЗ в лизинг", "link":"", "mod":""},
+										]
+						    		},						    	
+							    ],
+							    card_prefix:"card__",
+							    card_mod:"is--navbar",
+							    card_preview: [path.img,"/default/card-navbar-item1.svg"].join(""),
+							    card_heading: "Лизинг без поручителей", 
+							    card_note: "Без кредитного анализа, упрощенная процедура оформления, до 36 месяцев", 
+							}%} 
+						    {% include "item-drop-new.twig" with {
+						    	view: "full",
+						    	prefix:navbar_prefix, 
+						    	mod:"is--full", 
+						    	name:"Для физических лиц", 
+						    	link:page.leasing,
+						    	list : [
+						    		{
+										sublist:[
+											{"name":"Спецтехника в лизинг", "link":"", "mod":""},
+									    	{"name":"ГАЗ", "link":"", "mod":""},
+										]
+						    		},
+						    		{
+										sublist:[
+									    	{"name":"Коммерческая техника", "link":"", "mod":""},
+									    	{"name":"Грузовые автомобили", "link":"", "mod":""},
+										]
+						    		},						    	
+							    ],
+							    card_prefix:"card__",
+							    card_mod:"is--navbar",
+							    card_preview: [path.img,"/default/card-navbar-item2.svg"].join(""),
+							    card_heading: "Лизинг по трем документам", 
+							    card_note: "Упрощенная процедура оформления", 
+							}%}
+							{% set navbar = [
+								{"name":"Медицинское оборудование", "link":page.leasing,"mod":"is--full"},
+							] %}
+						    {% for value in navbar %}
+							<li class="{{navbar_prefix}}nav-item  {{value.mod}}"><a href="{{value.link}}" class="{{navbar_prefix}}nav-link  {{value.mod}}">{{value.name}}</a></li>
+						    {% endfor %}
+						</ul>
 					</div>
 				</div>
 			</div>

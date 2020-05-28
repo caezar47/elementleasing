@@ -13,8 +13,8 @@
 		padding-top: 36px;
 		padding-bottom: 36px;
 		.media-breakpoint-up(@xl; {
-			padding-top: 70px;
-			padding-bottom: 100px;
+			padding-top: 65px;
+			padding-bottom: 65px;
 			
 		});
 		a{
@@ -29,14 +29,14 @@
 		.media-breakpoint-up(@md; {
 			grid-template-columns: repeat(3, 1fr);			
 		});
-		.media-breakpoint-up(@lg; {
+		.media-breakpoint-up(@xl; {
 			grid-template-columns: repeat(4, 1fr);			
 		});
 	}
 	&cols{
 		&.is--line{
 			display: none;
-			border: 1px solid #4C4C4C;
+			border: 2px solid #4C4C4C;
   			opacity: 0.15;
 			margin: 20px 0;
 		}
@@ -44,22 +44,20 @@
 		&.is--nav{
 			display: none;
 		}
+		&.is--copyright{
+			display: flex;
+			padding-top: 10px;
+		}
 		.media-breakpoint-down(@md; {
 			&.is--nav-default{
 				grid-row: 2;
 			}
-			&.is--copyright{
-				display: flex;
-				padding-top: 10px;
-			}
 		});
 		.media-breakpoint-up(@md; {	
+			&.is--copyright,
 			&.is--social,
 			&.is--nav{
 				display: block;
-			}		
-			&.is--tel{			
-				grid-column: span 3;			
 			}
 			&.is--line{
 				display: block;
@@ -69,12 +67,9 @@
 				display: none;			
 			}
 		});
-		.media-breakpoint-up(@lg; {
-			&.is--tel{
-				grid-column: span 1;	
-			}
+		.media-breakpoint-up(@xl; {
 			&.is--line{
-				margin: 30px 0 23px;
+				margin: 30px 0 15px;
 				grid-column: span 4;
 			}	
 			&.is--nav-default{
@@ -85,10 +80,8 @@
 	&tel{
 		a&{
 			display: inline-block;
-			//font-size: @b-fs + 5;
-			//line-height: @b-lh + 5;
-			font-size: 1.27em;
-			line-height: 1.27em;
+			font-size: 1.31em;
+			line-height: 1.31em;
 			color: @success;
 			font-weight: 500;
 			.media-breakpoint-up(@xl; {
@@ -100,34 +93,45 @@
 		list-style: none;
 		margin: 0;
 		padding: 0;
-		.media-breakpoint-up(@lg; {			
-			&:nth-of-type(4){
-				grid-column: 3;
-			}			
-		});
-		.is--heading{
-			.heading4();
-			color: @white;
-			font-weight: 500;
-			margin-bottom: 15px;
-		}
+		font-size: 0.88em;
 		li{
 			margin-bottom: 8px;
 		}
-		.media-breakpoint-down(@md; {
-			font-size: 0.88em;
-		});
+		&.is--xl{
+			font-weight: 500;
+		}
 		.media-breakpoint-up(@md; {
+			font-size: 1em;
+			font-weight: 300;
+			&.is--xl{
+				font-size: 1.22em;
+				line-height: 1.5em;
+				a{
+					color: @black-98;
+					&:hover{
+						color: @white;
+					}
+				}
+				li{
+					margin-bottom: 1.1em;
+				}
+			}
 			li.is--hidden{
 				display: none;
 			}
+		});
+
+		.media-breakpoint-up(@lg; {			
+			&:nth-of-type(4){
+				//grid-column: 3;
+			}			
 		});
 	}
 	&logo{
 		width: 65px;
 		margin-right: 25px;
 		.media-breakpoint-up(@md; {
-			width: 82px;
+			width: 85px;
 			margin: 0 0 20px 0;
 		});
 	}

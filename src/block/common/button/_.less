@@ -34,15 +34,22 @@
 			justify-content: center;
 			align-items: center;
 			width: 100%;
-			font-size: 16px;
-			line-height: 18px;
-			padding: 11px 25px 11px 15px;
 			.media-breakpoint-up(@lg; {
 				justify-content: space-between;
 			});
 		}
 		&.is--size{
-			&-md{}
+			&-md{				
+				font-size: 16px;
+				line-height: 18px;
+				padding: 11px 25px 11px 15px;
+			}
+			&-xs{
+				font-size: 12px;
+				line-height: 12px;
+				padding: 9px 14px;
+
+			}
 		}
 
 
@@ -96,6 +103,15 @@
 				&:hover{
 					.icon-next(@c:'fff';);
 				}
+			}
+		}
+		&.is--blue{
+			color: @black-29;
+			background-color: @white;
+			border-color: @blue-c6;
+			&:hover{
+				border-color: @success;
+
 			}
 		}
 		//size
