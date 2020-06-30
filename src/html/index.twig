@@ -19,16 +19,28 @@
                     {
                         status:"active",
                         name:"Лизинг по трем документам",
-                        preview:"https://new.elementleasing.ru/upload/iblock/40c/40c674923a788fc958b7d28902ccca20.svg",
-                        preview:[path.img,"/default/index-slider-item1.svg"].join(""),
+                        preview:[path.img,"/default/index-banner1.png"].join(""),
                         note:'<p>Одобрение на следующий день</p><p>Срок от 12 месяцев</p><p>Для юридических лиц и ИП</p>',
                         link: page.leasing
                     },   
                     {
                         status:"",
                         name:"Лизинг по трем документам",
-                        preview:"http://via.placeholder.com/365x300",
-                        preview:[path.img,"/default/header-slider-item1.svg"].join(""),
+                        preview:[path.img,"/default/index-banner2.png"].join(""),
+                        note:'<p>Одобрение на следующий день</p><p>Срок от 12 месяцев</p><p>Для юридических лиц и ИП</p>',
+                        link: page.leasing
+                    } ,   
+                    {
+                        status:"",
+                        name:"Лизинг по трем документам",
+                        preview:[path.img,"/default/index-banner3.png"].join(""),
+                        note:'<p>Одобрение на следующий день</p><p>Срок от 12 месяцев</p><p>Для юридических лиц и ИП</p>',
+                        link: page.leasing
+                    } ,   
+                    {
+                        status:"",
+                        name:"Лизинг по трем документам",
+                        preview:[path.img,"/default/index-banner4.png"].join(""),
                         note:'<p>Одобрение на следующий день</p><p>Срок от 12 месяцев</p><p>Для юридических лиц и ИП</p>',
                         link: page.leasing
                     }                    
@@ -97,7 +109,7 @@
                 link:"Весь каталог",
                 link_href:page.catalog
             } %}
-{# 
+            {# 
             {% include "../block/page/index.twig" with {
                 view:"index_adv", 
                 content_prefix:"content-block__", 
@@ -156,7 +168,8 @@
                         '
                     }
                 ],
-            } %} #}
+            } %} 
+            #}
 
             {% include "../block/page/index.twig" with {
                 view:"index_order",  
@@ -171,7 +184,7 @@
                 heading_v_mod:"fw--700  color--white  is--index-order-value", 
                 heading_v_level:"p", 
                 heading_v:"ОТ 20%",
-                bg:[path.img,"/default/index-order.jpg"].join(""),
+                bg:[path.img,"/default/index-order-full.png"].join(""),
             } %}
 
             {% include "../block/page/leasing/tpl.twig" with {

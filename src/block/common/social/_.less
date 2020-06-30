@@ -54,14 +54,20 @@
 			width: @soc_size - 8;
 			height: @soc_size - 8;
 		});
-		&, &:focus{color: @soc_color;}  
+		&, &:focus{color: @soc_color;} 
+		&:hover{
+			color: @success;
+		}  
 		svg{display: block;}		
 		&.is--index{
 			&-header{
-				&, &:focus{color: @black-98;}  
+				&, &:focus{color: @black-98;} 
+				&:hover{
+					color: @success;
+				}  
 			}
 		}
-		&.is--soc-vk{
+		/*&.is--soc-vk{
 			&:hover{
 				color: @color-vk;				
 			}
@@ -90,6 +96,6 @@
 			&:hover{
 				color: @success;
 			}
-		}
+		}*/
 	}
 }

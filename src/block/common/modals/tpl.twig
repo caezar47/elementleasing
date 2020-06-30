@@ -30,8 +30,7 @@
 						heading_r_sm_mod:	"fw--100     is--form-leasing-order-result-note"
 					} %}
 				{% endif %}
-				{% if ID == "modal-call" %}	
-
+				{% if ID == "modal-call" %}
 					{% include "../form/form.twig" with {
 						view: 			"call", 
 						prefix:			"form__", 
@@ -55,6 +54,19 @@
 						heading_r_sm_level:	"p", 
 						heading_r_sm_mod:	"fw--100     is--form-leasing-order-result-note"
 					} %}
+				{% endif %}	
+				{% if ID == "modal-contacts-video" %}
+				<div class="{{prefix}}inner  {{mod}}">
+					<h3 class="page-header__heading  is--h3  fw--700  is--modal-default">Как добраться?</h3>
+					<div>
+						<p>От станции МЦК "Кутузовская"</p>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/B7-lKmUrqiU?controls=0"></iframe>
+					</div>
+					<div>
+                        <p>От станции Метро "Парк Победы"</p>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/x66NWICvsOY?controls=0"></iframe>
+                    </div>
+				</div>
 				{% endif %}	
 			</div> 
 		</div>

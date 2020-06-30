@@ -395,6 +395,16 @@
 	</form>
 {% endif %}
 
+{% if view=="search_navbar" %}
+	<form action="#" class="{{prefix}}search  {{mod}}  {{group}}">
+		<p class="{{prefix}}search-input  {{mod}}" id="collapse-search" class="collapse">
+			<input type="text" class="{{prefix}}control  {{mod}}  {{color}}" placeholder="{{placeholder}}" autofocus>
+		</p>
+		<button type="button" data-toggle="collapse" data-target="#collapse-search" class="{{prefix}}search-icon  {{mod}}  {{color}}">{% include "../svg-sprite/svg.twig" with {icon:"search"} %}</button>
+		<button type="submit" style="display: none" class="{{prefix}}search-icon  {{mod}}  {{color}}">{% include "../svg-sprite/svg.twig" with {icon:"search"} %}</button>
+	</form>
+{% endif %}
+
 {% if view=="partners" %}
 	<form action="#" class="{{prefix}}panel  {{mod}}  {{group}}">			
 		<div class="{{prefix}}row  {{mod}}">

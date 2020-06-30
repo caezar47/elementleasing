@@ -11,12 +11,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
 <link rel="manifest" href="./favicon/site.webmanifest">
-<link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#F24F00">
-<link rel="shortcut icon" href="./favicon/favicon.ico">
-<meta name="msapplication-config" content="./favicon/browserconfig.xml">
-<meta name="apple-mobile-web-app-title" content="elementleasing.ru">
-<meta name="application-name" content="elementleasing.ru">
-<meta name="msapplication-TileColor" content="#ffffff">
+<link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#0077b2">
+<meta name="msapplication-TileColor" content="#0077b2">
 <meta name="theme-color" content="#ffffff">
 
 <link href="./css/style.css" rel="stylesheet">	</head>
@@ -101,12 +97,15 @@
 
 
 
+
 	<form action="#" class="form__search  is--navbar  ">
-		<p class="form__search-input  is--navbar">
+		<p class="form__search-input  is--navbar" id="collapse-search" class="collapse">
 			<input type="text" class="form__control  is--navbar  " placeholder="Поиск по сайту" autofocus>
 		</p>
-				
-		<button type="submit" class="form__search-icon  is--navbar  "><svg class="icon-svg icon-search" role="img">
+		<button type="button" data-toggle="collapse" data-target="#collapse-search" class="form__search-icon  is--navbar  "><svg class="icon-svg icon-search" role="img">
+	<use xlink:href="./img/svg/sprite.svg#search"></use>
+</svg></button>
+		<button type="submit" style="display: none" class="form__search-icon  is--navbar  "><svg class="icon-svg icon-search" role="img">
 	<use xlink:href="./img/svg/sprite.svg#search"></use>
 </svg></button>
 	</form>
@@ -358,6 +357,7 @@
 	<use xlink:href="./img/svg/sprite.svg#search"></use>
 </svg></button>
 	</form>
+
 
 
 
@@ -670,6 +670,7 @@
 	<use xlink:href="./img/svg/sprite.svg#search"></use>
 </svg></button>
 	</form>
+
 
 
 

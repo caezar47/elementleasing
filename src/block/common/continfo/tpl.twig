@@ -7,7 +7,9 @@
 		<p class="{{prefix}}link  {{mod}}"><a href="{{link}}" 
 			{% if coord != null %}
 			{% if map_main == true %}
-				data-map-base 
+				data-map-base
+				data-toggle="modal" 
+				data-target="{{modal}}" 
 			{% endif %}
 			{% if scrollto == "true" %}
 				data-scrollto 
