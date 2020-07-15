@@ -105,6 +105,9 @@
 		padding: 10px @gutter_xs 0;
 		&.is--page{
 			&-contacts{
+				.media-breakpoint-down(@md; {
+					min-width: 36px;
+				});
 				.media-breakpoint-up(@lg; {
 					padding: 10px @gutter 0; 
 				});
@@ -138,6 +141,10 @@
 			&-contacts{
 				.heading3();					
 				color: @tabs_color;
+				font-weight: 400;
+				.media-breakpoint-up(@md; {
+					font-weight: 700;
+				});
 				&:hover,
 				.tabs__item.active &{
 					color: @tabs_color_active;

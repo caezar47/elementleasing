@@ -97,6 +97,20 @@
 						color: @success-a;
 					}	
 				}
+				&.is--hidden-md{	
+				}
+				&.is--visible-md{				
+					display: none;
+				}
+				.media-breakpoint-down(@md; {
+					&.is--hidden-md{		
+						display: none;	
+					}
+					&.is--visible-md{					
+						display: block;	
+					}
+					
+				});
 			}
 		}
 	}

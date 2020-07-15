@@ -4,7 +4,7 @@
 		<p class="{{prefix}}heading  {{mod}}  {{title_mod}}">
 			{{title}}
 		</p>
-		<p class="{{prefix}}link  {{mod}}"><a href="{{link}}" 
+		<p class="{{prefix}}link  {{mod}}  is--hidden-md"><a href="{{link}}" 
 			{% if coord != null %}
 			{% if map_main == true %}
 				data-map-base
@@ -49,5 +49,23 @@
 		<p class="{{prefix}}label  {{mod}}">{{value.label}}</p>
 		{% endif %}
 	</div>
-	{% endfor %} 
+	{% endfor %}
+	<p class="{{prefix}}link  {{mod}}  is--visible-md"><a href="{{link}}" 
+		{% if coord != null %}
+		{% if map_main == true %}
+			data-map-base
+			data-toggle="modal" 
+			data-target="{{modal}}" 
+		{% endif %}
+		{% if scrollto == "true" %}
+			data-scrollto 
+		{% endif %}
+			data-coord 
+			data-city="{{title}}" 
+			data-phone="{{phone}}" 
+			data-email="{{email}}" 
+			data-c="{{coord}}" 
+			data-addr="{{address}}"
+		{% endif %}
+		>{{link_name}}</a></p>
 </div>

@@ -13,14 +13,19 @@
 		});
 		&.is--block{			
 			&-map{
-				.media-breakpoint-up(@md; {
+				//.media-breakpoint-up(@md; {
 					height: 660px;			
-				});
+				//});
 			}
 		}
 	}
 	&container{
 		position: relative;
+		.media-breakpoint-down(@md; {
+			position: absolute;
+			z-index: 1;
+			top: 30px;
+		});
 	}
 	&panel{
 		display: none;
