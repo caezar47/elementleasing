@@ -755,8 +755,9 @@
 		&.is--success-black{
 			background-color: @black-29;
 			border-color: @success;
+			color: @white;
 			&:focus{
-				background-color: @white;
+				color: @white;
 			}
 		}
 		.form__panel.is--leasing-base &{
@@ -1274,6 +1275,9 @@
 						padding: 5px 45px 5px 15px;
 						font-size: @input_plh_fs - 4;
 						line-height: @input_plh_lh + 1;
+						.media-breakpoint-down(@md; {
+							height: 40px;
+						});
 						&::-moz-placeholder{
 							font-size: @input_plh_fs - 4;
 							line-height: @input_plh_lh + 1;
@@ -1349,6 +1353,9 @@
 					height: 32px;
 					padding: 8px;
 					color: @white;
+					.media-breakpoint-down(@md; {
+						height: 40px;
+					});
 				}
 			}
 		}

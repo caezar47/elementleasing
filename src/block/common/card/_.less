@@ -285,12 +285,11 @@
 			}
 			&-promo{
 				position: relative;
-				/*.media-breakpoint-down(@md; {
-					margin-bottom: 40px;
-					[data-slick-catalog] > *:last-child &{
-						margin-bottom: 0;
-					}			
-				});*/
+				.media-breakpoint-down(@md; {
+					.content-block__panel.is--page-catalog-card-adv	&{
+						opacity: 1;
+					}		
+				});
 				.media-breakpoint-down(@lg; {
 					font-size: 16px;
 				});

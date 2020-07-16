@@ -126,11 +126,13 @@
 					&-adv{
 						.media-breakpoint-down(@md; {
 							font-size: 12px;
+							background-color: @primary;
 						});
 					}
 					&-leasing{
 						.media-breakpoint-down(@md; {
 							font-size: 12px;
+							background-color: #FAFDFF;
 						});
 					}
 				}
@@ -204,9 +206,11 @@
 				});
 			}
 			&-formaliz{
-				background-color: #FAFDFF;
 				.media-breakpoint-down(@md; {
 					font-size: 12px;
+				});
+				.media-breakpoint-up(@md; {
+					background-color: #FAFDFF;
 				});
 			}
 			&-adv{
@@ -2469,12 +2473,11 @@
 			}
 			&-promo{
 				position: relative;
-				/*.media-breakpoint-down(@md; {
-					margin-bottom: 40px;
-					[data-slick-catalog] > *:last-child &{
-						margin-bottom: 0;
-					}			
-				});*/
+				.media-breakpoint-down(@md; {
+					.content-block__panel.is--page-catalog-card-adv	&{
+						opacity: 1;
+					}		
+				});
 				.media-breakpoint-down(@lg; {
 					font-size: 16px;
 				});
@@ -5490,8 +5493,9 @@
 		&.is--success-black{
 			background-color: @black-29;
 			border-color: @success;
+			color: @white;
 			&:focus{
-				background-color: @white;
+				color: @white;
 			}
 		}
 		.form__panel.is--leasing-base &{
@@ -6009,6 +6013,9 @@
 						padding: 5px 45px 5px 15px;
 						font-size: @input_plh_fs - 4;
 						line-height: @input_plh_lh + 1;
+						.media-breakpoint-down(@md; {
+							height: 40px;
+						});
 						&::-moz-placeholder{
 							font-size: @input_plh_fs - 4;
 							line-height: @input_plh_lh + 1;
@@ -6084,6 +6091,9 @@
 					height: 32px;
 					padding: 8px;
 					color: @white;
+					.media-breakpoint-down(@md; {
+						height: 40px;
+					});
 				}
 			}
 		}
@@ -8036,6 +8046,9 @@
 				}
 				&-card-adv{
 					margin-bottom: 35px;
+					.media-breakpoint-down(@md; {
+						color: @white;
+					});
 					.media-breakpoint-up(@md; {
 						margin-bottom: 15px;
 					});

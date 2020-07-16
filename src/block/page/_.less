@@ -126,11 +126,13 @@
 					&-adv{
 						.media-breakpoint-down(@md; {
 							font-size: 12px;
+							background-color: @primary;
 						});
 					}
 					&-leasing{
 						.media-breakpoint-down(@md; {
 							font-size: 12px;
+							background-color: #FAFDFF;
 						});
 					}
 				}
@@ -204,9 +206,11 @@
 				});
 			}
 			&-formaliz{
-				background-color: #FAFDFF;
 				.media-breakpoint-down(@md; {
 					font-size: 12px;
+				});
+				.media-breakpoint-up(@md; {
+					background-color: #FAFDFF;
 				});
 			}
 			&-adv{
