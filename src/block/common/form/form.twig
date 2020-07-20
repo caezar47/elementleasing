@@ -550,36 +550,36 @@
 				group:heading_group, 
 				level:heading_level, 
 				heading:heading} %}			
-				<div class="{{prefix}}row  grid__row  {{mod}}">				
-					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
-						{
-							"type":"text", 
-							"id":"fio", 
-							"form_id":ID,
-							"required": "required", 
-							"name":"ФИО", 
-							"placeholder":"ФИО"
-						},
-						{
-							"type":"tel", 
-							"id":"tel",
-							"form_id":ID, 
-							"required": "required", 
-							"name":"Телефон", 
-							"placeholder":"Ваш телефон"
-						},
-						{
-							"view": "time",
-							"type":"text", 
-							"id":"time",
-							"form_id":ID, 
-							"required": "required", 
-							"name":"Время звонка", 
-							"placeholder":"Время звонка"
-						}
-					]} %}
-					<button type="submit" data-form-submit class="btn__item  is--arrow  is--md  is--primary">Отправить</button>	
-				</div>
+			<div class="{{prefix}}row  grid__row  {{mod}}">				
+				{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
+					{
+						"type":"text", 
+						"id":"fio", 
+						"form_id":ID,
+						"required": "required", 
+						"name":"ФИО", 
+						"placeholder":"ФИО"
+					},
+					{
+						"type":"tel", 
+						"id":"tel",
+						"form_id":ID, 
+						"required": "required", 
+						"name":"Телефон", 
+						"placeholder":"Ваш телефон"
+					},
+					{
+						"view": "time",
+						"type":"text", 
+						"id":"time",
+						"form_id":ID, 
+						"required": "required", 
+						"name":"Время звонка", 
+						"placeholder":"Время звонка"
+					}
+				]} %}
+				<button type="submit" data-form-submit class="btn__item  is--arrow  is--md  is--primary">Отправить</button>	
+			</div>
 		</div>
 		<div class="{{prefix}}result  {{mod}}  {{group}}">
 			{% include "../../common/page-header/tpl.twig" with {
@@ -598,6 +598,103 @@
 				heading:heading_r_sm} 
 			%}
 			<div class="{{prefix}}bg  {{mod}}"><img src="{{path.img}}/default/train-success.svg" alt=""></div>
+		</div>
+	</form>
+{% endif %}
+
+{% if view=="inline" %}
+	<form action="#" class="{{prefix}}panel  {{mod}}  {{group}}"  {{form_data}}>
+		<div class="{{prefix}}container  container">
+			<div class="{{prefix}}wrap  {{mod}}">
+				{% include "../../common/page-header/tpl.twig" with {
+					heading_view:heading_view, 
+					prefix:"page-header__", 
+					mod:heading_mod, 
+					group:heading_group, 
+					level:heading_level, 
+					heading:heading} %}	
+
+				{% include "../../common/page-header/tpl.twig" with {
+					heading_view:heading_view, 
+					prefix:"page-header__", 
+					mod:heading_sm_mod, 
+					group:heading_sm_group, 
+					level:heading_sm_level, 
+					heading:heading_sm} %}			
+				<div class="{{prefix}}row  grid__row  {{mod}}">				
+					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
+						{
+							"type":"text", 
+							"id":"fio", 
+							"form_id":ID,
+							"required": "required", 
+							"name":"ФИО", 
+							"placeholder":"ФИО"
+						},
+						{
+							"type":"tel", 
+							"id":"tel",
+							"form_id":ID, 
+							"required": "required", 
+							"name":"Телефон", 
+							"placeholder":"Ваш телефон"
+						}
+					]} %}
+
+					{% include "elem-tpl.twig" with {
+						view: "select", 
+						prefix:prefix, 
+						mod:mod, 
+						color:color, 
+						form_id:ID, 
+						required: "required",
+						id:"city", 
+						name:"Город", 
+						attr:"data-select", 
+						placeholder:"Город", 
+						list: [
+							{"name": "Город", "status":"disabled selected"},
+							{"name": "Абакан"},
+							{"name": "Архангельск"},
+							{"name": "Астрахань"},
+							{"name": "Барнаул"},
+							{"name": "Белгород"},
+							{"name": "Благовещенск"},
+							{"name": "Брянск"}
+						]
+					} %}
+					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
+						{
+							"view": "time",
+							"type":"text", 
+							"id":"time",
+							"form_id":ID, 
+							"required": "required", 
+							"name":"Время звонка", 
+							"placeholder":"Время звонка"
+						}
+					]} %}
+					<button type="submit" data-form-submit class="btn__item  is--arrow  is--md  is--primary">Отправить заявку</button>	
+				</div>
+			</div>
+			<div class="{{prefix}}result  {{mod}}">
+				{% include "../../common/page-header/tpl.twig" with {
+					heading_view:heading_view, 
+					prefix:"page-header__", 
+					mod:heading_r_mod, 
+					group:heading_r_group, 
+					level:heading_r_level, 
+					heading:heading_r} %}
+				{% include "../../common/page-header/tpl.twig" with {
+					heading_view:heading_view, 
+					prefix:"page-header__", 
+					mod:heading_r_sm_mod, 
+					group:heading_r_sm_group, 
+					level:heading_r_sm_level, 
+					heading:heading_r_sm} 
+				%}
+				<div class="{{prefix}}bg  {{mod}}"><img src="{{path.img}}/default/train-primary.svg" alt=""></div>
+			</div>
 		</div>
 	</form>
 {% endif %}

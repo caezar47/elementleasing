@@ -27,6 +27,29 @@
                 content_mod:"is--page-news-leasing",
                 content_group:"hidden--md"
             } %}
+            {% include "../block/common/form/form.twig" with {
+				view: 			"inline", 
+				prefix:			"form__", 
+				open:			"true", 
+				group:			"visible--md", 
+				mod:			"is--inline", 
+				color:			"is--primary-light", 
+				ID: 			"f_call",  
+
+				heading:		"Обратный звонок", 
+				heading_level:	"h3", 
+				heading_group:	"", 
+				heading_mod:	"is--h3  fw--700  is--form-inline",
+				heading_sm:		"Оставьте заявку, и мы перезвоним в удобное для вас время!", 
+				heading_sm_level:"p", 
+				heading_sm_mod:	"fw--100  is--form-inline-xs",
+				heading_r:		"Спасибо!<br> Заявка отправлена", 
+				heading_r_level:"h3", 
+				heading_r_mod:	"is--h3 fw--700  is--form-inline-result",
+				heading_r_sm:	"В указанное время с вами свяжется наш специалист и ответит на все интересующие вас вопросы.", 
+				heading_r_sm_level:	"p", 
+				heading_r_sm_mod:	"fw--100  is--form-inline-note"
+			} %}
 		</main>
 		
     	{% include "../block/common/footer/footer.twig" with {footer_prefix:"footer__"} %}
