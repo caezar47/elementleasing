@@ -587,7 +587,7 @@
 			}		
 		}
 		&.is--inline{
-			grid-gap: 10px;
+			grid-gap: 20px;
 		}
 	}
 	&item{
@@ -661,6 +661,7 @@
 		color: @input_t_color;
 		font-size: @input_t_fs - 5;
 		line-height: @input_t_lh + 1;
+		line-height: 22px;
 		transition: @trs-site;
 		&[type="number"],
 		&[type="text"]{
@@ -688,7 +689,7 @@
 			transition: @trs-site;
 			color: @input_plh_color;
 			font-size: @input_plh_fs - 5;
-			line-height: @input_plh_lh - 1; 
+			line-height: @input_plh_lh + 5; 
 			//text-transform: uppercase;
 			//letter-spacing: 0.5px;
 		}
@@ -763,8 +764,7 @@
 				&:focus{
 					border-color: @success;
 				}
-			});
-			
+			});			
 		}
 		&.is--primary{
 			background-color: @primary;
