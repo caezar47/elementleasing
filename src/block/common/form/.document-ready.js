@@ -5,6 +5,8 @@ var form_visible = $("[data-form-visible]");
 form_visible.on('click', function(e) {
 	e.preventDefault();
 	$(this).next('.form__panel.is--md-open').addClass('is--visible');
+	$(this).css({"display":"none"});
+	$(this).closest(".content-block__row.is--leasing-condition").find('.content-block__cols.is--note').css({"display":"none"});
 });
 
 //сброс функции кнопки submit

@@ -645,13 +645,12 @@
 						view: "select", 
 						prefix:prefix, 
 						mod:mod, 
-						color:color, 
-						form_id:ID, 
-						required: "required",
+						form_id:ID,
 						id:"city", 
+						required: "required",
 						name:"Город", 
-						attr:"data-select", 
-						placeholder:"Город", 
+						color:color, 
+						attr:"data-select-primary-l", 
 						list: [
 							{"name": "Город", "status":"disabled selected"},
 							{"name": "Абакан"},
@@ -663,6 +662,7 @@
 							{"name": "Брянск"}
 						]
 					} %}
+
 					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
 						{
 							"view": "time",

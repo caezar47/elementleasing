@@ -37,11 +37,11 @@
 					&.is--md-open{
 						padding:0;
 						display: none;
-						position: absolute;
-						top: 0;
-						left: 0;	
-						right: 0px;
-						bottom: 0%;
+						//position: absolute;
+						//top: 0;
+						//left: 0;	
+						//right: 0px;
+						//bottom: 0%;
 						&.is--visible{
 							display: block;
 						}
@@ -587,7 +587,7 @@
 			}		
 		}
 		&.is--inline{
-			grid-gap: 20px;
+			grid-gap: 10px;
 		}
 	}
 	&item{
@@ -634,6 +634,11 @@
 			}
 			.select2-selection{
 				border-color: @red;
+			}
+			&.is--inline{
+				&:before{
+					display: none;
+				}
 			}
 		}
 	}
