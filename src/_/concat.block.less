@@ -217,7 +217,10 @@
 				.media-breakpoint-down(@md; {
 					font-size: 12px;
 				});
-				background-color: @primary;
+				.media-breakpoint-up(@md; {
+					background-color: #FAFDFF;
+				});
+				//background-color: @primary;
 			}
 			&-catalog{
 				.media-breakpoint-down(@md; {
@@ -385,22 +388,25 @@
 				padding-bottom: 30px;
 				.media-breakpoint-up(@lg; {
 					padding-top: 3.6vw;
-					padding-bottom: 6.2vw;
+					padding-bottom: 5.2vw;
 				});
 			}
 			&-adv{
 				padding-top: 25px;
+				padding-bottom: 45px;
 				.media-breakpoint-up(@md; {
 					padding-top: 45px;
 				});
 				.media-breakpoint-up(@lg; {
 					padding-top: 3.3vw;
-					padding-bottom: 5vw;
+					padding-bottom: 5.5vw;
 				});
 			}
 			&-catalog{
+				padding-top: 40px;
 				padding-bottom: 30px;
 				.media-breakpoint-up(@lg; {
+					padding-top: 4vw;
 					padding-bottom: 6.3vw;
 				});
 			}
@@ -1465,6 +1471,12 @@
 			position: relative;
 			padding-bottom: 10px;
 			color: fadeout(@primary, 70%);
+			&.is--sm{
+				.media-breakpoint-up(@lg; {
+					font-size: 0.75em;
+					line-height: 1.5em;
+				});
+			}
 			sup{
 				font-weight: 100;
 				color: @success;
@@ -1851,6 +1863,16 @@
 .btn__{
 	&clearfix{
 		.btn-clearfix();
+	}
+	&group{
+		&.is--page-vacancies{
+			.media-breakpoint-down(@sm; {
+				.cols,
+				.btn__item{
+					width: 100%;
+				}
+			});
+		}
 	}
 	&item{
 		.btn-clearfix();
@@ -2245,9 +2267,10 @@
 					}
 				});
 				.media-breakpoint-up(@lg; {
+					margin-bottom: 5px;
 					background-color: fadeout(@blue-08,100%);
 					transition: @trs-site; 
-					clip-path: polygon(0 8%,100% 0,100% 92%,0 100%);
+					//clip-path: polygon(0 8%,100% 0,100% 92%,0 100%);
 					&.is--open{
 						background-color: @blue-08; 
 					}
@@ -2569,11 +2592,19 @@
 		}
 		&.is--leasing{
 			&-adv{
+				display: grid;
+				grid-gap: 18px;
+				.media-breakpoint-up(@md; {
+					grid-gap: 30px;
+					align-items: flex-start;
+				});
+			}
+			/*&-adv{
 				position: relative;	
 				.media-breakpoint-up(@lg; {
 					padding-bottom: 50px;						
 				});	
-			}
+			}*/
 		}
 		&.is--brand{
 			display: flex;
@@ -2795,7 +2826,8 @@
 				.media-breakpoint-up(@lg; {	
 					text-align: left;				
 					//margin-top: -1px;				
-					padding: 0 20px 60px 40px;
+					//padding: 0 20px 60px 40px;
+					padding: 0 20px 50px 40px;
 		   			//clip-path: polygon(0 0%,100% 0,100% 87%,0 100%);
 					//background-color: @blue-08; 
 					transition: @trs-site;
@@ -3050,17 +3082,18 @@
 			&-products{
 				display: none;
 				.media-breakpoint-up(@lg; {
-					display: flex;
-					align-items: center;
-					justify-content: center;
+					display: block;
+					max-width: 556px;
+					//display: flex;
+					//align-items: center;
+					//justify-content: center;
 					overflow: hidden;
-					max-width: 555px;
-					height: 885px;
-					background-color: @primary-a;
-					//clip-path: polygon(0 10%,100% 5.5%,100% 94%,0 98.5%);
-					clip-path: polygon(0 8%,100% 4%,100% 94%,0 98.5%);
+					//max-width: 555px;
+					//height: 885px;
+					//background-color: @primary-a;
+					//clip-path: polygon(0 8%,100% 4%,100% 94%,0 98.5%);
 					img{
-						max-width: 636px;
+						//max-width: 636px;
 					}
 				});	
 			}
@@ -3235,6 +3268,18 @@
 		}
 		&.is--leasing{
 			&-adv{
+				.media-breakpoint-down(@md; {
+					img{
+						max-width: 67%;
+						margin: 8px auto 0;
+					}
+				});
+				.media-breakpoint-up(@md; {
+					grid-column: 2;
+					grid-row: ~"1/4";
+				});
+			}
+			/*&-adv{
 				margin-left: auto;
 				max-width: 255px;
 				background-color: @blue-08;
@@ -3252,7 +3297,7 @@
 					margin-bottom: 60px;
 					box-shadow: 0 12px 34px 0 #000054;
 				});
-			}
+			}*/
 		}
 		&.is--partners{
 			&-card{
@@ -3290,21 +3335,8 @@
 			}
 		}
 		&.is--leasing{
-			&-adv{
+			/*&-adv{
 				display: none;
-				/*.media-breakpoint-up(@md; {
-					display: block;
-					width: 225px;
-					background-color: #65C5FC;
-					box-shadow: 0 12px 34px 0 #000054;
-					padding: 70px 35px;
-					margin-top: -46%;
-					margin-bottom: 50px;
-					img{
-						width: 100%;
-					}
-				});*/
-
 				.media-breakpoint-up(@md; {
 					position: relative;
 					display: flex;
@@ -3315,7 +3347,6 @@
 					height: 300px;
 					background-color: #65C5FC;
 					box-shadow: 0 12px 34px 0 #000054;
-					//padding: 70px 35px;
 					padding: 35px;
 					margin-top: -46%;
 					margin-bottom: 50px;
@@ -3326,17 +3357,13 @@
 				.media-breakpoint-up(@xl; {
 					position: absolute;
 					left: 100px;
-					//bottom: 45px;
 					top: 235px;
-					//top: ~"calc(100% - 45px)";
-					//transform: translateY(-100%);
 					width: 390px;
 					height: 480px; 
 					margin: 0;
-					//padding: 110px 65px;
 					padding: 65px;
 				});
-			}
+			}*/
 		}
 		&.is--docs{
 			&-download{
@@ -3433,9 +3460,10 @@
 			   			}	
 						&[aria-expanded="true"]{
 							color: @white;
-							padding-top: 82px;
-							padding-bottom: 20px;
+							//padding-top: 82px;
 							//background-color: @blue-08;
+							padding-top: 40px;
+							padding-bottom: 20px;
 							&::after{
 				   				.icon-top(@c:'fff'; @w: 20px; @h: auto);
 				   			}
@@ -3621,6 +3649,18 @@
 		}
 		&.is--leasing{
 			&-adv{
+				font-weight: 700;
+				font-size: 1.33em;
+				line-height: 1.5em;
+				.media-breakpoint-up(@md; {
+					padding-top: 62px;
+				});
+				.media-breakpoint-up(@lg; {
+					font-size: 2em;
+					line-height: 1.25em;
+				});	
+			}
+			/*&-adv{
 				position: absolute;
 				top: 20px;	
 				z-index: 2;
@@ -3641,7 +3681,7 @@
 					max-width: 520px;
 					margin-bottom: 0;
 				});			
-			}
+			}*/
 		}
 		&.is--seo{
 			font-weight: 700;
@@ -3785,6 +3825,16 @@
 		}
 		&.is--leasing{
 			&-adv{
+				font-weight: 100;
+				font-size: 1.18em;
+				line-height: 1.45em;
+			    .media-breakpoint-up(@md; {
+					font-size: 1.33em;
+					line-height: 1.5em;	
+					max-width: 620px;	    	
+			    });	
+			}
+			/*&-adv{
 				position: relative;
 				z-index: 2;
 				background-color: @white;
@@ -3808,7 +3858,7 @@
 					margin: 0 155px 0 auto;
 				    padding: 0 0 40px;			    	
 			    });	
-			}
+			}*/
 		}
 		&.is--finance{
 			font-weight: 100;
@@ -8214,11 +8264,11 @@
 				});
 			}
 			&-adv{
-				margin-bottom: 30px;
+				margin-bottom: 24px;
 				font-size: 2em;
 				line-height: 1.34em;				
 				.media-breakpoint-up(@lg; {
-					margin-bottom: 6.5vw;    
+					margin-bottom: 5px;    
 					font-size: 3.1em;
 					line-height: 1.2em;
 				});
@@ -8989,6 +9039,73 @@
 		}
 		&.is--page{
 			&-vacancies{
+				&{
+					margin-bottom: 45px;
+					.media-breakpoint-down(@md; {
+						p,div,ul{
+							font-size: 0.88em;
+						}
+						p,div{
+							line-height: 1.6em;
+						}
+					});
+					p,div{
+						margin-bottom: 22px;
+					}
+					h3{
+						font-weight: 700;
+						margin-bottom: 60px;
+					}
+					picture{
+						display: block;
+						margin-bottom: 30px;
+					}
+					ul{
+						margin-bottom: 45px;
+						&.is--styled{
+							li{
+								position: relative;
+								padding-left: 65px;
+								margin-bottom: 16px;
+								&::before{
+									content: '';
+									position: absolute;
+									left: 0;
+									top: 15px;
+									height: 1px;
+									width: 50px;
+									background-color: @white-e9;
+								}
+							}
+						}
+					}
+					* + ul {
+						margin-top: 30px;
+					}
+					.media-breakpoint-up(@md; {
+						margin-bottom: 65px;
+						* + ul {
+							margin-top: 27px;
+						}
+						picture{
+							margin-bottom: 63px;
+						}						
+						p,div{
+							margin-bottom: 16px;
+						}						
+						ul{
+							margin-bottom: 40px;
+							&.is--styled{
+								li{
+									padding-left: 95px;
+									&::before{
+										width: 80px;
+									}
+								}
+							}
+						}
+					});
+				}
 				&-card{
 					font-weight: 100;
 					max-width: 880px;
@@ -9952,14 +10069,14 @@ blockquote {
 		}
 
 		[data-slick-leasing-adv].slick-dotted &{
-			margin-right: -15px;
-			margin-bottom: 0;
+			//margin-right: -15px;
+			margin-bottom: 10px;
 			.media-breakpoint-up(@md; {
 				margin-bottom: 25px;
-				margin-right: 0;
+				//margin-right: 0;
 			});
 			.media-breakpoint-up(@lg; {
-				margin-bottom: 50px;
+				margin-bottom: 55px;
 			});
 		}
 	} 
@@ -10255,7 +10372,11 @@ blockquote {
 				button {
 					width: 4px;
 					height: 4px;
-				}						
+					background-color: #E3E3E3;
+				}	
+				&.slick-active button{
+					background-color: #F99F1B;
+				}					
 				.media-breakpoint-up(@md; {
 					margin-left: @slider_dots_gutter;
 					margin-right: @slider_dots_gutter;

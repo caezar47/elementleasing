@@ -124,6 +124,73 @@
 		}
 		&.is--page{
 			&-vacancies{
+				&{
+					margin-bottom: 45px;
+					.media-breakpoint-down(@md; {
+						p,div,ul{
+							font-size: 0.88em;
+						}
+						p,div{
+							line-height: 1.6em;
+						}
+					});
+					p,div{
+						margin-bottom: 22px;
+					}
+					h3{
+						font-weight: 700;
+						margin-bottom: 60px;
+					}
+					picture{
+						display: block;
+						margin-bottom: 30px;
+					}
+					ul{
+						margin-bottom: 45px;
+						&.is--styled{
+							li{
+								position: relative;
+								padding-left: 65px;
+								margin-bottom: 16px;
+								&::before{
+									content: '';
+									position: absolute;
+									left: 0;
+									top: 15px;
+									height: 1px;
+									width: 50px;
+									background-color: @white-e9;
+								}
+							}
+						}
+					}
+					* + ul {
+						margin-top: 30px;
+					}
+					.media-breakpoint-up(@md; {
+						margin-bottom: 65px;
+						* + ul {
+							margin-top: 27px;
+						}
+						picture{
+							margin-bottom: 63px;
+						}						
+						p,div{
+							margin-bottom: 16px;
+						}						
+						ul{
+							margin-bottom: 40px;
+							&.is--styled{
+								li{
+									padding-left: 95px;
+									&::before{
+										width: 80px;
+									}
+								}
+							}
+						}
+					});
+				}
 				&-card{
 					font-weight: 100;
 					max-width: 880px;

@@ -83,14 +83,14 @@
 		}
 
 		[data-slick-leasing-adv].slick-dotted &{
-			margin-right: -15px;
-			margin-bottom: 0;
+			//margin-right: -15px;
+			margin-bottom: 10px;
 			.media-breakpoint-up(@md; {
 				margin-bottom: 25px;
-				margin-right: 0;
+				//margin-right: 0;
 			});
 			.media-breakpoint-up(@lg; {
-				margin-bottom: 50px;
+				margin-bottom: 55px;
 			});
 		}
 	} 
@@ -386,7 +386,11 @@
 				button {
 					width: 4px;
 					height: 4px;
-				}						
+					background-color: #E3E3E3;
+				}	
+				&.slick-active button{
+					background-color: #F99F1B;
+				}					
 				.media-breakpoint-up(@md; {
 					margin-left: @slider_dots_gutter;
 					margin-right: @slider_dots_gutter;

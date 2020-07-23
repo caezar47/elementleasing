@@ -1,3 +1,72 @@
+{% if view == "karera_page"%}
+	<section class="{{content_prefix}}panel">
+		<div class="{{content_prefix}}container container">
+			{% include "../../common/breadcrumb/tpl.twig" with {
+				prefix:prefix.breadcrumb, 
+				mod:bread_mod, 
+				bread:bread
+			} %}	
+			{% include "../../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+			<div class="{{content_prefix}}row  grid__row   is--page-aside">
+				{% include "../../common/aside/tpl.twig" with {
+					prefix: "aside__",
+					group: "is--bottom",
+					heading: "Другие разделы",
+					active: page.karera,
+					nav:[
+						{name:"Рекомендации по учету субсидий по льготному лизингу", mod:"is--sm", link:""}, 
+						{name:"Инвесторам", link: page.investors},
+						{name:"Отзывы", link: page.reviews},
+						{name:"Новости", link: page.news},
+						{name:"Новости для инвесторов", link: ""},
+						{name:"Руководство", link: page.menedzhment},
+						{name:"Цифры и факты", link: ""},
+						{name:"Преимущества", link: ""},
+						{name:"Карьера", link: page.karera},
+						{name:"Наши офисы", link: page.contacts}
+					]
+				} %}
+				<div>			
+					<div class="text__block  {{content_mod}}">
+						<h3>Компания «Элемент Лизинг» приглашает опытных и молодых специалистов в свою дружную команду!</h3>
+						<picture>
+							<img src="{{path.img}}/default/karera-img.svg" class="img-responsive" alt="">
+						</picture>
+						<p>
+							Мы рады предложить вам интересные проекты, обучение и широкие возможности для профессионального развития.
+						</p>
+						<p>
+							Каждый сотрудник Компании может быть уверен в соблюдении своих трудовых прав и предоставлении социального пакета: 
+						</p>
+						<ul>
+							<li>ДМС</li>
+							<li>Страхование жизни</li>
+							<li>Страхование при выезде за рубеж</li>
+						</ul>
+						<p>
+							Если вы готовы решать новые амбициозные задачи и хотите реализовать свой потенциал, работая в стабильной, устойчивой компании – откликайтесь на наши вакансии и присылайте резюме!
+						</p>
+						<p>Ознакомиться с текущими вакансиями можно здесь.</p>
+					</div>
+					<div class="btn__group  row  is--gutter  {{content_mod}}">
+						<div class="cols">
+							<a class="btn__item  is--arrow  is--md  is--primary" href="{{page.vacancies}}">Отправить резюме</a>
+						</div>
+						<div class="cols">
+							<a class="btn__item  is--arrow  is--md  is--success" href="https://hh.ru/employer/14402" target="_blank" rel="nofollow">Посмотреть вакансии</a>
+						</div>
+					</div>
+				</div>			
+			</div>		
+		</div>
+	</section>
+{% endif %}
+
 {% if view == "vacancies_page"%}
 	<section class="{{content_prefix}}panel">
 		<div class="{{content_prefix}}container container">

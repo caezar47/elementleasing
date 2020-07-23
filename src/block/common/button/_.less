@@ -2,6 +2,16 @@
 	&clearfix{
 		.btn-clearfix();
 	}
+	&group{
+		&.is--page-vacancies{
+			.media-breakpoint-down(@sm; {
+				.cols,
+				.btn__item{
+					width: 100%;
+				}
+			});
+		}
+	}
 	&item{
 		.btn-clearfix();
 		font-size: @btn_fs;

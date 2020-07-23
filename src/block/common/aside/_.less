@@ -168,6 +168,12 @@
 			position: relative;
 			padding-bottom: 10px;
 			color: fadeout(@primary, 70%);
+			&.is--sm{
+				.media-breakpoint-up(@lg; {
+					font-size: 0.75em;
+					line-height: 1.5em;
+				});
+			}
 			sup{
 				font-weight: 100;
 				color: @success;

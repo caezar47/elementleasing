@@ -217,7 +217,10 @@
 				.media-breakpoint-down(@md; {
 					font-size: 12px;
 				});
-				background-color: @primary;
+				.media-breakpoint-up(@md; {
+					background-color: #FAFDFF;
+				});
+				//background-color: @primary;
 			}
 			&-catalog{
 				.media-breakpoint-down(@md; {
@@ -385,22 +388,25 @@
 				padding-bottom: 30px;
 				.media-breakpoint-up(@lg; {
 					padding-top: 3.6vw;
-					padding-bottom: 6.2vw;
+					padding-bottom: 5.2vw;
 				});
 			}
 			&-adv{
 				padding-top: 25px;
+				padding-bottom: 45px;
 				.media-breakpoint-up(@md; {
 					padding-top: 45px;
 				});
 				.media-breakpoint-up(@lg; {
 					padding-top: 3.3vw;
-					padding-bottom: 5vw;
+					padding-bottom: 5.5vw;
 				});
 			}
 			&-catalog{
+				padding-top: 40px;
 				padding-bottom: 30px;
 				.media-breakpoint-up(@lg; {
+					padding-top: 4vw;
 					padding-bottom: 6.3vw;
 				});
 			}

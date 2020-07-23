@@ -27,7 +27,7 @@
 			<ul class="{{prefix}}nav">
 				{% for value in nav %}
 				<li class="{{prefix}}nav-item">
-					<a class="{{prefix}}nav-link  {% if value.link == active %}is--active{% endif %}" href="{{value.link}}">{{value.name}}</a>
+					<a class="{{prefix}}nav-link  {{value.mod}}  {% if value.link == active %}is--active{% endif %}" href="{{value.link}}">{{value.name}}</a>
 				</li>
 				{% endfor %}
 			</ul>
@@ -89,9 +89,9 @@
 		<ul class="{{prefix}}nav">
 			{% for value in nav %}
 			<li class="{{prefix}}nav-item">
-				<a class="{{prefix}}nav-link  {% if value.link == active %}is--active{% endif %}" href="{{value.link}}">{{value.name}}</a>
+				<a class="{{prefix}}nav-link  {{value.mod}}  {% if value.link == active %}is--active{% endif %}" href="{{value.link}}">{{value.name}}</a>
 			</li>
 			{% endfor %}
 		</ul>
 	{% endif %}
-{% endif %}
+{% endif %} 
