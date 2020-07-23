@@ -27,6 +27,9 @@
 						<a class="{{navbar_prefix}}logotip" href="{{page.index}}">
 							<img src="{{path.img}}/default/logo-header.svg" class="img-responsive" alt="">
 						</a>
+						<a class="{{navbar_prefix}}logotip-xs" href="{{page.index}}">
+							<img src="{{path.img}}/default/logo-header-xs.svg" class="img-responsive" alt="">
+						</a>
 					</div>			
 					<div class="{{navbar_prefix}}collapse-cols  is--navbar-xs">
 						<ul class="{{navbar_prefix}}nav">
@@ -82,6 +85,9 @@
 								} %}
 							</div>
 							<div class="cols">
+								<a href="tel:{{contacts.phone_tel}}" class="{{navbar_prefix}}header-icon">{% include "../svg-sprite/svg.twig" with {icon:"contacts-phone"} %}</a>
+							</div>
+							<div class="cols">
 								<a href="{{page.contacts}}" class="{{navbar_prefix}}header-icon">{% include "../svg-sprite/svg.twig" with {icon:"pointer"} %}</a>
 							</div>
 							<div class="cols">
@@ -97,6 +103,7 @@
 						    	prefix:navbar_prefix, 
 						    	mod:"is--full", 
 						    	name:"ГАЗ в лизинг", 
+						    	short_name:"ГАЗ в лизинг", 
 						    	link:page.leasing,
 						    	list : [
 						    		{
@@ -128,7 +135,8 @@
 						    	view: "full",
 						    	prefix:navbar_prefix, 
 						    	mod:"is--full", 
-						    	name:"Коммерческая техника", 
+						    	name:"Коммерческая техника",
+						    	short_name:"Коммерческая техника",  
 						    	link:page.leasing,
 						    	list : [
 						    		{
@@ -158,6 +166,7 @@
 						    	prefix:navbar_prefix, 
 						    	mod:"is--full", 
 						    	name:"Грузовые авто", 
+						    	short_name:"Грузовые авто",  
 						    	link:page.leasing,
 						    	list : [
 						    		{
@@ -191,6 +200,7 @@
 						    	prefix:navbar_prefix, 
 						    	mod:"is--full", 
 						    	name:"Спецтехника", 
+						    	short_name:"Спецтехника", 
 						    	link:page.leasing,
 						    	list : [
 						    		{
@@ -221,6 +231,7 @@
 						    	prefix:navbar_prefix, 
 						    	mod:"is--full", 
 						    	name:"Для физических лиц", 
+						    	short_name:"Для физ. лиц", 
 						    	link:page.leasing,
 						    	list : [
 						    		{
@@ -243,12 +254,23 @@
 							    card_note: "Упрощенная процедура оформления", 
 							}%}
 							{% set navbar = [
-								{"name":"Медицинское оборудование", "link":page.leasing,"mod":"is--full"},
+								{"name":"Медицинское оборудование","short_name":"Мед. оборудование",  "link":page.leasing,"mod":"is--full"},
 							] %}
 						    {% for value in navbar %}
-							<li class="{{navbar_prefix}}nav-item  {{value.mod}}"><a href="{{value.link}}" class="{{navbar_prefix}}nav-link  {{value.mod}}">{{value.name}}</a></li>
+							<li class="{{navbar_prefix}}nav-item  {{value.mod}}"><a href="{{value.link}}" class="{{navbar_prefix}}nav-link  {{value.mod}}" data-short="{{value.short_name}}"><span>{{value.name}}</span></a></li>
 						    {% endfor %}
 						</ul>
+					</div>
+					<div class="{{navbar_prefix}}collapse-cols  is--btn">
+						{% include "../button/btn.twig" with {
+							view:"btn",
+							prefix:"btn__", 
+							mod:"is--next  is--blue", 
+							type:"button", 
+							attr:"  ", 
+							icon:"arrow-next", 
+							name:"Запрос на лизинг" 
+						} %}
 					</div>
 				</div>
 			</div>

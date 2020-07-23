@@ -1,30 +1,17 @@
-/*var topPos = $(document).scrollTop();		
-var snb = $('.navbar__block.is--scroll');	
-
-if(snb.hasClass('opacity')) {
-	if(topPos <= 200) {
-		snb.removeClass('opacity');
-	}
+var scrolled = $(window).scrollTop();
+var navbar = $('.navbar__block');
+if ( scrolled > 200 ) {
+	navbar.addClass('is--opacity');
 } else {
-	if(topPos > 200) {
-		snb.addClass('opacity');
-	}
-}	
-if(snb.hasClass('fixed')) {
-	if(topPos <= 400) {
-		snb.removeClass('fixed');
-	}
+	navbar.removeClass('is--opacity');
+}
+if ( scrolled > 350 ) {
+	navbar.addClass('is--fixed');
 } else {
-	if(topPos > 400) {
-		snb.addClass('fixed'); 
-	}
-} 
-if(snb.hasClass('scroll-navbar')) {
-	if(topPos <= 500) {
-		snb.removeClass('scroll-navbar');
-	} 
+	navbar.removeClass('is--fixed');
+}
+if ( scrolled > 450 ) {
+	navbar.addClass('is--scroll');
 } else {
-	if(topPos > 500) {
-		snb.addClass('scroll-navbar');
-	} 
-}*/
+	navbar.removeClass('is--scroll');
+}

@@ -1,10 +1,10 @@
 {% if view == "xs" %}
 <li class="{{prefix}}nav-item dropdown  {{mod}}">
-	<a href="{{link}}" class="{{prefix}}nav-link  dropdown-toggle" data-toggle="dropdown">{{name}}</a>
+	<a href="{{link}}" class="{{prefix}}nav-link  dropdown-toggle" data-toggle="dropdown"><span>{{name}}</span></a>
 	<div class="{{prefix}}nav-dropdown dropdown-menu">
 		<ul class="{{prefix}}nav-dropdown-menu">
 	    	{% for value in list %}			
-			<li class="{{prefix}}nav-dropdown-item  {{value.mod}}"><a href="{{value.link}}" class="{{prefix}}nav-dropdown-link">{{value.name}}</a></li>
+			<li class="{{prefix}}nav-dropdown-item  {{value.mod}}"><a href="{{value.link}}" class="{{prefix}}nav-dropdown-link" >{{value.name}}</a></li>
 	    	{% endfor %}
 		</ul>
 	</div>
@@ -12,14 +12,16 @@
 {% endif %}
 {% if view == "full" %}
 <li class="{{prefix}}nav-item dropdown  {{mod}}">
-	<a href="{{link}}" class="dropdown-toggle {{prefix}}nav-link  {{mod}}" data-toggle="dropdown">{{name}}</a>
+	<a href="{{link}}" class="dropdown-toggle {{prefix}}nav-link  {{mod}}" data-toggle="dropdown"  data-short="{{short_name}}"><span>{{name}}</span></a>
 	<div class="{{prefix}}nav-dropdown dropdown-menu  {{mod}}">
 		<div class="{{prefix}}container  container  is--dropdown">
 			<div class="{{prefix}}nav-dropdown-row">
 			    {% for value in list %}			
 				<ul class="{{prefix}}nav-dropdown-menu  {{mod}}">
 				    {% for v in value.sublist %}
-					<li class="{{prefix}}nav-dropdown-item  {{v.mod}}"><a href="{{v.link}}" class="{{prefix}}nav-dropdown-link">{{v.name}}</a></li>
+					<li class="{{prefix}}nav-dropdown-item  {{v.mod}}">
+						<a href="{{v.link}}" class="{{prefix}}nav-dropdown-link">{{v.name}}</a>
+					</li>
 				    {% endfor %}
 				</ul>
 			    {% endfor %}
@@ -34,7 +36,7 @@
 						prefix:"btn__", 
 						mod:"is--next  is--size-xs  is--blue", 
 						type:"button", 
-						attr:"data-form-visible", 
+						attr:"  ", 
 						icon:"arrow-next", 
 						name:"Запрос на лизинг" 
 					} %}

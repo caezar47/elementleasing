@@ -6,8 +6,18 @@
 		top: 0;
 		left: 0;	
 		.media-breakpoint-up(@xl; {
+			position: absolute;
 			box-shadow: 0 1px 6px 0 fadeout(#cbcbcb, 60%);
 			transition: @trs-site;
+			&.is--opacity{
+				opacity: 0;
+			}
+			&.is--fixed{
+				position: fixed;
+			}
+			&.is--scroll{
+				opacity: 1;
+			}
 			html.is--open-navbar &{
 				box-shadow: 0 1px 6px 0 fadeout(#cbcbcb, 100%);
 			}
@@ -105,6 +115,21 @@
 		.media-breakpoint-up(@xl; {
 			max-width: @navbar_logo_widht;
 			height: @navbar_logo_height;
+			&{				
+				.navbar__block.is--scroll &{
+					display: none;
+				} 
+			}
+			&-xs{
+				display: block;
+				display: none;	
+				width: 56px;
+				height: 56px;
+				margin-top: -15px;
+				.navbar__block.is--scroll &{
+					display: block;
+				} 
+			}
 		});	
 		img{
 			height: 100%;
@@ -224,10 +249,14 @@
 				align-items: center;
 				flex-wrap: wrap;
 				padding: 16px 0 0;
+				.navbar__block.is--scroll &{
+					flex-wrap: nowrap;
+				} 
 			});			
 		}
 		&-cols{
 			&.is--line,
+			&.is--btn,
 			&.is--logotip{
 				display: none;
 			}
@@ -244,12 +273,18 @@
 					margin-right: 40px;
 				}
 				&.is--navbar-xs{
-					margin-bottom: 0
+					margin-bottom: 0;
+					.navbar__block.is--scroll &{
+						display: none;
+					} 
 				}
 				&.is--icon{
 					order: inherit;
 					margin-left: auto;
 					margin-bottom: 0;
+					.navbar__block.is--scroll &{
+						display: none;
+					} 
 				}
 				&.is--line{
 					display: block;
@@ -260,9 +295,28 @@
 					border: 0;
 					background-color: #E9E9E9;
 					border-radius: 0.5px;
+					.navbar__block.is--scroll &{
+						display: none;
+					} 
 				}
 				&.is--navbar{
 					flex: 1 1 100%;
+					.navbar__block.is--scroll &{
+						margin-top: 16px;
+					}
+				}
+				&.is--btn{
+					.navbar__block.is--scroll &{
+						display: block;
+						margin-left: 20px;
+						.btn__item{
+							white-space: nowrap;
+							font-size: 0.779em;
+							line-height: 1.1em;
+							margin-top: -16px;
+							min-width: 190px;
+						}
+					} 
 				}
 			});
 			.media-breakpoint-up(@xxl; {
@@ -428,6 +482,20 @@
 						}
 					}
 			    }
+				.navbar__block.is--scroll &{
+					span{
+						display: none;
+					}
+					&.is--full{
+						padding-bottom: 40px;
+					}
+					&::before{
+						display: block;
+						content: attr(data-short);
+						font-weight: 400;
+						font-size: 0.889em;
+					}
+				} 
 			});
 		}
 		&-dropdown{
