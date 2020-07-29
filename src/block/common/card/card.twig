@@ -72,7 +72,7 @@
 {% if view == "reviews" %}
 	{% for value in list %}		
 	<article class="{{prefix}}item  {{mod}}">
-		<div class="{{prefix}}bg  {{mod}}"></div>
+		<div class="{{prefix}}bg  {{mod}}" {% if value.speed %}data-rellax-speed="{{value.speed}}"{% endif %}></div>
 		<div class="{{prefix}}wrap  {{mod}}">
 			<h4 class="{{prefix}}heading  {{mod}}" data-grid-heading>{{value.firm}}</h4>
 			<time class="{{prefix}}date  {{mod}}" data-grid-date datetime="{{value.date_iso}}">{{value.date}}</time>
@@ -140,7 +140,7 @@
 				<img src="{{value.img}}" alt="{{value.heading}}" class="img-responsive">
 				<div class="{{prefix}}wrap  {{mod}}">
 					<h5 class="{{prefix}}heading  {{mod}}">{{value.heading}}</h5>
-					<p class="{{prefix}}value  {{mod}}  is--cost">От {{value.cost}} ₽ в месяц</p>
+					<p class="{{prefix}}value  {{mod}}  is--cost">От {{value.cost}} <span>₽</span> в месяц</p>
 					<p class="{{prefix}}value  {{mod}}  is--status">{{value.status}}</p>
 				</div>
 			</a>
@@ -241,9 +241,11 @@
 {% if view == "finance" %}
 	{% for value in list %}	
 	<div>
-		<div class="{{prefix}}item  {{mod}}">
-			<p class="{{prefix}}heading  {{mod}}">{{value.name}}</p>
-			<p class="{{prefix}}note  {{mod}}">{{value.note}}</p>
+		<div class="{{prefix}}wrap  {{mod}}">
+			<div class="{{prefix}}item  {{mod}}">
+				<p class="{{prefix}}heading  {{mod}}">{{value.name}}</p>
+				<p class="{{prefix}}note  {{mod}}">{{value.note}}</p>
+			</div>
 		</div>
 	</div>
 	{% endfor %}

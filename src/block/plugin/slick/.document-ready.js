@@ -128,21 +128,21 @@ $(function() {
 	leasing_adv.slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		arrows: true,
+		arrows: false,
 		dots: true,
 		autoplay: true,
   		autoplaySpeed: 4000,
 		prevArrow: prevArrow,
 		nextArrow: nextArrow,
 		fade: true,
-		responsive: [
+		/*responsive: [
 		    {
 				breakpoint: 992,
 				settings: {
 					arrows: false,
 				}
 		    }
-		]
+		]*/
 	});
 
 	finance.slick({
@@ -172,6 +172,7 @@ $(function() {
 		    {
 				breakpoint: 576,
 				settings: {
+					//variableWidth: true,
 					variableWidth: false,
 					slidesToShow: 1, 
 				}

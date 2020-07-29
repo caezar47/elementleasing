@@ -18,7 +18,7 @@
 {% endif %}
 
 {% if view == "investors_info"%}
-	<section class="{{content_prefix}}panel  {{content_mod}}" {% if bg %}style="background-image: url({{bg}})"{% endif %}>
+	<section class="{{content_prefix}}panel  {{content_mod}}">
 		<div class="{{content_prefix}}container container  {{content_mod}}">
 			{% include "../common/page-header/tpl.twig" with {
 				prefix:"page-header__", 
@@ -32,7 +32,12 @@
 				level:heading_n_level, 
 				heading:heading_n
 			} %}
+			<picture class="{{prefix.card}}preview  {{content_mod}}">
+				<source media="(max-width: 767px)" srcset="{{bg_xs}}">
+				<img src="{{bg}}" class="img-responsive" alt="">
+			</picture>
 			<a href="{{docs}}" class="btn__item  is--lg  is--success" target="_blank">{{docs_name}}</a>
+
 		</div>
 	</section>
 {% endif %}

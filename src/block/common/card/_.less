@@ -122,7 +122,6 @@
 			.media-breakpoint-down(@lg; {
 				font-size: 18px;	
 				//box-shadow: 0 4px 14px 0 rgba(0,52,156,0.25);
-
 			});
 			.media-breakpoint-down(@sm; {
 				width: 255px;
@@ -165,7 +164,7 @@
 		}
 		&.is--reviews{
 			position: relative;
-			z-index: 1;
+			//z-index: 1;
 			padding: 50px 0 0 0px;
 			margin-bottom: 40px;
 			&:last-child{
@@ -544,6 +543,13 @@
 			transition: @trs-site;
 			max-width: 220px;
     		margin: 0 auto;
+			.media-breakpoint-down(@sm; {
+				width: 255px;
+				//margin: 0;
+				//.slick-current &{
+				//	margin: 0 auto;
+				//	}
+			});
 			.media-breakpoint-up(@md; {
 				font-size: 18px;
 				min-height: 310px;
@@ -826,6 +832,11 @@
     			margin-bottom: 2px;
 			}
 		}
+		&.is--finance{
+			.media-breakpoint-down(@sm; {
+				//width: 75vw;
+			});
+		}
 	}
 	&preview{
 		display: block;
@@ -884,6 +895,29 @@
 						//max-width: 636px;
 					}
 				});	
+			}
+		}
+		&.is--page{
+			&-investors{
+				&-info{ 
+					margin-bottom: 15px;
+					img{
+						margin: 0 auto;
+					}
+					.media-breakpoint-up(@md; {
+						position: absolute;
+						margin-bottom: 0;
+						min-width: 390px;
+						width: 50vw;
+						top: 50%;
+						left: 48vw;
+						transform: translateY(-50%);
+					});
+					.media-breakpoint-up(@xl; {
+						min-width: 590px;
+						width: 34.5vw;
+					});
+				}
 			}
 		}
 		&.is--menedzhment{
@@ -1231,7 +1265,8 @@
 		   				}
 						&[aria-expanded="true"]{
 							flex-direction: column;
-							justify-content: center;	
+							justify-content: center;
+							text-align: center;	
 						}		
 					});	
 					.media-breakpoint-up(@lg; {	
@@ -1742,6 +1777,9 @@
 			transition: @trs-site;
 			margin-top: auto;
 			.media-breakpoint-down(@lg; {
+				.slick-current &{
+					color: @success;
+				}
 				br{display: none;}
 			});
 			span{

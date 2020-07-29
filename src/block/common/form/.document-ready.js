@@ -9,6 +9,10 @@ form_visible.on('click', function(e) {
 	$(this).closest(".content-block__row.is--leasing-condition").find('.content-block__cols.is--note').css({"display":"none"});
 });
 
+$('.form__search-input').on('shown.bs.collapse', function () {
+  $(this).find($('.form__control')).focus();
+});
+
 //сброс функции кнопки submit
 /*$('form button[type="submit"]').on('click', function(e) {
 	e.preventDefault();

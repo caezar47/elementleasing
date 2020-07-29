@@ -5,4 +5,5 @@ toggleButton.on('click', function(e) {
 	e.preventDefault();
 	e.stopPropagation();
 	$(this).closest('.aside__block').toggleClass('open');
+	$('html').toggleClass("is--open-aside");
 });

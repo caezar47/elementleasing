@@ -17,6 +17,12 @@ body {
 			visibility: visible;
 		}			
 	}
+	html.is--open-aside &{
+		overflow-y: hidden;
+		.media-breakpoint-down(@xl; {
+			overflow-y: hidden;
+		});
+	}
 	&.is--aside-bottom{
 		.media-breakpoint-down(@xl; {
 			padding-bottom: @navbar_bottom;

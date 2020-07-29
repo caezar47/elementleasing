@@ -83,7 +83,15 @@
 				}
 			}
 			&-catalog{				
+				&{
+					.media-breakpoint-down(@md; {
+						z-index: 1;
+					});	
+				}		
 				&-adv{
+					.media-breakpoint-down(@md; {
+						z-index: -1;
+					});
 					padding-bottom: 40px;	
 					padding-left: 15px;
 					padding-right: 15px;				
@@ -643,7 +651,7 @@
 						}
 					});	
 					.media-breakpoint-up(@xl; {
-						grid-template-columns: 4fr 8fr;				
+						grid-template-columns: 4fr 8fr;			
 					});
 				}
 				&-sm{
@@ -653,6 +661,8 @@
 						& > *:nth-child(2){
 							order: -1;
 							z-index: 1000;
+							margin-left: -15px;
+							margin-right: -15px;
 						}
 					});	
 					.media-breakpoint-up(@xl; {
