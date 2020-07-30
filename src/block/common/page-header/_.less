@@ -91,6 +91,15 @@
 			}
 		}
 		&.is--page{
+			&-default{
+				.heading-xl();
+				color: @primary-l;
+				font-weight: 700;
+				margin-bottom: 25px;
+				.media-breakpoint-up(@lg; {
+					margin-bottom: 80px;
+				});
+			}
 			&-contacts{
 				margin-bottom: 20px;
 				.media-breakpoint-up(@lg; {
