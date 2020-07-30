@@ -10,6 +10,143 @@
 			mod:heading_mod,
 			level:heading_level, 
 			heading:heading
+		} %}		
+		{% include "../common/form/elem-tpl.twig" with {
+			view: "selectize", 
+			prefix:"form__", 
+			mod:mod, 
+			group: "",
+			required: "required",
+			attr:"data-selectize-default", 
+			list: [
+				{"name": "Город", "status":"disabled selected"},
+				{"name": "Абакан"},
+				{"name": "Архангельск"},
+				{"name": "Астрахань"},
+				{"name": "Барнаул"},
+				{"name": "Белгород"},
+				{"name": "Благовещенск"},
+				{"name": "Брянск"}
+			]
+		} %}
+		<div class="form__item  is--selectize-primary">
+			<select data-selectize-default>
+				<option disabled selected>Город</option>
+				<option>Абакан</option>
+				<option>Архангельск</option>
+				<option>Астрахань</option>
+				<option>Барнаул</option>
+				<option>Белгород</option>
+				<option>Благовещенск</option>
+				<option>Брянск</option>
+			</select>
+		</div>
+		<div class="form__item  is--selectize-primary-light">
+			<select data-selectize-default>
+				<option disabled selected>Город</option>
+				<option>Абакан</option>
+				<option>Архангельск</option>
+				<option>Астрахань</option>
+				<option>Барнаул</option>
+				<option>Белгород</option>
+				<option>Благовещенск</option>
+				<option>Брянск</option>
+			</select>
+		</div>
+		<div class="form__item  is--selectize-inline-right">
+			<select data-selectize-default>
+				<option selected>по дате</option>
+				<option>по новизне</option>
+				<option>по&nbsp;популярности</option>
+			</select>
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		{% include "../common/form/elem-tpl.twig" with {
+			view: "select", 
+			prefix:prefix, 
+			mod:mod, 
+			form_id:ID,
+			id:"city1", 
+			required: "required",
+			name:"Город", 
+			color:color, 
+			attr:"data-select-default", 
+			list: [
+				{"name": "Город", "status":"disabled selected"},
+				{"name": "Абакан"},
+				{"name": "Архангельск"},
+				{"name": "Астрахань"},
+				{"name": "Барнаул"},
+				{"name": "Белгород"},
+				{"name": "Благовещенск"},
+				{"name": "Брянск"}
+			]
+		} %}
+		{% include "../common/form/elem-tpl.twig" with {
+			view: "select", 
+			prefix:prefix, 
+			mod:mod, 
+			form_id:ID,
+			id:"city2", 
+			required: "required",
+			name:"Город", 
+			color:color, 
+			attr:"data-select-primary", 
+			list: [
+				{"name": "Город", "status":"disabled selected"},
+				{"name": "Абакан"},
+				{"name": "Архангельск"},
+				{"name": "Астрахань"},
+				{"name": "Барнаул"},
+				{"name": "Белгород"},
+				{"name": "Благовещенск"},
+				{"name": "Брянск"}
+			]
+		} %}
+		{% include "../common/form/elem-tpl.twig" with {
+			view: "select", 
+			prefix:prefix, 
+			mod:mod, 
+			form_id:ID,
+			id:"city3", 
+			required: "required",
+			name:"Город", 
+			color:color, 
+			attr:"data-select-inline", 
+			list: [
+				{"name": "Город", "status":"disabled selected"},
+				{"name": "Абакан"},
+				{"name": "Архангельск"},
+				{"name": "Астрахань"},
+				{"name": "Барнаул"},
+				{"name": "Белгород"},
+				{"name": "Благовещенск"},
+				{"name": "Брянск"}
+			]
+		} %}
+		{% include "../common/form/elem-tpl.twig" with {
+			view: "select", 
+			prefix:prefix, 
+			mod:mod, 
+			form_id:ID,
+			id:"city", 
+			required: "required",
+			name:"Город", 
+			color:color, 
+			attr:"data-select-primary-l", 
+			list: [
+				{"name": "Город", "status":"disabled selected"},
+				{"name": "Абакан"},
+				{"name": "Архангельск"},
+				{"name": "Астрахань"},
+				{"name": "Барнаул"},
+				{"name": "Белгород"},
+				{"name": "Благовещенск"},
+				{"name": "Брянск"}
+			]
 		} %}
 		<div class="grid__row  is--columns-6">
 			<div>

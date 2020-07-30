@@ -7,6 +7,19 @@
 	{% endfor %}
 {% endif %}
 
+{% if view == "selectize" %}
+	<p class="{{prefix}}item  {{mod}}  {{group}}  {% if error == "true" %}is--error{% endif %}" {% if required == "required" %}data-error="Обязательно к заполнению"{% endif %}>
+		{% if label %}
+		<label class="{{prefix}}label  {{mod}}" for="{{form_id}}[{{id}}]">{{label}}</label>
+		{% endif %}
+		<select id="{{form_id}}[{{id}}]" name="f[{{name}}]" {{attr}} {{required}}>
+			{% for value in list %}
+				<option value="{{value.val}}" {{value.status}}>{{value.name}}</option>
+			{% endfor %}	
+		</select>
+	</p>
+{% endif %}
+
 {% if view == "select" %}
 	<p class="{{prefix}}item  {{mod}}  {{group}}  {% if error == "true" %}is--error{% endif %}"  {% if required == "required" %}data-error="Обязательно к заполнению"{% endif %}>
 		{% if label %}

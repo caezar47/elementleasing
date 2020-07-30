@@ -172,9 +172,8 @@ $(function() {
 		    {
 				breakpoint: 576,
 				settings: {
-					//variableWidth: true,
-					variableWidth: false,
-					slidesToShow: 1, 
+					variableWidth: true,
+					slidesToShow: 1,
 				}
 		    }
 		]

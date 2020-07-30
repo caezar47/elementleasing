@@ -3,6 +3,14 @@ html {
 		width: 100%;
 		position: relative;	
 	});
+	&.is--open-aside{
+	   // overflow: hidden;	
+	}
+	&.is--open-aside body{
+		position: relative;
+	    overflow: hidden;
+		//height: 100%;
+	}
 }
 *::selection{background: darken(@white, 20%);}
 body {
@@ -16,12 +24,6 @@ body {
 			opacity: 1;
 			visibility: visible;
 		}			
-	}
-	html.is--open-aside &{
-		overflow-y: hidden;
-		.media-breakpoint-down(@xl; {
-			overflow-y: hidden;
-		});
 	}
 	&.is--aside-bottom{
 		.media-breakpoint-down(@xl; {

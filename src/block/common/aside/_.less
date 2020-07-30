@@ -110,15 +110,17 @@
 					width: 100%;
 					position: absolute;
 					height: ~"calc(100vh - @{navbar_device} - 46px - @{navbar_bottom})";
+					height: 300px;
 					z-index: 5;
 					background-color: @white;
-					display: none;					
+					display: none;
+					box-shadow: 0 4px 14px 0 rgba(0,52,156,.5);
 				}
 				.aside__block.is--sticky.open &{
 					display: block;
 				}
 				.sticky-wrapper.is-sticky &{
-					height: ~"calc(100vh - @{navbar_device} - @{navbar_bottom})";
+					//height: ~"calc(100vh - @{navbar_device} - @{navbar_bottom})";
 				}
 			});
 			.media-breakpoint-up(@xl; {			

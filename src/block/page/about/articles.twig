@@ -16,7 +16,21 @@
 					} %}
 				</div>
 				<div class="cols">
+
 					{% include "../../common/form/elem-tpl.twig" with {
+						view: "selectize", 
+						prefix:prefix.form, 
+						mod:"is--filter", 
+						group: "is--selectize-inline-right",
+						attr:"data-selectize-default", 
+						label:"Сортировать:",
+						list: [
+							{"name": "по дате","status": "selected"},
+							{"name": "по новизне"},
+							{"name": "по&nbsp;популярности"}
+						]
+					} %}
+					{# {% include "../../common/form/elem-tpl.twig" with {
 						view: "select", 
 						prefix:prefix.form, 
 						mod:"is--filter", 
@@ -31,7 +45,7 @@
 							{"name": "по новизне"},
 							{"name": "по&nbsp;популярности"}
 						]
-					} %}
+					} %} #}
 				</div>
 			</div>	
 

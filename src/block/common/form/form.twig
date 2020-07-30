@@ -57,24 +57,24 @@
 					{"type":"tel", "id":"tel", "form_id":ID, "required": "required", "name":"Телефон", "placeholder":"Телефон"}
 				]} %}
 				{% include "elem-tpl.twig" with {
-					view: "select", 
+					view: "selectize", 
 					prefix:prefix, 
 					mod:mod, 
 					form_id:ID,
 					id:"city", 
+					group:"is--selectize-primary-light", 
 					required: "required",
 					name:"Город", 
-					color:color, 
-					attr:"data-select-primary-l", 
+					attr:"data-selectize-default", 
 					list: [
-						{"name": "Город", "status":"disabled selected"},
-						{"name": "Абакан"},
-						{"name": "Архангельск"},
-						{"name": "Астрахань"},
-						{"name": "Барнаул"},
-						{"name": "Белгород"},
-						{"name": "Благовещенск"},
-						{"name": "Брянск"}
+						{"name": "Город","val": "", "status":"disabled selected"},
+						{"name": "Абакан","val": "Абакан"},
+						{"name": "Архангельск","val": "Архангельск"},
+						{"name": "Астрахань","val": "Астрахань"},
+						{"name": "Барнаул","val": "Барнаул"},
+						{"name": "Белгород","val": "Белгород"},
+						{"name": "Благовещенск","val": "Благовещенск"},
+						{"name": "Брянск","val": "Брянск"}
 					]
 				} %}
 				<button type="submit" data-form-submit class="btn__item  is--arrow  is--md  is--primary">Отправить заявку</button>	
@@ -124,28 +124,28 @@
 					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
 						{"type":"text", "id":"fio", "form_id":ID, "required": "required", "name":"fio", "placeholder":"Имя"}
 					]} %}	
+					
 					{% include "elem-tpl.twig" with {
-						view: "select", 
+						view: "selectize", 
 						prefix:prefix, 
 						mod:mod, 
-						color:color, 
-						form_id:ID, 
-						required: "required",
+						form_id:ID,
 						id:"city", 
+						group:"is--selectize-primary", 
+						required: "required",
 						name:"Город", 
-						attr:"data-select-primary", 
-						placeholder:"Город", 
+						attr:"data-selectize-default", 
 						list: [
-							{"name": "Город", "status":"disabled selected"},
-							{"name": "Абакан"},
-							{"name": "Архангельск"},
-							{"name": "Астрахань"},
-							{"name": "Барнаул"},
-							{"name": "Белгород"},
-							{"name": "Благовещенск"},
-							{"name": "Брянск"}
+							{"name": "Город","val": "", "status":"disabled selected"},
+							{"name": "Абакан","val": "Абакан"},
+							{"name": "Архангельск","val": "Архангельск"},
+							{"name": "Астрахань","val": "Астрахань"},
+							{"name": "Барнаул","val": "Барнаул"},
+							{"name": "Белгород","val": "Белгород"},
+							{"name": "Благовещенск","val": "Благовещенск"},
+							{"name": "Брянск","val": "Брянск"}
 						]
-					} %}	
+					} %}
 					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
 						{"type":"tel", "id":"tel", "form_id":ID, "required": "required", "name":"Телефон", "placeholder":"Телефон"},
 						{"type":"email", "id":"email", "form_id":ID, "required": "required", "name":"Email", "placeholder":"E-mail"}
@@ -207,24 +207,25 @@
 							"name":"Объект лизинга", 
 							"placeholder":"Объект лизинга"
 						},
-					]} %}
+					]} %}	
+
 					{% include "elem-tpl.twig" with {
-						view: "select", 
+						view: "selectize", 
 						prefix:prefix, 
 						mod:mod, 
 						form_id:ID,
 						id:"time", 
-						name:"Срок лизинга", 
-						color:color, 
+						group:"is--selectize-primary-light", 
 						required: "required",
-						attr:"data-select-primary-l", 
+						name:"Срок лизинга", 
+						attr:"data-selectize-default", 
 						list: [
-							{"name": "Срок лизинга", "status":"disabled selected"},
-							{"name": "36 месяцев"},
-							{"name": "24 месяца"},
-							{"name": "12 месяцев"}
+							{"name": "Срок лизинга","val": "", "status":"disabled selected"},
+							{"name": "36 месяцев","val": "36 месяцев"},
+							{"name": "24 месяца","val": "24 месяца"},
+							{"name": "12 месяцев","val": "12 месяцев"}
 						]
-					} %}	
+					} %}
 					{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
 						{
 							"type":"number", 
@@ -269,21 +270,22 @@
 							"placeholder":"Название компании"
 						}
 					]} %} 
+
 					{% include "elem-tpl.twig" with {
-						view: "select", 
+						view: "selectize", 
 						prefix:prefix, 
 						mod:mod, 
 						form_id:ID,
 						id:"legal", 
-						name:"", 
-						color:color, 
-						required: "required", 
-						attr:"data-select-primary-l",
+						group:"is--selectize-primary-light", 
+						required: "required",
+						name:"Срок лизинга", 
+						attr:"data-selectize-default", 
 						list: [
-							{"name": "Правовая форма", "status":"disabled selected"},
-							{"name": "Юридическое лицо"},
-							{"name": "ИП"},
-							{"name": "Физическое лицо"}
+							{"name": "Правовая форма","val": "", "status":"disabled selected"},
+							{"name": "Юридическое лицо","val": "Юридическое лицо"},
+							{"name": "ИП","val": "ИП"},
+							{"name": "Физическое лицо","val": "Физическое лицо"}
 						]
 					} %}
 					{% include "../../common/button/btn.twig" with {
@@ -319,25 +321,26 @@
 							"placeholder":"Ваш телефон"
 						}
 					]} %} 
+
 					{% include "elem-tpl.twig" with {
-						view: "select", 
+						view: "selectize", 
 						prefix:prefix, 
 						mod:mod, 
 						form_id:ID,
-						required: "required", 
 						id:"city", 
-						name:"", 
-						color:color, 
-						attr:"data-select-primary-l", 
+						group:"is--selectize-primary-light", 
+						required: "required",
+						name:"Город", 
+						attr:"data-selectize-default", 
 						list: [
-							{"name": "Ваш город", "status":"disabled selected"},
-							{"name": "Абакан"},
-							{"name": "Архангельск"},
-							{"name": "Астрахань"},
-							{"name": "Барнаул"},
-							{"name": "Белгород"},
-							{"name": "Благовещенск"},
-							{"name": "Брянск"}
+							{"name": "Город","val": "", "status":"disabled selected"},
+							{"name": "Абакан","val": "Абакан"},
+							{"name": "Архангельск","val": "Архангельск"},
+							{"name": "Астрахань","val": "Астрахань"},
+							{"name": "Барнаул","val": "Барнаул"},
+							{"name": "Белгород","val": "Белгород"},
+							{"name": "Благовещенск","val": "Благовещенск"},
+							{"name": "Брянск","val": "Брянск"}
 						]
 					} %}
 					{% include "../../common/button/btn.twig" with {
@@ -408,7 +411,7 @@
 {% if view=="partners" %}
 	<form action="#" class="{{prefix}}panel  {{mod}}  {{group}}">			
 		<div class="{{prefix}}row  {{mod}}">
-			{% include "elem-tpl.twig" with {
+			{# {% include "elem-tpl.twig" with {
 				view: "select", 
 				prefix:prefix, 
 				mod:mod, 
@@ -427,7 +430,8 @@
 					{"name": "Благовещенск"},
 					{"name": "Брянск"}
 				]
-			} %}	
+			} %} 
+
 			{% include "elem-tpl.twig" with {
 				view: "select", 
 				prefix:prefix, 
@@ -450,6 +454,42 @@
 					{"name": "УРАЛ"},
 					{"name": "Mercedes-Benz"},
 					{"name": "HOWO"}
+				]
+			} %}#}
+			{% include "elem-tpl.twig" with {
+				view: "selectize", 
+				prefix:prefix, 
+				mod:mod, 
+				form_id:ID,
+				id:"city", 
+				group:"is--selectize-primary-light", 
+				name:"Город", 
+				attr:"data-selectize-default", 
+				list: [
+					{"name": "Город","val": "", "status":"disabled selected"},
+					{"name": "Абакан","val": "Абакан"},
+					{"name": "Архангельск","val": "Архангельск"},
+					{"name": "Астрахань","val": "Астрахань"},
+					{"name": "Барнаул","val": "Барнаул"},
+					{"name": "Белгород","val": "Белгород"},
+					{"name": "Благовещенск","val": "Благовещенск"},
+					{"name": "Брянск","val": "Брянск"}
+				]
+			} %}
+			{% include "elem-tpl.twig" with {
+				view: "selectize", 
+				prefix:prefix, 
+				mod:mod, 
+				form_id:ID,
+				id:"type", 
+				group:"is--selectize-primary-light", 
+				name:"Марка", 
+				attr:"data-selectize-default", 
+				list: [
+					{"name": "Марка","val": "", "status":"disabled selected"},
+					{"name": "Volvo","val": "Volvo"},
+					{"name": "КамАз","val": "КамАз"},
+					{"name": "IVECO","val": "IVECO"},
 				]
 			} %}		
 			<button type="submit" class="btn__item  is--arrow  is--primary  is--submit">Поиск</button>	
@@ -483,7 +523,7 @@
 						{view: "date","type":"text", "id":"bithday", "form_id":ID,"required": "required", "name":"bithday", "placeholder":"Дата рождения"}
 					]} %}
 
-					{% include "elem-tpl.twig" with {
+					{# {% include "elem-tpl.twig" with {
 						view: "select", 
 						prefix:prefix, 
 						mod:mod, 
@@ -503,6 +543,27 @@
 							{"name": "Белгород"},
 							{"name": "Благовещенск"},
 							{"name": "Брянск"}
+						]
+					} %} #}
+					{% include "elem-tpl.twig" with {
+						view: "selectize", 
+						prefix:prefix, 
+						mod:mod, 
+						form_id:ID,
+						id:"city", 
+						required: "required",
+						group:"is--selectize-primary", 
+						name:"Город планируемой работы", 
+						attr:"data-selectize-default", 
+						list: [
+							{"name": "Город планируемой работы","val": "", "status":"disabled selected"},
+							{"name": "Абакан","val": "Абакан"},
+							{"name": "Архангельск","val": "Архангельск"},
+							{"name": "Астрахань","val": "Астрахань"},
+							{"name": "Барнаул","val": "Барнаул"},
+							{"name": "Белгород","val": "Белгород"},
+							{"name": "Благовещенск","val": "Благовещенск"},
+							{"name": "Брянск","val": "Брянск"}
 						]
 					} %}
 
@@ -641,7 +702,7 @@
 						}
 					]} %}
 
-					{% include "elem-tpl.twig" with {
+					{# {% include "elem-tpl.twig" with {
 						view: "select", 
 						prefix:prefix, 
 						mod:mod, 
@@ -660,6 +721,28 @@
 							{"name": "Белгород"},
 							{"name": "Благовещенск"},
 							{"name": "Брянск"}
+						]
+					} %} #}
+
+					{% include "elem-tpl.twig" with {
+						view: "selectize", 
+						prefix:prefix, 
+						mod:mod, 
+						form_id:ID,
+						id:"city", 
+						required: "required",
+						group:"is--selectize-primary-light", 
+						name:"Город планируемой работы", 
+						attr:"data-selectize-default", 
+						list: [
+							{"name": "Город планируемой работы","val": "", "status":"disabled selected"},
+							{"name": "Абакан","val": "Абакан"},
+							{"name": "Архангельск","val": "Архангельск"},
+							{"name": "Астрахань","val": "Астрахань"},
+							{"name": "Барнаул","val": "Барнаул"},
+							{"name": "Белгород","val": "Белгород"},
+							{"name": "Благовещенск","val": "Благовещенск"},
+							{"name": "Брянск","val": "Брянск"}
 						]
 					} %}
 
