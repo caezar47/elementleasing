@@ -23,6 +23,7 @@
 .grid__{
 	&row{
 		display: flex;
+		flex-wrap: wrap;
 		@supports (display: grid) {
 			display: grid;
 			grid-gap: 30px;
@@ -35,7 +36,7 @@
 		&.is--columns-2{
 			grid-template-columns: 100%;
 			.media-breakpoint-up(@sm; {
-				grid-template-columns: repeat(2, 1fr);				
+				grid-template-columns: repeat(2, 1fr);			
 			});
 			.media-breakpoint-up(@md; {
 				grid-template-columns: repeat(3, 1fr);	

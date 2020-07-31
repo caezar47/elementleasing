@@ -27,10 +27,14 @@
 	}
 	&row{
 		.media-breakpoint-up(@md; {
-			grid-template-columns: repeat(3, 1fr);			
+			@supports (display: grid){
+				grid-template-columns: repeat(3, 1fr);			
+			}
 		});
 		.media-breakpoint-up(@xl; {
-			grid-template-columns: repeat(4, 1fr);			
+			@supports (display: grid){
+				grid-template-columns: repeat(4, 1fr);
+			}
 		});
 	}
 	&cols{
@@ -59,21 +63,30 @@
 			&.is--nav{
 				display: block;
 			}
-			&.is--line{
+			&.is--line{		
 				display: block;
-				grid-column: span 3;			
+				grid-column: span 3;
 			}
 			&.is--search{
 				display: none;			
 			}
 		});
 		.media-breakpoint-up(@xl; {
+			flex: 0 1 25%;
 			&.is--line{
-				margin: 30px 0 15px;
+				margin: 60px 0 45px;
 				grid-column: span 4;
+				flex: 1 1 100%;	
+				@supports (display: grid){
+					margin: 30px 0 15px;					
+				}
 			}	
 			&.is--nav-default{
 			    grid-column: 3;
+				margin-left: 25%;					
+				@supports (display: grid){
+					margin-left: 0px;					
+				}
 			}		
 		});
 	}

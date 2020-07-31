@@ -598,8 +598,13 @@
 		&.is--index{
 			&-order{
 				.media-breakpoint-up(@md; {		
-					position: relative;			
-					grid-template-columns: 1fr 1fr;
+					position: relative;		
+					& > *{
+						flex: 1 1 0;
+					}	
+					@supports (display: grid){
+						grid-template-columns: repeat(2, 1fr);
+					}
 					&>*:nth-child(1){
 						padding-right: 30px;
 					}
@@ -635,10 +640,18 @@
 			&-products{
 				& > *{
 					flex: 1 1 0;
+					&:nth-child(1){
+						margin-right: 30px;
+					}
 				}
 				.media-breakpoint-up(@lg; {
 					@supports (display: grid){
 						grid-template-columns: repeat(2, 1fr);
+						& > *{
+							&:nth-child(1){
+								margin-right: 0px;
+							}
+						}
 					}
 				});
 			}
@@ -997,8 +1010,21 @@
 				grid-template-columns: 100%;
 				grid-gap: 15px 30px;
 				.media-breakpoint-up(@sm; {
-					grid-gap: 30px 16px;
-					grid-template-columns: repeat(2, 1fr);	
+					& > *{
+						flex: 1 1 0;
+						&:nth-child(1){
+							margin-right: 16px;
+						}
+					}
+					@supports (display: grid){
+						grid-gap: 30px 16px;
+						grid-template-columns: repeat(2, 1fr);
+						& > *{
+							&:nth-child(1){
+								margin-right: 0px;
+							}
+						}
+					}	
 				});
 			}
 			&-leasing{
