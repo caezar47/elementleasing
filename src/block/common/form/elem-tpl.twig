@@ -12,7 +12,7 @@
 		{% if label %}
 		<label class="{{prefix}}label  {{mod}}" for="{{form_id}}[{{id}}]">{{label}}</label>
 		{% endif %}
-		<select id="{{form_id}}[{{id}}]" name="f[{{name}}]" {{attr}} {{required}}>
+		<select id="{{form_id}}[{{id}}]" name="f[{{name}}]" {{attr}} {{required}} placeholder="{{name}}">
 			{% for value in list %}
 				<option value="{{value.val}}" {{value.status}}>{{value.name}}</option>
 			{% endfor %}	

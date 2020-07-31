@@ -1,3 +1,4 @@
 $('[data-selectize-default]').selectize({
-    sortField: 'text'
+    sortField: 'text',
+    lockOptgroupOrder: true
 });

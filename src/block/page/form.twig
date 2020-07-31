@@ -10,25 +10,30 @@
 			mod:heading_mod,
 			level:heading_level, 
 			heading:heading
-		} %}		
+		} %}
+
 		{% include "../common/form/elem-tpl.twig" with {
 			view: "selectize", 
-			prefix:"form__", 
+			prefix:prefix, 
 			mod:mod, 
-			group: "",
+			form_id:ID,
+			id:"city", 
 			required: "required",
-			attr:"data-selectize-default", 
+			group:"is--selectize-primary", 
+			name:"Город планируемой работы", 
+			attr:"data-selectize-default readonly", 
 			list: [
-				{"name": "Город", "status":"disabled selected"},
-				{"name": "Абакан"},
-				{"name": "Архангельск"},
-				{"name": "Астрахань"},
-				{"name": "Барнаул"},
-				{"name": "Белгород"},
-				{"name": "Благовещенск"},
-				{"name": "Брянск"}
+				{"name": "Город","val": "", "status":"disabled selected"},
+				{"name": "Абакан","val": "Абакан"},
+				{"name": "Архангельск","val": "Архангельск"},
+				{"name": "Астрахань","val": "Астрахань"},
+				{"name": "Барнаул","val": "Барнаул"},
+				{"name": "Белгород","val": "Белгород"},
+				{"name": "Благовещенск","val": "Благовещенск"},
+				{"name": "Брянск","val": "Брянск"}
 			]
 		} %}
+
 		<div class="form__item  is--selectize-primary">
 			<select data-selectize-default>
 				<option disabled selected>Город</option>

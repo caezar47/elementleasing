@@ -17,20 +17,20 @@
 				</div>
 				<div class="cols">
 
-					{% include "../../common/form/elem-tpl.twig" with {
+					{# {% include "../../common/form/elem-tpl.twig" with {
 						view: "selectize", 
 						prefix:prefix.form, 
-						mod:"is--filter", 
+						mod:"is--filter  is--search-disabled", 
 						group: "is--selectize-inline-right",
 						attr:"data-selectize-default", 
 						label:"Сортировать:",
 						list: [
-							{"name": "по дате","status": "selected"},
-							{"name": "по новизне"},
-							{"name": "по&nbsp;популярности"}
+							{"name": "по дате","val": "по дате","status": "selected"},
+							{"name": "по новизне","val": "по новизне"},
+							{"name": "по&nbsp;популярности","val": "по популярности"}
 						]
-					} %}
-					{# {% include "../../common/form/elem-tpl.twig" with {
+					} %} #}
+					{% include "../../common/form/elem-tpl.twig" with {
 						view: "select", 
 						prefix:prefix.form, 
 						mod:"is--filter", 
@@ -45,7 +45,7 @@
 							{"name": "по новизне"},
 							{"name": "по&nbsp;популярности"}
 						]
-					} %} #}
+					} %}
 				</div>
 			</div>	
 
