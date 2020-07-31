@@ -1026,12 +1026,16 @@
 					}
 				});
 				.media-breakpoint-up(@md; {
-					display: grid;
-				    grid-gap: 30px 16px;
-					grid-template-columns: repeat(3, 1fr);
+					display: flex;
 					& > *{
+						flex: 1 1 0;
 						display: flex;
 						width: 100%;						
+					}
+					@supports (display: grid){
+						display: grid;
+					    grid-gap: 30px 16px;
+						grid-template-columns: repeat(3, 1fr);
 					}
 				});
 				.media-breakpoint-up(@lg; {
@@ -3128,6 +3132,7 @@
 					//background-color: @primary-a;
 					//clip-path: polygon(0 8%,100% 4%,100% 94%,0 98.5%);
 					img{
+						width: 100%;
 						//max-width: 636px;
 					}
 				});	
