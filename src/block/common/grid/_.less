@@ -22,8 +22,11 @@
 }
 .grid__{
 	&row{
-		display: grid;
-		grid-gap: 30px;
+		display: flex;
+		@supports (display: grid) {
+			display: grid;
+			grid-gap: 30px;
+		}
 		.media-breakpoint-up(@xl; {
 			grid-gap: 30px 16px;
 		});
