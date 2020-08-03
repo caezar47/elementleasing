@@ -673,12 +673,13 @@
 		}
 		&.is--news{
 			padding-top: 10px;
-			flex: 1 1 0;
+			//flex: 1 1 0;
 			.media-breakpoint-up(@md; {
 				padding: 15px 15px 20px;
 				background-position: right 25px bottom 25px;
 				display: flex;
-				flex-wrap: wrap;				
+				//flex-wrap: wrap;
+				flex-direction: column;				
 				.card__item:hover &{
 					.icon-next(@c: '636363');
 				}
@@ -1643,7 +1644,8 @@
 					font-size: 0.889em;
 					margin-bottom: 10px;
 					overflow: hidden;
-		    		height: 75px;
+		    		//height: 75px;
+		    		max-height: 75px;
 				});
 			}
 			&-card{

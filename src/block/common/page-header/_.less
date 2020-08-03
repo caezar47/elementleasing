@@ -23,7 +23,11 @@
 				//.media-breakpoint-up(@md; {
 					margin-left: auto;
 					justify-self: flex-end;
+					min-width: 410px;
 				//});
+				@supports (display: grid){
+					min-width: 0;
+				}
 			}
 			&.is--back{
 				.media-breakpoint-down(@md; {
