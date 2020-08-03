@@ -19,8 +19,19 @@
 					grid-template-columns: repeat(2, 1fr);
 				});
 				.media-breakpoint-up(@lg; {
-					grid-gap: 40px 16px;
-					grid-template-columns: repeat(3, 1fr);
+					margin: 0 -2%;
+					& > *{
+						margin: 0 2% 40px;
+						flex: 1 1 29.333%;
+					}
+					@supports (display: grid){
+						margin: 0;
+						grid-gap: 40px 16px;
+						grid-template-columns: repeat(3, 1fr);
+						& > *{
+							margin: 0;
+						}						
+					}
 				});
 			}
 		}
