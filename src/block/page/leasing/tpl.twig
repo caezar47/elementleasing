@@ -120,10 +120,12 @@
 				{% for value in list %}
 				<div class="item  {{value.status}}">
 					<div class="{{prefix.card}}item  {{content_mod}}">
-						<div class="{{prefix.card}}heading  {{content_mod}}">
-							{{value.name}}
-						</div>					
-						<div class="{{prefix.card}}note  {{content_mod}}">{{value.note}}</div>
+						<div> 							
+							<div class="{{prefix.card}}heading  {{content_mod}}">
+								{{value.name}}
+							</div>					
+							<div class="{{prefix.card}}note  {{content_mod}}">{{value.note}}</div>
+						</div>
 						<div class="{{prefix.card}}preview  {{content_mod}}">
 							<img src="{{value.preview}}" alt="">
 						</div>	

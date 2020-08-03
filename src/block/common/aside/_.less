@@ -110,7 +110,7 @@
 					width: 100%;
 					position: absolute;
 					height: ~"calc(100vh - @{navbar_device} - 46px - @{navbar_bottom})";
-					height: 300px;
+					//height: 300px;
 					z-index: 5;
 					background-color: @white;
 					display: none;
@@ -120,7 +120,7 @@
 					display: block;
 				}
 				.sticky-wrapper.is-sticky &{
-					//height: ~"calc(100vh - @{navbar_device} - @{navbar_bottom})";
+					height: ~"calc(100vh - @{navbar_device} - @{navbar_bottom})";
 				}
 			});
 			.media-breakpoint-up(@xl; {			
@@ -132,7 +132,7 @@
 			position: relative;
 			height: 100%;
 			overflow: auto;
-			padding: 15px 0;
+			padding: 15px 0 45px;
 			.media-breakpoint-up(@xl; {	
 				overflow: visible;
 				padding: 0;
