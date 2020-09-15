@@ -5,7 +5,7 @@
 				prefix:prefix.breadcrumb, 
 				mod:bread_mod, 
 				bread:bread
-			} %}	
+			} %}
 
 			{% include "../common/page-header/tpl.twig" with {
 				prefix:"page-header__", 
@@ -43,14 +43,17 @@
 {% endif %}
 
 {% if view == "investors_docs"%}
-	<section class="{{content_prefix}}panel  {{content_mod}}">
+	<section class="{{content_prefix}}panel  {{content_mod}}" {% if bg %}style="background-image:url({{bg}})"{% endif %}>
 		<div class="{{content_prefix}}container container  {{content_mod}}">
-			{% include "../common/page-header/tpl.twig" with {
-				prefix:"page-header__", 
-				mod:heading_mod,
-				level:heading_level, 
-				heading:heading
-			} %}
+			<div class="page-header__panel  {{content_mod}}">
+				{% include "../common/page-header/tpl.twig" with {
+					prefix:"page-header__", 
+					mod:heading_mod,
+					level:heading_level, 
+					heading:heading
+				} %}
+				<p class="page-header__heading  {{content_mod}}-note">{{note}}</p>
+			</div>
 			<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
 				{% include "../common/card/card.twig" with {
 				 	view: "docs_card", 

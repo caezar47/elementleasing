@@ -565,10 +565,11 @@
   				background-color: @white;
   				margin: -1px;
   				padding: 20px;
-  				min-height: 180px;
+  				min-height: 173px;
   				transition: @trs-site;
   				.media-breakpoint-up(@md; {
-  					min-height: 290px;
+  					min-height: 285px;
+  					padding: 40px;
   				});
   				&:hover{
   					z-index: 1;
@@ -1029,22 +1030,32 @@
 		&.is--page{
 			&-investors{
 				&-info{ 
-					margin-bottom: 15px;
+					margin-bottom: -15px;
 					img{
 						margin: 0 auto;
 					}
 					.media-breakpoint-up(@md; {
 						position: absolute;
 						margin-bottom: 0;
-						min-width: 390px;
-						width: 50vw;
+						min-width: 350px;
+						width: 40vw;
+						right: 15px;
+						bottom: 15px;
+						//top: 50%;
+						//left: 48vw;
+					});
+					.media-breakpoint-up(@lg; {
+						bottom: inherit;
 						top: 50%;
-						left: 48vw;
-						transform: translateY(-50%);
+						transform: translateY(-50%);						
 					});
 					.media-breakpoint-up(@xl; {
-						min-width: 590px;
-						width: 34.5vw;
+						min-width: 501px;
+						width: 25.5vw;
+    					left: 54.7vw;
+    					right: inherit;
+						//min-width: 590px;
+						//width: 34.5vw;
 					});
 				}
 			}
@@ -1678,13 +1689,15 @@
 			&-card{
 				font-size: 1.34em;
     			line-height: 1.34em;
-				font-weight: 100;
-				color: @default;
+				//font-weight: 100;
+				color: #545454;
 				text-align: center;
   				.media-breakpoint-up(@md; {
-					.heading4();
+					//.heading4();
+					font-size: 1em;
   				});
 				.card__item:hover &{
+					color: @black;
 					//transform: scale(1.5);
 					//font-size: 1.8em;
 				}
