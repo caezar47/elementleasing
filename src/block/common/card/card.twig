@@ -18,7 +18,9 @@
 	<a href="{{value.link}}" class="{{prefix}}item  {{mod}}">
 		<div class="{{prefix}}wrap  {{mod}}">
 			<h4 class="{{prefix}}heading  {{mod}}">{{value.heading}}</h4>
+			{% if value.note %}
 			<div class="{{prefix}}note  {{mod}}">{{value.note}}</div>
+			{% endif %}
 			<time class="{{prefix}}date  {{mod}}" datetime="{{value.date_iso}}">{{value.date}}</time>
 		</div>	
 		<picture class="{{prefix}}preview  {{mod}}">

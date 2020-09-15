@@ -69,11 +69,19 @@ $(function() {
 			slidesToShow: 2,
 			slidesToScroll: 2,
 			arrows: false,
-			dots: dots,
+			dots: dots,		
+			variableWidth: true,
 			infinite: false,
 			prevArrow: prevArrow,
 			nextArrow: nextArrow,
 			responsive: [
+			   
+			    {
+					breakpoint: 1200,
+					settings: {						
+						slidesToScroll: 1,
+					}
+			    },
 			    {
 					breakpoint: 768,
 					/*settings: {
@@ -82,7 +90,6 @@ $(function() {
 						slidesToScroll: 1,
 						dots: false,
 					}*/
-
 					settings: "unslick"
 			    }
 			]

@@ -48,16 +48,24 @@
 		&.is--block{
 			&-news{				
 				margin-bottom: 20px;
+				font-size: 1.33em;
+				line-height: 1.34em;
 				.media-breakpoint-up(@md; {
-					margin-bottom: 36px;
+					margin-bottom: 53px;
 				});
+			    .media-breakpoint-up(@lg; {
+					font-size: 3.111em;  	
+			    });
 			}
 		}
 		&.is--index{
 			&-products{
-				margin-bottom: 20px;
+				font-weight: 500;
+				margin-bottom: 23px;
 				.media-breakpoint-up(@lg; {
-					margin-bottom: 75px;
+					font-size: 3.25em;
+					//margin-bottom: 75px;
+					margin-bottom: 45px;
 				});
 			}
 			&-adv{
@@ -69,19 +77,28 @@
 				});
 			}
 			&-catalog{
-				margin-bottom: 35px;
+				color: #2996CC;
+				font-size: 1.35em;
+				margin-bottom: 40px;
 				.media-breakpoint-up(@md; {
 					margin-bottom: 5px;
+					font-size: 3.2em;
 				});
-
 			}
 			&-order{
 				&{
-					margin-bottom: 15px;
+					margin-bottom: 20px;
+					font-size: 3.111em;
+					.media-breakpoint-up(@md; {
+						font-size: 3.23em;
+						line-height: 105%;						
+					});
 				}
 				&-note{
+					font-weight: 400;
 					margin-bottom: 45px;
 					.media-breakpoint-up(@md; {
+						font-size: 1em;
 						line-height: 1.5em;
 					});
 				}
@@ -90,8 +107,9 @@
 					z-index: 2;
 					font-size: 4em;
 					line-height: 1.33em;
-					.media-breakpoint-up(@xl; {						
-						font-size: 9em;
+					.media-breakpoint-up(@md; {
+						font-size: 3.15em;
+						line-height: 140%;
 					});
 				}
 			}
