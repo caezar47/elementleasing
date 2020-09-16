@@ -596,6 +596,34 @@
 			}
 		}
 		&.is--finance{
+			&-card{
+				color: @white;
+				text-align: center;
+				.media-breakpoint-down(@lg; {					
+					&:nth-child(2){
+						order: 2;
+					}
+					&:nth-child(3){
+						order: 1;
+					}
+				});
+				.media-breakpoint-up(@lg; {
+					margin: 0 auto;
+					max-width: 210px;
+					&:nth-child(1),
+					&:nth-child(4){
+						max-width: 170px;
+					}
+					&:nth-child(1){
+						margin: 0 auto 0 0;
+					}
+					&:nth-child(4){
+						margin:0 0 0 auto;
+					}
+				});
+			}
+		}
+		/*&.is--finance{
 			font-size: 16px;
 			display: flex;
 			flex-direction: column;
@@ -611,17 +639,12 @@
 				max-width: 290px;
 				width: 100%;
 				min-width: 225px;
-				//margin: 0;
-				//.slick-current &{
-				//	margin: 0 auto;
-				//	}
 			});
 			.media-breakpoint-up(@md; {
 				font-size: 18px;
 				min-height: 310px;
 				max-width: 290px;
 				height: 310px;
-				//padding: 20px 40px 60px;
 				padding: 20px 25px 60px;
 				@supports (display: grid){
 					height: auto;					
@@ -633,6 +656,33 @@
 			.slick-current &,
 			&:hover{
 				background-color: @white;
+			}
+		}*/
+		&.is--adv{
+			&-card{
+				background: @white;
+				padding: 40px 15px 40px 15px;
+				max-width: 256px;
+				display: flex;
+				flex-direction: column;
+				min-height: 350px;
+				&.slick-current{
+					box-shadow: 0px 12px 34px rgba(0, 52, 156, 0.25);
+				}
+				.media-breakpoint-up(@sm; {
+					
+					box-shadow: 0px 9px 15px rgba(0, 52, 156, 0.25);
+				});
+				.media-breakpoint-up(@lg; {
+					height: 100%;
+					min-height: 440px;
+					max-width: 100%;
+					padding: 45px 22px 50px 32px;
+					.is--leasing-adv &{
+						min-height: 485px;
+						padding-top: 55px;
+					}
+				});
 			}
 		}
 	}
@@ -1275,6 +1325,17 @@
 				}
 			}
 		}
+		&.is--adv{
+			&-card{
+				margin-bottom: 20px;
+				.media-breakpoint-down(@lg; {
+					max-width: 45px;
+				});
+				.media-breakpoint-up(@lg; {
+					margin-bottom: 37px;
+				});
+			}
+		}
 	}
 	&icon {
 		&.is--index{
@@ -1353,7 +1414,7 @@
 			font-size: 16px;
 			line-height: 16px;
 			color: @black-29;
-			font-weight: 300;
+			//font-weight: 300;
 			margin-bottom: 12px;
 		}
 		&.is--index{
@@ -1709,6 +1770,7 @@
     			line-height: 1.34em;
 			}
 		}
+		/*
 		&.is--finance{
 			color: @success;
 			font-weight: 700;
@@ -1716,10 +1778,20 @@
 			font-size: 1.75em;
 			line-height: 1.2em;
 			margin-bottom: 10px;
-			/*.card__item:hover &{
-				font-size: 1.8em;
-				transform: scale(1.25);
-			}*/
+		}*/
+		&.is--finance{
+			&-card{
+				font-weight: 500;
+				font-size: 1.32em;
+				line-height: 120%;
+				margin-bottom: 10px;
+				.media-breakpoint-up(@lg; {
+					margin-bottom: 15px;
+					font-size: 2em;
+					font-weight: 700;
+				});
+
+			}
 		}
 		&.is--partners{
 			&-card{
@@ -1728,10 +1800,26 @@
 				font-weight: 700;
 			}
 		}
+		&.is--adv{
+			&-card{
+				font-weight: 500;
+				margin-bottom: 15px;
+				font-size: 0.899em;
+				.media-breakpoint-up(@lg; {
+					font-size: 1em;
+					margin-bottom: 20px;
+					.is--leasing-adv &{
+						font-size: 2.08em;
+						line-height: 130%;
+						margin-bottom: 30px;
+					}
+				});
+			}
+		}
 	}
 	&note{
 		&.is--navbar{
-			font-weight: 300;
+			//font-weight: 300;
 			font-size: 12px;
 			line-height: 16px;
 			color: @black-98;
@@ -1848,6 +1936,7 @@
 			    });	
 			}*/
 		}
+		/*
 		&.is--finance{
 			font-weight: 100;
 			text-align: center;
@@ -1858,9 +1947,15 @@
 				max-width: 170px;
 				margin: 0 auto;
 			});
-			/*.card__item:hover &{
-				transform: scale(1.25);
-			}*/
+		}*/
+		&.is--finance{
+			&-card{
+				font-size: 0.889em;
+				line-height: 160%;
+				.media-breakpoint-up(@lg; {
+					font-size: 1em;
+				});
+			}
 		}
 		&.is--partners{
 			&-card{
@@ -1868,6 +1963,16 @@
 				line-height: 1.55em;
 				padding: 0 15px;
 				margin-bottom: 15px;
+			}
+		}
+		&.is--adv{
+			&-card{
+				font-size: 0.85em;
+				line-height: 150%;
+				.media-breakpoint-up(@lg; {
+					font-size: 1em;
+					line-height: 160%;
+				});
 			}
 		}
 	}	

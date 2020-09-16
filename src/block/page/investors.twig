@@ -75,8 +75,23 @@
 				level:heading_level, 
 				heading:heading
 			} %}
+
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_sm_mod,
+				level:heading_sm_level, 
+				heading:heading_sm
+			} %}
 			
-			<div class="{{content_prefix}}slider  {{content_mod}}">
+			<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
+				{% include "../common/card/card.twig" with {
+				 	view: "finance", 
+				 	prefix:prefix.card, 
+				 	mod:"is--finance-card", 
+				 	list: list
+				} %}
+			</div>
+			{# <div class="{{content_prefix}}slider  {{content_mod}}">
 				<div data-slick-finance  data-slick-dots="{{slider_dots}}">
 					{% include "../common/card/card.twig" with {
 					 	view: "finance", 
@@ -89,7 +104,7 @@
 					<p>*Финансовые показатели по МСФО</p>
 					<p>**Аннуализированный показатель</p>
 				</div>
-			</div>
+			</div> #}
 			{#
 			{% if link %}
 			<p class="{{content_prefix}}link  is--block-slider">

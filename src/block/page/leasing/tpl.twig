@@ -108,8 +108,8 @@
 {% endif %}
 
 {% if view == "leasing_adv" %}
-	<section class="{{content_prefix}}panel  {{content_mod}}">
-		<div class="{{content_prefix}}container container  {{content_mod}}">
+	<section class="{{content_prefix}}panel  {{content_mod}}  {{content_group}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}  {{content_group}}">
 			{% include "../../common/page-header/tpl.twig" with {
 				prefix:"page-header__", 
 				mod:heading_mod,
@@ -117,7 +117,18 @@
 				heading:heading
 			} %}		
 			<div class="{{content_prefix}}slider   {{content_mod}}" data-slick-leasing-adv>				
-				{% for value in list %}
+				{% for value in card_list %}
+				<div class="{{prefix.card}}item  {{card_mod}}">
+					<div class="{{prefix.card}}preview  {{card_mod}}">
+						<img src="{{value.icon}}" class="img-responsive" alt="">
+					</div>								
+					<p class="{{prefix.card}}heading  {{card_mod}}">
+						{{value.name}}
+					</p>					
+					<div class="{{prefix.card}}note  {{card_mod}}">{{value.note}}</div>
+				</div>
+				{% endfor %}
+				{# 
 				<div class="item  {{value.status}}">
 					<div class="{{prefix.card}}item  {{content_mod}}">
 						<div> 							
@@ -130,22 +141,7 @@
 							<img src="{{value.preview}}" alt="">
 						</div>	
 					</div>
-				</div>
-				{# <div class="item  {{value.status}}">
-					<div class="{{prefix.card}}item  {{content_mod}}">
-						<div class="{{prefix.card}}heading  {{content_mod}}">
-							{{value.name}}
-						</div>
-						<div class="{{prefix.card}}preview  {{content_mod}}">
-							<img src="{{value.preview}}" alt="">
-						</div>	
-						<div class="{{prefix.card}}icon  {{content_mod}}">
-							<img src="{{value.icon}}" alt="" class="img-responsive">
-						</div>							
-						<div class="{{prefix.card}}note  {{content_mod}}">{{value.note}}</div>
-					</div>
 				</div> #}
-				{% endfor %}
 			</div>
 		</div>
 	</section>

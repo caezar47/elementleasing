@@ -141,7 +141,22 @@ $(function() {
   		autoplaySpeed: 4000,
 		prevArrow: prevArrow,
 		nextArrow: nextArrow,
-		fade: true,
+	    responsive: [
+		    {
+				breakpoint: 3000,
+					settings: "unslick"
+				
+		    },
+		    {
+				breakpoint: 576,
+				settings: {
+					variableWidth: true,
+					slidesToShow: 1,
+					slidesToScroll: 1, 
+				}
+		    }
+		]
+		//fade: true,
 		/*responsive: [
 		    {
 				breakpoint: 992,

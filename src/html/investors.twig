@@ -138,18 +138,42 @@
 			{% include "../block/page/leasing/tpl.twig" with {
 				view:"leasing_adv", 
 				content_prefix:"content-block__", 
-				content_mod:"is--leasing-adv",
-				heading_mod:"is--h1  fw--700  color--white  is--leasing-adv", 
+				content_mod:"is--page-investors-adv-card",
+				heading_mod:"is--page-investors-adv-card", 
 				heading_level:"h2", 
-				heading:"Преимущества работы <br>с Элемент Лизинг",  
-				list:[
+				heading:"Наши преимущества", 
+                card_mod: "is--adv-card", 
+				card_list:[
 					{
-						status:"active",
-						name:"1. Выгодные условия лизинговых программ", 
-						icon:[path.img,"/default/leasing-cup.svg"].join(""), 
-						preview:[path.img,"/default/leasing-adv1.svg"].join(""),
-						note:'Лизинговые услуги относятся к расходам предприятия и позволяют снизить налог на прибыль компании, а также вернуть до 20% НДС от стоимости объекта лизинга.'
-					}
+						name:"Высоколиквидные активы", 
+						icon:[path.img,"/default/icon-car.svg"].join(""), 
+						note:'Специализируемся на предоставлении в лизинг высоколиквидных активов – коммерческого/грузового автотранспорта и колесной техники.'
+					},
+                    {
+                        name:"Малый и средний бизнес", 
+                        icon:[path.img,"/default/icon-case.svg"].join(""), 
+                        note:'Работаем с предприятиями малого и среднего бизнеса – сегментом рынка, обладающим большим потенциалом повторных обращений.'
+                    },
+                    {
+                        name:"Конкурентноспособный продукт", 
+                        icon:[path.img,"/default/icon-chart.svg"].join(""), 
+                        note:'Предлагаем привлекательный лизинговый продукт, ключевыми характеристиками которого являются скорость, простота и прозрачность принятия решений.'
+                    },
+                    {
+                        name:"Лидер рынка", 
+                        icon:[path.img,"/default/icon-rocket.svg"].join(""), 
+                        note:'Занимаем лидирующее положение в сегменте лизинга грузового автотранспорта.'
+                    },
+                    {
+                        name:"Развитая региональная сеть", 
+                        icon:[path.img,"/default/icon-road.svg"].join(""), 
+                        note:'Занимаем лидирующие позиции по объему регионального охвата рынка лизинговых услуг – компания представлена более 100 офисами продаж в 65 городах РФ.'
+                    },
+                    {
+                        name:"Устойчивое финансовое положение", 
+                        icon:[path.img,"/default/icon-money.svg"].join(""), 
+                        note:'Компания имеет устойчивую бизнес-модель и безупречную кредитную историю, демонстрирует стабильный рост основных финансовых показателей.'
+                    }
 				],
 			} %}
 
@@ -157,9 +181,13 @@
                 view:"investors_finance", 
                 content_prefix:"content-block__", 
                 content_mod:"is--page-investors-finance",
-                heading_mod:"fw--700  color--white  is--page-investors-finance", 
+                heading_mod:"fw--500  color--white  is--page-investors-finance", 
                 heading_level:"h2", 
-                heading:"Финансовые показатели*", 
+                heading:"Финансовые показатели*",
+
+                heading_sm_mod:"is--page-investors-finance-note", 
+                heading_sm_level:"p", 
+                heading_sm:"*Финансовые показатели по МСФО", 
                 list:[
                     {
                         name:"4,8",
@@ -179,11 +207,6 @@
                     {
                         name:"36,4%",
                         note:"Рентабельность капитала",
-                        link:"#",
-                    },
-                    {
-                        name:"4,8",
-                        note:"Отношение чистого долга к капиталу",
                         link:"#",
                     }
                 ],

@@ -87,14 +87,13 @@
 					} 
 					.media-breakpoint-down(@md; {
 						font-size: 12px;
-					});
-						
+					});		
 				}
 				&-finance{
-					.media-breakpoint-down(@md; {
+					/*.media-breakpoint-down(@md; {
 						font-size: 12px;
-					});
-					background-color: @primary;					
+					});*/
+					background-color: @blue-00;					
 				}
 			}
 			&-catalog{				
@@ -201,7 +200,7 @@
 					left: 0;
 					width: 100%;
 					height: 100%;
-					background-color: fadeout(@primary, 50%);
+					background-color: fadeout(@blue-00, 50%);
 				}
 				background-position: center;
 				background-size: cover;
@@ -237,29 +236,24 @@
 					font-size: 12px;
 				});
 				.media-breakpoint-up(@md; {
-					background-color: #FAFDFF;
+					//background-color: #FAFDFF;
+					background-color: #E5F7FF;
 				});
 			}
 			&-adv{
-				.media-breakpoint-down(@md; {
-					font-size: 12px;
-				});
-				.media-breakpoint-up(@md; {
-					background-color: #FAFDFF;
-				});
-				//background-color: @primary;
+				background-color: #E5F7FF;				
 			}
 			&-catalog{
-				.media-breakpoint-down(@md; {
+				/*.media-breakpoint-down(@md; {
 					font-size: 14px;
-				});
-				background-color: @primary;
+				});*/
+				background-color: @blue-00;
 			}
 			&-brand{
 				.media-breakpoint-down(@md; {
 					font-size: 12px;
 				});
-				background-color: #FAFDFF;
+				background-color: #E5F7FF;
 			}
 			&-conditions{
 				.media-breakpoint-down(@md; {
@@ -386,10 +380,11 @@
 			}
 			&-programm{
 				padding-top: 100px;
-				padding-bottom: 32px;
+				//padding-bottom: 30px;
+				padding-bottom: 0px;
 				.media-breakpoint-up(@lg; {
 					padding-top: 157px;
-					padding-bottom: 47px;
+					padding-bottom: 60px;
 				});
 			}
 		}
@@ -401,58 +396,54 @@
 				z-index: 2;
 				padding-top: 30px;
 				.media-breakpoint-up(@lg; {
-					padding-top: 2.7vw;
-					padding-bottom: 3.7vw;
+					padding-top: 50px;
+					padding-bottom: 65px;
 				});
 			}
 			&-condition{
-				padding-top: 25px;
-				padding-bottom: 15px;
-				.media-breakpoint-down(@md; {
-					padding-left: 25px;
-					padding-bottom: 40px;
+				padding-left: 25px;
+				padding-bottom: 40px;
+				.media-breakpoint-up(@lg; {
+					padding-top: 30px;
+					padding-bottom: 110px;
 				});
 			}
 			&-formaliz{
 				padding-top: 40px;
 				padding-bottom: 30px;
 				.media-breakpoint-up(@lg; {
-					padding-top: 3.6vw;
-					padding-bottom: 5.2vw;
+					padding-top: 68px;
+					padding-bottom: 93px;
 				});
 			}
 			&-adv{
-				padding-top: 25px;
-				padding-bottom: 45px;
-				.media-breakpoint-up(@md; {
-					padding-top: 45px;
-				});
+				padding-top: 15px;
+				padding-bottom: 30px;
 				.media-breakpoint-up(@lg; {
-					padding-top: 3.3vw;
-					padding-bottom: 5.5vw;
+					padding-bottom: 115px;
 				});
 			}
 			&-catalog{
 				padding-top: 40px;
 				padding-bottom: 30px;
 				.media-breakpoint-up(@lg; {
-					padding-top: 4vw;
-					padding-bottom: 6.3vw;
+					padding-top: 90px;
+					padding-bottom: 105px;
 				});
 			}
 			&-brand{
 				padding-top: 25px;
 				padding-bottom: 25px;
 				.media-breakpoint-up(@lg; {
-					padding-top: 2.4vw;
-					padding-bottom: 5vw;	
+					padding-top: 96px;
+					padding-bottom: 100px;	
 				});
 			}
 			&-conditions{
 				padding-top: 60px;
 				.media-breakpoint-up(@lg; {
-					padding-top: 4.3vw;
-					padding-bottom: 7vw;
+					padding-top: 115px;
+					padding-bottom: 120px;
 				});
 			}
 			&-partners{
@@ -497,9 +488,17 @@
 				}
 				&-adv{
 					padding-bottom: 0px;
-					.media-breakpoint-up(@md; {
+					.media-breakpoint-up(@lg; {
 						padding-top: 80px;
 						padding-bottom: 83px;
+					});
+				}
+				&-adv-card{					
+					padding-top: 55px;
+					padding-bottom: 70px;
+					.media-breakpoint-up(@lg; {
+						padding-top: 95px;
+						padding-bottom: 175px;
 					});
 				}
 				&-docs{
@@ -513,10 +512,11 @@
 					});
 				}
 				&-finance{
-					padding-bottom: 30px;
+					padding-top: 50px;
+					padding-bottom: 70px;
 					.media-breakpoint-up(@md; {
-						padding-top: 7.3vw;
-						padding-bottom: 8.65vw;
+						padding-top: 95px;
+						padding-bottom: 135px;
 					});
 				}
 			}
@@ -612,9 +612,11 @@
 		&.is--block{			
 			&-news{
 				padding-top: 30px;
+				padding-top: 60px;
 				padding-bottom: 55px;
 				.media-breakpoint-up(@lg; {
 					padding-top: 70px;
+					padding-top: 85px;
 					padding-bottom: 85px;
 				});
 			}
@@ -776,6 +778,14 @@
 						@supports (display: grid){
 							grid-template-columns: repeat(3, 1fr);							
 						}
+					});
+				}
+				&-finance{
+					grid-template-columns: repeat(2, 1fr);
+					grid-gap: 37px 30px;
+					.media-breakpoint-up(@lg; {
+						grid-template-columns: repeat(4, 1fr);
+						grid-gap: 30px 16px;
 					});
 				}
 			}
@@ -1036,7 +1046,7 @@
 				.media-breakpoint-up(@md; {
 					margin: 0 -2%;
 					& > *:nth-child(1){
-						padding-top: 30px;
+						padding-top: 48px;
 					}
 					[data-form-visible]{
 						display: none;
@@ -1152,7 +1162,7 @@
 							flex: 1 1 100%;
 							display: block;
 							margin: 25px 0 68px;
-							border-top: 2px solid @blue-light;
+							border-top: 2px solid #D8E8F0;
 						}
 					}
 					@supports (display: grid){
@@ -1430,7 +1440,7 @@
 				span{
 					display: block;
 					color: @default;
-					font-weight: 700;
+					font-weight: 500;
 					font-size: 1.22em;
 				}
 				.media-breakpoint-up(@lg; {
@@ -1483,6 +1493,13 @@
 								max-width: 1240px;
 							}
 						});
+					}					
+					&-adv-card{
+						.media-breakpoint-up(@sm; {
+							display: grid;
+							grid-gap:  32px 16px;
+							grid-template-columns: repeat(3, 1fr);
+						});					
 					}
 				}
 			}
@@ -1496,12 +1513,19 @@
 						opacity: 1;
 					}
 				}*/
-				&-catalog{
+				&-adv{
+					.media-breakpoint-up(@sm; {
+						display: grid;
+						grid-gap:  32px 16px;
+						grid-template-columns: repeat(3, 1fr);
+					});
+				}
+				/*&-catalog{
 					margin-bottom: 50px;
 					.media-breakpoint-up(@md; {
 						margin-bottom: 5.3vw;
 					});
-				}
+				}*/
 			}
 			&[data-slick-catalog]{
 				.media-breakpoint-down(@md; {

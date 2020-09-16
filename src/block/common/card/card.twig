@@ -242,11 +242,9 @@
 
 {% if view == "finance" %}
 	{% for value in list %}	
-	<div>
 		<div class="{{prefix}}item  {{mod}}">
 			<p class="{{prefix}}heading  {{mod}}">{{value.name}}</p>
 			<p class="{{prefix}}note  {{mod}}">{{value.note}}</p>
 		</div>
-	</div>
 	{% endfor %}
 {% endif %}

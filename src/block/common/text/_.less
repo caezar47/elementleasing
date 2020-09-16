@@ -248,11 +248,11 @@
 		}
 		&.is--leasing{
 			&-formaliz{
-				font-weight: 100;
+				//font-weight: 100;
 				max-width: 620px;
 				p, div{
 					position: relative;
-					font-size: 1.2em;
+					font-size: 1em;
 					line-height: 1.5em;
 					margin-bottom: 5px;
 				}
@@ -268,16 +268,16 @@
 				}
 				.media-breakpoint-up(@md; {
 					p, div{
-						margin-bottom: 20px;
+						margin-bottom: 30px;
 						padding-left: 90px;
-						font-size: 1.33em;
+						font-size: 1em;
 						line-height: 1.5em;
 					}
 					h2,
 					h3,
 					h4,
 					h5{
-						margin-bottom: 25px;						
+						margin-bottom: 35px;						
 						& + *{
 							&::before{
 								content: '';
@@ -303,7 +303,7 @@
   					margin-bottom: 15px;
   				}
 				h3{
-					font-weight: 700;
+					font-weight: 500;
 					margin-bottom: 20px;
 				}
 				hr{
@@ -317,8 +317,7 @@
 					padding-top: 0px;
 				}
 				blockquote{
-					font-size: 0.88em;
-				    line-height: 1.5em;
+					font-size: 0.889em;
 					border: 0;
 					border-top: 2px solid @white-e9;
 					padding: 0;
@@ -343,7 +342,7 @@
 					}
 				}
 				.media-breakpoint-up(@lg; {
-  					padding: 50px 45px 70px;
+  					padding: 50px 45px 30px;
 	  				p, div{
 	  					margin-bottom: 10px;
 	  				}
@@ -357,8 +356,9 @@
 						margin-top: 65px;
 					}
 					blockquote{
-						padding-top: 35px;
-					    font-size: 0.66em;
+						padding-top: 30px;
+					    font-size: 1em;
+					    line-height: 160%;
 						margin: 0 0 20px;
 					}
 					* + blockquote{
@@ -368,7 +368,7 @@
 			}
 		}
 		&.is--seo{
-			font-weight: 100;
+			//font-weight: 100;
 		}
 		&.is--catalog{
 			&-card{

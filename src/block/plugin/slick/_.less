@@ -82,6 +82,13 @@
 			});
 		}
 
+		[data-slick-leasing-adv] &{
+			overflow: visible;
+			.media-breakpoint-down(@lg; {
+				margin: 0 -8px;
+			});
+		}
+
 		[data-slick-leasing-adv].slick-dotted &{
 			//margin-right: -15px;
 			margin-bottom: 10px;
@@ -170,6 +177,11 @@
 		[data-slick-leasing] &{
 			.media-breakpoint-down(@md; {				
 				padding: 0 8px;
+			});
+		}
+		[data-slick-leasing-adv] &{
+			.media-breakpoint-down(@lg; {
+				margin: 0 8px;
 			});
 		}
 	}
