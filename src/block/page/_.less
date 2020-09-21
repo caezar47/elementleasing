@@ -52,7 +52,7 @@
 		&.is--page{
 			&-investors{
 				&-info{
-					background-color: @blue-08;
+					background-color: @custom;
 					background-repeat: no-repeat;
 					background-size: 325px auto;
 					background-position: center bottom 85px;
@@ -124,7 +124,7 @@
 						left: 0;
 						width: 100%;
 						height: 100%;
-						background-color: fadeout(@primary, 50%);
+						background-color: fadeout(@custom, 50%);
 					}
 					.breadcrumb__list{
 						margin-bottom: 20px;
@@ -349,7 +349,8 @@
 				});
 			}
 			&-products{
-				padding-bottom: 22px;
+				//padding-bottom: 22px;
+				padding-bottom: 0px;
 				.media-breakpoint-up(@lg; {
 					padding-top: 17px;
 					padding-bottom: 128px;
@@ -380,8 +381,8 @@
 			}
 			&-programm{
 				padding-top: 100px;
-				//padding-bottom: 30px;
-				padding-bottom: 0px;
+				padding-bottom: 30px;
+				//padding-bottom: 0px;
 				.media-breakpoint-up(@lg; {
 					padding-top: 157px;
 					padding-bottom: 60px;

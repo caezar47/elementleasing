@@ -29,7 +29,7 @@
 					left: 0px;
 					right: 0px;
 					bottom: 0px;
-					background-color: @primary;
+					background-color: @custom;
 					clip-path: polygon(0 5%,100% 0%,100% 95%,0% 100%);
 					transition: @trs-site;
 				}
@@ -86,7 +86,7 @@
 			}
 		}
 		&.is--vacancies{
-			background-color: @primary;
+			background-color: @custom;
 			.media-breakpoint-down(@md; {
 				font-size: 16px;
 				padding-top: 25px;
@@ -837,7 +837,7 @@
 			});			
 		}
 		&.is--primary{
-			background-color: @primary;
+			background-color: @custom;
 			border-color: @white;
 			color: @white;
 			font-size: 12px;
@@ -1006,7 +1006,7 @@
 			padding: 20px;			
 		});
 		&.is--primary{
-			background-color: @primary;
+			background-color: @custom;
 			border-color: @white;
 			color: @white;
 			transition: @trs-site;
@@ -1250,14 +1250,14 @@
 				border-color: @check_disabled_border_color;
 			}
 			&.is--primary{
-				background-color: @primary;
-				border-color: @success;
+				background-color: @custom;
+				border-color: @success; 
 				&::after{
 					.icon-checked(@c: 'F99F1B');
 				}
 			}
 			.form__panel.is--vacancies &{
-				background-color: @primary;
+				background-color: @custom;
 				border-color: @white;
 				&::after{
 					.icon-checked(@c: 'fff');
@@ -1583,7 +1583,7 @@
 
 		&.is--primary{
 			border-color: @white;
-			background-color: @primary;
+			background-color: @custom;
 			color: @white;
 			font-size: .82em;
 			.icon-bottom(@c: 'fff'; @w: 10px; @h: auto);
@@ -1682,7 +1682,7 @@
 		z-index: 1000; 
 		margin-top: -1px;
 		&.is--primary{
-			background-color: @primary;
+			background-color: @custom;
 			border-color: @white;
 		}
 		&.is--primary-light{

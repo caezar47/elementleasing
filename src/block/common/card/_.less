@@ -1167,7 +1167,7 @@
 					position: absolute;
 					top: 0;
 					left: 0;
-					background-color: fadeout(@primary, 50%);
+					background-color: fadeout(@custom, 50%);
 					width: 100%;
 					height: 100%;
 					transition: @trs-site;
@@ -1221,7 +1221,7 @@
 				.media-breakpoint-up(@md; {
 					height: 410px;
 					&::before{
-						background-color: fadeout(@primary, 50%);
+						background-color: fadeout(@custom, 50%);
 					}
 				});
 			}
@@ -1664,7 +1664,7 @@
 				&-sm{
 					.heading4();
 					margin-bottom: 15px;
-					color: @primary;
+					color: @custom;
 					.media-breakpoint-down(@md; {
 						display: none;
 					});

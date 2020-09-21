@@ -52,7 +52,7 @@
 		&.is--page{
 			&-investors{
 				&-info{
-					background-color: @blue-08;
+					background-color: @custom;
 					background-repeat: no-repeat;
 					background-size: 325px auto;
 					background-position: center bottom 85px;
@@ -124,7 +124,7 @@
 						left: 0;
 						width: 100%;
 						height: 100%;
-						background-color: fadeout(@primary, 50%);
+						background-color: fadeout(@custom, 50%);
 					}
 					.breadcrumb__list{
 						margin-bottom: 20px;
@@ -349,7 +349,8 @@
 				});
 			}
 			&-products{
-				padding-bottom: 22px;
+				//padding-bottom: 22px;
+				padding-bottom: 0px;
 				.media-breakpoint-up(@lg; {
 					padding-top: 17px;
 					padding-bottom: 128px;
@@ -380,8 +381,8 @@
 			}
 			&-programm{
 				padding-top: 100px;
-				//padding-bottom: 30px;
-				padding-bottom: 0px;
+				padding-bottom: 30px;
+				//padding-bottom: 0px;
 				.media-breakpoint-up(@lg; {
 					padding-top: 157px;
 					padding-bottom: 60px;
@@ -1870,14 +1871,14 @@
 				left: 0;
 				width: 100%;
 				height: 4px;
-				background-color: @primary;
+				background-color: @custom;
 				transform-origin: right;
 				transition: transform 0.4s;
 				transform: scale(0, 1);				
 			}
 			&.is--active,
 			&:hover{
-				color: @primary;
+				color: @custom;
 				&::after{
 					transform-origin: left;
 					transform: scale(1, 1);
@@ -3801,7 +3802,7 @@
 					position: absolute;
 					top: 0;
 					left: 0;
-					background-color: fadeout(@primary, 50%);
+					background-color: fadeout(@custom, 50%);
 					width: 100%;
 					height: 100%;
 					transition: @trs-site;
@@ -3855,7 +3856,7 @@
 				.media-breakpoint-up(@md; {
 					height: 410px;
 					&::before{
-						background-color: fadeout(@primary, 50%);
+						background-color: fadeout(@custom, 50%);
 					}
 				});
 			}
@@ -4298,7 +4299,7 @@
 				&-sm{
 					.heading4();
 					margin-bottom: 15px;
-					color: @primary;
+					color: @custom;
 					.media-breakpoint-down(@md; {
 						display: none;
 					});
@@ -5591,7 +5592,7 @@
 					left: 0px;
 					right: 0px;
 					bottom: 0px;
-					background-color: @primary;
+					background-color: @custom;
 					clip-path: polygon(0 5%,100% 0%,100% 95%,0% 100%);
 					transition: @trs-site;
 				}
@@ -5648,7 +5649,7 @@
 			}
 		}
 		&.is--vacancies{
-			background-color: @primary;
+			background-color: @custom;
 			.media-breakpoint-down(@md; {
 				font-size: 16px;
 				padding-top: 25px;
@@ -6399,7 +6400,7 @@
 			});			
 		}
 		&.is--primary{
-			background-color: @primary;
+			background-color: @custom;
 			border-color: @white;
 			color: @white;
 			font-size: 12px;
@@ -6568,7 +6569,7 @@
 			padding: 20px;			
 		});
 		&.is--primary{
-			background-color: @primary;
+			background-color: @custom;
 			border-color: @white;
 			color: @white;
 			transition: @trs-site;
@@ -6812,14 +6813,14 @@
 				border-color: @check_disabled_border_color;
 			}
 			&.is--primary{
-				background-color: @primary;
-				border-color: @success;
+				background-color: @custom;
+				border-color: @success; 
 				&::after{
 					.icon-checked(@c: 'F99F1B');
 				}
 			}
 			.form__panel.is--vacancies &{
-				background-color: @primary;
+				background-color: @custom;
 				border-color: @white;
 				&::after{
 					.icon-checked(@c: 'fff');
@@ -7145,7 +7146,7 @@
 
 		&.is--primary{
 			border-color: @white;
-			background-color: @primary;
+			background-color: @custom;
 			color: @white;
 			font-size: .82em;
 			.icon-bottom(@c: 'fff'; @w: 10px; @h: auto);
@@ -7244,7 +7245,7 @@
 		z-index: 1000; 
 		margin-top: -1px;
 		&.is--primary{
-			background-color: @primary;
+			background-color: @custom;
 			border-color: @white;
 		}
 		&.is--primary-light{
@@ -9933,14 +9934,14 @@
 				left: 0;
 				width: 100%;
 				height: 2px;
-				background-color: @blue-08;
+				background-color: @custom;
 				transform-origin: right;
 				transition: transform 0.4s;
 				transform: scale(0, 1);				
 			}
 			&:hover,
 			.tabs__item.active &{
-				color: @blue-08;
+				color: @custom;
 				opacity: 1;
 				&::after{
 					transform-origin: left;
@@ -11188,7 +11189,7 @@ blockquote {
 	}
 	.form__item.is--selectize-primary &{
 		border-color: @white;
-		background-color: @primary;
+		background-color: @custom;
 		color: @white;
 		font-size: .82em;
 		.icon-bottom(@c: 'fff'; @w: 10px; @h: auto);
@@ -11348,7 +11349,7 @@ blockquote {
 		}
 	}
 	.form__item.is--selectize-primary &{
-		background-color: @primary;
+		background-color: @custom;
 		border-color: @white;
 		.option{
 			color: fadeout(@white, 50%);			
@@ -11528,7 +11529,7 @@ blockquote {
 		[data-slick-leasing-adv] &{
 			overflow: visible;
 			.media-breakpoint-down(@lg; {
-				margin: 0 -8px;
+				//margin: 0 -15px;
 			});
 		}
 
