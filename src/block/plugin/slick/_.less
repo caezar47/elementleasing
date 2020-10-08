@@ -354,6 +354,7 @@
 					display: inline-block;
 					font-weight: 700;
 					opacity: 0.3;
+					color: @blue-00;
 					&::after{
 						content: '';
 						position: absolute;
@@ -361,13 +362,13 @@
 						left: 0;
 						width: 100%;
 						height: 2px;
-						background-color: @primary;
+						background-color: @blue-00;
 						transform-origin: right;
 						transition: transform 0.4s;
 						transform: scale(0, 1);				
 					}
 					&:hover{
-						color: @primary;
+						color: @blue-00;
 						opacity: 1;
 						&::after{
 							transform-origin: left;
@@ -384,7 +385,7 @@
 					});
 				}
 				&.slick-active a{
-					color: @primary;
+					color: @blue-00;
 					opacity: 1;
 					&::after{
 						transform-origin: left;
@@ -400,7 +401,7 @@
 				button {
 					width: 4px;
 					height: 4px;
-					background-color: #E3E3E3;
+					background-color: @blue-00;
 				}	
 				&.slick-active button{
 					background-color: #F99F1B;

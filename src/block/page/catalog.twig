@@ -7,40 +7,50 @@
 				bread:bread
 			} %}
 			<div class="{{content_prefix}}row  grid__row   is--page-aside-sm">
-				<div class="page-header__panel  row  {{heading_group}}  {{content_mod}}">
-					<div class="cols">
-						{% include "../common/page-header/tpl.twig" with {
-							prefix:"page-header__", 
-							mod:heading_mod,
-							level:heading_level, 
-							heading:heading
-						} %}
-						{% include "../common/page-header/tpl.twig" with {
-							prefix:"page-header__", 
-							mod:heading_cat_mod,
-							level:heading_cat_level, 
-							heading:heading_cat
-						} %}
-					</div>
-					<div class="cols">
-						{% include "../common/form/elem-tpl.twig" with {
-							view:"filter", 
-							prefix:prefix.form, 
-							mod:"", 
-							color:"", 
-							group:"", 
-							label:"Сортировать:", 
-							form_id:"filter", 
-							id:"select", 
-							name:"Сортировать", 
-							list: [
-								{"name": "по дате","status": "selected"},
-								{"name": "по новизне"},
-								{"name": "по популярности"}
-							]}
-						%}
-					</div>
+				<div class="page-header__panel  {{heading_group}}  {{content_mod}}">
+					{% include "../common/page-header/tpl.twig" with {
+						prefix:"page-header__", 
+						mod:heading_mod,
+						level:heading_level, 
+						heading:heading
+					} %}
 				</div>
+				{# <div class="page-header__panel  {{heading_group}}  {{content_mod}}">
+					<div class="row">
+						<div class="cols">
+							{% include "../common/page-header/tpl.twig" with {
+								prefix:"page-header__", 
+								mod:heading_mod,
+								level:heading_level, 
+								heading:heading
+							} %}
+							{% include "../common/page-header/tpl.twig" with {
+								prefix:"page-header__", 
+								mod:heading_cat_mod,
+								level:heading_cat_level, 
+								heading:heading_cat
+							} %}
+						</div>
+						<div class="cols">
+							{% include "../common/form/elem-tpl.twig" with {
+								view:"filter", 
+								prefix:prefix.form, 
+								mod:"", 
+								color:"", 
+								group:"", 
+								label:"Сортировать:", 
+								form_id:"filter", 
+								id:"select", 
+								name:"Сортировать", 
+								list: [
+									{"name": "по дате","status": "selected"},
+									{"name": "по новизне"},
+									{"name": "по популярности"}
+								]}
+							%}
+						</div>
+					</div>
+				</div> #}
 				{% include "../common/aside/tpl.twig" with {
 					view: "filter_catalog",
 					prefix: "aside__",
@@ -124,7 +134,7 @@
 						 	]
 						} %}
 						<div class="{{content_prefix}}row  grid__row  {{content_mod}}  is--new">
-							<h2 class="{{prefix.heading}}heading  is--heading  is--line  fw--700  is--h3">Новинки в каталоге</h2>	
+							<h2 class="{{prefix.heading}}heading  is--heading  is--line  fw--500  is--h3">Новинки в каталоге</h2>	
 							{% include "../common/card/card.twig" with {
 							 	view: "catalog_new", 
 							 	prefix:prefix.card, 

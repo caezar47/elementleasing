@@ -127,7 +127,7 @@
 				left: 0;
 				right: 0;
 				bottom: 0px;
-				background-color: @primary;
+				background-color: @blue-00;
 				clip-path: polygon(0 10%,100% 0%,100% 92%,0% 100%);
 			}			
 		}
@@ -653,6 +653,12 @@
 	}
 	&item{
 		position: relative;
+		&.is--catalog-filter{
+			//.media-breakpoint-up(@lg; {
+			    height: 430px;
+			    overflow: auto;
+			//});
+		}
 		&.is--login{
 			margin-bottom: 15px;
 			&:last-of-type{

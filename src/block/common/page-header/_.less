@@ -8,10 +8,10 @@
 				});
 			}
 			&-catalog{
-				margin-bottom: 25px;
-				.media-breakpoint-up(@lg; {
-					margin-bottom: 0px;
-				});
+				//margin-bottom: 25px;
+				//.media-breakpoint-up(@lg; {
+				//	margin-bottom: 0px;
+				//});
 			}
 			&-investors{
 				&-docs{
@@ -144,15 +144,11 @@
 		}
 		&.is--page{
 			&-default{
-				color: @blue-00;
+				.heading1();
 				font-weight: 500;
-				//.heading-xl();
-				//color: @primary-l;
+				color: @blue-00;
 				margin-bottom: 25px;
-				font-size: 1.35em;
-				line-height: 1.34em;
-			    .media-breakpoint-up(@lg; {
-					font-size: 3.111em;  	
+			    .media-breakpoint-up(@lg; {	
 					margin-bottom: 30px;
 			    });
 			}
@@ -397,13 +393,17 @@
 		}
 		&.is--catalog{
 			&-screen{
-				display: none;
-				.media-breakpoint-up(@md; {
-					display: block;
+				.media-breakpoint-down(@lg; {
+					margin-bottom: 0;
 				});
+				//display: none;
+				//.media-breakpoint-up(@md; {
+				//	display: block;
+				//});
 			}
 			&-device{
-				display: block;
+				display: none;
+				//display: block;
 				text-align: center;
 				.media-breakpoint-up(@md; {
 					display: none;
