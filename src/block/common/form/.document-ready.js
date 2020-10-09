@@ -46,6 +46,7 @@ var filter_view = $("[data-filter-view]");
 filter_view.on('click', function(e) {
 	e.preventDefault();
 	$(this).closest('.aside__filter').find('.form__checkbox.is--hidden').toggleClass('is--visible');
+	$(this).closest('.aside__filter').find('.form__item').toggleClass('is--open');
 });
 // споллер показать все для фильтров - end's
 
